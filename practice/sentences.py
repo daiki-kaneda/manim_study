@@ -1,7 +1,5 @@
 from manim import *
 
-
-
 class Sentences(Scene):
     def __init__(self, sentences, max_lines=5, wait_time=1.0,is_tex = True, **kwargs):
         super().__init__(**kwargs)
@@ -124,32 +122,3 @@ class NovelExample(Sentences):
     "それがどんな運命を辿るかは、まだ知る由もない。"
 ]
         super().__init__(sentences=wagahai_sentences, max_lines=4, wait_time=2.5,is_tex = False, **kwargs)
-
-
-
-
-class YourScene(Scene):
-    def construct(self):
-        proof_sentences_japanese = [
-            r"これから$\sqrt{2}$が無理数であることの証明をします。",
-            r"1.$\sqrt{2}$ が有理数であると仮定します。",
-            r"ここで、$\sqrt{2} = \frac{a}{b}$ ($a, b$は互いに素な自然数)",
-            r"2. 両辺を二乗して、 $2 = \frac{a^2}{b^2}$.",
-            r"3. よって, $2b^2 = a^2$.",
-            r"これは$a^2$が偶数であることを意味し、従って、$a$も偶数でなくてはなりません。",
-            r"4. $a = 2k$ とします ($k$は任意の整数)。",
-            r"5. このとき、$2b^2 = (2k)^2 = 4k^2$ となります。",
-            r"6. よって、$b^2 = 2k^2$ となります。",
-            r"これは$b^2$が偶数であることを意味し、従って、$b$も偶数でなくてはなりません。",
-            r"7. しかし、私たちは$a$と$b$が互いに素であると仮定しました。",
-            r"これは矛盾です。",
-            r"したがって、$\sqrt{2}$は無理数でなければなりません。",
-        ]
-
-        tex_mobjects = VGroup(*[
-            Tex(sentence, tex_template=japanese_tex_template_final).scale(0.7)
-            for sentence in proof_sentences_japanese
-        ]).arrange(DOWN, alignment=UL, buff=0.4).to_corner(UL)
-
-        self.play(FadeIn(tex_mobjects))
-        self.wait(3)

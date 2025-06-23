@@ -1,6 +1,6 @@
 from manim import *
 
-# manim --r 1920,1080 --format=mov --transparent practice/write_tex.py Sceneの名前
+# manim --r 1920,1080 --format=mov --transparent パス名 Sceneの名前
 # 上のコマンドでYoutubeのサイズで背景透過された状態でビルドされる
 class WriteTex(Scene):
     def construct(self):

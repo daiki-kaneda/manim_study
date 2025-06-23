@@ -24,7 +24,7 @@ class Sentences(Scene):
         \usepackage{amsmath}
         \usepackage{amssymb}
         \usepackage{fontspec}    % ★ システムフォントを使うためのパッケージ
-        \setmainfont{HiraginoSans-W3} % ★★★ あなたの環境での正確なPostScript名をここに記述 ★★★
+        \setmainfont{HannariMincho-Regular} % ★★★ あなたの環境での正確なPostScript名をここに記述 ★★★
                                      % 例: HiraginoSans-W3 (Macのヒラギノ角ゴ)
                                      % 例: YuGo-Medium (游ゴシック Medium)
         % \usepackage{zxjatype}   % 日本語組版ルールが必要な場合は追加 (フォント問題解決後)
@@ -95,7 +95,7 @@ class ProofExampleJa(Sentences):
             r"これは矛盾です。",
             r"したがって、$\sqrt{2}$は無理数でなければなりません。",
         ]
-        super().__init__(sentences=proof_sentences, max_lines=4, wait_time=2.5, **kwargs)
+        super().__init__(sentences=proof_sentences, max_lines=5, wait_time=2.5, **kwargs)
 
 class NovelExample(Sentences):
     def __init__(self, **kwargs):

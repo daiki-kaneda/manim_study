@@ -4,7 +4,7 @@ from manim import *
 
 # move_to...絶対位置に移動
 # next_to...他のmobjectの相対位置に移動
-# shift...画面内の相対位置に移動
+# shift...Mobjectをシフトさせる(UP, DOWN, LEFT, RIGHT, ORIGINなどは、Manimにおいて大きさが1の方向を表す単位ベクトルで、shiftと相性がいい)
 
 class MobjectMoveBootcamp(Scene):
     def construct(self):

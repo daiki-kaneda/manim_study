@@ -5,23 +5,33 @@ import json
 import os
 import time
 
+def generate_voice_from_texts(
+        text_list:list[str],
+        output_dir:str = "/Volumes/T7/VOICEVOX/",
+        sub_dir_name:str = "voice_outputs",
+        speaker_id:int = 3
+)-> list[dict]:
+    voice_info_list = []
+    base_url = "http://127.0.0.1:50021"
+
+    os.makedirs(output_dir,exist_ok=True)
+
+    for i,text in enumerate(text_list):
+        output_filename = os.path.join(output_dir, f"output_{i}.wav")
+        try:
+            print
+        except Exception as e:
+            print(e)
+
+
+
+    return voice_info_list
+
 def generate_voice_from_text_list(
     text_list: list[str],
-    output_dir: str = "voice_outputs",
+    output_dir: str = "/Volumes/T7/VOICEVOX/voice_outputs",
     speaker_id: int = 3 # デフォルトのずんだもん
 ) -> list[dict]:
-    """
-    VoiceVox API を使用して文字列のリストから音声を生成し、その情報リストを返します。
-
-    Args:
-        text_list (list[str]): 音声に変換する文字列のリスト。
-        output_dir (str): 音声ファイルを保存するディレクトリ。
-        speaker_id (int): 使用する話者ID。VoiceVoxエディタで確認できます。
-
-    Returns:
-        list[dict]: 生成された音声ファイルのパスとデュレーションを含む辞書のリスト。
-                    例: [{'path': 'voice_outputs/output_0.wav', 'duration': 2.5}, ...]
-    """
     voice_info_list = []
     base_url = "http://127.0.0.1:50021"
 

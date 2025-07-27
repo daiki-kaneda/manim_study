@@ -17,6 +17,23 @@ class PythagorasTheorem(Scene):
     #     ピタゴラスの定理の代数的証明を Manim でアニメーション化するメインメソッドです。
     #     各ステップのメソッドを順に呼び出して証明を進行させます。
     #     """
+        self.japanese_tex_template = japanese_tex_template = TexTemplate(
+    tex_compiler='xelatex', # ★ xelatex を明示的に指定
+    output_format='.xdv',    # ★ PDF 出力が最も安定
+    documentclass='\\documentclass[preview]{standalone}',
+    preamble=r"""
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{fontspec}    % ★ システムフォントを使うためのパッケージ
+        \setmainfont{HannariMincho-Regular} % ★★★ あなたの環境での正確なPostScript名をここに記述 ★★★
+                                     % 例: HiraginoSans-W3 (Macのヒラギノ角ゴ)
+                                     % 例: YuGo-Medium (游ゴシック Medium)
+        % \usepackage{zxjatype}   % 日本語組版ルールが必要な場合は追加 (フォント問題解決後)
+        % \usepackage{pxjahyper}  % 日本語PDFのしおりなどが必要な場合は追加 (フォント問題解決後)
+    """
+    )
+        self.a_val=2.5
+        self.b_val=3.5
         # 1. 定理の紹介
         self.introduce_theorem()
         self.wait(0.5) # シーン間の短いポーズ
@@ -24,6 +41,10 @@ class PythagorasTheorem(Scene):
     #     # 2. 大きな正方形の構築
         self.construct_large_square()
         self.wait(0.5)
+
+        self.arrange_triangles_and_c_square()
+        self.wait(0.5)
+
 
     #     # 3. 直角三角形とc^2正方形の配置 (a+b)^2 = 2ab + c^2 を示す
     #     self.arrange_triangles_and_c_square()
@@ -33,9 +54,9 @@ class PythagorasTheorem(Scene):
     #     self.rearrange_to_a_b_squares()
     #     self.wait(0.5)
 
-    #     # 5. 結果の式を導く
-    #     self.derive_final_equation()
-    #     self.wait(0.5)
+        # 5. 結果の式を導く
+        self.derive_final_equation()
+        self.wait(0.5)
 
     #     # 6. まとめと結論
     #     self.summarize_and_conclude()
@@ -64,7 +85,7 @@ class PythagorasTheorem(Scene):
             label_b = MathTex("b").next_to(triangle.get_critical_point(LEFT), LEFT * 0.5)
             
             hypotenuse_midpoint = (RIGHT * a_val + UP * b_val) / 2
-            label_c = MathTex("c").move_to(hypotenuse_midpoint).shift(UP*0.25)
+            label_c = MathTex("c").move_to(hypotenuse_midpoint).shift(UP*0.3)
 
             label_A = MathTex("A").next_to(triangle.get_critical_point(UL), UL*0.5)
             label_B = MathTex("B").next_to(triangle.get_critical_point(DR), )
@@ -85,9 +106,9 @@ class PythagorasTheorem(Scene):
         """
         辺にラベルがついた直角三角形を表示し、ピタゴラスの定理の内容を紹介します。
         """
-        triangle = self.get_right_triangle(with_label=True,show_angle=True)
+        triangle = self.get_right_triangle(with_label=True,show_angle=True,a_val=self.a_val,b_val=self.b_val).move_to(LEFT*2)
         # ピタゴラスの定理の式と名前
-        theorem_formula = MathTex("a^2 + b^2 = c^2").scale(1.5).next_to(triangle, DOWN, buff=2.0)
+        theorem_formula = MathTex("a^2 + b^2 = c^2").scale(1.5).next_to(triangle, RIGHT, buff=2.0)
         theorem_name = Text("ピタゴラスの定理").next_to(theorem_formula, UP, buff=0.5).scale(0.8)
 
         # アニメーション: 三角形の作成、ラベルの表示、定理の表示
@@ -108,83 +129,59 @@ class PythagorasTheorem(Scene):
         この正方形は、以降の証明の土台となります。
         """
         # 導入で使用した辺の長さの値を保持
-        self.a_val, self.b_val = 3, 4
         self.side_length = self.a_val + self.b_val
         
         # 大きな正方形を作成し、画面中央に配置
-        self.large_square_main = Square(side_length=self.side_length, color=YELLOW_B, fill_opacity=0.2).move_to(ORIGIN)
+        self.large_square_main = Square(side_length=self.side_length, color=GREEN, fill_opacity=0.2).move_to(LEFT)
+        self.main_group = VGroup(self.large_square_main)
         
         # 面積のラベルを表示
-        area_label = MathTex(f"\\text{{Area}} = (a+b)^2").next_to(self.large_square_main, DOWN, buff=0.5)
+        area_label = Tex("面積 = $(a+b)^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main, RIGHT, buff=0.5)
+        edge_label = MathTex("a+b").next_to(self.large_square_main.get_critical_point(DOWN),DOWN
+                                            )
         
         # アニメーション: 正方形の作成と面積ラベルの表示
-        self.play(Create(self.large_square_main))
+        self.play(Create(self.main_group))
+        self.play(Write(edge_label))
+        self.wait(1.5)
         self.play(Write(area_label))
         self.wait(1.5)
-        
         # 面積ラベルをフェードアウト（正方形は残す）
+        self.play(FadeOut(edge_label))
         self.play(FadeOut(area_label))
+        self.play(self.main_group.animate.move_to(ORIGIN))
 
 
-    # def arrange_triangles_and_c_square(self):
-    #     """
-    #     最初の大きな正方形の内部に、4つの直角三角形と1つの辺cの正方形を配置します。
-    #     これにより、面積の表現 $ (a+b)^2 = 2ab + c^2 $ を示します。
-    #     """
-    #     # 大きな正方形を左に移動させ、第1の配置の場所を確保
-    #     self.play(self.large_square_main.animate.shift(LEFT * (self.side_length / 2 + 1.5))) # 少し間隔を空ける
+    def arrange_triangles_and_c_square(self):
+        """
+        最初の大きな正方形の内部に、4つの直角三角形と1つの辺cの正方形を配置します。
+        これにより、面積の表現 $ (a+b)^2 = 2ab + c^2 $ を示します。
+        """
+        right_triangle = self.get_right_triangle(a_val=self.a_val,b_val=self.b_val)
+        self.triangle1 = right_triangle.copy().shift((-self.side_length/2,-self.side_length/2,0))
+        self.triangle2 = self.triangle1.copy().rotate_about_origin(90*DEGREES)
+        self.triangle3 = self.triangle1.copy().rotate_about_origin(180*DEGREES)
+        self.triangle4 = self.triangle1.copy().rotate_about_origin(270*DEGREES)
 
-    #     # 基本となる直角三角形 (頂点 (0,0), (a,0), (0,b) で作成)
-    #     base_triangle = Polygon(
-    #         ORIGIN,
-    #         RIGHT * self.a_val,
-    #         UP * self.b_val,
-    #         color=RED_C,
-    #         fill_opacity=0.7
-    #     )
-
-    #     # 4つの三角形を large_square_main の角に合わせて配置
-    #     triangles_group = VGroup()
+        self.label_a = MathTex("a").next_to(self.triangle1.get_critical_point(DOWN), DOWN * 0.5)
+        self.label_b = MathTex("b").next_to(self.triangle1.get_critical_point(LEFT), LEFT * 0.5)
+        hypotenuse_midpoint = (-self.side_length/4,-self.side_length/4,0)
+        self.label_c = MathTex("c").move_to(hypotenuse_midpoint).shift(UP*0.3)
         
-    #     # 1. 左下 (アライメント後、移動なし)
-    #     t1 = base_triangle.copy().align_to(self.large_square_main, DL)
-    #     triangles_group.add(t1)
+        for triangle in [self.triangle1,
+            self.triangle2,
+            self.triangle3,
+            self.triangle4,]:
+            self.main_group.add(triangle)
+            self.play(Create(triangle))
 
-    #     # 2. 右下 (90度反時計回り回転、位置調整)
-    #     t2 = base_triangle.copy().rotate(PI/2).align_to(self.large_square_main, DR).shift(LEFT * self.b_val)
-    #     triangles_group.add(t2)
+        self.wait(1)
 
-    #     # 3. 右上 (180度回転、位置調整)
-    #     t3 = base_triangle.copy().rotate(PI).align_to(self.large_square_main, UR).shift(LEFT * self.a_val + DOWN * self.b_val)
-    #     triangles_group.add(t3)
+        self.play(AnimationGroup(Create(self.label_a),Create(self.label_b),Create(self.label_c)))
+        self.main_group.add(self.label_a,self.label_b,self.label_c)
+        self.wait(1)
+        self.play(self.main_group.animate.shift(LEFT*2.5))
 
-    #     # 4. 左上 (270度反時計回り回転、位置調整)
-    #     t4 = base_triangle.copy().rotate(3*PI/2).align_to(self.large_square_main, UL).shift(DOWN * self.a_val)
-    #     triangles_group.add(t4)
-        
-    #     # 中央の辺cの正方形
-    #     c_val = np.sqrt(self.a_val**2 + self.b_val**2)
-    #     self.c_square_obj = Square(side_length=c_val, color=GREEN_C, fill_opacity=0.7).move_to(self.large_square_main.get_center())
-
-    #     # アニメーション: 三角形とc^2正方形の作成
-    #     self.play(LaggedStart(*[Create(t) for t in triangles_group], run_time=2, lag_ratio=0.2)) # 順番に三角形を作成
-    #     self.play(Create(self.c_square_obj))
-    #     self.wait(1)
-
-    #     # 面積の式を表示: (a+b)^2 の別の表現
-    #     area_exp1_part1 = MathTex(f"(a+b)^2 = 4 \\times \\frac{{1}}{{2}}ab + c^2")
-    #     area_exp1_part2 = MathTex(f"\\quad = 2ab + c^2")
-        
-    #     # 式を正方形の右隣に配置
-    #     area_exp1_part1.next_to(self.large_square_main, RIGHT, buff=1.5).shift(UP * 1.5)
-    #     area_exp1_part2.next_to(area_exp1_part1, DOWN)
-
-    #     self.play(Write(area_exp1_part1))
-    #     self.play(Write(area_exp1_part2))
-    #     self.wait(2)
-        
-    #     # 後のステップでフェードアウトするためにグループ化して保持
-    #     self.first_arrangement_objects = VGroup(triangles_group, self.c_square_obj, area_exp1_part1, area_exp1_part2)
 
 
     # def rearrange_to_a_b_squares(self):
@@ -231,54 +228,54 @@ class PythagorasTheorem(Scene):
     #     )
 
 
-    # def derive_final_equation(self):
-    #     """
-    #     2つの異なる面積表現 (2ab + c^2 と a^2 + b^2 + 2ab) を比較し、
-    #     最終的にピタゴラスの定理の式 $a^2 + b^2 = c^2$ を導きます。
-    #     """
-    #     # 前のステップのオブジェクトをすべてフェードアウトして、式を中央に表示する準備
-    #     self.play(FadeOut(self.second_arrangement_objects))
+    def derive_final_equation(self):
+        """
+        2つの異なる面積表現 (2ab + c^2 と a^2 + b^2 + 2ab) を比較し、
+        最終的にピタゴラスの定理の式 $a^2 + b^2 = c^2$ を導きます。
+        """
+        # 前のステップのオブジェクトをすべてフェードアウトして、式を中央に表示する準備
 
-    #     # 2つの面積の式を中央に表示
-    #     eq1_final = MathTex("(a+b)^2 = 2ab + c^2").shift(UP * 1.5)
-    #     eq2_final = MathTex("(a+b)^2 = a^2 + b^2 + 2ab").shift(DOWN * 1.5)
 
-    #     self.play(Write(eq1_final))
-    #     self.play(Write(eq2_final))
-    #     self.wait(1)
+        # 2つの面積の式を中央に表示
+        eq1_final = MathTex("(a+b)^2 = 2ab + c^2").shift(UP * 1.5)
+        eq2_final = MathTex("(a+b)^2 = a^2 + b^2 + 2ab").shift(DOWN * 1.5)
 
-    #     # 左辺が等しいことを強調
-    #     self.play(
-    #         Indicate(eq1_final.get_part_by_tex("(a+b)^2"), color=GREEN_C),
-    #         Indicate(eq2_final.get_part_by_tex("(a+b)^2"), color=GREEN_C)
-    #     )
-    #     self.wait(1)
+        self.play(Write(eq1_final))
+        self.play(Write(eq2_final))
+        self.wait(1)
 
-    #     # 左辺が等しいので、右辺同士を等式で結ぶ
-    #     equated_rhs = MathTex("2ab + c^2 = a^2 + b^2 + 2ab")
-    #     # `TransformMatchingTex` を使用して、前の2つの式から新しい式へ変換
-    #     self.play(TransformMatchingTex(VGroup(eq1_final, eq2_final), equated_rhs))
-    #     self.wait(1.5)
+        # 左辺が等しいことを強調
+        self.play(
+            Indicate(eq1_final.get_part_by_tex("(a+b)^2"), color=GREEN_C),
+            Indicate(eq2_final.get_part_by_tex("(a+b)^2"), color=GREEN_C)
+        )
+        self.wait(1)
 
-    #     # 両辺から共通項 2ab を消去するアニメーション
-    #     # `get_part_by_tex` は同じ文字列が複数ある場合、リストで返します
-    #     term_to_remove_left = equated_rhs.get_part_by_tex("2ab")[0]
-    #     term_to_remove_right = equated_rhs.get_part_by_tex("2ab")[1]
+        # 左辺が等しいので、右辺同士を等式で結ぶ
+        equated_rhs = MathTex("2ab + c^2 = a^2 + b^2 + 2ab")
+        # `TransformMatchingTex` を使用して、前の2つの式から新しい式へ変換
+        self.play(TransformMatchingTex(VGroup(eq1_final, eq2_final), equated_rhs))
+        self.wait(1.5)
 
-    #     self.play(
-    #         FadeOut(term_to_remove_left, shift=DOWN*0.5), # 下に少し移動させながらフェードアウト
-    #         FadeOut(term_to_remove_right, shift=DOWN*0.5)
-    #     )
-    #     self.wait(0.5)
+        # 両辺から共通項 2ab を消去するアニメーション
+        # `get_part_by_tex` は同じ文字列が複数ある場合、リストで返します
+        term_to_remove_left = equated_rhs.get_part_by_tex("2ab")[0]
+        term_to_remove_right = equated_rhs.get_part_by_tex("2ab")[1]
 
-    #     # 最終的なピタゴラスの定理の式
-    #     final_theorem_result = MathTex("c^2 = a^2 + b^2").move_to(equated_rhs.get_center())
-    #     # `TransformMatchingTex` を使用して、古い式から新しい式へ変換
-    #     self.play(TransformMatchingTex(equated_rhs, final_theorem_result))
-    #     self.wait(2)
+        self.play(
+            FadeOut(term_to_remove_left, shift=DOWN*0.5), # 下に少し移動させながらフェードアウト
+            FadeOut(term_to_remove_right, shift=DOWN*0.5)
+        )
+        self.wait(0.5)
+
+        # 最終的なピタゴラスの定理の式
+        final_theorem_result = MathTex("c^2 = a^2 + b^2").move_to(equated_rhs.get_center())
+        # `TransformMatchingTex` を使用して、古い式から新しい式へ変換
+        self.play(TransformMatchingTex(equated_rhs, final_theorem_result))
+        self.wait(2)
         
-    #     # 最終結果をフェードアウト
-    #     self.play(FadeOut(final_theorem_result))
+        # 最終結果をフェードアウト
+        self.play(FadeOut(final_theorem_result))
 
 
     # def summarize_and_conclude(self):

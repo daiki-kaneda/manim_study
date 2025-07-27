@@ -12,16 +12,14 @@ from manim import *
 
 class PythagorasTheorem(Scene):
     def construct(self):
-        self.add(self.get_right_triangle())
-        return
            
     #     """
     #     ピタゴラスの定理の代数的証明を Manim でアニメーション化するメインメソッドです。
     #     各ステップのメソッドを順に呼び出して証明を進行させます。
     #     """
-    #     # 1. 定理の紹介
-    #     self.introduce_theorem()
-    #     self.wait(0.5) # シーン間の短いポーズ
+        # 1. 定理の紹介
+        self.introduce_theorem()
+        self.wait(0.5) # シーン間の短いポーズ
 
     #     # 2. 大きな正方形の構築
     #     self.construct_large_square()
@@ -42,79 +40,66 @@ class PythagorasTheorem(Scene):
     #     # 6. まとめと結論
     #     self.summarize_and_conclude()
     #     self.wait(2) # 最後のポーズ
-    def get_right_triangle(with_label:bool=False,color:ManimColor=ORANGE,a_val:int=4,b_val:int=3):
+    def get_right_triangle(self,with_label:bool=False,color:ManimColor=BLUE,a_val:int=4,b_val:int=3,fill_opacity:float=0.75,show_angle:bool=False,angle_color:ManimColor=WHITE):
+        triangle = Polygon(
+            ORIGIN,
+            RIGHT * a_val,
+            UP * b_val,
+            color=color, 
+            fill_opacity = fill_opacity
+        )
+
+        vertices = triangle.get_vertices()
+        right_angle = RightAngle(Line(vertices[0],vertices[1]), Line(vertices[0],vertices[2]),length=0.4,stroke_width=1,color=angle_color)
+
+        right_triangle = VGroup(triangle)
+        if show_angle:
+            right_triangle.add(right_angle)
+
         if not with_label:
-            return  Polygon(
-            ORIGIN,
-            RIGHT * a_val,
-            UP * b_val,
-            color=color, 
-            )
+            return right_triangle
         else:
-            return  VGroup(
-            Polygon(
-            ORIGIN,
-            RIGHT * a_val,
-            UP * b_val,
-            color=color, 
-            ),
-            MathTex("a"),
-            MathTex("b"),
-            MathTex("c"),
+            # ラベルの位置を調整するとより見やすくなります
+            label_a = MathTex("a").next_to(triangle.get_critical_point(DOWN), DOWN * 0.5)
+            label_b = MathTex("b").next_to(triangle.get_critical_point(LEFT), LEFT * 0.5)
+            
+            hypotenuse_midpoint = (RIGHT * a_val + UP * b_val) / 2
+            label_c = MathTex("c").move_to(hypotenuse_midpoint).shift(UP*0.25)
+
+            label_A = MathTex("A").next_to(triangle.get_critical_point(UL), UL*0.5)
+            label_B = MathTex("B").next_to(triangle.get_critical_point(DR), )
+            label_C = MathTex("C").next_to(triangle.get_critical_point(DL),LEFT*1)
+            
+            return VGroup(
+                right_triangle,
+                label_a,
+                label_b,
+                label_c,
+                label_A,
+                label_B,
+                label_C
             )
 
 
-    # def introduce_theorem(self):
-    #     """
-    #     辺にラベルがついた直角三角形を表示し、ピタゴラスの定理の内容を紹介します。
-    #     """
-    #     # 仮の辺の長さ。実際の比率で表示されます。
-    #     a_val, b_val = 3, 4
+    def introduce_theorem(self):
+        """
+        辺にラベルがついた直角三角形を表示し、ピタゴラスの定理の内容を紹介します。
+        """
+        triangle = self.get_right_triangle(with_label=True,show_angle=True)
+        # ピタゴラスの定理の式と名前
+        theorem_formula = MathTex("a^2 + b^2 = c^2").scale(1.5).next_to(triangle, DOWN, buff=1.0)
+        theorem_name = Text("ピタゴラスの定理").next_to(theorem_formula, UP, buff=0.5).scale(0.8)
+
+        # アニメーション: 三角形の作成、ラベルの表示、定理の表示
+        self.play(Create(triangle))
+        self.play(Write(theorem_name), Write(theorem_formula))
+        self.wait(2) # 2秒間表示
         
-    #     # 直角三角形を作成し、画面中央に配置
-    #     triangle = Polygon(
-    #         ORIGIN,
-    #         RIGHT * a_val,
-    #         UP * b_val,
-    #         color=BLUE_C, # 三角形の色
-    #         fill_opacity=0.7 # 塗りつぶしの透明度
-    #     ).move_to(ORIGIN)
-
-    #     # 辺のラベルを作成し、適切な位置に配置
-    #     # a: 底辺
-    #     label_a = MathTex("a").next_to(Line(ORIGIN, RIGHT * a_val), DOWN, buff=0.2).align_to(triangle, DOWN).shift(RIGHT * a_val / 2)
-    #     # b: 高さ
-    #     label_b = MathTex("b").next_to(Line(ORIGIN, UP * b_val), LEFT, buff=0.2).align_to(triangle, LEFT).shift(UP * b_val / 2)
-    #     # c: 斜辺 (斜辺に沿って配置)
-    #     c_line_dummy = Line(triangle.get_vertices()[1], triangle.get_vertices()[2]) # ラベル配置用の一時的な線
-    #     label_c = MathTex("c").next_to(c_line_dummy, UP + RIGHT, buff=0.2).shift(LEFT * 0.1) 
-
-    #     # 直角マークを作成
-    #     right_angle = RightAngle(
-    #         Line(triangle.get_vertices()[0],
-    #         triangle.get_vertices()[1],),
-    #         Line(triangle.get_vertices()[0],
-    #         triangle.get_vertices()[2],),
-    #         length=0.4, # 直角マークのサイズ
-    #         stroke_width=2,
-    #         color=WHITE
-    #     )
-
-    #     # ピタゴラスの定理の式と名前
-    #     theorem_formula = MathTex("a^2 + b^2 = c^2").scale(1.5).next_to(triangle, DOWN, buff=1.0)
-    #     theorem_name = Text("ピタゴラスの定理").next_to(theorem_formula, UP, buff=0.5).scale(0.8)
-
-    #     # アニメーション: 三角形の作成、ラベルの表示、定理の表示
-    #     self.play(Create(triangle), Create(right_angle))
-    #     self.play(Write(label_a), Write(label_b), Write(label_c))
-    #     self.play(Write(theorem_name), Write(theorem_formula))
-    #     self.wait(2) # 2秒間表示
-        
-    #     # すべてのオブジェクトをフェードアウトして次のステップへ
-    #     self.play(
-    #         FadeOut(VGroup(triangle, right_angle, label_a, label_b, label_c, theorem_name, theorem_formula)),
-    #         run_time=1.5
-    #     )
+        # すべてのオブジェクトをフェードアウトして次のステップへ
+        self.play(
+            FadeOut(VGroup(triangle, theorem_name, theorem_formula)),
+            run_time=1.5
+        )
 
 
     # def construct_large_square(self):

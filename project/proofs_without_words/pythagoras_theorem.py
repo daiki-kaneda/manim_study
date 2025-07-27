@@ -22,8 +22,8 @@ class PythagorasTheorem(Scene):
         self.wait(0.5) # シーン間の短いポーズ
 
     #     # 2. 大きな正方形の構築
-    #     self.construct_large_square()
-    #     self.wait(0.5)
+        self.construct_large_square()
+        self.wait(0.5)
 
     #     # 3. 直角三角形とc^2正方形の配置 (a+b)^2 = 2ab + c^2 を示す
     #     self.arrange_triangles_and_c_square()
@@ -102,28 +102,28 @@ class PythagorasTheorem(Scene):
         )
 
 
-    # def construct_large_square(self):
-    #     """
-    #     一辺の長さが (a+b) となる大きな正方形を作成し、その面積を示します。
-    #     この正方形は、以降の証明の土台となります。
-    #     """
-    #     # 導入で使用した辺の長さの値を保持
-    #     self.a_val, self.b_val = 3, 4
-    #     self.side_length = self.a_val + self.b_val
+    def construct_large_square(self):
+        """
+        一辺の長さが (a+b) となる大きな正方形を作成し、その面積を示します。
+        この正方形は、以降の証明の土台となります。
+        """
+        # 導入で使用した辺の長さの値を保持
+        self.a_val, self.b_val = 3, 4
+        self.side_length = self.a_val + self.b_val
         
-    #     # 大きな正方形を作成し、画面中央に配置
-    #     self.large_square_main = Square(side_length=self.side_length, color=YELLOW_B, fill_opacity=0.2).move_to(ORIGIN)
+        # 大きな正方形を作成し、画面中央に配置
+        self.large_square_main = Square(side_length=self.side_length, color=YELLOW_B, fill_opacity=0.2).move_to(ORIGIN)
         
-    #     # 面積のラベルを表示
-    #     area_label = MathTex(f"\\text{{Area}} = (a+b)^2").next_to(self.large_square_main, DOWN, buff=0.5)
+        # 面積のラベルを表示
+        area_label = MathTex(f"\\text{{Area}} = (a+b)^2").next_to(self.large_square_main, DOWN, buff=0.5)
         
-    #     # アニメーション: 正方形の作成と面積ラベルの表示
-    #     self.play(Create(self.large_square_main))
-    #     self.play(Write(area_label))
-    #     self.wait(1.5)
+        # アニメーション: 正方形の作成と面積ラベルの表示
+        self.play(Create(self.large_square_main))
+        self.play(Write(area_label))
+        self.wait(1.5)
         
-    #     # 面積ラベルをフェードアウト（正方形は残す）
-    #     self.play(FadeOut(area_label))
+        # 面積ラベルをフェードアウト（正方形は残す）
+        self.play(FadeOut(area_label))
 
 
     # def arrange_triangles_and_c_square(self):

@@ -1,4 +1,4 @@
-# VGroup...複数のMobjectをひとつのグループとして扱うためのMobject.コードの簡略化に役立つ.buffはアイテム館のスペースを表す
+# VGroup(Vector Group)...複数のMobjectをひとつのグループとして扱うためのMobject.コードの簡略化に役立つ.buffはアイテム館のスペースを表す. .arrangeメソッドで整列させられる
 from manim import *
 
 class VGroupBootcamp1(Scene):

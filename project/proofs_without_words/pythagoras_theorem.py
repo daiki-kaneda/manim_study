@@ -87,7 +87,7 @@ class PythagorasTheorem(Scene):
         """
         triangle = self.get_right_triangle(with_label=True,show_angle=True)
         # ピタゴラスの定理の式と名前
-        theorem_formula = MathTex("a^2 + b^2 = c^2").scale(1.5).next_to(triangle, DOWN, buff=1.0)
+        theorem_formula = MathTex("a^2 + b^2 = c^2").scale(1.5).next_to(triangle, DOWN, buff=2.0)
         theorem_name = Text("ピタゴラスの定理").next_to(theorem_formula, UP, buff=0.5).scale(0.8)
 
         # アニメーション: 三角形の作成、ラベルの表示、定理の表示

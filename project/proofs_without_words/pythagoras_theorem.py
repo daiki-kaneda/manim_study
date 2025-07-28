@@ -55,8 +55,8 @@ class PythagorasTheorem(Scene):
     #     self.wait(0.5)
 
         # 5. 結果の式を導く
-        self.derive_final_equation()
-        self.wait(0.5)
+        # self.derive_final_equation()
+        # self.wait(0.5)
 
     #     # 6. まとめと結論
     #     self.summarize_and_conclude()
@@ -132,24 +132,16 @@ class PythagorasTheorem(Scene):
         self.side_length = self.a_val + self.b_val
         
         # 大きな正方形を作成し、画面中央に配置
-        self.large_square_main = Square(side_length=self.side_length, color=GREEN, fill_opacity=0.2).move_to(LEFT)
+        self.large_square_main = Square(side_length=self.side_length, color=GREEN, fill_opacity=0.2)
         self.main_group = VGroup(self.large_square_main)
         
-        # 面積のラベルを表示
-        area_label = Tex("面積 = $(a+b)^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main, RIGHT, buff=0.5)
-        edge_label = MathTex("a+b").next_to(self.large_square_main.get_critical_point(DOWN),DOWN
-                                            )
+        edge_label = MathTex("a+b").next_to(self.large_square_main.get_critical_point(DOWN),DOWN)
         
-        # アニメーション: 正方形の作成と面積ラベルの表示
+        # アニメーション: 正方形の作成
         self.play(Create(self.main_group))
         self.play(Write(edge_label))
         self.wait(1.5)
-        self.play(Write(area_label))
-        self.wait(1.5)
-        # 面積ラベルをフェードアウト（正方形は残す）
         self.play(FadeOut(edge_label))
-        self.play(FadeOut(area_label))
-        self.play(self.main_group.animate.move_to(ORIGIN))
 
 
     def arrange_triangles_and_c_square(self):
@@ -182,50 +174,20 @@ class PythagorasTheorem(Scene):
         self.wait(1)
         self.play(self.main_group.animate.shift(LEFT*2.5))
 
+        self.eq1_final = Tex("空欄の面積 = $c^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT)
+
+        blank_area1 = MathTex("c^2").shift(LEFT*2.5)
+        self.play(AnimationGroup(Write(self.eq1_final),Create(blank_area1)))
 
 
-    # def rearrange_to_a_b_squares(self):
-    #     """
-    #     同一の大きな正方形の別の配置として、2つの辺a, 辺bの正方形と
-    #     4つの直角三角形（概念的に2つのab長方形を形成）を配置します。
-    #     これにより、面積の表現 $(a+b)^2 = a^2 + b^2 + 2ab$ を示します。
-    #     """
-    #     # 最初の配置をフェードアウト
-    #     self.play(FadeOut(self.first_arrangement_objects))
 
-    #     # 2つ目の大きな正方形を、最初の正方形の右隣に作成
-    #     # large_square_main が左にある状態から、その右に新しい正方形を表示
-    #     self.large_square_alt = self.large_square_main.copy().shift(RIGHT * (self.side_length + 3)) # 最初の正方形から十分に離す
-    #     self.play(Create(self.large_square_alt))
-
-    #     # 辺aの正方形と辺bの正方形を作成し、新しい大きな正方形の内部に配置
-    #     a_squared_obj = Square(side_length=self.a_val, color=BLUE_B, fill_opacity=0.7).align_to(self.large_square_alt, UL)
-    #     b_squared_obj = Square(side_length=self.b_val, color=BLUE_E, fill_opacity=0.7).align_to(self.large_square_alt, DR)
-
-    #     # 残りのスペースを埋める2つの長方形 (それぞれが2つの直角三角形で構成されることを示唆)
-    #     # 1つ目の長方形 (幅b, 高さa)
-    #     rect1_obj = Rectangle(width=self.b_val, height=self.a_val, color=RED_C, fill_opacity=0.7).align_to(a_squared_obj, DR)
-    #     # 2つ目の長方形 (幅a, 高さb)
-    #     rect2_obj = Rectangle(width=self.a_val, height=self.b_val, color=RED_C, fill_opacity=0.7).align_to(b_squared_obj, UL)
-
-    #     # アニメーション: a^2, b^2 正方形と2つの長方形の作成
-    #     self.play(Create(a_squared_obj), Create(b_squared_obj))
-    #     self.play(Create(rect1_obj), Create(rect2_obj))
-    #     self.wait(1)
-
-    #     # 面積の式を表示
-    #     area_exp3 = MathTex(f"(a+b)^2 = a^2 + b^2 + 2ab")
-    #     area_exp3.next_to(self.large_square_alt, RIGHT, buff=1.5).shift(UP * 0.5)
-        
-    #     self.play(Write(area_exp3))
-    #     self.wait(2)
-
-    #     # この配置のオブジェクトを保持し、次のステップでフェードアウトする
-    #     self.second_arrangement_objects = VGroup(
-    #         self.large_square_main, # 最初の正方形もここで含めておく
-    #         self.large_square_alt,
-    #         a_squared_obj, b_squared_obj, rect1_obj, rect2_obj, area_exp3
-    #     )
+    def rearrange_to_a_b_squares(self):
+        """
+        同一の大きな正方形の別の配置として、2つの辺a, 辺bの正方形と
+        4つの直角三角形（概念的に2つのab長方形を形成）を配置します。
+        これにより、面積の表現 $(a+b)^2 = a^2 + b^2 + 2ab$ を示します。
+        """
+       
 
 
     def derive_final_equation(self):

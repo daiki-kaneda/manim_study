@@ -51,8 +51,8 @@ class PythagorasTheorem(Scene):
     #     self.wait(0.5)
 
     #     # 4. 直角三角形を再配置して、a^2, b^2が現れる等式を導く (a+b)^2 = a^2 + b^2 + 2ab を示す
-    #     self.rearrange_to_a_b_squares()
-    #     self.wait(0.5)
+        self.rearrange_to_a_b_squares()
+        self.wait(0.5)
 
         # 5. 結果の式を導く
         # self.derive_final_equation()
@@ -176,8 +176,8 @@ class PythagorasTheorem(Scene):
 
         self.eq1_final = Tex("空欄の面積 = $c^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT)
 
-        blank_area1 = MathTex("c^2").shift(LEFT*2.5)
-        self.play(AnimationGroup(Write(self.eq1_final),Create(blank_area1)))
+        self.blank_area1 = MathTex("c^2").shift(LEFT*2.5)
+        self.play(AnimationGroup(Write(self.eq1_final),Create(self.blank_area1)))
 
 
 
@@ -187,7 +187,18 @@ class PythagorasTheorem(Scene):
         4つの直角三角形（概念的に2つのab長方形を形成）を配置します。
         これにより、面積の表現 $(a+b)^2 = a^2 + b^2 + 2ab$ を示します。
         """
-       
+        self.play(LaggedStart(
+            AnimationGroup(
+                FadeOut(self.label_a),
+                FadeOut(self.label_b),
+                FadeOut(self.label_c),
+                FadeOut(self.blank_area1),
+                self.triangle3.animate.shift((-self.b_val,-self.a_val,0))
+            ),
+            self.triangle2.animate.shift((0,self.b_val,0)),
+            self.triangle4.animate.shift((self.a_val,0,0)),
+            lag_ratio=0.25
+        ))
 
 
     def derive_final_equation(self):

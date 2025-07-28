@@ -119,7 +119,7 @@ class PythagorasTheorem(Scene):
         self.side_length = self.a_val + self.b_val
         
         # 大きな正方形を作成し、画面中央に配置
-        self.large_square_main = Square(side_length=self.side_length, color=GREEN, fill_opacity=0.2)
+        self.large_square_main = Square(side_length=self.side_length, color=GREEN, fill_opacity=0.75)
         self.main_group = VGroup(self.large_square_main)
         
         edge_label = MathTex("a+b").next_to(self.large_square_main.get_critical_point(DOWN),DOWN)

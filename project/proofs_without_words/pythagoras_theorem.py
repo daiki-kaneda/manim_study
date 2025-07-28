@@ -1,48 +1,39 @@
 from manim import *
 # ピタゴラスの定理の証明解説の構成
-# 1.IntroduceTheorem:辺にラベルがついた直角三角形を表示して定理の内容を紹介
-# 2.ConstructLargeSquare:いっぺんの長さがa+bとなるような正方形を表示し、その面積を表示
-# 3.ArrageTrianglesAndCSquares:対象の直角三角形4つを大きな正方形にうまく埋め込む
-# 4.RearrageToABSquares:直角三角形を再配置して、a^2,b^2が現れる等式を導く
-# 5.DriveFinalEquation:結果の式を導く
-# 6.SummarizeAndConclude:まとめ
+# 1.辺にラベルがついた直角三角形を表示して定理の内容を紹介
+# 2.いっぺんの長さがa+bとなるような正方形を表示する
+# 3.対象の直角三角形4つを大きな正方形にうまく埋め込み,空欄の面積がc^2であることを示す
+# 4.直角三角形を再配置して、a^2,b^2が現れる等式を導く
+# 5.結果の式を導く
+# (6.まとめ)
 
 
 from manim import *
 
 class PythagorasTheorem(Scene):
     def construct(self):
-           
-    #     """
-    #     ピタゴラスの定理の代数的証明を Manim でアニメーション化するメインメソッドです。
-    #     各ステップのメソッドを順に呼び出して証明を進行させます。
-    #     """
         self.japanese_tex_template = japanese_tex_template = TexTemplate(
-    tex_compiler='xelatex', # ★ xelatex を明示的に指定
-    output_format='.xdv',    # ★ PDF 出力が最も安定
-    documentclass='\\documentclass[preview]{standalone}',
-    preamble=r"""
-        \usepackage{amsmath}
-        \usepackage{amssymb}
-        \usepackage{fontspec}    % ★ システムフォントを使うためのパッケージ
-        \setmainfont{HannariMincho-Regular} % ★★★ あなたの環境での正確なPostScript名をここに記述 ★★★
-                                     % 例: HiraginoSans-W3 (Macのヒラギノ角ゴ)
-                                     % 例: YuGo-Medium (游ゴシック Medium)
-        % \usepackage{zxjatype}   % 日本語組版ルールが必要な場合は追加 (フォント問題解決後)
-        % \usepackage{pxjahyper}  % 日本語PDFのしおりなどが必要な場合は追加 (フォント問題解決後)
-    """
+            tex_compiler='xelatex', # ★ xelatex を明示的に指定
+            output_format='.xdv',    # ★ PDF 出力が最も安定
+            documentclass='\\documentclass[preview]{standalone}',
+            preamble=r"""
+            \usepackage{amsmath}
+            \usepackage{amssymb}
+            \usepackage{fontspec} 
+            \setmainfont{HannariMincho-Regular} 
+            """
     )
         self.a_val=2.5
         self.b_val=3.5
         # 1. 定理の紹介
         self.introduce_theorem()
-        self.wait(0.5) # シーン間の短いポーズ
-
-    #     # 2. 大きな正方形の構築
+        self.wait(0.5)
+        
+        # 2. 大きな正方形の構築
         self.construct_large_square()
         self.wait(0.5)
 
-        # 3. 直角三角形とc^2正方形の配置 (a+b)^2 = 2ab + c^2 を示す
+        # 3. 直角三角形とc^2正方形の配置
         self.arrange_triangles_and_c_square()
         self.wait(0.5)
         
@@ -56,7 +47,7 @@ class PythagorasTheorem(Scene):
 
     #     # 6. まとめと結論
     #     self.summarize_and_conclude()
-    #     self.wait(2) # 最後のポーズ
+
     def get_right_triangle(self,with_label:bool=False,color:ManimColor=BLUE,a_val:int=4,b_val:int=3,fill_opacity:float=0.75,show_angle:bool=False,angle_color:ManimColor=WHITE):
         triangle = Polygon(
             ORIGIN,
@@ -76,7 +67,6 @@ class PythagorasTheorem(Scene):
         if not with_label:
             return right_triangle
         else:
-            # ラベルの位置を調整するとより見やすくなります
             label_a = MathTex("a").next_to(triangle.get_critical_point(DOWN), DOWN * 0.5)
             label_b = MathTex("b").next_to(triangle.get_critical_point(LEFT), LEFT * 0.5)
             
@@ -111,7 +101,7 @@ class PythagorasTheorem(Scene):
         self.play(Create(triangle))
         self.play(Write(theorem_name), Write(theorem_formula))
         self.play(Indicate(theorem_formula,color=BLUE))
-        self.wait(2) # 2秒間表示
+        self.wait(2) 
         
         # すべてのオブジェクトをフェードアウトして次のステップへ
         self.play(
@@ -122,8 +112,7 @@ class PythagorasTheorem(Scene):
 
     def construct_large_square(self):
         """
-        一辺の長さが (a+b) となる大きな正方形を作成し、その面積を示します。
-        この正方形は、以降の証明の土台となります。
+        一辺の長さが (a+b) となる大きな正方形を作成する
         """
         # 導入で使用した辺の長さの値を保持
         self.side_length = self.a_val + self.b_val
@@ -144,7 +133,6 @@ class PythagorasTheorem(Scene):
     def arrange_triangles_and_c_square(self):
         """
         最初の大きな正方形の内部に、4つの直角三角形と1つの辺cの正方形を配置します。
-        これにより、面積の表現 $ (a+b)^2 = 2ab + c^2 $ を示します。
         """
         right_triangle = self.get_right_triangle(a_val=self.a_val,b_val=self.b_val)
         self.triangle1 = right_triangle.copy().shift((-self.side_length/2,-self.side_length/2,0))
@@ -183,7 +171,6 @@ class PythagorasTheorem(Scene):
         """
         同一の大きな正方形の別の配置として、2つの辺a, 辺bの正方形と
         4つの直角三角形（概念的に2つのab長方形を形成）を配置します。
-        これにより、面積の表現 $(a+b)^2 = a^2 + b^2 + 2ab$ を示します。
         """
         self.play(LaggedStart(
             AnimationGroup(
@@ -219,7 +206,7 @@ class PythagorasTheorem(Scene):
 
     def derive_final_equation(self):
         """
-        2つの異なる面積表現 (2ab + c^2 と a^2 + b^2 + 2ab) を比較し、
+        2つの異なる空欄の面積表現を比較し、
         最終的にピタゴラスの定理の式 $a^2 + b^2 = c^2$ を導きます。
         """
 
@@ -235,19 +222,5 @@ class PythagorasTheorem(Scene):
         self.play(Indicate(final_theorem_result,color=BLUE))
 
 
-    # def summarize_and_conclude(self):
-    #     """
-    #     証明のまとめと結論を表示します。
-    #     """
-    #     conclusion_text = Text("これで、ピタゴラスの定理が証明されました！").scale(0.8)
-    #     self.play(Write(conclusion_text))
-    #     self.wait(1)
-        
-    #     # 再度定理の式を表示し、強調
-    #     final_formula_display = MathTex("a^2 + b^2 = c^2").scale(1.8).next_to(conclusion_text, DOWN, buff=1.0)
-    #     self.play(Write(final_formula_display))
-    #     self.play(Indicate(final_formula_display, scale_factor=1.2, color=YELLOW_A)) # 明るい黄色で強調
-    #     self.wait(3)
-        
-    #     # 全てのオブジェクトをフェードアウトしてアニメーションを終了
-    #     self.play(FadeOut(VGroup(conclusion_text, final_formula_display)))
+    def summarize_and_conclude(self):
+        return

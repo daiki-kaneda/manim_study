@@ -43,11 +43,12 @@ class PythagorasTheorem(Scene):
 
         #5. 結果の式を導く
         self.derive_final_equation()
-        self.wait(0.5)
+        self.wait(2.5)
 
     #     # 6. まとめと結論
     #     self.summarize_and_conclude()
 
+    # 直角三角形を取得するためのutility
     def get_right_triangle(self,with_label:bool=False,color:ManimColor=BLUE,a_val:int=4,b_val:int=3,fill_opacity:float=0.75,show_angle:bool=False,angle_color:ManimColor=WHITE):
         triangle = Polygon(
             ORIGIN,
@@ -126,7 +127,7 @@ class PythagorasTheorem(Scene):
         # アニメーション: 正方形の作成
         self.play(Create(self.main_group))
         self.play(Write(edge_label))
-        self.wait(1.5)
+        self.wait(3)
         self.play(FadeOut(edge_label))
 
 
@@ -162,8 +163,10 @@ class PythagorasTheorem(Scene):
         self.eq1_final = Tex("空欄の面積 = $c^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT)
 
         self.blank_area1 = MathTex("c^2").shift(LEFT*2.5)
-        self.play(AnimationGroup(Write(self.eq1_final),Create(self.blank_area1)))
-        self.wait(1.5)
+        self.play(Create(self.blank_area1))
+        self.wait(0.5)
+        self.play(Write(self.eq1_final))
+        self.wait(3)
 
 
 
@@ -182,7 +185,7 @@ class PythagorasTheorem(Scene):
             ),
             self.triangle2.animate.shift((0,self.b_val,0)),
             self.triangle4.animate.shift((self.a_val,0,0)),
-            lag_ratio=0.3
+            lag_ratio=1.0
         )),
         self.play(            
             AnimationGroup(
@@ -198,7 +201,7 @@ class PythagorasTheorem(Scene):
             Create(self.blank_area3.move_to(self.large_square_main.get_critical_point(LEFT)).shift(DOWN*self.a_val/2).shift(RIGHT*(self.a_val+self.b_val/2)),
             )
         ))
-
+        self.wait(1.5)
         self.eq2_final = Tex("空欄の面積 = $a^2 + b^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT).shift(DOWN)
         self.play(Write(self.eq2_final))
 
@@ -214,7 +217,7 @@ class PythagorasTheorem(Scene):
             Indicate(self.eq1_final.get_part_by_tex("空欄の面積"), color=GREEN_C),
             Indicate(self.eq2_final.get_part_by_tex("空欄の面積"), color=GREEN_C),
         )
-        self.wait(0.5)
+        self.wait(1.0)
         
         final_theorem_result = MathTex("a^2 + b^2 = c^2",).move_to(RIGHT*4)
 

@@ -12,9 +12,9 @@ from manim import *
 
 class PythagorasTheorem(Scene):
     def construct(self):
-        self.japanese_tex_template = japanese_tex_template = TexTemplate(
-            tex_compiler='xelatex', # ★ xelatex を明示的に指定
-            output_format='.xdv',    # ★ PDF 出力が最も安定
+        self.japanese_tex_template = TexTemplate(
+            tex_compiler='xelatex', 
+            output_format='.xdv',    
             documentclass='\\documentclass[preview]{standalone}',
             preamble=r"""
             \usepackage{amsmath}

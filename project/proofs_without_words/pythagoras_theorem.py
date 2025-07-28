@@ -178,6 +178,7 @@ class PythagorasTheorem(Scene):
 
         self.blank_area1 = MathTex("c^2").shift(LEFT*2.5)
         self.play(AnimationGroup(Write(self.eq1_final),Create(self.blank_area1)))
+        self.wait(1.5)
 
 
 
@@ -197,8 +198,17 @@ class PythagorasTheorem(Scene):
             ),
             self.triangle2.animate.shift((0,self.b_val,0)),
             self.triangle4.animate.shift((self.a_val,0,0)),
-            lag_ratio=0.25
+            lag_ratio=0.3
         ))
+
+        self.wait(0.5)
+        self.blank_area2 = MathTex("a^2")
+        self.blank_area3 = MathTex("b^2")
+        self.play(AnimationGroup(
+            Create(self.label_a.move_to(self.large_square_main.get_critical_point(LEFT)).shift(UP*self.b_val/2)),
+            Create(self.label_a.move_to(self.large_square_main.get_critical_point(LEFT)).shift(DOWN*self.a_val/2)),
+        ))
+
 
 
     def derive_final_equation(self):

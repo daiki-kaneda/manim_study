@@ -42,21 +42,17 @@ class PythagorasTheorem(Scene):
         self.construct_large_square()
         self.wait(0.5)
 
+        # 3. 直角三角形とc^2正方形の配置 (a+b)^2 = 2ab + c^2 を示す
         self.arrange_triangles_and_c_square()
         self.wait(0.5)
-
-
-    #     # 3. 直角三角形とc^2正方形の配置 (a+b)^2 = 2ab + c^2 を示す
-    #     self.arrange_triangles_and_c_square()
-    #     self.wait(0.5)
-
-    #     # 4. 直角三角形を再配置して、a^2, b^2が現れる等式を導く (a+b)^2 = a^2 + b^2 + 2ab を示す
+        
+         # 4. 直角三角形を再配置する
         self.rearrange_to_a_b_squares()
         self.wait(0.5)
 
-        # 5. 結果の式を導く
-        # self.derive_final_equation()
-        # self.wait(0.5)
+        #5. 結果の式を導く
+        self.derive_final_equation()
+        self.wait(0.5)
 
     #     # 6. まとめと結論
     #     self.summarize_and_conclude()
@@ -114,6 +110,7 @@ class PythagorasTheorem(Scene):
         # アニメーション: 三角形の作成、ラベルの表示、定理の表示
         self.play(Create(triangle))
         self.play(Write(theorem_name), Write(theorem_formula))
+        self.play(Indicate(theorem_formula,color=BLUE))
         self.wait(2) # 2秒間表示
         
         # すべてのオブジェクトをフェードアウトして次のステップへ
@@ -199,15 +196,24 @@ class PythagorasTheorem(Scene):
             self.triangle2.animate.shift((0,self.b_val,0)),
             self.triangle4.animate.shift((self.a_val,0,0)),
             lag_ratio=0.3
-        ))
+        )),
+        self.play(            
+            AnimationGroup(
+            Create(self.label_a.move_to(self.large_square_main.get_critical_point(LEFT)).shift(UP*self.b_val/2).shift(LEFT*0.2)),
+            Create(self.label_b.move_to(self.large_square_main.get_critical_point(LEFT)).shift(DOWN*self.a_val/2).shift(LEFT*0.2)),
+            ))
 
-        self.wait(0.5)
+        self.wait(1.5)
         self.blank_area2 = MathTex("a^2")
         self.blank_area3 = MathTex("b^2")
         self.play(AnimationGroup(
-            Create(self.label_a.move_to(self.large_square_main.get_critical_point(LEFT)).shift(UP*self.b_val/2)),
-            Create(self.label_a.move_to(self.large_square_main.get_critical_point(LEFT)).shift(DOWN*self.a_val/2)),
+            Create(self.blank_area2.move_to(self.large_square_main.get_critical_point(LEFT)).shift(UP*self.b_val/2).shift(RIGHT*self.a_val/2)),
+            Create(self.blank_area3.move_to(self.large_square_main.get_critical_point(LEFT)).shift(DOWN*self.a_val/2).shift(RIGHT*(self.a_val+self.b_val/2)),
+            )
         ))
+
+        self.eq2_final = Tex("空欄の面積 = $a^2 + b^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT).shift(DOWN)
+        self.play(Write(self.eq2_final))
 
 
 
@@ -216,49 +222,17 @@ class PythagorasTheorem(Scene):
         2つの異なる面積表現 (2ab + c^2 と a^2 + b^2 + 2ab) を比較し、
         最終的にピタゴラスの定理の式 $a^2 + b^2 = c^2$ を導きます。
         """
-        # 前のステップのオブジェクトをすべてフェードアウトして、式を中央に表示する準備
-
-
-        # 2つの面積の式を中央に表示
-        eq1_final = MathTex("(a+b)^2 = 2ab + c^2").shift(UP * 1.5)
-        eq2_final = MathTex("(a+b)^2 = a^2 + b^2 + 2ab").shift(DOWN * 1.5)
-
-        self.play(Write(eq1_final))
-        self.play(Write(eq2_final))
-        self.wait(1)
-
-        # 左辺が等しいことを強調
-        self.play(
-            Indicate(eq1_final.get_part_by_tex("(a+b)^2"), color=GREEN_C),
-            Indicate(eq2_final.get_part_by_tex("(a+b)^2"), color=GREEN_C)
-        )
-        self.wait(1)
-
-        # 左辺が等しいので、右辺同士を等式で結ぶ
-        equated_rhs = MathTex("2ab + c^2 = a^2 + b^2 + 2ab")
-        # `TransformMatchingTex` を使用して、前の2つの式から新しい式へ変換
-        self.play(TransformMatchingTex(VGroup(eq1_final, eq2_final), equated_rhs))
-        self.wait(1.5)
-
-        # 両辺から共通項 2ab を消去するアニメーション
-        # `get_part_by_tex` は同じ文字列が複数ある場合、リストで返します
-        term_to_remove_left = equated_rhs.get_part_by_tex("2ab")[0]
-        term_to_remove_right = equated_rhs.get_part_by_tex("2ab")[1]
 
         self.play(
-            FadeOut(term_to_remove_left, shift=DOWN*0.5), # 下に少し移動させながらフェードアウト
-            FadeOut(term_to_remove_right, shift=DOWN*0.5)
+            Indicate(self.eq1_final.get_part_by_tex("空欄の面積"), color=GREEN_C),
+            Indicate(self.eq2_final.get_part_by_tex("空欄の面積"), color=GREEN_C),
         )
         self.wait(0.5)
-
-        # 最終的なピタゴラスの定理の式
-        final_theorem_result = MathTex("c^2 = a^2 + b^2").move_to(equated_rhs.get_center())
-        # `TransformMatchingTex` を使用して、古い式から新しい式へ変換
-        self.play(TransformMatchingTex(equated_rhs, final_theorem_result))
-        self.wait(2)
         
-        # 最終結果をフェードアウト
-        self.play(FadeOut(final_theorem_result))
+        final_theorem_result = MathTex("a^2 + b^2 = c^2",).move_to(RIGHT*4)
+
+        self.play(TransformMatchingTex(VGroup(self.eq1_final,self.eq2_final),final_theorem_result))
+        self.play(Indicate(final_theorem_result,color=BLUE))
 
 
     # def summarize_and_conclude(self):

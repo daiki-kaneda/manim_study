@@ -217,12 +217,14 @@ class PythagorasTheorem(Scene):
             Indicate(self.eq1_final.get_part_by_tex("空欄の面積"), color=GREEN_C),
             Indicate(self.eq2_final.get_part_by_tex("空欄の面積"), color=GREEN_C),
         )
-        self.wait(1.0)
+        self.wait(2.5)
         
         final_theorem_result = MathTex("a^2 + b^2 = c^2",).move_to(RIGHT*4)
 
         self.play(TransformMatchingTex(VGroup(self.eq1_final,self.eq2_final),final_theorem_result))
         self.play(Indicate(final_theorem_result,color=BLUE))
+
+        self.wait(2.5)
 
 
     def summarize_and_conclude(self):

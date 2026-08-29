@@ -400,3 +400,18 @@ VIDEOS_402_413: tuple[Video, ...] = (
     Video(412, "中心極限定理", "project/math/142_probability_24/412_clt/scene.py", "CentralLimitTheorem"),
     Video(413, "ナラヤナ数", "project/math/143_combinatorics_23/413_narayana/scene.py", "Narayana"),
 )
+
+VIDEOS_414_425: tuple[Video, ...] = (
+    Video(414, "スペクトル写像", "project/math/144_analysis_27/414_spectral_mapping/scene.py", "SpectralMapping"),
+    Video(415, "カルキン代数", "project/math/144_analysis_27/415_calkin/scene.py", "CalkinAlgebra"),
+    Video(416, "トーエプリッツ・ハウスドルフ", "project/math/144_analysis_27/416_toeplitz_hausdorff/scene.py", "ToeplitzHausdorff"),
+    Video(417, "LSQR", "project/math/145_linear_27/417_lsqr/scene.py", "LSQR"),
+    Video(418, "リッジ回帰", "project/math/145_linear_27/418_ridge/scene.py", "RidgeRegression"),
+    Video(419, "特異値のワイル", "project/math/145_linear_27/419_weyl_svd/scene.py", "WeylSingular"),
+    Video(420, "ファニャーノの問題", "project/math/146_geometry_27/420_fagnano/scene.py", "Fagnano"),
+    Video(421, "共焦点", "project/math/146_geometry_27/421_confocal/scene.py", "Confocal"),
+    Video(422, "正弦法則", "project/math/146_geometry_27/422_law_of_sines/scene.py", "LawOfSines"),
+    Video(423, "任意停止定理", "project/math/147_probability_25/423_optional_stopping/scene.py", "OptionalStopping"),
+    Video(424, "スコロホッド表現", "project/math/147_probability_25/424_skorokhod/scene.py", "Skorokhod"),
+    Video(425, "デランノワ数", "project/math/148_combinatorics_24/425_delannoy/scene.py", "Delannoy"),
+)

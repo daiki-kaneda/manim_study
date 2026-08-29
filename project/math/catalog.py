@@ -220,3 +220,18 @@ VIDEOS_258_269: tuple[Video, ...] = (
     Video(268, "尤度関数", "project/math/82_probability_12/268_likelihood/scene.py", "Likelihood"),
     Video(269, "パスカルの恒等式", "project/math/83_combinatorics_11/269_pascal_identity/scene.py", "PascalIdentity"),
 )
+
+VIDEOS_270_281: tuple[Video, ...] = (
+    Video(270, "ミンコフスキーの不等式", "project/math/84_analysis_15/270_minkowski/scene.py", "MinkowskiInequality"),
+    Video(271, "ベッセルの不等式", "project/math/84_analysis_15/271_bessel/scene.py", "BesselInequality"),
+    Video(272, "パーセバルの等式", "project/math/84_analysis_15/272_parseval/scene.py", "ParsevalIdentity"),
+    Video(273, "ガウス・ザイデル法", "project/math/85_linear_15/273_gauss_seidel/scene.py", "GaussSeidel"),
+    Video(274, "ケーリー・ハミルトン", "project/math/85_linear_15/274_cayley_hamilton/scene.py", "CayleyHamilton"),
+    Video(275, "数値域", "project/math/85_linear_15/275_numerical_range/scene.py", "NumericalRange"),
+    Video(276, "ヴァリニョンの定理", "project/math/86_geometry_15/276_varignon/scene.py", "Varignon"),
+    Video(277, "ピトーの定理", "project/math/86_geometry_15/277_pitot/scene.py", "Pitot"),
+    Video(278, "英国旗定理", "project/math/86_geometry_15/278_british_flag/scene.py", "BritishFlag"),
+    Video(279, "イェンセンの不等式", "project/math/87_probability_13/279_jensen/scene.py", "JensenInequality"),
+    Video(280, "全分散の法則", "project/math/87_probability_13/280_total_variance/scene.py", "TotalVariance"),
+    Video(281, "ホッケースティック恒等式", "project/math/88_combinatorics_12/281_hockey_stick/scene.py", "HockeyStick"),
+)

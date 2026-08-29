@@ -50,7 +50,7 @@ class SpectralRadius(PacedScene):
         # highlight farthest
         far = self.dots[int(np.argmax(radii))]
         self.play(Indicate(far, color=RED), run_time=0.9)
-        cap2 = self.ja_text("スペクトル半径", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("最大の絶対値", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap2), run_time=0.6)
         self.read(0.35)
 

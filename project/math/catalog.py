@@ -475,3 +475,18 @@ VIDEOS_462_473: tuple[Video, ...] = (
     Video(472, "対数ランク検定", "project/math/167_probability_29/472_logrank/scene.py", "LogRank"),
     Video(473, "カタラン三角", "project/math/168_combinatorics_28/473_catalan_triangle/scene.py", "CatalanTriangle"),
 )
+
+VIDEOS_474_485: tuple[Video, ...] = (
+    Video(474, "リゾルベント集合", "project/math/169_analysis_32/474_resolvent_set/scene.py", "ResolventSet"),
+    Video(475, "ヒルベルト・シュミット", "project/math/169_analysis_32/475_hilbert_schmidt/scene.py", "HilbertSchmidt"),
+    Video(476, "正規作用素", "project/math/169_analysis_32/476_normal_op/scene.py", "NormalOperator"),
+    Video(477, "ADMM", "project/math/170_linear_32/477_admm/scene.py", "ADMM"),
+    Video(478, "近接勾配", "project/math/170_linear_32/478_prox_grad/scene.py", "ProximalGradient"),
+    Video(479, "行列補完", "project/math/170_linear_32/479_matrix_completion/scene.py", "MatrixCompletion"),
+    Video(480, "ヴァン・オーベル", "project/math/171_geometry_32/480_van_obel/scene.py", "VanObel"),
+    Video(481, "ブロシャール点", "project/math/171_geometry_32/481_brocard/scene.py", "BrocardPoint"),
+    Video(482, "垂心三角形", "project/math/171_geometry_32/482_orthic/scene.py", "OrthicTriangle"),
+    Video(483, "比例ハザード", "project/math/172_probability_30/483_prop_hazards/scene.py", "ProportionalHazards"),
+    Video(484, "競合リスク", "project/math/172_probability_30/484_competing_risks/scene.py", "CompetingRisks"),
+    Video(485, "ケイリーの公式", "project/math/173_combinatorics_29/485_cayley/scene.py", "CayleyFormula"),
+)

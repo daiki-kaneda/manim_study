@@ -51,7 +51,7 @@ class MartingaleConvergence(PacedScene):
         cap = self.ja_text("やがて落ち着く", font_size=24).move_to(self.note)
         self.play(LaggedStart(*[Create(l) for l in levels], lag_ratio=0.1), Transform(self.note, cap), run_time=1.4)
         self.read(0.3)
-        cap2 = self.ja_text("ほぼ確実に収束", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("収束する", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap2), run_time=0.8)
         self.read(0.4)
 

@@ -355,3 +355,18 @@ VIDEOS_366_377: tuple[Video, ...] = (
     Video(376, "マルチンゲール収束", "project/math/127_probability_21/376_martingale/scene.py", "MartingaleConvergence"),
     Video(377, "ベル多項式", "project/math/128_combinatorics_20/377_bell_poly/scene.py", "BellPolynomials"),
 )
+
+VIDEOS_378_389: tuple[Video, ...] = (
+    Video(378, "コンパクト作用素", "project/math/129_analysis_24/378_compact_op/scene.py", "CompactOperator"),
+    Video(379, "関数カリキュラス", "project/math/129_analysis_24/379_functional_calc/scene.py", "FunctionalCalculus"),
+    Video(380, "フレドホルム指数", "project/math/129_analysis_24/380_fredholm_index/scene.py", "FredholmIndex"),
+    Video(381, "アダマール積", "project/math/130_linear_24/381_hadamard_product/scene.py", "HadamardProduct"),
+    Video(382, "行列平方根", "project/math/130_linear_24/382_matrix_square_root/scene.py", "MatrixSquareRoot"),
+    Video(383, "固有値の条件数", "project/math/130_linear_24/383_condition_eig/scene.py", "EigenCondition"),
+    Video(384, "五点ミケル", "project/math/131_geometry_24/384_miquel_five/scene.py", "MiquelFive"),
+    Video(385, "調和共役", "project/math/131_geometry_24/385_harmonic_conjugate/scene.py", "HarmonicConjugate"),
+    Video(386, "モルレーの定理", "project/math/131_geometry_24/386_morley/scene.py", "Morley"),
+    Video(387, "分岐過程", "project/math/132_probability_22/387_branching/scene.py", "BranchingProcess"),
+    Video(388, "再生過程", "project/math/132_probability_22/388_renewal/scene.py", "RenewalProcess"),
+    Video(389, "スターリング第二種", "project/math/133_combinatorics_21/389_stirling2/scene.py", "StirlingSecond"),
+)

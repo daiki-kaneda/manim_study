@@ -430,3 +430,18 @@ VIDEOS_426_437: tuple[Video, ...] = (
     Video(436, "ガウス過程", "project/math/152_probability_26/436_gaussian_process/scene.py", "GaussianProcess"),
     Video(437, "ラホール数", "project/math/153_combinatorics_25/437_lah/scene.py", "LahNumbers"),
 )
+
+VIDEOS_438_449: tuple[Video, ...] = (
+    Video(438, "強作用素位相", "project/math/154_analysis_29/438_strong_op/scene.py", "StrongOperatorTopology"),
+    Video(439, "コンパクトレゾルベント", "project/math/154_analysis_29/439_compact_resolvent/scene.py", "CompactResolvent"),
+    Video(440, "スペクトルギャップ", "project/math/154_analysis_29/440_spectral_gap/scene.py", "SpectralGap"),
+    Video(441, "ネステロフ加速", "project/math/155_linear_29/441_nesterov/scene.py", "Nesterov"),
+    Video(442, "Adam", "project/math/155_linear_29/442_adam/scene.py", "Adam"),
+    Video(443, "低ランク SVD", "project/math/155_linear_29/443_low_rank_svd/scene.py", "LowRankSVD"),
+    Video(444, "余弦面積", "project/math/156_geometry_29/444_cosine_area/scene.py", "CosineArea"),
+    Video(445, "ミケル枢軸", "project/math/156_geometry_29/445_miquel_pivot/scene.py", "MiquelPivot"),
+    Video(446, "円内接の対角", "project/math/156_geometry_29/446_cyclic_diag/scene.py", "CyclicDiagonals"),
+    Video(447, "ウィーナー測度", "project/math/157_probability_27/447_wiener/scene.py", "WienerMeasure"),
+    Video(448, "ポアソン点過程", "project/math/157_probability_27/448_poisson_point/scene.py", "PoissonPointProcess"),
+    Video(449, "シュレーダー数", "project/math/158_combinatorics_26/449_schroeder/scene.py", "Schroeder"),
+)

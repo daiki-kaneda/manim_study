@@ -1900,3 +1900,48 @@ VIDEOS_1602_1613: tuple[Video, ...] = (
     Video(1612, "ピネリス再訪", "project/math/642_probability_124/1612_pinelis_revisit/scene.py", "PinelisRevisit"),
     Video(1613, "平面木細分", "project/math/643_combinatorics_123/1613_plane_tree_refine/scene.py", "PlaneTreeRefine"),
 )
+
+VIDEOS_1614_1625: tuple[Video, ...] = (
+    Video(1614, "相対ログ正値対", "project/math/644_analysis_127/1614_rel_log_positive_pair/scene.py", "RelLogPositivePair"),
+    Video(1615, "相対ログ体積対", "project/math/644_analysis_127/1615_rel_log_volume_pair/scene.py", "RelLogVolumePair"),
+    Video(1616, "ログ収縮対", "project/math/644_analysis_127/1616_log_contraction_pair/scene.py", "LogContractionPair"),
+    Video(1617, "AdamWBoundSoft", "project/math/645_linear_127/1617_adamwboundsoft/scene.py", "AdamWBoundSoft"),
+    Video(1618, "LionBoundClip", "project/math/645_linear_127/1618_lionboundclip/scene.py", "LionBoundClip"),
+    Video(1619, "SophiaBoundClip", "project/math/645_linear_127/1619_sophiaboundclip/scene.py", "SophiaBoundClip"),
+    Video(1620, "垂心オイラー比", "project/math/646_geometry_127/1620_h_euler_ratio/scene.py", "HEulerRatio"),
+    Video(1621, "重心オイラー比", "project/math/646_geometry_127/1621_g_euler_ratio/scene.py", "GEulerRatio"),
+    Video(1622, "九点オイラー比", "project/math/646_geometry_127/1622_n_euler_ratio/scene.py", "NEulerRatio"),
+    Video(1623, "経験チャイニング", "project/math/647_probability_125/1623_empirical_chaining/scene.py", "EmpiricalChaining"),
+    Video(1624, "局所パッキング", "project/math/647_probability_125/1624_local_packing/scene.py", "LocalPacking"),
+    Video(1625, "ホフスタッター細分", "project/math/648_combinatorics_124/1625_hofstadter_refine/scene.py", "HofstadterRefine"),
+)
+
+VIDEOS_1626_1637: tuple[Video, ...] = (
+    Video(1626, "相対ログ数値次元対", "project/math/649_analysis_128/1626_rel_log_num_dim/scene.py", "RelLogNumDim"),
+    Video(1627, "相対ログ飯高次元対", "project/math/649_analysis_128/1627_rel_log_iitaka/scene.py", "RelLogIitaka"),
+    Video(1628, "ログフリップ対", "project/math/649_analysis_128/1628_log_flip_pair/scene.py", "LogFlipPair"),
+    Video(1629, "AdaFactorSoftHard", "project/math/650_linear_128/1629_adafactorsofthard/scene.py", "AdaFactorSoftHard"),
+    Video(1630, "NAdamSoftBound", "project/math/650_linear_128/1630_nadamsoftbound/scene.py", "NAdamSoftBound"),
+    Video(1631, "RMSBoundSoft", "project/math/650_linear_128/1631_rmsboundsoft/scene.py", "RMSBoundSoft"),
+    Video(1632, "内心類似スピーカー比", "project/math/651_geometry_128/1632_in_sym_spieker_ratio/scene.py", "InSymSpiekerRatio"),
+    Video(1633, "傍心類似スピーカー比", "project/math/651_geometry_128/1633_ex_sym_spieker_ratio/scene.py", "ExSymSpiekerRatio"),
+    Video(1634, "外心類似スピーカー比", "project/math/651_geometry_128/1634_o_sym_spieker_ratio/scene.py", "OSymSpiekerRatio"),
+    Video(1635, "一様パッキング", "project/math/652_probability_126/1635_uniform_packing/scene.py", "UniformPacking"),
+    Video(1636, "劣指数再訪", "project/math/652_probability_126/1636_subexp_revisit/scene.py", "SubexpRevisit"),
+    Video(1637, "ディセクト細分", "project/math/653_combinatorics_125/1637_dissect_refine/scene.py", "DissectRefine"),
+)
+
+VIDEOS_1638_1649: tuple[Video, ...] = (
+    Video(1638, "相対ログ収縮対", "project/math/654_analysis_129/1638_rel_log_contraction/scene.py", "RelLogContraction"),
+    Video(1639, "相対ログフリップ対", "project/math/654_analysis_129/1639_rel_log_flip/scene.py", "RelLogFlip"),
+    Video(1640, "ログフロップ対", "project/math/654_analysis_129/1640_log_flop_pair/scene.py", "LogFlopPair"),
+    Video(1641, "AdamWSoftHard", "project/math/655_linear_129/1641_adamwsofthard/scene.py", "AdamWSoftHard"),
+    Video(1642, "LookaheadBound", "project/math/655_linear_129/1642_lookaheadbound/scene.py", "LookaheadBound"),
+    Video(1643, "SAMBoundSoft", "project/math/655_linear_129/1643_samboundsoft/scene.py", "SAMBoundSoft"),
+    Video(1644, "垂心類似スピーカー比", "project/math/656_geometry_129/1644_h_sym_spieker_ratio/scene.py", "HSymSpiekerRatio"),
+    Video(1645, "重心類似スピーカー比", "project/math/656_geometry_129/1645_g_sym_spieker_ratio/scene.py", "GSymSpiekerRatio"),
+    Video(1646, "九点類似スピーカー比", "project/math/656_geometry_129/1646_n_sym_spieker_ratio/scene.py", "NSymSpiekerRatio"),
+    Video(1647, "有界差再訪", "project/math/657_probability_127/1647_bounded_diff_revisit/scene.py", "BoundedDiffRevisit"),
+    Video(1648, "ベクトル集中再訪", "project/math/657_probability_127/1648_vector_conc_revisit/scene.py", "VectorConcRevisit"),
+    Video(1649, "カータラン路細分", "project/math/658_combinatorics_126/1649_catalan_path_refine/scene.py", "CatalanPathRefine"),
+)

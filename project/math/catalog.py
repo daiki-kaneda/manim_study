@@ -100,3 +100,18 @@ VIDEOS_162_173: tuple[Video, ...] = (
     Video(172, "モーメント", "project/math/42_probability_4/172_moment/scene.py", "Moments"),
     Video(173, "スターリング数", "project/math/43_combinatorics_3/173_stirling/scene.py", "Stirling"),
 )
+
+VIDEOS_174_185: tuple[Video, ...] = (
+    Video(174, "テイラー余り", "project/math/44_analysis_7/174_taylor_remainder/scene.py", "TaylorRemainder"),
+    Video(175, "フーリエ変換", "project/math/44_analysis_7/175_fourier_transform/scene.py", "FourierTransform"),
+    Video(176, "留数", "project/math/44_analysis_7/176_residue/scene.py", "Residue"),
+    Video(177, "ハウスホルダー", "project/math/45_linear_7/177_householder/scene.py", "Householder"),
+    Video(178, "QR 分解", "project/math/45_linear_7/178_qr/scene.py", "QRFactorization"),
+    Video(179, "条件数", "project/math/45_linear_7/179_condition/scene.py", "ConditionNumber"),
+    Video(180, "デザルグの定理", "project/math/46_geometry_7/180_desargues/scene.py", "Desargues"),
+    Video(181, "パスカルの定理", "project/math/46_geometry_7/181_pascal_hexagon/scene.py", "PascalHexagon"),
+    Video(182, "バタフライ定理", "project/math/46_geometry_7/182_butterfly/scene.py", "Butterfly"),
+    Video(183, "ハザード", "project/math/47_probability_5/183_hazard/scene.py", "HazardRate"),
+    Video(184, "同時分布", "project/math/47_probability_5/184_joint/scene.py", "JointDensity"),
+    Video(185, "ベル数", "project/math/48_combinatorics_4/185_bell/scene.py", "BellNumbers"),
+)

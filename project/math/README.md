@@ -46,6 +46,9 @@ manim -pql project/math/38_number_2/161_euler_totient/scene.py EulerTotient
 manim -pql project/math/39_analysis_6/162_surface_area/scene.py SurfaceOfRevolution
 manim -pql project/math/41_geometry_6/169_morley/scene.py Morley
 manim -pql project/math/43_combinatorics_3/173_stirling/scene.py Stirling
+manim -pql project/math/44_analysis_7/175_fourier_transform/scene.py FourierTransform
+manim -pql project/math/46_geometry_7/180_desargues/scene.py Desargues
+manim -pql project/math/48_combinatorics_4/185_bell/scene.py BellNumbers
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -238,3 +241,15 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 171 | 確率の木 | `project/math/42_probability_4/171_bayes_tree/` |
 | 172 | モーメント | `project/math/42_probability_4/172_moment/` |
 | 173 | スターリング数 | `project/math/43_combinatorics_3/173_stirling/` |
+| 174 | テイラー余り | `project/math/44_analysis_7/174_taylor_remainder/` |
+| 175 | フーリエ変換 | `project/math/44_analysis_7/175_fourier_transform/` |
+| 176 | 留数 | `project/math/44_analysis_7/176_residue/` |
+| 177 | ハウスホルダー | `project/math/45_linear_7/177_householder/` |
+| 178 | QR 分解 | `project/math/45_linear_7/178_qr/` |
+| 179 | 条件数 | `project/math/45_linear_7/179_condition/` |
+| 180 | デザルグの定理 | `project/math/46_geometry_7/180_desargues/` |
+| 181 | パスカルの定理 | `project/math/46_geometry_7/181_pascal_hexagon/` |
+| 182 | バタフライ定理 | `project/math/46_geometry_7/182_butterfly/` |
+| 183 | ハザード | `project/math/47_probability_5/183_hazard/` |
+| 184 | 同時分布 | `project/math/47_probability_5/184_joint/` |
+| 185 | ベル数 | `project/math/48_combinatorics_4/185_bell/` |

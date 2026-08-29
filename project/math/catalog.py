@@ -745,3 +745,18 @@ VIDEOS_678_689: tuple[Video, ...] = (
     Video(688, "ラプラス汎関数", "project/math/257_probability_47/688_laplace_func/scene.py", "LaplaceFunctional"),
     Video(689, "セイデル数", "project/math/258_combinatorics_46/689_seidel/scene.py", "SeidelNumbers"),
 )
+
+VIDEOS_690_701: tuple[Video, ...] = (
+    Video(690, "チャーン・サイモンズ", "project/math/259_analysis_50/690_chern_simons/scene.py", "ChernSimons"),
+    Video(691, "インスタントン", "project/math/259_analysis_50/691_instanton/scene.py", "Instanton"),
+    Video(692, "ヒッグス機構", "project/math/259_analysis_50/692_higgs/scene.py", "HiggsMechanism"),
+    Video(693, "EMA", "project/math/260_linear_50/693_ema/scene.py", "EMA"),
+    Video(694, "ポリアック平均", "project/math/260_linear_50/694_polyak_avg/scene.py", "PolyakAveraging"),
+    Video(695, "モデルスープ", "project/math/260_linear_50/695_model_soup/scene.py", "ModelSoup"),
+    Video(696, "第二ブロカール点", "project/math/261_geometry_50/696_second_brocard/scene.py", "SecondBrocardPoint"),
+    Video(697, "ブロカール三角形", "project/math/261_geometry_50/697_brocard_tri/scene.py", "BrocardTriangle"),
+    Video(698, "ブロカールのポリズム", "project/math/261_geometry_50/698_brocard_porism/scene.py", "BrocardPorism"),
+    Video(699, "キャンベル・メッケ", "project/math/262_probability_48/699_campbell_mecke/scene.py", "CampbellMecke"),
+    Video(700, "確率母関数", "project/math/262_probability_48/700_pgf/scene.py", "PGF"),
+    Video(701, "ジェノッキ数", "project/math/263_combinatorics_47/701_genocchi/scene.py", "GenocchiNumbers"),
+)

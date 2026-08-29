@@ -8,6 +8,7 @@ for _parent in Path(__file__).resolve().parents:
 
 from manim import *
 from manim_math import JapaneseScene
+import numpy as np
 
 
 class DerivativeTangent(JapaneseScene):
@@ -35,38 +36,36 @@ class DerivativeTangent(JapaneseScene):
         self.hold(0.5)
         self.graph = graph
 
-    def _secant(self, x1, x2, color=ORANGE):
+    def _extended_line(self, x1, x2, color=ORANGE, half_len=2.7):
         def f(x):
             return 0.28 * x * x + 0.2
 
-        p1 = self.axes.c2p(x1, f(x1))
-        p2 = self.axes.c2p(x2, f(x2))
-        line = Line(p1, p2, color=color, stroke_width=4)
-        line.scale(2.2)
-        return line
+        p1 = np.array(self.axes.c2p(x1, f(x1)))
+        p2 = np.array(self.axes.c2p(x2, f(x2)))
+        direction = p2 - p1
+        norm = np.linalg.norm(direction)
+        if norm < 1e-8:
+            return Line(p1, p2, color=color, stroke_width=5)
+        direction = direction / norm
+        mid = (p1 + p2) / 2.0
+        return Line(
+            mid - direction * half_len,
+            mid + direction * half_len,
+            color=color,
+            stroke_width=5,
+        )
 
     def secant_to_tangent(self):
         x0 = 1.7
-        sec = self._secant(x0, x0 + 1.4)
+        sec = self._extended_line(x0, x0 + 1.4)
         note = self.ja_text("割線", font_size=26).to_edge(RIGHT, buff=0.6).shift(UP * 1.2)
         self.play(Create(sec), FadeIn(note), run_time=0.7)
         self.hold(0.6)
         for h in (0.8, 0.35):
-            nxt = self._secant(x0, x0 + h)
+            nxt = self._extended_line(x0, x0 + h)
             self.play(Transform(sec, nxt), run_time=0.7)
             self.hold(0.4)
-        # 近接2点だと線分が極短になるので、点を通る長い接線にする
-        def f(x):
-            return 0.28 * x * x + 0.2
-
-        slope = 0.56 * x0
-        dx = 1.6
-        tan = Line(
-            self.axes.c2p(x0 - dx, f(x0) - slope * dx),
-            self.axes.c2p(x0 + dx, f(x0) + slope * dx),
-            color=YELLOW,
-            stroke_width=5,
-        )
+        tan = self._extended_line(x0 - 0.05, x0 + 0.05, color=YELLOW)
         self.play(Transform(sec, tan), run_time=0.8)
         tan_note = self.ja_text("接線", font_size=26).move_to(note)
         self.play(Transform(note, tan_note), run_time=0.4)

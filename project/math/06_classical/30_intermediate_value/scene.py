@@ -73,6 +73,18 @@ class IntermediateValue(JapaneseScene):
             run_time=0.8,
         )
         self.hold(0.9)
+        back = self.ja_text("連続なら 0 を通る", font_size=26).move_to(self.note)
+        self.play(
+            FadeOut(left),
+            FadeOut(right),
+            FadeIn(self.graph),
+            FadeIn(self.da),
+            FadeIn(self.db),
+            FadeIn(self.cross),
+            Transform(self.note, back),
+            run_time=0.7,
+        )
+        self.hold(0.5)
 
     def show_formula(self):
         formula = VGroup(

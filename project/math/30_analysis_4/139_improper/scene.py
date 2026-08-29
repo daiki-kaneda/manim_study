@@ -1,0 +1,61 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
+from manim import *
+from manim_math import PacedScene
+
+
+class ImproperIntegral(PacedScene):
+    """#139 広義積分は端を無限に伸ばす（約50秒）"""
+
+    def construct(self):
+        self.show_heading("広義積分")
+        self.draw_curve()
+        self.grow_tail()
+        self.show_formula()
+        self.read(1.4)
+
+    def draw_curve(self):
+        self.axes = Axes(
+            x_range=[0, 7.4, 1],
+            y_range=[0, 1.25, 1],
+            x_length=8.4,
+            y_length=3.15,
+            tips=False,
+            axis_config={"stroke_width": 2, "include_ticks": False},
+        ).shift(DOWN * 0.2 + LEFT * 0.15)
+        self.graph = self.axes.plot(
+            lambda x: 1.0 / (x * x),
+            x_range=[1.0, 7.1],
+            color=BLUE,
+            stroke_width=5,
+        )
+        self.play(Create(self.axes), run_time=0.95)
+        self.play(Create(self.graph), run_time=2.0)
+        self.read(0.35)
+
+    def _area(self, b, color=BLUE):
+        return self.axes.get_area(self.graph, x_range=[1.0, b], color=color, opacity=0.45)
+
+    def grow_tail(self):
+        area = self._area(2.0)
+        note = self.ja_text("1 から 2", font_size=24)
+        note.to_edge(RIGHT, buff=0.35).shift(UP * 1.65)
+        self.play(FadeIn(area), FadeIn(note), run_time=1.3)
+        self.read(0.4)
+        for b, label in ((3.4, "もっと先へ"), (6.6, "残りは小さい")):
+            nxt = self._area(b, color=TEAL)
+            cap = self.ja_text(label, font_size=24).move_to(note)
+            self.play(Transform(area, nxt), Transform(note, cap), run_time=1.7)
+            self.read(0.45)
+
+    def show_formula(self):
+        formula = MathTex(r"\int_1^{\infty}\frac{1}{x^{2}}\,dx=1").scale(0.95)
+        formula.to_edge(DOWN, buff=0.3)
+        self.play(Write(formula), run_time=1.9)
+        self.play(Indicate(formula, color=YELLOW), run_time=0.85)

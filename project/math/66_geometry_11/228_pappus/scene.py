@@ -41,9 +41,16 @@ class Pappus(PacedScene):
         self.note = note
 
     def _intersect(self, p1, p2, q1, q2):
-        A = np.array(p1[:2]); B = np.array(p2[:2]); C = np.array(q1[:2]); D = np.array(q2[:2])
-        den = np.cross(B - A, D - C)
-        t = np.cross(C - A, D - C) / den
+        A = np.array(p1[:2], dtype=float)
+        B = np.array(p2[:2], dtype=float)
+        C = np.array(q1[:2], dtype=float)
+        D = np.array(q2[:2], dtype=float)
+
+        def cross2(u, v):
+            return u[0] * v[1] - u[1] * v[0]
+
+        den = cross2(B - A, D - C)
+        t = cross2(C - A, D - C) / den
         xy = A + t * (B - A)
         return np.array([xy[0], xy[1], 0.0])
 

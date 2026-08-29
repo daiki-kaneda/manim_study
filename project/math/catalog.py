@@ -1135,3 +1135,48 @@ VIDEOS_990_1001: tuple[Video, ...] = (
     Video(1000, "反射原理ブラウン", "project/math/387_probability_73/1000_reflection_bm/scene.py", "ReflectionPrincipleBM"),
     Video(1001, "ナラヤナ多項式", "project/math/388_combinatorics_72/1001_narayana_poly/scene.py", "NarayanaPolynomials"),
 )
+
+VIDEOS_1002_1013: tuple[Video, ...] = (
+    Video(1002, "数値的効果", "project/math/389_analysis_76/1002_numerical_effect/scene.py", "NumericalEffectivity"),
+    Video(1003, "交叉形式", "project/math/389_analysis_76/1003_intersection_form/scene.py", "IntersectionForm"),
+    Video(1004, "ビッグ錐", "project/math/389_analysis_76/1004_big_cone/scene.py", "BigCone"),
+    Video(1005, "PadamW", "project/math/390_linear_76/1005_padamw/scene.py", "PadamW"),
+    Video(1006, "AdaiW", "project/math/390_linear_76/1006_adaiw/scene.py", "AdaiW"),
+    Video(1007, "ShampooW", "project/math/390_linear_76/1007_shampoow/scene.py", "ShampooW"),
+    Video(1008, "内心半径公式", "project/math/391_geometry_76/1008_inradius/scene.py", "InradiusFormula"),
+    Video(1009, "傍心半径公式", "project/math/391_geometry_76/1009_exradius/scene.py", "ExradiusFormula"),
+    Video(1010, "面積ヘロン", "project/math/391_geometry_76/1010_heron_area/scene.py", "HeronArea"),
+    Video(1011, "最大過程", "project/math/392_probability_74/1011_maximum_process/scene.py", "MaximumProcess"),
+    Video(1012, "ブラウン橋分布", "project/math/392_probability_74/1012_bb_law/scene.py", "BrownianBridgeLaw"),
+    Video(1013, "ファイン多項式", "project/math/393_combinatorics_73/1013_fine_poly/scene.py", "FinePolynomials"),
+)
+
+VIDEOS_1014_1025: tuple[Video, ...] = (
+    Video(1014, "有効錐", "project/math/394_analysis_77/1014_effective_cone/scene.py", "EffectiveCone"),
+    Video(1015, "ネフ錐", "project/math/394_analysis_77/1015_nef_cone/scene.py", "NefCone"),
+    Video(1016, "ムービング錐", "project/math/394_analysis_77/1016_moving_cone/scene.py", "MovingCone"),
+    Video(1017, "AdoptW", "project/math/395_linear_77/1017_adoptw/scene.py", "AdoptW"),
+    Video(1018, "KronW", "project/math/395_linear_77/1018_kronw/scene.py", "KronW"),
+    Video(1019, "SOAPW", "project/math/395_linear_77/1019_soapw/scene.py", "SOAPW"),
+    Video(1020, "ヘロン変形", "project/math/396_geometry_77/1020_heron_variant/scene.py", "HeronVariant"),
+    Video(1021, "オイラー三角形公式", "project/math/396_geometry_77/1021_euler_triangle/scene.py", "EulerTriangleFormula"),
+    Video(1022, "角面積公式", "project/math/396_geometry_77/1022_angle_area/scene.py", "AngleAreaFormula"),
+    Video(1023, "最小過程", "project/math/397_probability_75/1023_minimum_process/scene.py", "MinimumProcess"),
+    Video(1024, "劣マルチンゲール", "project/math/397_probability_75/1024_submartingale/scene.py", "Submartingale"),
+    Video(1025, "デラノワ多項式", "project/math/398_combinatorics_74/1025_delannoy_poly/scene.py", "DelannoyPolynomials"),
+)
+
+VIDEOS_1026_1037: tuple[Video, ...] = (
+    Video(1026, "クレマン錐", "project/math/399_analysis_78/1026_kleiman/scene.py", "KleimanCone"),
+    Video(1027, "数値同値", "project/math/399_analysis_78/1027_numerical_equiv/scene.py", "NumericalEquivalence"),
+    Video(1028, "線形同値", "project/math/399_analysis_78/1028_linear_equiv/scene.py", "LinearEquivalence"),
+    Video(1029, "RangerW", "project/math/400_linear_78/1029_rangerw/scene.py", "RangerW"),
+    Video(1030, "ApolloW", "project/math/400_linear_78/1030_apollow/scene.py", "ApolloW"),
+    Video(1031, "AdaiClip", "project/math/400_linear_78/1031_adaiclip/scene.py", "AdaiClip"),
+    Video(1032, "傍接半径", "project/math/401_geometry_78/1032_exradius_short/scene.py", "ExradiusShort"),
+    Video(1033, "内接半径", "project/math/401_geometry_78/1033_inradius_short/scene.py", "InradiusShort"),
+    Video(1034, "正弦面積半", "project/math/401_geometry_78/1034_sine_area_half/scene.py", "SineAreaHalf"),
+    Video(1035, "優マルチンゲール", "project/math/402_probability_76/1035_supermartingale/scene.py", "Supermartingale"),
+    Video(1036, "任意停止", "project/math/402_probability_76/1036_optional_stopping/scene.py", "OptionalStopping"),
+    Video(1037, "切手問題", "project/math/403_combinatorics_75/1037_postage/scene.py", "PostageStamp"),
+)

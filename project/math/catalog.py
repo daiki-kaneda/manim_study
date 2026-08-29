@@ -670,3 +670,18 @@ VIDEOS_618_629: tuple[Video, ...] = (
     Video(628, "ペア相関", "project/math/232_probability_42/628_pair_corr/scene.py", "PairCorrelation"),
     Video(629, "電話番号", "project/math/233_combinatorics_41/629_telephone/scene.py", "TelephoneNumbers"),
 )
+
+VIDEOS_630_641: tuple[Video, ...] = (
+    Video(630, "ポントリャーギン", "project/math/234_analysis_45/630_pontryagin/scene.py", "Pontryagin"),
+    Video(631, "ハミルトン・ヤコビ", "project/math/234_analysis_45/631_hjb/scene.py", "HJB"),
+    Video(632, "ベルマン最適性", "project/math/234_analysis_45/632_bellman/scene.py", "BellmanOpt"),
+    Video(633, "レーベンバーグ", "project/math/235_linear_45/633_levenberg/scene.py", "LevenbergMarquardt"),
+    Video(634, "非線形CG", "project/math/235_linear_45/634_nlcg/scene.py", "NonlinearCG"),
+    Video(635, "バルジライ・ボーウェイン", "project/math/235_linear_45/635_bb/scene.py", "BarzilaiBorwein"),
+    Video(636, "円の反転", "project/math/236_geometry_45/636_inversion/scene.py", "CircleInversion"),
+    Video(637, "ホモセティ", "project/math/236_geometry_45/637_homothety/scene.py", "Homothety"),
+    Video(638, "相似の中心", "project/math/236_geometry_45/638_similitude/scene.py", "CenterOfSimilitude"),
+    Video(639, "ボイド確率", "project/math/237_probability_43/639_void/scene.py", "VoidProbability"),
+    Video(640, "空き空間関数", "project/math/237_probability_43/640_empty_space/scene.py", "EmptySpaceF"),
+    Video(641, "リオルダン数", "project/math/238_combinatorics_42/641_riordan/scene.py", "RiordanNumbers"),
+)

@@ -1315,3 +1315,48 @@ VIDEOS_1134_1145: tuple[Video, ...] = (
     Video(1144, "ドゥーブ上界", "project/math/447_probability_85/1144_doob_bound/scene.py", "DoobBound"),
     Video(1145, "小さなシュレーダー", "project/math/448_combinatorics_84/1145_small_schroeder/scene.py", "SmallSchroeder"),
 )
+
+VIDEOS_1146_1157: tuple[Video, ...] = (
+    Video(1146, "飯高ファイバー", "project/math/449_analysis_88/1146_iitaka_fiber/scene.py", "IitakaFiber"),
+    Video(1147, "小平ファイバー", "project/math/449_analysis_88/1147_kodaira_fiber/scene.py", "KodairaFiber"),
+    Video(1148, "標準ファイバー", "project/math/449_analysis_88/1148_canonical_fiber/scene.py", "CanonicalFiber"),
+    Video(1149, "AdaDeltaClip", "project/math/450_linear_88/1149_adadeltaclip/scene.py", "AdaDeltaClip"),
+    Video(1150, "LionBound", "project/math/450_linear_88/1150_lionbound/scene.py", "LionBound"),
+    Video(1151, "SophiaHard", "project/math/450_linear_88/1151_sophiahard/scene.py", "SophiaHard"),
+    Video(1152, "九点内心比", "project/math/451_geometry_88/1152_nine_in_ratio/scene.py", "NineInRatio"),
+    Video(1153, "垂心九点比", "project/math/451_geometry_88/1153_h_nine_ratio/scene.py", "HNineRatio"),
+    Video(1154, "重心九点距離", "project/math/451_geometry_88/1154_g_nine_dist/scene.py", "GNineDistance"),
+    Video(1155, "ペティ不等式", "project/math/452_probability_86/1155_petty/scene.py", "PettyInequality"),
+    Video(1156, "フリードマン不等式", "project/math/452_probability_86/1156_freedman/scene.py", "FreedmanInequality"),
+    Video(1157, "ルカ数列", "project/math/453_combinatorics_85/1157_lucas/scene.py", "LucasSequence"),
+)
+
+VIDEOS_1158_1169: tuple[Video, ...] = (
+    Video(1158, "移動補題", "project/math/454_analysis_89/1158_moving_lemma/scene.py", "MovingLemma"),
+    Video(1159, "基底軌跡", "project/math/454_analysis_89/1159_base_locus/scene.py", "BaseLocus"),
+    Video(1160, "安定基点自由", "project/math/454_analysis_89/1160_stable_basepoint/scene.py", "StableBasepointFree"),
+    Video(1161, "AdoptSoft", "project/math/455_linear_89/1161_adoptsoft/scene.py", "AdoptSoft"),
+    Video(1162, "KronHard", "project/math/455_linear_89/1162_kronhard/scene.py", "KronHard"),
+    Video(1163, "NAdamClip", "project/math/455_linear_89/1163_nadamclip/scene.py", "NAdamClip"),
+    Video(1164, "傍心九点距離", "project/math/456_geometry_89/1164_ex_nine_dist/scene.py", "ExNineDistance"),
+    Video(1165, "内心外心線比", "project/math/456_geometry_89/1165_io_line_ratio/scene.py", "IOLineRatio"),
+    Video(1166, "垂心外心距離比", "project/math/456_geometry_89/1166_ho_dist_ratio/scene.py", "HODistRatio"),
+    Video(1167, "カントロジ不等式", "project/math/457_probability_87/1167_kantorovich/scene.py", "KantorovichInequality"),
+    Video(1168, "ピネリス不等式", "project/math/457_probability_87/1168_pinelis/scene.py", "PinelisInequality"),
+    Video(1169, "エルミート三角形", "project/math/458_combinatorics_86/1169_hermite_triangle/scene.py", "HermiteTriangle"),
+)
+
+VIDEOS_1170_1181: tuple[Video, ...] = (
+    Video(1170, "数値的引き算", "project/math/459_analysis_90/1170_numerical_pullback/scene.py", "NumericalPullback"),
+    Video(1171, "数値的押し出し", "project/math/459_analysis_90/1171_numerical_pushforward/scene.py", "NumericalPushforward"),
+    Video(1172, "交点数公式", "project/math/459_analysis_90/1172_intersection_number/scene.py", "IntersectionNumber"),
+    Video(1173, "QHMBound", "project/math/460_linear_90/1173_qhmbound/scene.py", "QHMBound"),
+    Video(1174, "LaPropBound", "project/math/460_linear_90/1174_lapropbound/scene.py", "LaPropBound"),
+    Video(1175, "AdaSmoothHard", "project/math/460_linear_90/1175_adasmoothhard/scene.py", "AdaSmoothHard"),
+    Video(1176, "内心傍心線", "project/math/461_geometry_90/1176_in_ex_line/scene.py", "InExLine"),
+    Video(1177, "重心傍心比", "project/math/461_geometry_90/1177_g_ex_ratio/scene.py", "GExRatio"),
+    Video(1178, "九点傍心比", "project/math/461_geometry_90/1178_nine_ex_ratio/scene.py", "NineExRatio"),
+    Video(1179, "ブール積", "project/math/462_probability_88/1179_boole_prod/scene.py", "BooleProduct"),
+    Video(1180, "ヘフディング積", "project/math/462_probability_88/1180_hoeffding_prod/scene.py", "HoeffdingProduct"),
+    Video(1181, "オイラー三角形", "project/math/463_combinatorics_87/1181_euler_triangle/scene.py", "EulerTriangle"),
+)

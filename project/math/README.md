@@ -16,6 +16,8 @@ manim -pql project/math/02_geometry/06_inscribed_angle/scene.py InscribedAngle
 manim -pql project/math/03_algebra/12_binomial_square/scene.py BinomialSquare
 manim -pql project/math/04_calculus/16_derivative_tangent/scene.py DerivativeTangent
 manim -pql project/math/04_calculus/20_e_definition/scene.py EDefinition
+manim -pql project/math/05_identities/21_euler_formula/scene.py EulerFormula
+manim -pql project/math/06_classical/27_am_gm/scene.py AMGM
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -55,5 +57,15 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 18 | 合成関数の微分 | `project/math/04_calculus/18_chain_rule/` |
 | 19 | 部分積分 | `project/math/04_calculus/19_integration_by_parts/` |
 | 20 | e の定義 | `project/math/04_calculus/20_e_definition/` |
+| 21 | オイラーの公式 | `project/math/05_identities/21_euler_formula/` |
+| 22 | ド・モアブルの定理 | `project/math/05_identities/22_de_moivre/` |
+| 23 | sin²+cos²=1 | `project/math/05_identities/23_pythagorean_identity/` |
+| 24 | sin のテイラー | `project/math/05_identities/24_taylor_sin/` |
+| 25 | ベイズの定理 | `project/math/05_identities/25_bayes/` |
+| 26 | 素数は無限 | `project/math/06_classical/26_infinite_primes/` |
+| 27 | 相加相乗平均 | `project/math/06_classical/27_am_gm/` |
+| 28 | 内角の和 | `project/math/06_classical/28_triangle_angle_sum/` |
+| 29 | 円の面積 | `project/math/06_classical/29_circle_area/` |
+| 30 | 中間値の定理 | `project/math/06_classical/30_intermediate_value/` |
 
 以降の番号は `PLAN.md` を参照。

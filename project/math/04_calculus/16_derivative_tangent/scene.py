@@ -20,9 +20,6 @@ class DerivativeTangent(JapaneseScene):
         self.show_formula()
         self.hold(1.2)
 
-    def f(self, x):
-        return 0.28 * x * x + 0.2
-
     def draw_curve(self):
         self.axes = Axes(
             x_range=[0, 4.2, 1],
@@ -32,16 +29,21 @@ class DerivativeTangent(JapaneseScene):
             tips=False,
             axis_config={"stroke_width": 2, "include_ticks": False},
         ).shift(LEFT * 1.5 + DOWN * 0.35)
-        graph = self.axes.plot(self.f, x_range=[0.2, 3.8], color=BLUE, stroke_width=4)
+        graph = self.axes.plot(lambda x: 0.28 * x * x + 0.2, x_range=[0.2, 3.8], color=BLUE, stroke_width=4)
         self.play(Create(self.axes), run_time=0.6)
         self.play(Create(graph), run_time=0.9)
         self.hold(0.5)
         self.graph = graph
 
     def _secant(self, x1, x2, color=ORANGE):
-        p1 = self.axes.c2p(x1, self.f(x1))
-        p2 = self.axes.c2p(x2, self.f(x2))
-        return Line(p1, p2, color=color, stroke_width=4).set_length(4.5)
+        def f(x):
+            return 0.28 * x * x + 0.2
+
+        p1 = self.axes.c2p(x1, f(x1))
+        p2 = self.axes.c2p(x2, f(x2))
+        line = Line(p1, p2, color=color, stroke_width=4)
+        line.scale(2.2)
+        return line
 
     def secant_to_tangent(self):
         x0 = 1.7
@@ -53,8 +55,18 @@ class DerivativeTangent(JapaneseScene):
             nxt = self._secant(x0, x0 + h)
             self.play(Transform(sec, nxt), run_time=0.7)
             self.hold(0.4)
-        tan = self._secant(x0 - 0.01, x0 + 0.01, color=YELLOW)
-        tan.set_length(4.8)
+        # 近接2点だと線分が極短になるので、点を通る長い接線にする
+        def f(x):
+            return 0.28 * x * x + 0.2
+
+        slope = 0.56 * x0
+        dx = 1.6
+        tan = Line(
+            self.axes.c2p(x0 - dx, f(x0) - slope * dx),
+            self.axes.c2p(x0 + dx, f(x0) + slope * dx),
+            color=YELLOW,
+            stroke_width=5,
+        )
         self.play(Transform(sec, tan), run_time=0.8)
         tan_note = self.ja_text("接線", font_size=26).move_to(note)
         self.play(Transform(note, tan_note), run_time=0.4)

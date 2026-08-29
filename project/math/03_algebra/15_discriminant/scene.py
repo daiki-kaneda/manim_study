@@ -54,10 +54,11 @@ class Discriminant(JapaneseScene):
         return group
 
     def show_three_cases(self):
+        # 最後を D=0（接する）で止めて、結論と絵が一致するようにする
         cases = [
             (lambda x: 0.45 * x * x - 1.6, BLUE, "2つの実数解", r"D>0"),
-            (lambda x: 0.45 * (x - 0.2) ** 2, GREEN, "重解（接する）", r"D=0"),
             (lambda x: 0.45 * x * x + 1.3, ORANGE, "実数解なし", r"D<0"),
+            (lambda x: 0.45 * (x - 0.2) ** 2, GREEN, "重解（接する）", r"D=0"),
         ]
         current = None
         for fn, color, jp, math in cases:

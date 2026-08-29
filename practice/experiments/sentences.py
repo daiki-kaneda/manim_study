@@ -1,4 +1,14 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
 from manim import *
+from manim_math import ja_tex, ja_text
+
 
 class Sentences(Scene):
     def __init__(self, sentences, max_lines=5, wait_time=1.0,is_tex = True, **kwargs):
@@ -13,32 +23,10 @@ class Sentences(Scene):
         lines = VGroup().to_edge(UL)
 
         for sentence_text in self.sentences:
-            # 数式をサポートするためにMathTexを使用して新しいテキスト行を作成します
-            # MathTex内では、通常のテキストは \text{} で囲むと良いです
             if self.is_tex:
-                japanese_tex_template = TexTemplate(
-    tex_compiler='xelatex', # ★ xelatex を明示的に指定
-    output_format='.xdv',    # ★ PDF 出力が最も安定
-    documentclass='\\documentclass[preview]{standalone}',
-    preamble=r"""
-        \usepackage{amsmath}
-        \usepackage{amssymb}
-        \usepackage{fontspec}    % ★ システムフォントを使うためのパッケージ
-        \setmainfont{HannariMincho-Regular} % ★★★ あなたの環境での正確なPostScript名をここに記述 ★★★
-                                     % 例: HiraginoSans-W3 (Macのヒラギノ角ゴ)
-                                     % 例: YuGo-Medium (游ゴシック Medium)
-        % \usepackage{zxjatype}   % 日本語組版ルールが必要な場合は追加 (フォント問題解決後)
-        % \usepackage{pxjahyper}  % 日本語PDFのしおりなどが必要な場合は追加 (フォント問題解決後)
-    """
-)
-
-                # new_line = MathTex(sentence_text, font_size=36,)                
-                new_line = Tex(sentence_text,tex_template = japanese_tex_template,
-                            
-                               font_size=36,)                
-
+                new_line = ja_tex(sentence_text, font_size=36)
             else:
-                new_line = Text(sentence_text)
+                new_line = ja_text(sentence_text)
 
             # 行数が最大値に達した場合、最も古い行をフェードアウトさせます
             if len(lines) >= self.max_lines:

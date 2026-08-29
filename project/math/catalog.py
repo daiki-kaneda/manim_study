@@ -2305,3 +2305,48 @@ VIDEOS_1926_1937: tuple[Video, ...] = (
     Video(1936, "一様スケールエントロピー再訪", "project/math/777_probability_151/1936_uniform_scale_entropy_rev/scene.py", "UniformScaleEntropyRev"),
     Video(1937, "増加ヒープ細分", "project/math/778_combinatorics_150/1937_inc_heap_refine/scene.py", "IncHeapRefine"),
 )
+
+VIDEOS_1938_1949: tuple[Video, ...] = (
+    Video(1938, "ログ小平対", "project/math/779_analysis_154/1938_log_kodaira_pair/scene.py", "LogKodairaPair"),
+    Video(1939, "相対ログ小平対", "project/math/779_analysis_154/1939_rel_log_kodaira/scene.py", "RelLogKodaira"),
+    Video(1940, "ログ飯高ファイバー対", "project/math/779_analysis_154/1940_log_iitaka_fiber/scene.py", "LogIitakaFiber"),
+    Video(1941, "RMSSoftBoundClip", "project/math/780_linear_154/1941_rmssoftboundclip/scene.py", "RMSSoftBoundClip"),
+    Video(1942, "LAMBBoundClip", "project/math/780_linear_154/1942_lambboundclip/scene.py", "LAMBBoundClip"),
+    Video(1943, "AdamWSoftBoundClip", "project/math/780_linear_154/1943_adamwsoftboundclip/scene.py", "AdamWSoftBoundClip"),
+    Video(1944, "内心九点弦比", "project/math/781_geometry_154/1944_in_nine_chord/scene.py", "InNineChord"),
+    Video(1945, "傍心九点弦比", "project/math/781_geometry_154/1945_ex_nine_chord/scene.py", "ExNineChord"),
+    Video(1946, "外心九点弦比", "project/math/781_geometry_154/1946_o_nine_chord/scene.py", "ONineChord"),
+    Video(1947, "データ半径エントロピー", "project/math/782_probability_152/1947_data_radius_entropy/scene.py", "DataRadiusEntropy"),
+    Video(1948, "標本半径複雑度", "project/math/782_probability_152/1948_sample_radius_comp/scene.py", "SampleRadiusComp"),
+    Video(1949, "減少森細分", "project/math/783_combinatorics_151/1949_dec_forest_refine/scene.py", "DecForestRefine"),
+)
+
+VIDEOS_1950_1961: tuple[Video, ...] = (
+    Video(1950, "相対ログ飯高ファイバー対", "project/math/784_analysis_155/1950_rel_log_iitaka_fiber/scene.py", "RelLogIitakaFiber"),
+    Video(1951, "ログ随伴対", "project/math/784_analysis_155/1951_log_adjoint_pair/scene.py", "LogAdjointPair"),
+    Video(1952, "相対ログ随伴対", "project/math/784_analysis_155/1952_rel_log_adjoint/scene.py", "RelLogAdjoint"),
+    Video(1953, "ScheduleFreeSoftBound", "project/math/785_linear_155/1953_schedulefreesoftbound/scene.py", "ScheduleFreeSoftBound"),
+    Video(1954, "ApolloHardBound", "project/math/785_linear_155/1954_apollohardbound/scene.py", "ApolloHardBound"),
+    Video(1955, "MuonSoftHardBound", "project/math/785_linear_155/1955_muonsofthardbound/scene.py", "MuonSoftHardBound"),
+    Video(1956, "垂心九点弦比", "project/math/786_geometry_155/1956_h_nine_chord/scene.py", "HNineChord"),
+    Video(1957, "重心九点弦比", "project/math/786_geometry_155/1957_g_nine_chord/scene.py", "GNineChord"),
+    Video(1958, "九点弦長比", "project/math/786_geometry_155/1958_n_nine_chord/scene.py", "NNineChord"),
+    Video(1959, "局所標本スケール被覆", "project/math/787_probability_153/1959_local_sample_scale_cov/scene.py", "LocalSampleScaleCov"),
+    Video(1960, "局所標本スケールパッキング", "project/math/787_probability_153/1960_local_sample_scale_pack/scene.py", "LocalSampleScalePack"),
+    Video(1961, "根つき三分木細分", "project/math/788_combinatorics_152/1961_rooted_ternary_refine/scene.py", "RootedTernaryRefine"),
+)
+
+VIDEOS_1962_1973: tuple[Video, ...] = (
+    Video(1962, "ログ随伴豊富対", "project/math/789_analysis_156/1962_log_adj_ample/scene.py", "LogAdjAmple"),
+    Video(1963, "相対ログ随伴豊富対", "project/math/789_analysis_156/1963_rel_log_adj_ample/scene.py", "RelLogAdjAmple"),
+    Video(1964, "ログ随伴ネフ対", "project/math/789_analysis_156/1964_log_adj_nef/scene.py", "LogAdjNef"),
+    Video(1965, "SamSoftBoundClip", "project/math/790_linear_156/1965_samsoftboundclip/scene.py", "SamSoftBoundClip"),
+    Video(1966, "NAdamSoftBoundClip", "project/math/790_linear_156/1966_nadamsoftboundclip/scene.py", "NAdamSoftBoundClip"),
+    Video(1967, "LARSSoftBound", "project/math/790_linear_156/1967_larssoftbound/scene.py", "LARSSoftBound"),
+    Video(1968, "内心類似九点弦比", "project/math/791_geometry_156/1968_in_sym_nine_chord/scene.py", "InSymNineChord"),
+    Video(1969, "傍心類似九点弦比", "project/math/791_geometry_156/1969_ex_sym_nine_chord/scene.py", "ExSymNineChord"),
+    Video(1970, "外心類似九点弦比", "project/math/791_geometry_156/1970_o_sym_nine_chord/scene.py", "OSymNineChord"),
+    Video(1971, "経験一様スケール被覆", "project/math/792_probability_154/1971_emp_unif_scale_cov/scene.py", "EmpUnifScaleCov"),
+    Video(1972, "経験一様スケールパッキング", "project/math/792_probability_154/1972_emp_unif_scale_pack/scene.py", "EmpUnifScalePack"),
+    Video(1973, "ラベル三分木細分", "project/math/793_combinatorics_153/1973_labeled_ternary_refine/scene.py", "LabeledTernaryRefine"),
+)

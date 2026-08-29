@@ -385,3 +385,18 @@ VIDEOS_390_401: tuple[Video, ...] = (
     Video(400, "ブラウン運動", "project/math/137_probability_23/400_brownian/scene.py", "BrownianMotion"),
     Video(401, "モツキン数", "project/math/138_combinatorics_22/401_motzkin/scene.py", "Motzkin"),
 )
+
+VIDEOS_402_413: tuple[Video, ...] = (
+    Video(402, "スペクトル測度", "project/math/139_analysis_26/402_spectral_measure/scene.py", "SpectralMeasure"),
+    Video(403, "ダンフォード積分", "project/math/139_analysis_26/403_dunford/scene.py", "DunfordCalculus"),
+    Video(404, "ボホナー積分", "project/math/139_analysis_26/404_bochner/scene.py", "BochnerIntegral"),
+    Video(405, "ギブンス回転", "project/math/140_linear_26/405_givens/scene.py", "GivensRotation"),
+    Video(406, "二対角化", "project/math/140_linear_26/406_bidiagonal/scene.py", "Bidiagonalization"),
+    Video(407, "トレースクラス", "project/math/140_linear_26/407_trace_class/scene.py", "TraceClass"),
+    Video(408, "パスカルの蝸牛線", "project/math/141_geometry_26/408_limacon/scene.py", "Limacon"),
+    Video(409, "ソディの円", "project/math/141_geometry_26/409_soddy/scene.py", "SoddyCircles"),
+    Video(410, "スチュワートの定理", "project/math/141_geometry_26/410_stewart/scene.py", "StewartTheorem"),
+    Video(411, "大数の法則", "project/math/142_probability_24/411_lln/scene.py", "LawOfLargeNumbers"),
+    Video(412, "中心極限定理", "project/math/142_probability_24/412_clt/scene.py", "CentralLimitTheorem"),
+    Video(413, "ナラヤナ数", "project/math/143_combinatorics_23/413_narayana/scene.py", "Narayana"),
+)

@@ -580,3 +580,18 @@ VIDEOS_546_557: tuple[Video, ...] = (
     Video(556, "ハフ変換", "project/math/202_probability_36/556_hough/scene.py", "HoughTransform"),
     Video(557, "平面木", "project/math/203_combinatorics_35/557_plane_trees/scene.py", "PlaneTrees"),
 )
+
+VIDEOS_558_569: tuple[Video, ...] = (
+    Video(558, "BMO空間", "project/math/204_analysis_39/558_bmo/scene.py", "BMOSpace"),
+    Video(559, "振幅作用素", "project/math/204_analysis_39/559_amplitude/scene.py", "AmplitudeOperator"),
+    Video(560, "パラプロダクト", "project/math/204_analysis_39/560_paraproduct/scene.py", "Paraproduct"),
+    Video(561, "不完全コレスキー", "project/math/205_linear_39/561_ichol/scene.py", "IncompleteCholesky"),
+    Video(562, "ヤコビ前処理", "project/math/205_linear_39/562_jacobi_pre/scene.py", "JacobiPreconditioner"),
+    Video(563, "代数的多重グリッド", "project/math/205_linear_39/563_amg/scene.py", "AlgebraicMultigrid"),
+    Video(564, "共役直径", "project/math/206_geometry_39/564_conjugate_diameters/scene.py", "ConjugateDiameters"),
+    Video(565, "焦点弦", "project/math/206_geometry_39/565_focal_chord/scene.py", "FocalChord"),
+    Video(566, "配景の中心", "project/math/206_geometry_39/566_perspector/scene.py", "Perspector"),
+    Video(567, "コックス過程", "project/math/207_probability_37/567_cox_process/scene.py", "CoxProcess"),
+    Video(568, "マーク付き点過程", "project/math/207_probability_37/568_marked_pp/scene.py", "MarkedPointProcess"),
+    Video(569, "整数の分割", "project/math/208_combinatorics_36/569_integer_partitions/scene.py", "IntegerPartitions"),
+)

@@ -21,6 +21,9 @@ manim -pql project/math/06_classical/27_am_gm/scene.py AMGM
 manim -pql project/math/07_linear_algebra/31_linear_map/scene.py LinearMap
 manim -pql project/math/08_probability/36_expected_value/scene.py ExpectedValue
 manim -pql project/math/10_combinatorics/50_midpoint_recap/scene.py MidpointRecap
+manim -pql project/math/11_trig/51_law_of_sines/scene.py LawOfSines
+manim -pql project/math/12_series/60_fourier_square/scene.py FourierSquare
+manim -pql project/math/14_ode/66_slope_field/scene.py SlopeField
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -90,5 +93,30 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 48 | 包除原理 | `project/math/10_combinatorics/48_inclusion_exclusion/` |
 | 49 | 鳩の巣原理 | `project/math/10_combinatorics/49_pigeonhole/` |
 | 50 | 前半の地図 | `project/math/10_combinatorics/50_midpoint_recap/` |
+| 51 | 正弦定理 | `project/math/11_trig/51_law_of_sines/` |
+| 52 | 余弦定理 | `project/math/11_trig/52_law_of_cosines/` |
+| 53 | 二倍角 | `project/math/11_trig/53_double_angle/` |
+| 54 | 余弦の加法 | `project/math/11_trig/54_cosine_addition/` |
+| 55 | 面積と正弦 | `project/math/11_trig/55_triangle_area_sine/` |
+| 56 | 調和級数 | `project/math/12_series/56_harmonic_series/` |
+| 57 | ライプニッツの π | `project/math/12_series/57_leibniz_pi/` |
+| 58 | バーゼル問題 | `project/math/12_series/58_basel_problem/` |
+| 59 | e^x のテイラー | `project/math/12_series/59_taylor_exp/` |
+| 60 | フーリエ矩形波 | `project/math/12_series/60_fourier_square/` |
+| 61 | 対偶 | `project/math/13_logic/61_contrapositive/` |
+| 62 | ド・モルガン | `project/math/13_logic/62_de_morgan/` |
+| 63 | 単射と全射 | `project/math/13_logic/63_injective_surjective/` |
+| 64 | 量化子の順 | `project/math/13_logic/64_quantifier_order/` |
+| 65 | 必要十分 | `project/math/13_logic/65_iff/` |
+| 66 | 傾き場 | `project/math/14_ode/66_slope_field/` |
+| 67 | 指数成長 | `project/math/14_ode/67_exponential_growth/` |
+| 68 | 単振動 | `project/math/14_ode/68_harmonic_oscillator/` |
+| 69 | ロジスティック | `project/math/14_ode/69_logistic_growth/` |
+| 70 | 重ね合わせ | `project/math/14_ode/70_linear_superposition/` |
+| 71 | 複素数の積 | `project/math/15_complex/71_complex_multiply/` |
+| 72 | e^z | `project/math/15_complex/72_exp_map/` |
+| 73 | 回転数 | `project/math/15_complex/73_winding_number/` |
+| 74 | 1/z | `project/math/15_complex/74_one_over_z/` |
+| 75 | 等角写像 | `project/math/15_complex/75_conformal/` |
 
 以降の番号は `PLAN.md` を参照。

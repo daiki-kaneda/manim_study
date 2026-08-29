@@ -165,6 +165,9 @@ VIDEOS_1926_1937 = _catalog.VIDEOS_1926_1937
 VIDEOS_1938_1949 = _catalog.VIDEOS_1938_1949
 VIDEOS_1950_1961 = _catalog.VIDEOS_1950_1961
 VIDEOS_1962_1973 = _catalog.VIDEOS_1962_1973
+VIDEOS_1974_1985 = _catalog.VIDEOS_1974_1985
+VIDEOS_1986_1997 = _catalog.VIDEOS_1986_1997
+VIDEOS_1998_2009 = _catalog.VIDEOS_1998_2009
 
 
 class CatalogTests(unittest.TestCase):
@@ -879,6 +882,21 @@ class CatalogTests(unittest.TestCase):
         nums = [v.number for v in VIDEOS_1962_1973]
         self.assertEqual(nums, list(range(1962, 1974)))
 
+
+    def test_numbers_are_1974_to_1985(self):
+        nums = [v.number for v in VIDEOS_1974_1985]
+        self.assertEqual(nums, list(range(1974, 1986)))
+
+
+    def test_numbers_are_1986_to_1997(self):
+        nums = [v.number for v in VIDEOS_1986_1997]
+        self.assertEqual(nums, list(range(1986, 1998)))
+
+
+    def test_numbers_are_1998_to_2009(self):
+        nums = [v.number for v in VIDEOS_1998_2009]
+        self.assertEqual(nums, list(range(1998, 2010)))
+
     def test_each_scene_file_defines_the_class(self):
         for video in (
             *VIDEOS_101_125,
@@ -1036,6 +1054,9 @@ class CatalogTests(unittest.TestCase):
             *VIDEOS_1938_1949,
             *VIDEOS_1950_1961,
             *VIDEOS_1962_1973,
+            *VIDEOS_1974_1985,
+            *VIDEOS_1986_1997,
+            *VIDEOS_1998_2009,
         ):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)

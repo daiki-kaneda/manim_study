@@ -2350,3 +2350,48 @@ VIDEOS_1962_1973: tuple[Video, ...] = (
     Video(1972, "経験一様スケールパッキング", "project/math/792_probability_154/1972_emp_unif_scale_pack/scene.py", "EmpUnifScalePack"),
     Video(1973, "ラベル三分木細分", "project/math/793_combinatorics_153/1973_labeled_ternary_refine/scene.py", "LabeledTernaryRefine"),
 )
+
+VIDEOS_1974_1985: tuple[Video, ...] = (
+    Video(1974, "相対ログ随伴ネフ対", "project/math/794_analysis_157/1974_rel_log_adj_nef/scene.py", "RelLogAdjNef"),
+    Video(1975, "ログ随伴ビッグ対", "project/math/794_analysis_157/1975_log_adj_big/scene.py", "LogAdjBig"),
+    Video(1976, "相対ログ随伴ビッグ対", "project/math/794_analysis_157/1976_rel_log_adj_big/scene.py", "RelLogAdjBig"),
+    Video(1977, "LionWBoundClip", "project/math/795_linear_157/1977_lionwboundclip/scene.py", "LionWBoundClip"),
+    Video(1978, "SophiaWBoundClip", "project/math/795_linear_157/1978_sophiawboundclip/scene.py", "SophiaWBoundClip"),
+    Video(1979, "ApolloSoftBoundClip", "project/math/795_linear_157/1979_apollosoftboundclip/scene.py", "ApolloSoftBoundClip"),
+    Video(1980, "垂心類似九点弦比", "project/math/796_geometry_157/1980_h_sym_nine_chord/scene.py", "HSymNineChord"),
+    Video(1981, "重心類似九点弦比", "project/math/796_geometry_157/1981_g_sym_nine_chord/scene.py", "GSymNineChord"),
+    Video(1982, "九点類似弦比", "project/math/796_geometry_157/1982_n_sym_nine_chord/scene.py", "NSymNineChord"),
+    Video(1983, "局所一様スケール被覆", "project/math/797_probability_155/1983_local_unif_scale_cov/scene.py", "LocalUnifScaleCov"),
+    Video(1984, "局所一様スケールパッキング", "project/math/797_probability_155/1984_local_unif_scale_pack/scene.py", "LocalUnifScalePack"),
+    Video(1985, "順序三分木細分", "project/math/798_combinatorics_154/1985_ordered_ternary_refine/scene.py", "OrderedTernaryRefine"),
+)
+
+VIDEOS_1986_1997: tuple[Video, ...] = (
+    Video(1986, "ログ随伴擬有効対", "project/math/799_analysis_158/1986_log_adj_psef/scene.py", "LogAdjPsef"),
+    Video(1987, "相対ログ随伴擬有効対", "project/math/799_analysis_158/1987_rel_log_adj_psef/scene.py", "RelLogAdjPsef"),
+    Video(1988, "ログ随伴移動対", "project/math/799_analysis_158/1988_log_adj_movable/scene.py", "LogAdjMovable"),
+    Video(1989, "MuonHardBoundClip", "project/math/800_linear_158/1989_muonhardboundclip/scene.py", "MuonHardBoundClip"),
+    Video(1990, "SamHardBoundClip", "project/math/800_linear_158/1990_samhardboundclip/scene.py", "SamHardBoundClip"),
+    Video(1991, "AdaFactorSoftBoundClip", "project/math/800_linear_158/1991_adafactorsoftboundclip/scene.py", "AdaFactorSoftBoundClip"),
+    Video(1992, "内心九点弧比", "project/math/801_geometry_158/1992_in_nine_arc/scene.py", "InNineArc"),
+    Video(1993, "傍心九点弧比", "project/math/801_geometry_158/1993_ex_nine_arc/scene.py", "ExNineArc"),
+    Video(1994, "外心九点弧比", "project/math/801_geometry_158/1994_o_nine_arc/scene.py", "ONineArc"),
+    Video(1995, "一様標本スケール被覆", "project/math/802_probability_156/1995_unif_sample_scale_cov/scene.py", "UnifSampleScaleCov"),
+    Video(1996, "一様標本スケールパッキング", "project/math/802_probability_156/1996_unif_sample_scale_pack/scene.py", "UnifSampleScalePack"),
+    Video(1997, "平面増加森細分", "project/math/803_combinatorics_155/1997_plane_inc_forest_refine/scene.py", "PlaneIncForestRefine"),
+)
+
+VIDEOS_1998_2009: tuple[Video, ...] = (
+    Video(1998, "相対ログ随伴移動対", "project/math/804_analysis_159/1998_rel_log_adj_mov/scene.py", "RelLogAdjMov"),
+    Video(1999, "ログ随伴正値対", "project/math/804_analysis_159/1999_log_adj_pos/scene.py", "LogAdjPos"),
+    Video(2000, "相対ログ随伴正値対", "project/math/804_analysis_159/2000_rel_log_adj_pos/scene.py", "RelLogAdjPos"),
+    Video(2001, "NAdamHardBoundClip", "project/math/805_linear_159/2001_nadamhardboundclip/scene.py", "NAdamHardBoundClip"),
+    Video(2002, "LARSHardBoundClip", "project/math/805_linear_159/2002_larshardboundclip/scene.py", "LARSHardBoundClip"),
+    Video(2003, "LAMBSoftBoundClip", "project/math/805_linear_159/2003_lambsoftboundclip/scene.py", "LAMBSoftBoundClip"),
+    Video(2004, "垂心九点弧比", "project/math/806_geometry_159/2004_h_nine_arc/scene.py", "HNineArc"),
+    Video(2005, "重心九点弧比", "project/math/806_geometry_159/2005_g_nine_arc/scene.py", "GNineArc"),
+    Video(2006, "九点円弧比", "project/math/806_geometry_159/2006_n_nine_arc/scene.py", "NNineArc"),
+    Video(2007, "半径データ複雑度", "project/math/807_probability_157/2007_radius_data_comp/scene.py", "RadiusDataComp"),
+    Video(2008, "スケール一様被覆再訪", "project/math/807_probability_157/2008_scale_unif_cov_rev/scene.py", "ScaleUnifCovRev"),
+    Video(2009, "ケイリー三分木細分", "project/math/808_combinatorics_156/2009_cayley_ternary_refine/scene.py", "CayleyTernaryRefine"),
+)

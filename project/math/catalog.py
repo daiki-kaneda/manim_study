@@ -445,3 +445,18 @@ VIDEOS_438_449: tuple[Video, ...] = (
     Video(448, "ポアソン点過程", "project/math/157_probability_27/448_poisson_point/scene.py", "PoissonPointProcess"),
     Video(449, "シュレーダー数", "project/math/158_combinatorics_26/449_schroeder/scene.py", "Schroeder"),
 )
+
+VIDEOS_450_461: tuple[Video, ...] = (
+    Video(450, "近似点スペクトル", "project/math/159_analysis_30/450_approx_point_spec/scene.py", "ApproxPointSpectrum"),
+    Video(451, "フリードリヒス拡張", "project/math/159_analysis_30/451_friedrichs/scene.py", "FriedrichsExtension"),
+    Video(452, "連続スペクトル", "project/math/159_analysis_30/452_continuous_spec/scene.py", "ContinuousSpectrum"),
+    Video(453, "RMSProp", "project/math/160_linear_30/453_rmsprop/scene.py", "RMSProp"),
+    Video(454, "ソフト閾値", "project/math/160_linear_30/454_soft_threshold/scene.py", "SoftThreshold"),
+    Video(455, "行列モーメント", "project/math/160_linear_30/455_matrix_moments/scene.py", "MatrixMoments"),
+    Video(456, "外接円半径", "project/math/161_geometry_30/456_circumradius/scene.py", "Circumradius"),
+    Video(457, "オイラーの不等式", "project/math/161_geometry_30/457_euler_ineq/scene.py", "EulerInequality"),
+    Video(458, "角の二等分線の長さ", "project/math/161_geometry_30/458_angle_bisector_len/scene.py", "AngleBisectorLength"),
+    Video(459, "カプランマイヤー", "project/math/162_probability_28/459_kaplan_meier/scene.py", "KaplanMeier"),
+    Video(460, "累積ハザード", "project/math/162_probability_28/460_cum_hazard/scene.py", "CumulativeHazard"),
+    Video(461, "カッシーニの恒等式", "project/math/163_combinatorics_27/461_cassini/scene.py", "CassiniIdentity"),
+)

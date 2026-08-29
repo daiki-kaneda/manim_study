@@ -1,0 +1,47 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
+from manim import *
+from manim_math import PacedScene
+
+class ContinuousSpectrum(PacedScene):
+    """#452 連続スペクトル：固有値でないスペクトル（約45秒）"""
+
+    def construct(self):
+        self.show_heading("連続スペクトル")
+        self.draw_band()
+        self.contrast()
+        self.show_formula()
+        self.read(1.4)
+
+    def draw_band(self):
+        self.O = LEFT * 0.2
+        ax = Line(self.O + LEFT * 3.0, self.O + RIGHT * 3.2, color=GREY, stroke_width=2)
+        band = Line(self.O + LEFT * 1.5, self.O + RIGHT * 2.2, color=ORANGE, stroke_width=12)
+        self.play(Create(ax), Create(band), run_time=1.3)
+        note = self.ja_text("帯状のスペクトル", font_size=24)
+        note.to_edge(RIGHT, buff=0.35).shift(UP * 1.65)
+        self.play(FadeIn(note), run_time=0.4)
+        self.read(0.3)
+        self.note = note
+        self.band = band
+
+    def contrast(self):
+        dots = VGroup(*[Dot(self.O + RIGHT * x + UP * 1.1, color=BLUE, radius=0.09) for x in [-2.4, 0.0, 2.6]])
+        cap = self.ja_text("点スペクトルと違う", font_size=24).move_to(self.note)
+        self.play(FadeIn(dots), Transform(self.note, cap), run_time=1.3)
+        self.read(0.25)
+        cap2 = self.ja_text("固有ベクトルなし", font_size=24).move_to(self.note)
+        self.play(Transform(self.note, cap2), run_time=0.8)
+        self.read(0.35)
+
+    def show_formula(self):
+        formula = MathTex(r"\sigma_c(A)=\sigma(A)\setminus\sigma_p(A)").scale(0.82)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
+        self.play(Indicate(formula, color=YELLOW), run_time=0.85)

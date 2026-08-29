@@ -295,3 +295,18 @@ VIDEOS_318_329: tuple[Video, ...] = (
     Video(328, "DKW 不等式", "project/math/107_probability_17/328_dvoretzky/scene.py", "DKWInequality"),
     Video(329, "バロット定理", "project/math/108_combinatorics_16/329_ballot/scene.py", "BallotTheorem"),
 )
+
+VIDEOS_330_341: tuple[Video, ...] = (
+    Video(330, "ハーン・バナッハの定理", "project/math/109_analysis_20/330_hahn_banach/scene.py", "HahnBanach"),
+    Video(331, "ベールの範疇定理", "project/math/109_analysis_20/331_baire/scene.py", "BaireCategory"),
+    Video(332, "アラオグルの定理", "project/math/109_analysis_20/332_alaoglu/scene.py", "Alaoglu"),
+    Video(333, "ヘッセンベルグ形", "project/math/110_linear_20/333_hessenberg/scene.py", "Hessenberg"),
+    Video(334, "逆反復法", "project/math/110_linear_20/334_inverse_iteration/scene.py", "InverseIteration"),
+    Video(335, "核ノルム", "project/math/110_linear_20/335_nuclear_norm/scene.py", "NuclearNorm"),
+    Video(336, "内心", "project/math/111_geometry_20/336_incenter/scene.py", "Incenter"),
+    Video(337, "傍心", "project/math/111_geometry_20/337_excenter/scene.py", "Excenter"),
+    Video(338, "タルボットの定理", "project/math/111_geometry_20/338_talbot/scene.py", "Talbot"),
+    Video(339, "チャップマン・コロモゴロフ", "project/math/112_probability_18/339_chapman/scene.py", "ChapmanKolmogorov"),
+    Video(340, "経験過程", "project/math/112_probability_18/340_empirical_process/scene.py", "EmpiricalProcess"),
+    Video(341, "リュカの定理", "project/math/113_combinatorics_17/341_lucas/scene.py", "LucasTheorem"),
+)

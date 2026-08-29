@@ -1675,3 +1675,48 @@ VIDEOS_1422_1433: tuple[Video, ...] = (
     Video(1432, "アルゴリズム安定性", "project/math/567_probability_109/1432_alg_stability/scene.py", "AlgorithmicStability"),
     Video(1433, "エルミート細分", "project/math/568_combinatorics_108/1433_hermite_refine/scene.py", "HermiteRefine"),
 )
+
+VIDEOS_1434_1445: tuple[Video, ...] = (
+    Video(1434, "豊富対", "project/math/569_analysis_112/1434_ample_pair/scene.py", "AmplePair"),
+    Video(1435, "ネフ対", "project/math/569_analysis_112/1435_nef_pair/scene.py", "NefPair"),
+    Video(1436, "ビッグ対", "project/math/569_analysis_112/1436_big_pair/scene.py", "BigPair"),
+    Video(1437, "ProdigySoftClip", "project/math/570_linear_112/1437_prodigysoftclip/scene.py", "ProdigySoftClip"),
+    Video(1438, "ScheduleFreeSoftClip", "project/math/570_linear_112/1438_schedulefreesoftclip/scene.py", "ScheduleFreeSoftClip"),
+    Video(1439, "MuonSoftHard", "project/math/570_linear_112/1439_muonsofthard/scene.py", "MuonSoftHard"),
+    Video(1440, "内心角二等分比", "project/math/571_geometry_112/1440_in_bisector_ratio/scene.py", "InBisectorRatio"),
+    Video(1441, "傍心角二等分比", "project/math/571_geometry_112/1441_ex_bisector_ratio/scene.py", "ExBisectorRatio"),
+    Video(1442, "外心角二等分比", "project/math/571_geometry_112/1442_o_bisector_ratio/scene.py", "OBisectorRatio"),
+    Video(1443, "VCサウアー再訪", "project/math/572_probability_110/1443_vc_sauer_revisit/scene.py", "VCSauerRevisit"),
+    Video(1444, "粉砕係数", "project/math/572_probability_110/1444_shattering_coef/scene.py", "ShatteringCoef"),
+    Video(1445, "タッチャード細分", "project/math/573_combinatorics_109/1445_touchard_refine/scene.py", "TouchardRefine"),
+)
+
+VIDEOS_1446_1457: tuple[Video, ...] = (
+    Video(1446, "擬有効対", "project/math/574_analysis_113/1446_psef_pair/scene.py", "PsefPair"),
+    Video(1447, "移動対", "project/math/574_analysis_113/1447_movable_pair/scene.py", "MovablePair"),
+    Video(1448, "正値対", "project/math/574_analysis_113/1448_positive_pair/scene.py", "PositivePair"),
+    Video(1449, "AdaBoundSoft", "project/math/575_linear_113/1449_adaboundsoft/scene.py", "AdaBoundSoft"),
+    Video(1450, "LionBoundSoft", "project/math/575_linear_113/1450_lionboundsoft/scene.py", "LionBoundSoft"),
+    Video(1451, "SophiaBoundSoft", "project/math/575_linear_113/1451_sophiaboundsoft/scene.py", "SophiaBoundSoft"),
+    Video(1452, "垂心角二等分比", "project/math/576_geometry_113/1452_h_bisector_ratio/scene.py", "HBisectorRatio"),
+    Video(1453, "重心角二等分比", "project/math/576_geometry_113/1453_g_bisector_ratio/scene.py", "GBisectorRatio"),
+    Video(1454, "九点角二等分比", "project/math/576_geometry_113/1454_n_bisector_ratio/scene.py", "NBisectorRatio"),
+    Video(1455, "成長多項式", "project/math/577_probability_111/1455_growth_poly/scene.py", "GrowthPolynomial"),
+    Video(1456, "ネット近似", "project/math/577_probability_111/1456_net_approx/scene.py", "NetApproximation"),
+    Video(1457, "フォア細分", "project/math/578_combinatorics_110/1457_fuss_refine/scene.py", "FussRefine"),
+)
+
+VIDEOS_1458_1469: tuple[Video, ...] = (
+    Video(1458, "体積対", "project/math/579_analysis_114/1458_volume_pair/scene.py", "VolumePair"),
+    Video(1459, "数値的次元対", "project/math/579_analysis_114/1459_num_dim_pair/scene.py", "NumDimPair"),
+    Video(1460, "飯高次元対", "project/math/579_analysis_114/1460_iitaka_pair/scene.py", "IitakaPair"),
+    Video(1461, "AdaBoundHard", "project/math/580_linear_114/1461_adaboundhard/scene.py", "AdaBoundHard"),
+    Video(1462, "LionBoundHard", "project/math/580_linear_114/1462_lionboundhard/scene.py", "LionBoundHard"),
+    Video(1463, "SophiaBoundHard", "project/math/580_linear_114/1463_sophiaboundhard/scene.py", "SophiaBoundHard"),
+    Video(1464, "内心高さ比", "project/math/581_geometry_114/1464_in_altitude_ratio/scene.py", "InAltitudeRatio"),
+    Video(1465, "傍心高さ比", "project/math/581_geometry_114/1465_ex_altitude_ratio/scene.py", "ExAltitudeRatio"),
+    Video(1466, "外心高さ比", "project/math/581_geometry_114/1466_o_altitude_ratio/scene.py", "OAltitudeRatio"),
+    Video(1467, "イプシロンネット", "project/math/582_probability_112/1467_epsilon_net/scene.py", "EpsilonNet"),
+    Video(1468, "チャイニング再訪", "project/math/582_probability_112/1468_chaining_revisit/scene.py", "ChainingRevisit"),
+    Video(1469, "アペル細分", "project/math/583_combinatorics_111/1469_appel_refine/scene.py", "AppelRefine"),
+)

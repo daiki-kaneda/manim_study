@@ -160,3 +160,18 @@ VIDEOS_210_221: tuple[Video, ...] = (
     Video(220, "エントロピー率", "project/math/62_probability_8/220_entropy_rate/scene.py", "EntropyRate"),
     Video(221, "プリューファーコード", "project/math/63_combinatorics_7/221_prufer/scene.py", "PruferCode"),
 )
+
+VIDEOS_222_233: tuple[Video, ...] = (
+    Video(222, "フーリエ級数", "project/math/64_analysis_11/222_fourier_series/scene.py", "FourierSeries"),
+    Video(223, "ラプラス変換", "project/math/64_analysis_11/223_laplace/scene.py", "LaplaceTransform"),
+    Video(224, "変分法", "project/math/64_analysis_11/224_calculus_variations/scene.py", "CalculusOfVariations"),
+    Video(225, "クロネッカー積", "project/math/65_linear_11/225_kronecker/scene.py", "KroneckerProduct"),
+    Video(226, "低ランク近似", "project/math/65_linear_11/226_low_rank/scene.py", "LowRankApprox"),
+    Video(227, "ペロン・フロベニウス", "project/math/65_linear_11/227_perron/scene.py", "PerronFrobenius"),
+    Video(228, "パップスの定理", "project/math/66_geometry_11/228_pappus/scene.py", "Pappus"),
+    Video(229, "球面過剰", "project/math/66_geometry_11/229_spherical_excess/scene.py", "SphericalExcess"),
+    Video(230, "ファン・シューテン", "project/math/66_geometry_11/230_van_schooten/scene.py", "VanSchooten"),
+    Video(231, "ワルドの等式", "project/math/67_probability_9/231_wald/scene.py", "WaldEquation"),
+    Video(232, "経験分布関数", "project/math/67_probability_9/232_empirical_cdf/scene.py", "EmpiricalCDF"),
+    Video(233, "バーンサイドの補題", "project/math/68_combinatorics_8/233_burnside/scene.py", "Burnside"),
+)

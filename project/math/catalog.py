@@ -865,3 +865,18 @@ VIDEOS_774_785: tuple[Video, ...] = (
     Video(784, "パーマネント過程", "project/math/297_probability_55/784_permanental/scene.py", "PermanentalProcess"),
     Video(785, "ケーキ数", "project/math/298_combinatorics_54/785_cake/scene.py", "CakeNumbers"),
 )
+
+VIDEOS_786_797: tuple[Video, ...] = (
+    Video(786, "相対GW", "project/math/299_analysis_58/786_relative_gw/scene.py", "RelativeGW"),
+    Video(787, "開GW", "project/math/299_analysis_58/787_open_gw/scene.py", "OpenGW"),
+    Video(788, "ログGW", "project/math/299_analysis_58/788_log_gw/scene.py", "LogGW"),
+    Video(789, "Schedule-Free", "project/math/300_linear_58/789_schedule_free/scene.py", "ScheduleFree"),
+    Video(790, "Adopt", "project/math/300_linear_58/790_adopt/scene.py", "Adopt"),
+    Video(791, "MARS", "project/math/300_linear_58/791_mars/scene.py", "MARS"),
+    Video(792, "タルボット点", "project/math/301_geometry_58/792_talbot/scene.py", "TalbotPoint"),
+    Video(793, "アポロニウス点", "project/math/301_geometry_58/793_apollonius/scene.py", "ApolloniusPoint"),
+    Video(794, "ベバン点", "project/math/301_geometry_58/794_bevan/scene.py", "BevanPoint"),
+    Video(795, "ネーマン・スコット", "project/math/302_probability_56/795_neyman_scott/scene.py", "NeymanScott"),
+    Video(796, "マターン過程", "project/math/302_probability_56/796_matern/scene.py", "MaternProcess"),
+    Video(797, "中央二項係数", "project/math/303_combinatorics_55/797_central_binom/scene.py", "CentralBinomial"),
+)

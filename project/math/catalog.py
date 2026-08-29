@@ -1045,3 +1045,48 @@ VIDEOS_918_929: tuple[Video, ...] = (
     Video(928, "ギラサノフ", "project/math/357_probability_67/928_girsanov/scene.py", "Girsanov"),
     Video(929, "メタフィボナッチ", "project/math/358_combinatorics_66/929_metafib/scene.py", "MetaFibonacci"),
 )
+
+VIDEOS_930_941: tuple[Video, ...] = (
+    Video(930, "フィノ写像", "project/math/359_analysis_70/930_fino/scene.py", "FanoMap"),
+    Video(931, "モジュライ積み", "project/math/359_analysis_70/931_moduli_stack/scene.py", "ModuliStack"),
+    Video(932, "障害理論", "project/math/359_analysis_70/932_obstruction/scene.py", "ObstructionTheory"),
+    Video(933, "QHM", "project/math/360_linear_70/933_qhm/scene.py", "QHM"),
+    Video(934, "LaProp", "project/math/360_linear_70/934_laprop/scene.py", "LaProp"),
+    Video(935, "AdaNorm", "project/math/360_linear_70/935_adanorm/scene.py", "AdaNorm"),
+    Video(936, "共円条件点", "project/math/361_geometry_70/936_concyclic_cond/scene.py", "ConcyclicConditionPoint"),
+    Video(937, "等角共役軸", "project/math/361_geometry_70/937_isogonal_axis/scene.py", "IsogonalAxis"),
+    Video(938, "シムソン族", "project/math/361_geometry_70/938_simson_family/scene.py", "SimsonFamily"),
+    Video(939, "ストラスノヴィッチ", "project/math/362_probability_68/939_stratonovich/scene.py", "Stratonovich"),
+    Video(940, "田中公式", "project/math/362_probability_68/940_tanaka/scene.py", "TanakaFormula"),
+    Video(941, "リュカ多項式", "project/math/363_combinatorics_67/941_lucas_poly/scene.py", "LucasPolynomials"),
+)
+
+VIDEOS_942_953: tuple[Video, ...] = (
+    Video(942, "完全障害", "project/math/364_analysis_71/942_perfect_obstruction/scene.py", "PerfectObstruction"),
+    Video(943, "仮想次元", "project/math/364_analysis_71/943_virtual_dim/scene.py", "VirtualDimension"),
+    Video(944, "ファノ多様体", "project/math/364_analysis_71/944_fano/scene.py", "FanoVariety"),
+    Video(945, "DemonAdam", "project/math/365_linear_71/945_demon/scene.py", "DemonAdam"),
+    Video(946, "AdaPlus", "project/math/365_linear_71/946_adaplus/scene.py", "AdaPlus"),
+    Video(947, "NadamW", "project/math/365_linear_71/947_nadamw/scene.py", "NadamW"),
+    Video(948, "内心反射", "project/math/366_geometry_71/948_incenter_reflect/scene.py", "IncenterReflection"),
+    Video(949, "五点共円", "project/math/366_geometry_71/949_five_concyclic/scene.py", "FiveConcyclic"),
+    Video(950, "外接円弧", "project/math/366_geometry_71/950_circumarc/scene.py", "CircumArc"),
+    Video(951, "確率積分", "project/math/367_probability_69/951_stochastic_integral/scene.py", "StochasticIntegral"),
+    Video(952, "占有時間", "project/math/367_probability_69/952_occupation_time/scene.py", "OccupationTime"),
+    Video(953, "ペル多項式", "project/math/368_combinatorics_68/953_pell_poly/scene.py", "PellPolynomials"),
+)
+
+VIDEOS_954_965: tuple[Video, ...] = (
+    Video(954, "有理曲線", "project/math/369_analysis_72/954_rational_curve/scene.py", "RationalCurve"),
+    Video(955, "森理論", "project/math/369_analysis_72/955_mori/scene.py", "MoriTheory"),
+    Video(956, "旗多様体", "project/math/369_analysis_72/956_flag/scene.py", "FlagVariety"),
+    Video(957, "AdaGO", "project/math/370_linear_72/957_adago/scene.py", "AdaGO"),
+    Video(958, "AdaBeliefW", "project/math/370_linear_72/958_adabeliefw/scene.py", "AdaBeliefW"),
+    Video(959, "EveW", "project/math/370_linear_72/959_evew/scene.py", "EveW"),
+    Video(960, "内心三角形辺", "project/math/371_geometry_72/960_intouch_side/scene.py", "IntouchSide"),
+    Video(961, "傍心円", "project/math/371_geometry_72/961_excircle/scene.py", "ExcircleCenterCircle"),
+    Video(962, "角の二等分線長", "project/math/371_geometry_72/962_bisector_length/scene.py", "BisectorLength"),
+    Video(963, "ブラウン局所時間", "project/math/372_probability_70/963_brownian_local/scene.py", "BrownianLocalTime"),
+    Video(964, "反射ブラウン", "project/math/372_probability_70/964_reflected_bm/scene.py", "ReflectedBM"),
+    Video(965, "カタラン多項式", "project/math/373_combinatorics_69/965_catalan_poly/scene.py", "CatalanPolynomials"),
+)

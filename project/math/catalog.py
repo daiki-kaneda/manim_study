@@ -700,3 +700,18 @@ VIDEOS_642_653: tuple[Video, ...] = (
     Video(652, "J関数", "project/math/242_probability_44/652_j_func/scene.py", "JFunction"),
     Video(653, "オイラーアリアン数", "project/math/243_combinatorics_43/653_eulerian/scene.py", "EulerianNumbers"),
 )
+
+VIDEOS_654_665: tuple[Video, ...] = (
+    Video(654, "エヴァンス・クリロフ", "project/math/244_analysis_47/654_evans_krylov/scene.py", "EvansKrylov"),
+    Video(655, "アイザック方程式", "project/math/244_analysis_47/655_isaacs/scene.py", "IsaacsEquation"),
+    Video(656, "平均場ゲーム", "project/math/244_analysis_47/656_mfg/scene.py", "MeanFieldGame"),
+    Video(657, "AdamW", "project/math/245_linear_47/657_adamw/scene.py", "AdamW"),
+    Video(658, "Lookahead", "project/math/245_linear_47/658_lookahead/scene.py", "Lookahead"),
+    Video(659, "SAM", "project/math/245_linear_47/659_sam/scene.py", "SAM"),
+    Video(660, "シュピーカー中心", "project/math/246_geometry_47/660_spieker/scene.py", "SpiekerCenter"),
+    Video(661, "ミッテンプンクト", "project/math/246_geometry_47/661_mittenpunkt/scene.py", "Mittenpunkt"),
+    Video(662, "類似中線点", "project/math/246_geometry_47/662_symmedian/scene.py", "SymmedianPoint"),
+    Video(663, "L関数", "project/math/247_probability_45/663_l_func/scene.py", "LFunction"),
+    Video(664, "マーク相関", "project/math/247_probability_45/664_mark_corr/scene.py", "MarkCorrelation"),
+    Video(665, "交替順列", "project/math/248_combinatorics_44/665_alternating/scene.py", "AlternatingPermutations"),
+)

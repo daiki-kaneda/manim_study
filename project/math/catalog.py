@@ -695,7 +695,7 @@ VIDEOS_642_653: tuple[Video, ...] = (
     Video(647, "AdaGrad", "project/math/240_linear_46/647_adagrad/scene.py", "AdaGrad"),
     Video(648, "シュタイナー楕円", "project/math/241_geometry_46/648_steiner_ell/scene.py", "SteinerEllipse"),
     Video(649, "マンダール楕円", "project/math/241_geometry_46/649_mandart/scene.py", "MandartInellipse"),
-    Video(650, "接点三角形", "project/math/241_geometry_46/650_intouch/scene.py", "IntouchTriangle"),
+    Video(650, "傍接点三角形", "project/math/241_geometry_46/650_extouch/scene.py", "ExtouchTriangle"),
     Video(651, "最近傍関数", "project/math/242_probability_44/651_nn_g/scene.py", "NearestNeighborG"),
     Video(652, "J関数", "project/math/242_probability_44/652_j_func/scene.py", "JFunction"),
     Video(653, "オイラーアリアン数", "project/math/243_combinatorics_43/653_eulerian/scene.py", "EulerianNumbers"),

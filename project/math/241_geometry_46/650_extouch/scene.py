@@ -10,11 +10,11 @@ from manim import *
 from manim_math import PacedScene
 
 
-class IntouchTriangle(PacedScene):
-    """#650 接点三角形：内接円の接点が作る三角形（約45秒）"""
+class ExtouchTriangle(PacedScene):
+    """#650 傍接点三角形：傍接円の接点が作る三角形（約45秒）"""
 
     def construct(self):
-        self.show_heading("接点三角形")
+        self.show_heading("傍接点三角形")
         self.draw()
         self.props()
         self.show_formula()
@@ -40,7 +40,7 @@ class IntouchTriangle(PacedScene):
         cap = self.ja_text("接触三角形", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap), run_time=0.9)
         self.read(0.25)
-        cap2 = self.ja_text("ジェルゴンヌ点へ", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("ナーゲル点へ", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap2), run_time=0.8)
         self.read(0.35)
 

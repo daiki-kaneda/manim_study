@@ -1030,3 +1030,18 @@ VIDEOS_906_917: tuple[Video, ...] = (
     Video(916, "ドレアゼ分解", "project/math/352_probability_66/916_doob_meyer/scene.py", "DoobMeyer"),
     Video(917, "ゼッケンドルフ", "project/math/353_combinatorics_65/917_zeckendorf/scene.py", "Zeckendorf"),
 )
+
+VIDEOS_918_929: tuple[Video, ...] = (
+    Video(918, "仮想構造層", "project/math/354_analysis_69/918_virtual_structure/scene.py", "VirtualStructureSheaf"),
+    Video(919, "グロタンディークRR", "project/math/354_analysis_69/919_grr/scene.py", "GrothendieckRR"),
+    Video(920, "安定写像空間", "project/math/354_analysis_69/920_stable_map_space/scene.py", "StableMapSpace"),
+    Video(921, "AdaX", "project/math/355_linear_69/921_adax/scene.py", "AdaX"),
+    Video(922, "PowerSign", "project/math/355_linear_69/922_powersign/scene.py", "PowerSign"),
+    Video(923, "AddSign", "project/math/355_linear_69/923_addsign/scene.py", "AddSign"),
+    Video(924, "三線合流", "project/math/356_geometry_69/924_concurrent/scene.py", "ThreeConcurrent"),
+    Video(925, "メネラウス比", "project/math/356_geometry_69/925_menelaus_ratio/scene.py", "MenelausRatio"),
+    Video(926, "パスカル線点", "project/math/356_geometry_69/926_pascal_point/scene.py", "PascalLinePoint"),
+    Video(927, "伊藤積分", "project/math/357_probability_67/927_ito/scene.py", "ItoIntegral"),
+    Video(928, "ギラサノフ", "project/math/357_probability_67/928_girsanov/scene.py", "Girsanov"),
+    Video(929, "メタフィボナッチ", "project/math/358_combinatorics_66/929_metafib/scene.py", "MetaFibonacci"),
+)

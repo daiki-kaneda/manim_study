@@ -36,6 +36,7 @@ VIDEOS_378_389 = _catalog.VIDEOS_378_389
 VIDEOS_390_401 = _catalog.VIDEOS_390_401
 VIDEOS_402_413 = _catalog.VIDEOS_402_413
 VIDEOS_414_425 = _catalog.VIDEOS_414_425
+VIDEOS_426_437 = _catalog.VIDEOS_426_437
 
 
 class CatalogTests(unittest.TestCase):

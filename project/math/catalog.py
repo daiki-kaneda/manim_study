@@ -415,3 +415,18 @@ VIDEOS_414_425: tuple[Video, ...] = (
     Video(424, "スコロホッド表現", "project/math/147_probability_25/424_skorokhod/scene.py", "Skorokhod"),
     Video(425, "デランノワ数", "project/math/148_combinatorics_24/425_delannoy/scene.py", "Delannoy"),
 )
+
+VIDEOS_426_437: tuple[Video, ...] = (
+    Video(426, "スペクトル射影", "project/math/149_analysis_28/426_spectral_proj/scene.py", "SpectralProjection"),
+    Video(427, "リゾルベント恒等式", "project/math/149_analysis_28/427_resolvent_id/scene.py", "ResolventIdentity"),
+    Video(428, "ノルム位相", "project/math/149_analysis_28/428_norm_topology/scene.py", "NormTopology"),
+    Video(429, "勾配降下", "project/math/150_linear_28/429_gradient_descent/scene.py", "GradientDescent"),
+    Video(430, "ニュートン法", "project/math/150_linear_28/430_newton_opt/scene.py", "NewtonOptimization"),
+    Video(431, "準ニュートン法", "project/math/150_linear_28/431_quasi_newton/scene.py", "QuasiNewton"),
+    Video(432, "オイラーの四角形", "project/math/151_geometry_28/432_euler_quad/scene.py", "EulerQuadrilateral"),
+    Video(433, "トレミーの不等式", "project/math/151_geometry_28/433_ptolemy_ineq/scene.py", "PtolemyInequality"),
+    Video(434, "正弦面積", "project/math/151_geometry_28/434_sine_area/scene.py", "SineArea"),
+    Video(435, "エルゴード分解", "project/math/152_probability_26/435_ergodic_decomp/scene.py", "ErgodicDecomposition"),
+    Video(436, "ガウス過程", "project/math/152_probability_26/436_gaussian_process/scene.py", "GaussianProcess"),
+    Video(437, "ラホール数", "project/math/153_combinatorics_25/437_lah/scene.py", "LahNumbers"),
+)

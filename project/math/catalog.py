@@ -910,3 +910,18 @@ VIDEOS_810_821: tuple[Video, ...] = (
     Video(820, "バートレット過程", "project/math/312_probability_58/820_bartlett/scene.py", "BartlettProcess"),
     Video(821, "ファイン数", "project/math/313_combinatorics_57/821_fine/scene.py", "FineNumbers"),
 )
+
+VIDEOS_822_833: tuple[Video, ...] = (
+    Video(822, "クンマー曲面", "project/math/314_analysis_61/822_kummer/scene.py", "KummerSurface"),
+    Video(823, "カラビ・ヤウ", "project/math/314_analysis_61/823_calabi_yau/scene.py", "CalabiYau"),
+    Video(824, "特異点解消", "project/math/314_analysis_61/824_resolution/scene.py", "ResolutionOfSingularities"),
+    Video(825, "NaturalGrad", "project/math/315_linear_61/825_natural_grad/scene.py", "NaturalGrad"),
+    Video(826, "SWATS", "project/math/315_linear_61/826_swats/scene.py", "SWATS"),
+    Video(827, "Gravity", "project/math/315_linear_61/827_gravity/scene.py", "Gravity"),
+    Video(828, "シュライフラ点", "project/math/316_geometry_61/828_schiffler/scene.py", "SchifflerPoint"),
+    Video(829, "グレブ点", "project/math/316_geometry_61/829_grebe/scene.py", "GrebePoint"),
+    Video(830, "ミッケル点", "project/math/316_geometry_61/830_miquel/scene.py", "MiquelPoint"),
+    Video(831, "フォック空間過程", "project/math/317_probability_59/831_fock/scene.py", "FockSpaceProcess"),
+    Video(832, "ガウス過程回帰", "project/math/317_probability_59/832_gpr/scene.py", "GaussianProcessRegression"),
+    Video(833, "大きなシュレーダー", "project/math/318_combinatorics_58/833_large_schroeder/scene.py", "LargeSchroeder"),
+)

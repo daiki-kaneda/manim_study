@@ -460,3 +460,18 @@ VIDEOS_450_461: tuple[Video, ...] = (
     Video(460, "累積ハザード", "project/math/162_probability_28/460_cum_hazard/scene.py", "CumulativeHazard"),
     Video(461, "カッシーニの恒等式", "project/math/163_combinatorics_27/461_cassini/scene.py", "CassiniIdentity"),
 )
+
+VIDEOS_462_473: tuple[Video, ...] = (
+    Video(462, "本質ノルム", "project/math/164_analysis_31/462_essential_norm/scene.py", "EssentialNorm"),
+    Video(463, "Weyl列", "project/math/164_analysis_31/463_weyl_sequence/scene.py", "WeylSequence"),
+    Video(464, "スペクトル族", "project/math/164_analysis_31/464_spectral_family/scene.py", "SpectralFamily"),
+    Video(465, "L-BFGS", "project/math/165_linear_31/465_lbfgs/scene.py", "LBFGS"),
+    Video(466, "座標降下", "project/math/165_linear_31/466_coord_descent/scene.py", "CoordinateDescent"),
+    Video(467, "特異値縮小", "project/math/165_linear_31/467_svt/scene.py", "SingularValueThresholding"),
+    Video(468, "中点三角形", "project/math/166_geometry_31/468_medial/scene.py", "MedialTriangle"),
+    Video(469, "傍接円半径", "project/math/166_geometry_31/469_exradius/scene.py", "Exradius"),
+    Video(470, "投影公式", "project/math/166_geometry_31/470_projection_formula/scene.py", "ProjectionFormula"),
+    Video(471, "ワイブル分布", "project/math/167_probability_29/471_weibull/scene.py", "Weibull"),
+    Video(472, "対数ランク検定", "project/math/167_probability_29/472_logrank/scene.py", "LogRank"),
+    Video(473, "カタラン三角", "project/math/168_combinatorics_28/473_catalan_triangle/scene.py", "CatalanTriangle"),
+)

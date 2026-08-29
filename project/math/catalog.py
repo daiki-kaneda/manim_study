@@ -1855,3 +1855,48 @@ VIDEOS_1566_1577: tuple[Video, ...] = (
     Video(1576, "スケール敏感度", "project/math/627_probability_121/1576_scale_sensitivity/scene.py", "ScaleSensitivity"),
     Video(1577, "大きなフィボナッチ細分", "project/math/628_combinatorics_120/1577_large_fib_refine/scene.py", "LargeFibRefine"),
 )
+
+VIDEOS_1578_1589: tuple[Video, ...] = (
+    Video(1578, "ログ移動対", "project/math/629_analysis_124/1578_log_movable_pair/scene.py", "LogMovablePair"),
+    Video(1579, "ログ正値対", "project/math/629_analysis_124/1579_log_positive_pair/scene.py", "LogPositivePair"),
+    Video(1580, "ログ体積対", "project/math/629_analysis_124/1580_log_volume_pair/scene.py", "LogVolumePair"),
+    Video(1581, "RMSSoftClip", "project/math/630_linear_124/1581_rmssoftclip/scene.py", "RMSSoftClip"),
+    Video(1582, "RMSHardClip", "project/math/630_linear_124/1582_rmshardclip/scene.py", "RMSHardClip"),
+    Video(1583, "LionSoftHard", "project/math/630_linear_124/1583_lionsofthard/scene.py", "LionSoftHard"),
+    Video(1584, "垂心シュタイナー比", "project/math/631_geometry_124/1584_h_steiner_ratio/scene.py", "HSteinerRatio"),
+    Video(1585, "重心シュタイナー比", "project/math/631_geometry_124/1585_g_steiner_ratio/scene.py", "GSteinerRatio"),
+    Video(1586, "九点シュタイナー比", "project/math/631_geometry_124/1586_n_steiner_ratio/scene.py", "NSteinerRatio"),
+    Video(1587, "ベンネット再訪", "project/math/632_probability_122/1587_bennett_revisit/scene.py", "BennettRevisit"),
+    Video(1588, "ブールガンディ再訪", "project/math/632_probability_122/1588_bousquet_revisit/scene.py", "BousquetRevisit"),
+    Video(1589, "ツリー細分", "project/math/633_combinatorics_121/1589_tree_refine/scene.py", "TreeRefine"),
+)
+
+VIDEOS_1590_1601: tuple[Video, ...] = (
+    Video(1590, "相対ログネフ対", "project/math/634_analysis_125/1590_rel_log_nef_pair/scene.py", "RelLogNefPair"),
+    Video(1591, "相対ログビッグ対", "project/math/634_analysis_125/1591_rel_log_big_pair/scene.py", "RelLogBigPair"),
+    Video(1592, "相対ログ擬有効対", "project/math/634_analysis_125/1592_rel_log_psef_pair/scene.py", "RelLogPsefPair"),
+    Video(1593, "AdaFactorBound", "project/math/635_linear_125/1593_adafactorbound/scene.py", "AdaFactorBound"),
+    Video(1594, "NAdamBound", "project/math/635_linear_125/1594_nadambound/scene.py", "NAdamBound"),
+    Video(1595, "LookaheadHardClip", "project/math/635_linear_125/1595_lookaheadhardclip/scene.py", "LookaheadHardClip"),
+    Video(1596, "内心類似ジェルゴンヌ比", "project/math/636_geometry_125/1596_in_sym_gergonne_ratio/scene.py", "InSymGergonneRatio"),
+    Video(1597, "傍心類似ナーゲル比", "project/math/636_geometry_125/1597_ex_sym_nagel_ratio/scene.py", "ExSymNagelRatio"),
+    Video(1598, "外心類似ミッテン比", "project/math/636_geometry_125/1598_o_sym_mitten_ratio/scene.py", "OSymMittenRatio"),
+    Video(1599, "経験パッキング", "project/math/637_probability_123/1599_empirical_packing/scene.py", "EmpiricalPacking"),
+    Video(1600, "局所エントロピー", "project/math/637_probability_123/1600_local_entropy/scene.py", "LocalEntropy"),
+    Video(1601, "森細分", "project/math/638_combinatorics_122/1601_forest_refine/scene.py", "ForestRefine"),
+)
+
+VIDEOS_1602_1613: tuple[Video, ...] = (
+    Video(1602, "ログ数値次元対", "project/math/639_analysis_126/1602_log_num_dim_pair/scene.py", "LogNumDimPair"),
+    Video(1603, "ログ飯高次元対", "project/math/639_analysis_126/1603_log_iitaka_pair/scene.py", "LogIitakaPair"),
+    Video(1604, "相対ログ移動対", "project/math/639_analysis_126/1604_rel_log_movable_pair/scene.py", "RelLogMovablePair"),
+    Video(1605, "MuonBoundHard", "project/math/640_linear_126/1605_muonboundhard/scene.py", "MuonBoundHard"),
+    Video(1606, "ProdigyBoundSoft", "project/math/640_linear_126/1606_prodigyboundsoft/scene.py", "ProdigyBoundSoft"),
+    Video(1607, "ScheduleFreeSoftHard", "project/math/640_linear_126/1607_schedulefreesofthard/scene.py", "ScheduleFreeSoftHard"),
+    Video(1608, "内心オイラー比", "project/math/641_geometry_126/1608_in_euler_ratio/scene.py", "InEulerRatio"),
+    Video(1609, "傍心オイラー比", "project/math/641_geometry_126/1609_ex_euler_ratio/scene.py", "ExEulerRatio"),
+    Video(1610, "外心オイラー比", "project/math/641_geometry_126/1610_o_euler_ratio/scene.py", "OEulerRatio"),
+    Video(1611, "一様被覆数", "project/math/642_probability_124/1611_uniform_covering/scene.py", "UniformCovering"),
+    Video(1612, "ピネリス再訪", "project/math/642_probability_124/1612_pinelis_revisit/scene.py", "PinelisRevisit"),
+    Video(1613, "平面木細分", "project/math/643_combinatorics_123/1613_plane_tree_refine/scene.py", "PlaneTreeRefine"),
+)

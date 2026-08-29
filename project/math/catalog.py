@@ -505,3 +505,18 @@ VIDEOS_486_497: tuple[Video, ...] = (
     Video(496, "フィルトレーション", "project/math/177_probability_31/496_filtration/scene.py", "Filtration"),
     Video(497, "包含排除原理", "project/math/178_combinatorics_30/497_inclusion_exclusion/scene.py", "InclusionExclusion"),
 )
+
+VIDEOS_498_509: tuple[Video, ...] = (
+    Video(498, "フォンノイマン代数", "project/math/179_analysis_34/498_von_neumann/scene.py", "VonNeumannAlgebra"),
+    Video(499, "ソボレフ埋蔵", "project/math/179_analysis_34/499_sobolev_embed/scene.py", "SobolevEmbedding"),
+    Video(500, "カールソンの定理", "project/math/179_analysis_34/500_carleson/scene.py", "CarlesonTheorem"),
+    Video(501, "CMA-ES", "project/math/180_linear_34/501_cmaes/scene.py", "CMAES"),
+    Video(502, "部分空間反復", "project/math/180_linear_34/502_subspace_iter/scene.py", "SubspaceIteration"),
+    Video(503, "ブロック座標", "project/math/180_linear_34/503_block_coord/scene.py", "BlockCoordinate"),
+    Video(504, "パスカル線", "project/math/181_geometry_34/504_pascal_line/scene.py", "PascalLine"),
+    Video(505, "チェバの拡張", "project/math/181_geometry_34/505_ceva_ext/scene.py", "CevaExtension"),
+    Video(506, "剛性", "project/math/181_geometry_34/506_rigidity/scene.py", "Rigidity"),
+    Video(507, "ネルソン・アーレン", "project/math/182_probability_32/507_nelson_aalen/scene.py", "NelsonAalen"),
+    Video(508, "生存関数", "project/math/182_probability_32/508_survival/scene.py", "SurvivalFunction"),
+    Video(509, "リュカ数", "project/math/183_combinatorics_31/509_lucas/scene.py", "LucasNumbers"),
+)

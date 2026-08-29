@@ -23,11 +23,12 @@ class Viviani(PacedScene):
         self.read(1.4)
 
     def draw_triangle(self):
-        side = 5.4
+        side = 4.6
         h = side * np.sqrt(3) / 2
-        self.A = UP * (h * 2 / 3) + UP * 0.15
-        self.B = self.A + DOWN * h + LEFT * (side / 2)
-        self.C = self.A + DOWN * h + RIGHT * (side / 2)
+        c = DOWN * 0.28
+        self.A = c + UP * (h * 2 / 3)
+        self.B = c + DOWN * (h / 3) + LEFT * (side / 2)
+        self.C = c + DOWN * (h / 3) + RIGHT * (side / 2)
         self.tri = Polygon(self.A, self.B, self.C, color=WHITE, stroke_width=3)
         self.play(Create(self.tri), run_time=1.5)
         self.alt = Line(self.A, (self.B + self.C) / 2, color=GREY, stroke_width=2)

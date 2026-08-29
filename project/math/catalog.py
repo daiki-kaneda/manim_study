@@ -730,3 +730,18 @@ VIDEOS_666_677: tuple[Video, ...] = (
     Video(676, "階乗モーメント測度", "project/math/252_probability_46/676_factorial_moment/scene.py", "FactorialMoment"),
     Video(677, "エントリンガー数", "project/math/253_combinatorics_45/677_entringer/scene.py", "EntringerNumbers"),
 )
+
+VIDEOS_678_689: tuple[Video, ...] = (
+    Video(678, "調和写像", "project/math/254_analysis_49/678_harmonic_map/scene.py", "HarmonicMap"),
+    Video(679, "ヤン・ミルズ", "project/math/254_analysis_49/679_yang_mills/scene.py", "YangMills"),
+    Video(680, "ゲージ理論", "project/math/254_analysis_49/680_gauge/scene.py", "GaugeTheory"),
+    Video(681, "勾配クリッピング", "project/math/255_linear_49/681_grad_clip/scene.py", "GradientClipping"),
+    Video(682, "スケジュールフリー", "project/math/255_linear_49/682_schedule_free/scene.py", "ScheduleFree"),
+    Video(683, "SWA", "project/math/255_linear_49/683_swa/scene.py", "SWA"),
+    Video(684, "ブロカール点", "project/math/256_geometry_49/684_brocard/scene.py", "BrocardPoint"),
+    Video(685, "ブロカール角", "project/math/256_geometry_49/685_brocard_angle/scene.py", "BrocardAngle"),
+    Video(686, "ブロカール円", "project/math/256_geometry_49/686_brocard_circle/scene.py", "BrocardCircle"),
+    Video(687, "生成汎関数", "project/math/257_probability_47/687_pgf/scene.py", "GeneratingFunctional"),
+    Video(688, "ラプラス汎関数", "project/math/257_probability_47/688_laplace_func/scene.py", "LaplaceFunctional"),
+    Video(689, "セイデル数", "project/math/258_combinatorics_46/689_seidel/scene.py", "SeidelNumbers"),
+)

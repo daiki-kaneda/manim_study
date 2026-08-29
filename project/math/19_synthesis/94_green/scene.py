@@ -48,7 +48,7 @@ class GreenTheorem(JapaneseScene):
         curl = MathTex(r"\partial_x Q-\partial_y P", font_size=28, color=ORANGE)
         curl.move_to(self.center)
         self.play(FadeIn(curl), run_time=0.45)
-        cap = self.ja_text("境界＝内部の回転", font_size=24).move_to(self.note)
+        cap = self.ja_text("境界＝回転", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap), run_time=0.4)
         self.hold(0.7)
 

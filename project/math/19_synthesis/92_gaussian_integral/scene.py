@@ -46,8 +46,9 @@ class GaussianIntegral(JapaneseScene):
     def fill_area(self):
         area = self.axes.get_area(self.curve, x_range=[-2.6, 2.6], color=YELLOW, opacity=0.4)
         self.play(FadeIn(area), run_time=0.8)
-        cap = self.ja_text("面積は √π", font_size=24).move_to(self.lab)
-        self.play(Transform(self.lab, cap), run_time=0.4)
+        cap = self.ja_text("面積", font_size=24).move_to(self.lab)
+        self.play(FadeOut(self.lab), FadeIn(cap), run_time=0.4)
+        self.lab = cap
         self.hold(0.7)
 
     def show_formula(self):

@@ -16,7 +16,6 @@ class Scaling(JapaneseScene):
     def construct(self):
         self.show_heading("スケール")
         self.grow_square()
-        self.show_cubes()
         self.show_formula()
         self.hold(1.2)
 
@@ -32,13 +31,7 @@ class Scaling(JapaneseScene):
         note = self.ja_text("面積は 4 倍", font_size=24)
         note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
         self.play(FadeIn(note), run_time=0.35)
-        self.hold(0.55)
-        self.note = note
-
-    def show_cubes(self):
-        cap = self.ja_text("体積は 8 倍", font_size=24).move_to(self.note)
-        self.play(Transform(self.note, cap), run_time=0.4)
-        self.hold(0.55)
+        self.hold(0.7)
 
     def show_formula(self):
         formula = MathTex(r"A\propto L^{2},\quad V\propto L^{3}").scale(1.1)

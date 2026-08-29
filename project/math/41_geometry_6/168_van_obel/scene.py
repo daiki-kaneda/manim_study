@@ -23,10 +23,10 @@ class VanAubel(PacedScene):
         self.read(1.4)
 
     def draw_quad(self):
-        self.A = LEFT * 1.6 + UP * 1.35
-        self.B = RIGHT * 1.35 + UP * 1.05
-        self.C = RIGHT * 1.7 + DOWN * 1.25
-        self.D = LEFT * 1.85 + DOWN * 1.05
+        self.A = LEFT * 1.05 + UP * 0.75
+        self.B = RIGHT * 0.95 + UP * 0.55
+        self.C = RIGHT * 1.1 + DOWN * 0.95
+        self.D = LEFT * 1.15 + DOWN * 0.8
         self.quad = Polygon(self.A, self.B, self.C, self.D, color=WHITE, stroke_width=3)
         self.play(Create(self.quad), run_time=1.4)
         self.read(0.3)
@@ -67,7 +67,7 @@ class VanAubel(PacedScene):
         self.play(FadeIn(dots), run_time=0.7)
         self.play(Create(e1), Create(e2), Transform(self.note, cap), run_time=1.5)
         self.read(0.35)
-        cap2 = self.ja_text("等しく直角", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("等長で直角", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap2), run_time=0.7)
         self.read(0.4)
 

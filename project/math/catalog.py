@@ -1990,3 +1990,48 @@ VIDEOS_1674_1685: tuple[Video, ...] = (
     Video(1684, "標本依存複雑度", "project/math/672_probability_130/1684_sample_complexity/scene.py", "SampleComplexity"),
     Video(1685, "順序木細分", "project/math/673_combinatorics_129/1685_ordered_tree_refine/scene.py", "OrderedTreeRefine"),
 )
+
+VIDEOS_1686_1697: tuple[Video, ...] = (
+    Video(1686, "相対ログ簡約対", "project/math/674_analysis_133/1686_rel_log_slc/scene.py", "RelLogSlc"),
+    Video(1687, "ログ平坦対", "project/math/674_analysis_133/1687_log_flat_pair/scene.py", "LogFlatPair"),
+    Video(1688, "相対ログ平坦対", "project/math/674_analysis_133/1688_rel_log_flat/scene.py", "RelLogFlat"),
+    Video(1689, "LAMBBoundSoft", "project/math/675_linear_133/1689_lambboundsoft/scene.py", "LAMBBoundSoft"),
+    Video(1690, "ApolloBound", "project/math/675_linear_133/1690_apollobound/scene.py", "ApolloBound"),
+    Video(1691, "ApolloSoftHard", "project/math/675_linear_133/1691_apollosofthard/scene.py", "ApolloSoftHard"),
+    Video(1692, "垂心フォイエル接点比", "project/math/676_geometry_133/1692_h_feuerbach_touch/scene.py", "HFeuerbachTouch"),
+    Video(1693, "重心フォイエル接点比", "project/math/676_geometry_133/1693_g_feuerbach_touch/scene.py", "GFeuerbachTouch"),
+    Video(1694, "九点フォイエル接点比", "project/math/676_geometry_133/1694_n_feuerbach_touch/scene.py", "NFeuerbachTouch"),
+    Video(1695, "経験スケール敏感度", "project/math/677_probability_131/1695_emp_scale_sens/scene.py", "EmpScaleSens"),
+    Video(1696, "局所スケールエントロピー", "project/math/677_probability_131/1696_local_scale_entropy/scene.py", "LocalScaleEntropy"),
+    Video(1697, "シュレーダー路細分", "project/math/678_combinatorics_130/1697_schroeder_path_refine/scene.py", "SchroederPathRefine"),
+)
+
+VIDEOS_1698_1709: tuple[Video, ...] = (
+    Video(1698, "ログ正規対", "project/math/679_analysis_134/1698_log_normal_pair/scene.py", "LogNormalPair"),
+    Video(1699, "相対ログ正規対", "project/math/679_analysis_134/1699_rel_log_normal/scene.py", "RelLogNormal"),
+    Video(1700, "ログクッション対", "project/math/679_analysis_134/1700_log_cushion_pair/scene.py", "LogCushionPair"),
+    Video(1701, "LionWHardClip", "project/math/680_linear_134/1701_lionwhardclip/scene.py", "LionWHardClip"),
+    Video(1702, "SophiaWHardClip", "project/math/680_linear_134/1702_sophiawhardclip/scene.py", "SophiaWHardClip"),
+    Video(1703, "AdaFactorBoundSoft", "project/math/680_linear_134/1703_adafactorboundsoft/scene.py", "AdaFactorBoundSoft"),
+    Video(1704, "内心類似フォイエル比", "project/math/681_geometry_134/1704_in_sym_feuerbach/scene.py", "InSymFeuerbach"),
+    Video(1705, "傍心類似フォイエル比", "project/math/681_geometry_134/1705_ex_sym_feuerbach/scene.py", "ExSymFeuerbach"),
+    Video(1706, "外心類似フォイエル比", "project/math/681_geometry_134/1706_o_sym_feuerbach/scene.py", "OSymFeuerbach"),
+    Video(1707, "一様半径敏感度", "project/math/682_probability_132/1707_uniform_radius_sens/scene.py", "UniformRadiusSens"),
+    Video(1708, "データ依存チャイニング", "project/math/682_probability_132/1708_data_chaining/scene.py", "DataChaining"),
+    Video(1709, "モツキン三角形細分", "project/math/683_combinatorics_131/1709_motzkin_tri_refine/scene.py", "MotzkinTriRefine"),
+)
+
+VIDEOS_1710_1721: tuple[Video, ...] = (
+    Video(1710, "相対ログクッション対", "project/math/684_analysis_135/1710_rel_log_cushion/scene.py", "RelLogCushion"),
+    Video(1711, "ログ平滑対", "project/math/684_analysis_135/1711_log_smooth_pair/scene.py", "LogSmoothPair"),
+    Video(1712, "相対ログ平滑対", "project/math/684_analysis_135/1712_rel_log_smooth/scene.py", "RelLogSmooth"),
+    Video(1713, "NAdamHardBound", "project/math/685_linear_135/1713_nadamhardbound/scene.py", "NAdamHardBound"),
+    Video(1714, "RMSSoftBound", "project/math/685_linear_135/1714_rmssoftbound/scene.py", "RMSSoftBound"),
+    Video(1715, "LAMBSoftHard", "project/math/685_linear_135/1715_lambsofthard/scene.py", "LAMBSoftHard"),
+    Video(1716, "垂心類似フォイエル比", "project/math/686_geometry_135/1716_h_sym_feuerbach/scene.py", "HSymFeuerbach"),
+    Video(1717, "重心類似フォイエル比", "project/math/686_geometry_135/1717_g_sym_feuerbach/scene.py", "GSymFeuerbach"),
+    Video(1718, "九点類似フォイエル比", "project/math/686_geometry_135/1718_n_sym_feuerbach/scene.py", "NSymFeuerbach"),
+    Video(1719, "標本被覆数", "project/math/687_probability_133/1719_sample_covering/scene.py", "SampleCovering"),
+    Video(1720, "標本パッキング数", "project/math/687_probability_133/1720_sample_packing/scene.py", "SamplePacking"),
+    Video(1721, "大きなナラヤナ細分", "project/math/688_combinatorics_132/1721_large_narayana_refine/scene.py", "LargeNarayanaRefine"),
+)

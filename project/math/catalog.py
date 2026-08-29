@@ -325,3 +325,18 @@ VIDEOS_342_353: tuple[Video, ...] = (
     Video(352, "パーコレーション", "project/math/117_probability_19/352_percolation/scene.py", "Percolation"),
     Video(353, "メビウス反転", "project/math/118_combinatorics_18/353_mobius/scene.py", "MobiusInversion"),
 )
+
+VIDEOS_354_365: tuple[Video, ...] = (
+    Video(354, "ヒルベルト空間", "project/math/119_analysis_22/354_hilbert/scene.py", "HilbertSpace"),
+    Video(355, "リースの表現定理", "project/math/119_analysis_22/355_riesz_rep/scene.py", "RieszRepresentation"),
+    Video(356, "ラックス・ミルグラム", "project/math/119_analysis_22/356_lax_milgram/scene.py", "LaxMilgram"),
+    Video(357, "極分解", "project/math/120_linear_22/357_polar_decomp/scene.py", "PolarDecomposition"),
+    Video(358, "CS 分解", "project/math/120_linear_22/358_cs_decomp/scene.py", "CSDecomposition"),
+    Video(359, "数値半径", "project/math/120_linear_22/359_numerical_radius/scene.py", "NumericalRadius"),
+    Video(360, "傍心三角形", "project/math/121_geometry_22/360_excentral/scene.py", "ExcentralTriangle"),
+    Video(361, "接線四角形", "project/math/121_geometry_22/361_tangential_quad/scene.py", "TangentialQuad"),
+    Video(362, "両心四角形", "project/math/121_geometry_22/362_bicentric/scene.py", "BicentricQuad"),
+    Video(363, "大偏差原理", "project/math/122_probability_20/363_large_dev/scene.py", "LargeDeviations"),
+    Video(364, "サノフの定理", "project/math/122_probability_20/364_sanov/scene.py", "SanovTheorem"),
+    Video(365, "ゼッケンドルフの定理", "project/math/123_combinatorics_19/365_zeckendorf/scene.py", "Zeckendorf"),
+)

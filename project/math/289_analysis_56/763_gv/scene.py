@@ -22,7 +22,7 @@ class GopakumarVafa(PacedScene):
 
     def draw(self):
         box = RoundedRectangle(width=3.8, height=1.5, corner_radius=0.12, color=TEAL, stroke_width=3).shift(LEFT * 0.3 + UP * 0.2)
-        self.play(Create(box), FadeIn(MathTex(r"n_g^eta", font_size=34).move_to(box)), run_time=1.3)
+        self.play(Create(box), FadeIn(MathTex("n_g^{" + chr(92) + "beta}", font_size=34).move_to(box)), run_time=1.3)
         note = self.ja_text("BPS 不変量", font_size=24)
         note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
         self.play(FadeIn(note), run_time=0.4)

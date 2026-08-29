@@ -1225,3 +1225,48 @@ VIDEOS_1062_1073: tuple[Video, ...] = (
     Video(1072, "ワルド等式", "project/math/417_probability_79/1072_wald/scene.py", "WaldIdentity"),
     Video(1073, "ナラヤナ三角形", "project/math/418_combinatorics_78/1073_narayana_triangle/scene.py", "NarayanaTriangle"),
 )
+
+VIDEOS_1074_1085: tuple[Video, ...] = (
+    Video(1074, "川又・フィーベック", "project/math/419_analysis_82/1074_kawamata_viehweg/scene.py", "KawamataViehweg"),
+    Video(1075, "Nadel消滅", "project/math/419_analysis_82/1075_nadel/scene.py", "NadelVanishing"),
+    Video(1076, "端末特異点", "project/math/419_analysis_82/1076_terminal/scene.py", "TerminalSingularities"),
+    Video(1077, "AdaSmoothClip", "project/math/420_linear_82/1077_adasmoothclip/scene.py", "AdaSmoothClip"),
+    Video(1078, "LionSoft", "project/math/420_linear_82/1078_lionsoft/scene.py", "LionSoft"),
+    Video(1079, "SophiaSoft", "project/math/420_linear_82/1079_sophiasoft/scene.py", "SophiaSoft"),
+    Video(1080, "オイラー距離比", "project/math/421_geometry_82/1080_euler_dist_ratio/scene.py", "EulerDistRatio"),
+    Video(1081, "内心傍心比", "project/math/421_geometry_82/1081_in_ex_ratio/scene.py", "InExRatio"),
+    Video(1082, "外接内接比", "project/math/421_geometry_82/1082_ circum_in_ratio/scene.py", "CircumInRatio"),
+    Video(1083, "マクディアミド", "project/math/422_probability_80/1083_mcdiarmid/scene.py", "McDiarmid"),
+    Video(1084, "ブールの不等式", "project/math/422_probability_80/1084_boole/scene.py", "BooleInequality"),
+    Video(1085, "整数分割多項式", "project/math/423_combinatorics_79/1085_partition_poly/scene.py", "PartitionPolynomials"),
+)
+
+VIDEOS_1086_1097: tuple[Video, ...] = (
+    Video(1086, "川又対数端末", "project/math/424_analysis_83/1086_klt/scene.py", "KLT"),
+    Video(1087, "正準特異点", "project/math/424_analysis_83/1087_canonical_sing/scene.py", "CanonicalSingularities"),
+    Video(1088, "消滅定理", "project/math/424_analysis_83/1088_vanishing/scene.py", "VanishingTheorem"),
+    Video(1089, "MuonHard", "project/math/425_linear_83/1089_muonhard/scene.py", "MuonHard"),
+    Video(1090, "SOAPHard", "project/math/425_linear_83/1090_soaphard/scene.py", "SOAPHard"),
+    Video(1091, "ShampooSoft", "project/math/425_linear_83/1091_shampoosoft/scene.py", "ShampooSoft"),
+    Video(1092, "傍心外心距離", "project/math/426_geometry_83/1092_ex_o_dist/scene.py", "ExODistance"),
+    Video(1093, "九点円垂心", "project/math/426_geometry_83/1093_nine_orthocenter/scene.py", "NineOrthocenter"),
+    Video(1094, "内心外心比", "project/math/426_geometry_83/1094_io_ratio/scene.py", "IORatio"),
+    Video(1095, "ユニオンバウンド", "project/math/427_probability_81/1095_union_bound/scene.py", "UnionBound"),
+    Video(1096, "マクディアミド差", "project/math/427_probability_81/1096_mcdiarmid_diff/scene.py", "McDiarmidDiff"),
+    Video(1097, "カタラン三角形細分", "project/math/428_combinatorics_80/1097_catalan_triangle_ref/scene.py", "CatalanTriangleRefine"),
+)
+
+VIDEOS_1098_1109: tuple[Video, ...] = (
+    Video(1098, "食い違い係数", "project/math/429_analysis_84/1098_discrepancy/scene.py", "Discrepancy"),
+    Video(1099, "標準環", "project/math/429_analysis_84/1099_canonical_ring/scene.py", "CanonicalRing"),
+    Video(1100, "極小モデル", "project/math/429_analysis_84/1100_minimal_model/scene.py", "MinimalModel"),
+    Video(1101, "AdaNormClip", "project/math/430_linear_84/1101_adanormclip/scene.py", "AdaNormClip"),
+    Video(1102, "QHMSoft", "project/math/430_linear_84/1102_qhmsoft/scene.py", "QHMSoft"),
+    Video(1103, "LaPropClip", "project/math/430_linear_84/1103_lapropclip/scene.py", "LaPropClip"),
+    Video(1104, "垂心内心距離", "project/math/431_geometry_84/1104_hi_distance/scene.py", "HIDistance"),
+    Video(1105, "重心外心距離", "project/math/431_geometry_84/1105_go_distance/scene.py", "GODistance"),
+    Video(1106, "九点円外接比", "project/math/431_geometry_84/1106_nine_circum_ratio/scene.py", "NineCircumRatio"),
+    Video(1107, "ブール上界", "project/math/432_probability_82/1107_boole_bound/scene.py", "BooleBound"),
+    Video(1108, "有界差不等式", "project/math/432_probability_82/1108_bounded_diff/scene.py", "BoundedDifferences"),
+    Video(1109, "モツキン三角形", "project/math/433_combinatorics_81/1109_motzkin_triangle/scene.py", "MotzkinTriangle"),
+)

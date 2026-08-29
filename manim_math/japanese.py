@@ -168,4 +168,4 @@ class JapaneseScene(Scene):
 class PacedScene(JapaneseScene):
     """30–60 second shorts: animations are stretched, idle waits are not."""
 
-    motion_scale = 2.0
+    motion_scale = 2.5

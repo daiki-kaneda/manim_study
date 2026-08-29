@@ -96,7 +96,7 @@ class NinePoint(PacedScene):
             DashedLine(self.B, _foot(self.B, self.C, self.A), color=GREY, stroke_width=2),
             DashedLine(self.C, _foot(self.C, self.A, self.B), color=GREY, stroke_width=2),
         )
-        cap2 = self.ja_text("垂線の足も", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("九点", font_size=24).move_to(self.note)
         self.play(LaggedStart(*[Create(ln) for ln in alts], lag_ratio=0.18), run_time=1.6)
         self.play(FadeIn(feet), Transform(self.note, cap2), run_time=1.1)
         self.read(0.5)

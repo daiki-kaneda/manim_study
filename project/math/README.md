@@ -53,7 +53,7 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 
 日本語フォントは `MANIM_JAPANESE_FONT` で上書きできる。未設定なら Hannari Mincho を優先し、なければ Noto / 文泉驛などにフォールバックする。
 
-尺の目安は 30秒〜1分。#126 以降は `PacedScene` でアニメーションを約2倍にし、静止の待ちは `read(秒)` で短くする。古いシーンの `JapaneseScene.beat` / `hold` はそのまま。
+尺の目安は 30秒〜1分。#126 以降は `PacedScene` でアニメーションを約2.5倍にし、静止の待ちは `read(秒)` で短くする。古いシーンの `JapaneseScene.beat` / `hold` はそのまま。
 
 ## 番号
 

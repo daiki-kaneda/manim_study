@@ -54,14 +54,14 @@ class OrthogonalMatrix(PacedScene):
         self.shape = self._poly(self._rot(0))
         self.arr = self._arrows(self._rot(0))
         self.play(FadeIn(self.shape), GrowArrow(self.arr[0]), GrowArrow(self.arr[1]), run_time=1.4)
-        note = self.ja_text("長さ 1", font_size=24)
-        note.to_edge(RIGHT, buff=0.45).shift(UP * 1.65)
+        note = self.ja_text("同じ長さ", font_size=24)
+        note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
         self.play(FadeIn(note), run_time=0.4)
         self.read(0.4)
         self.note = note
 
     def turn(self):
-        for deg, label in ((40, "回しても"), (90, "長さはそのまま")):
+        for deg, label in ((40, "回しても"), (90, "保たれる")):
             nxt = self._poly(self._rot(deg))
             narr = self._arrows(self._rot(deg))
             cap = self.ja_text(label, font_size=24).move_to(self.note)

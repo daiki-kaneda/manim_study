@@ -49,7 +49,7 @@ class Substitution(PacedScene):
         for x in (0.7, 1.15, 1.5, 1.8, 2.05):
             dots.add(Dot(self.axes.c2p(x, np.sin(x * x)), radius=0.06, color=YELLOW))
         self.play(LaggedStart(*[FadeIn(d, scale=0.4) for d in dots], lag_ratio=0.18), run_time=1.8)
-        cap = self.ja_text("内側は x²", font_size=24).move_to(self.note)
+        cap = self.ja_text("内側は二乗", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap), run_time=0.8)
         self.read(0.4)
         inner = MathTex(r"u=x^{2}", font_size=36, color=YELLOW)

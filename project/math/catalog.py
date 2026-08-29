@@ -280,3 +280,18 @@ VIDEOS_306_317: tuple[Video, ...] = (
     Video(316, "ブートストラップ", "project/math/102_probability_16/316_bootstrap/scene.py", "Bootstrap"),
     Video(317, "星と棒", "project/math/103_combinatorics_15/317_stars_and_bars/scene.py", "StarsAndBars"),
 )
+
+VIDEOS_318_329: tuple[Video, ...] = (
+    Video(318, "アスコリ・アルツェラ", "project/math/104_analysis_19/318_ascoli/scene.py", "AscoliArzela"),
+    Video(319, "ディニの定理", "project/math/104_analysis_19/319_dini/scene.py", "DiniTheorem"),
+    Video(320, "アーベル総和法", "project/math/104_analysis_19/320_abel_sum/scene.py", "AbelSummation"),
+    Video(321, "リアプノフ方程式", "project/math/105_linear_19/321_lyapunov/scene.py", "LyapunovEquation"),
+    Video(322, "シルベスター方程式", "project/math/105_linear_19/322_sylvester/scene.py", "SylvesterEquation"),
+    Video(323, "ケイリー変換", "project/math/105_linear_19/323_cayley_transform/scene.py", "CayleyTransform"),
+    Video(324, "三線極線", "project/math/106_geometry_19/324_trilinear_polar/scene.py", "TrilinearPolar"),
+    Video(325, "等力点", "project/math/106_geometry_19/325_isodynamic/scene.py", "Isodynamic"),
+    Video(326, "垂足軸", "project/math/106_geometry_19/326_orthic_axis/scene.py", "OrthicAxis"),
+    Video(327, "ベネットの不等式", "project/math/107_probability_17/327_bennett/scene.py", "BennettInequality"),
+    Video(328, "DKW 不等式", "project/math/107_probability_17/328_dvoretzky/scene.py", "DKWInequality"),
+    Video(329, "バロット定理", "project/math/108_combinatorics_16/329_ballot/scene.py", "BallotTheorem"),
+)

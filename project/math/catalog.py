@@ -790,3 +790,18 @@ VIDEOS_714_725: tuple[Video, ...] = (
     Video(724, "縮小パーム", "project/math/272_probability_50/724_reduced_palm/scene.py", "ReducedPalm"),
     Video(725, "ウィソフ配列", "project/math/273_combinatorics_49/725_wythoff/scene.py", "WythoffArray"),
 )
+
+VIDEOS_726_737: tuple[Video, ...] = (
+    Video(726, "ホモロジカルミラー", "project/math/274_analysis_53/726_homological_mirror/scene.py", "HomologicalMirror"),
+    Video(727, "SYZ予想", "project/math/274_analysis_53/727_syz/scene.py", "SYZConjecture"),
+    Video(728, "量子コホモロジー", "project/math/274_analysis_53/728_quantum_cohomology/scene.py", "QuantumCohomology"),
+    Video(729, "Prodigy", "project/math/275_linear_53/729_prodigy/scene.py", "Prodigy"),
+    Video(730, "NovoGrad", "project/math/275_linear_53/730_novograd/scene.py", "NovoGrad"),
+    Video(731, "Ranger", "project/math/275_linear_53/731_ranger/scene.py", "Ranger"),
+    Video(732, "ジョンソン円", "project/math/276_geometry_53/732_johnson/scene.py", "JohnsonCircle"),
+    Video(733, "第2ルモワーヌ円", "project/math/276_geometry_53/733_second_lemoine/scene.py", "SecondLemoineCircle"),
+    Video(734, "三重比円", "project/math/276_geometry_53/734_triplicate/scene.py", "TriplicateRatioCircle"),
+    Video(735, "パパンゲルー強度", "project/math/277_probability_51/735_papangelou/scene.py", "PapangelouIntensity"),
+    Video(736, "相関ヒストグラム", "project/math/277_probability_51/736_correlation_hist/scene.py", "CorrelationHistogram"),
+    Video(737, "ホフスタッター数列", "project/math/278_combinatorics_50/737_hofstadter/scene.py", "HofstadterSequence"),
+)

@@ -655,3 +655,18 @@ VIDEOS_606_617: tuple[Video, ...] = (
     Video(616, "キャンベル公式", "project/math/227_probability_41/616_campbell/scene.py", "CampbellFormula"),
     Video(617, "順序ベル数", "project/math/228_combinatorics_40/617_ordered_bell/scene.py", "OrderedBell"),
 )
+
+VIDEOS_618_629: tuple[Video, ...] = (
+    Video(618, "可安定化", "project/math/229_analysis_44/618_stabilizability/scene.py", "Stabilizability"),
+    Video(619, "可検出性", "project/math/229_analysis_44/619_detectability/scene.py", "Detectability"),
+    Video(620, "LQR", "project/math/229_analysis_44/620_lqr/scene.py", "LQR"),
+    Video(621, "ドッグレッグ", "project/math/230_linear_44/621_dogleg/scene.py", "Dogleg"),
+    Video(622, "ガウス・ニュートン", "project/math/230_linear_44/622_gauss_newton/scene.py", "GaussNewton"),
+    Video(623, "ウルフ条件", "project/math/230_linear_44/623_wolfe/scene.py", "WolfeConditions"),
+    Video(624, "楕円の反射", "project/math/231_geometry_44/624_ellipse_refl/scene.py", "EllipseReflection"),
+    Video(625, "双曲線の反射", "project/math/231_geometry_44/625_hyperbola_refl/scene.py", "HyperbolaReflection"),
+    Video(626, "補助円", "project/math/231_geometry_44/626_aux_circle/scene.py", "AuxiliaryCircle"),
+    Video(627, "リプリーのK", "project/math/232_probability_42/627_ripley/scene.py", "RipleyK"),
+    Video(628, "ペア相関", "project/math/232_probability_42/628_pair_corr/scene.py", "PairCorrelation"),
+    Video(629, "電話番号", "project/math/233_combinatorics_41/629_telephone/scene.py", "TelephoneNumbers"),
+)

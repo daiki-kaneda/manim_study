@@ -36,6 +36,8 @@ class GeometryTests(unittest.TestCase):
         x, y, z = polar(2.0, 3.141592653589793 / 2)
         self.assertAlmostEqual(x, 0.0, places=6)
         self.assertAlmostEqual(y, 2.0, places=6)
+
+    def test_odd_layer_rejects_invalid_k(self):
         with self.assertRaises(ValueError):
             odd_layer_cells(0)
 

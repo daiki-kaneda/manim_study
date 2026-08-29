@@ -144,6 +144,8 @@ class JapaneseScene(Scene):
 
     def show_heading(self, text: str, font_size: int = 42):
         """Fade in a Japanese title, then park it at the top edge."""
+        from manim import FadeIn, UP
+
         title = self.ja_text(text, font_size=font_size)
         self.play(FadeIn(title), run_time=0.8)
         self.hold(0.6)

@@ -1765,3 +1765,48 @@ VIDEOS_1494_1505: tuple[Video, ...] = (
     Video(1504, "一様エントロピー", "project/math/597_probability_115/1504_uniform_entropy/scene.py", "UniformEntropy"),
     Video(1505, "フィボナッチ細分", "project/math/598_combinatorics_114/1505_fibonacci_refine/scene.py", "FibonacciRefine"),
 )
+
+VIDEOS_1506_1517: tuple[Video, ...] = (
+    Video(1506, "相対純端末対", "project/math/599_analysis_118/1506_rel_plt_pair/scene.py", "RelPltPair"),
+    Video(1507, "相対純標準対", "project/math/599_analysis_118/1507_rel_klt_pair/scene.py", "RelKltPair"),
+    Video(1508, "相対カノニカル対", "project/math/599_analysis_118/1508_rel_canonical_pair/scene.py", "RelCanonicalPair"),
+    Video(1509, "ScheduleFreeBound", "project/math/600_linear_118/1509_schedulefreebound/scene.py", "ScheduleFreeBound"),
+    Video(1510, "ProdigyBound", "project/math/600_linear_118/1510_prodigybound/scene.py", "ProdigyBound"),
+    Video(1511, "ProdigyHardClip", "project/math/600_linear_118/1511_prodigyhardclip/scene.py", "ProdigyHardClip"),
+    Video(1512, "垂心傍接円比", "project/math/601_geometry_118/1512_h_excircle_ratio/scene.py", "HExcircleRatio"),
+    Video(1513, "重心傍接円比", "project/math/601_geometry_118/1513_g_excircle_ratio/scene.py", "GExcircleRatio"),
+    Video(1514, "九点傍接円比", "project/math/601_geometry_118/1514_n_excircle_ratio/scene.py", "NExcircleRatio"),
+    Video(1515, "劣ガウス再訪", "project/math/602_probability_116/1515_subgaussian_revisit/scene.py", "SubgaussianRevisit"),
+    Video(1516, "ヘフディング再訪", "project/math/602_probability_116/1516_hoeffding_revisit/scene.py", "HoeffdingRevisit"),
+    Video(1517, "リュカ細分", "project/math/603_combinatorics_115/1517_lucas_refine/scene.py", "LucasRefine"),
+)
+
+VIDEOS_1518_1529: tuple[Video, ...] = (
+    Video(1518, "対数端末対", "project/math/604_analysis_119/1518_log_terminal_pair/scene.py", "LogTerminalPair"),
+    Video(1519, "対数標準対", "project/math/604_analysis_119/1519_log_canonical_pair/scene.py", "LogCanonicalPair"),
+    Video(1520, "対数カノニカル対", "project/math/604_analysis_119/1520_log_can_pair/scene.py", "LogCanPair"),
+    Video(1521, "MuonHardClip", "project/math/605_linear_119/1521_muonhardclip/scene.py", "MuonHardClip"),
+    Video(1522, "SamHardClip", "project/math/605_linear_119/1522_samhardclip/scene.py", "SamHardClip"),
+    Video(1523, "AdamWHardClip", "project/math/605_linear_119/1523_adamwhardclip/scene.py", "AdamWHardClip"),
+    Video(1524, "内心ジェルゴンヌ比", "project/math/606_geometry_119/1524_in_gergonne_ratio/scene.py", "InGergonneRatio"),
+    Video(1525, "傍心ナーゲル比", "project/math/606_geometry_119/1525_ex_nagel_ratio/scene.py", "ExNagelRatio"),
+    Video(1526, "外心ミッテン比", "project/math/606_geometry_119/1526_o_mitten_ratio/scene.py", "OMittenRatio"),
+    Video(1527, "アズラ再訪", "project/math/607_probability_117/1527_azuma_revisit/scene.py", "AzumaRevisit"),
+    Video(1528, "タルラール再訪", "project/math/607_probability_117/1528_talagrand_revisit/scene.py", "TalagrandRevisit"),
+    Video(1529, "ペル細分", "project/math/608_combinatorics_116/1529_pell_refine/scene.py", "PellRefine"),
+)
+
+VIDEOS_1530_1541: tuple[Video, ...] = (
+    Video(1530, "相対フリップ対", "project/math/609_analysis_120/1530_rel_flip_pair/scene.py", "RelFlipPair"),
+    Video(1531, "相対フロップ対", "project/math/609_analysis_120/1531_rel_flop_pair/scene.py", "RelFlopPair"),
+    Video(1532, "相対収縮対", "project/math/609_analysis_120/1532_rel_contraction_pair/scene.py", "RelContractionPair"),
+    Video(1533, "AdamWSoftClip", "project/math/610_linear_120/1533_adamwsoftclip/scene.py", "AdamWSoftClip"),
+    Video(1534, "LionWHard", "project/math/610_linear_120/1534_lionwhard/scene.py", "LionWHard"),
+    Video(1535, "AdaFactorHard", "project/math/610_linear_120/1535_adafactorhard/scene.py", "AdaFactorHard"),
+    Video(1536, "内心スピーカー比", "project/math/611_geometry_120/1536_in_spieker_ratio/scene.py", "InSpiekerRatio"),
+    Video(1537, "傍心スピーカー比", "project/math/611_geometry_120/1537_ex_spieker_ratio/scene.py", "ExSpiekerRatio"),
+    Video(1538, "外心スピーカー比", "project/math/611_geometry_120/1538_o_spieker_ratio/scene.py", "OSpiekerRatio"),
+    Video(1539, "パッキング数", "project/math/612_probability_118/1539_packing_number/scene.py", "PackingNumber"),
+    Video(1540, "メトリックエントロピー", "project/math/612_probability_118/1540_metric_entropy/scene.py", "MetricEntropy"),
+    Video(1541, "ゼッケンドルフ細分", "project/math/613_combinatorics_117/1541_zeckendorf_refine/scene.py", "ZeckendorfRefine"),
+)

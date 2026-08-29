@@ -370,3 +370,18 @@ VIDEOS_378_389: tuple[Video, ...] = (
     Video(388, "再生過程", "project/math/132_probability_22/388_renewal/scene.py", "RenewalProcess"),
     Video(389, "スターリング第二種", "project/math/133_combinatorics_21/389_stirling2/scene.py", "StirlingSecond"),
 )
+
+VIDEOS_390_401: tuple[Video, ...] = (
+    Video(390, "本質スペクトル", "project/math/134_analysis_25/390_essential_spec/scene.py", "EssentialSpectrum"),
+    Video(391, "ゲルファント表現", "project/math/134_analysis_25/391_gelfand/scene.py", "Gelfand"),
+    Video(392, "弱作用素位相", "project/math/134_analysis_25/392_wot/scene.py", "WeakOperatorTopology"),
+    Video(393, "アーノルディ法", "project/math/135_linear_25/393_arnoldi/scene.py", "Arnoldi"),
+    Video(394, "ランチョス法", "project/math/135_linear_25/394_lanczos/scene.py", "Lanczos"),
+    Video(395, "擬逆行列", "project/math/135_linear_25/395_pseudoinverse/scene.py", "Pseudoinverse"),
+    Video(396, "日本の定理", "project/math/136_geometry_25/396_japanese_thm/scene.py", "JapaneseTheorem"),
+    Video(397, "クロス比", "project/math/136_geometry_25/397_cross_ratio/scene.py", "CrossRatio"),
+    Video(398, "トムセンの図形", "project/math/136_geometry_25/398_thomsen/scene.py", "Thomsen"),
+    Video(399, "結合法", "project/math/137_probability_23/399_coupling/scene.py", "Coupling"),
+    Video(400, "ブラウン運動", "project/math/137_probability_23/400_brownian/scene.py", "BrownianMotion"),
+    Video(401, "モツキン数", "project/math/138_combinatorics_22/401_motzkin/scene.py", "Motzkin"),
+)

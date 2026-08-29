@@ -205,3 +205,18 @@ VIDEOS_246_257: tuple[Video, ...] = (
     Video(256, "M/M/1 待ち行列", "project/math/77_probability_11/256_mm1/scene.py", "MM1Queue"),
     Video(257, "スターリング第一種", "project/math/78_combinatorics_10/257_stirling_first/scene.py", "StirlingFirstKind"),
 )
+
+VIDEOS_258_269: tuple[Video, ...] = (
+    Video(258, "ヘルダーの不等式", "project/math/79_analysis_14/258_holder/scene.py", "HolderInequality"),
+    Video(259, "ヤングの不等式", "project/math/79_analysis_14/259_young/scene.py", "YoungInequality"),
+    Video(260, "弱い収束", "project/math/79_analysis_14/260_weak_convergence/scene.py", "WeakConvergence"),
+    Video(261, "フロベニウスノルム", "project/math/80_linear_14/261_frobenius/scene.py", "FrobeniusNorm"),
+    Video(262, "スペクトル半径", "project/math/80_linear_14/262_spectral_radius/scene.py", "SpectralRadius"),
+    Video(263, "アダマールの不等式", "project/math/80_linear_14/263_hadamard/scene.py", "HadamardInequality"),
+    Video(264, "余弦定理", "project/math/81_geometry_14/264_law_of_cosines/scene.py", "LawOfCosines"),
+    Video(265, "円に内接する四角形", "project/math/81_geometry_14/265_cyclic_quad/scene.py", "CyclicQuad"),
+    Video(266, "螺旋相似", "project/math/81_geometry_14/266_spiral_sim/scene.py", "SpiralSimilarity"),
+    Video(267, "分散の加法性", "project/math/82_probability_12/267_variance_add/scene.py", "VarianceAdditivity"),
+    Video(268, "尤度関数", "project/math/82_probability_12/268_likelihood/scene.py", "Likelihood"),
+    Video(269, "パスカルの恒等式", "project/math/83_combinatorics_11/269_pascal_identity/scene.py", "PascalIdentity"),
+)

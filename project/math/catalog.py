@@ -625,3 +625,18 @@ VIDEOS_582_593: tuple[Video, ...] = (
     Video(592, "ストリング過程", "project/math/217_probability_39/592_string/scene.py", "StringProcess"),
     Video(593, "モザー数", "project/math/218_combinatorics_38/593_moser_number/scene.py", "MoserNumber"),
 )
+
+VIDEOS_594_605: tuple[Video, ...] = (
+    Video(594, "フーリエ積分作用素", "project/math/219_analysis_42/594_fio/scene.py", "FourierIntegralOp"),
+    Video(595, "波動前線", "project/math/219_analysis_42/595_wavefront/scene.py", "WavefrontSet"),
+    Video(596, "ミクロローカル", "project/math/219_analysis_42/596_microlocal/scene.py", "Microlocal"),
+    Video(597, "拘束付きCG", "project/math/220_linear_42/597_constrained_cg/scene.py", "ConstrainedCG"),
+    Video(598, "射影法", "project/math/220_linear_42/598_projection_method/scene.py", "ProjectionMethod"),
+    Video(599, "ブロックILU", "project/math/220_linear_42/599_block_ilu/scene.py", "BlockILU"),
+    Video(600, "離心率", "project/math/221_geometry_42/600_eccentricity/scene.py", "Eccentricity"),
+    Video(601, "楕円のパラメータ", "project/math/221_geometry_42/601_ellipse_param/scene.py", "EllipseParam"),
+    Video(602, "双曲線の漸近線", "project/math/221_geometry_42/602_hyperbola_asymp/scene.py", "HyperbolaAsymptotes"),
+    Video(603, "ショットノイズ", "project/math/222_probability_40/603_shot_noise/scene.py", "ShotNoise"),
+    Video(604, "マーク強度", "project/math/222_probability_40/604_mark_intensity/scene.py", "MarkIntensity"),
+    Video(605, "セット分割", "project/math/223_combinatorics_39/605_set_partitions/scene.py", "SetPartitions"),
+)

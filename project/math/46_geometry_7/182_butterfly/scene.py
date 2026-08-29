@@ -95,10 +95,11 @@ class Butterfly(PacedScene):
         )
         self.play(Create(extras), run_time=1.0)
         self.play(FadeIn(Dot(X, color=YELLOW, radius=0.08)), FadeIn(Dot(Y, color=TEAL, radius=0.08)), run_time=0.7)
-        brace1 = BraceBetweenPoints(self.M, X, direction=UP, color=YELLOW)
-        brace2 = BraceBetweenPoints(self.M, Y, direction=DOWN, color=TEAL)
+        # short markers along the chord instead of large braces
+        mx = Line(self.M, X, color=YELLOW, stroke_width=8)
+        my = Line(self.M, Y, color=TEAL, stroke_width=8)
         cap2 = self.ja_text("MX=MY", font_size=24).move_to(self.note)
-        self.play(GrowFromCenter(brace1), GrowFromCenter(brace2), Transform(self.note, cap2), run_time=1.3)
+        self.play(Create(mx), Create(my), Transform(self.note, cap2), run_time=1.3)
         self.read(0.45)
 
     def show_formula(self):

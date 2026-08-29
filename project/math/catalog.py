@@ -880,3 +880,18 @@ VIDEOS_786_797: tuple[Video, ...] = (
     Video(796, "マターン過程", "project/math/302_probability_56/796_matern/scene.py", "MaternProcess"),
     Video(797, "中央二項係数", "project/math/303_combinatorics_55/797_central_binom/scene.py", "CentralBinomial"),
 )
+
+VIDEOS_798_809: tuple[Video, ...] = (
+    Video(798, "フロベニウス多様体", "project/math/304_analysis_59/798_frobenius/scene.py", "FrobeniusManifold"),
+    Video(799, "ミラー写像", "project/math/304_analysis_59/799_mirror_map/scene.py", "MirrorMap"),
+    Video(800, "ヤコビ環", "project/math/304_analysis_59/800_jacobi_ring/scene.py", "JacobiRing"),
+    Video(801, "NAdam", "project/math/305_linear_59/801_nadam/scene.py", "NAdam"),
+    Video(802, "Adamax", "project/math/305_linear_59/802_adamax/scene.py", "Adamax"),
+    Video(803, "Lamb", "project/math/305_linear_59/803_lamb/scene.py", "Lamb"),
+    Video(804, "シュタイナー点", "project/math/306_geometry_59/804_steiner/scene.py", "SteinerPoint"),
+    Video(805, "アイゼンシュタイン三点", "project/math/306_geometry_59/805_eisenstein/scene.py", "EisensteinTriple"),
+    Video(806, "第一ナポレオン", "project/math/306_geometry_59/806_napoleon1/scene.py", "FirstNapoleon"),
+    Video(807, "トーマス過程", "project/math/307_probability_57/807_thomas/scene.py", "ThomasProcess"),
+    Video(808, "ホークス過程", "project/math/307_probability_57/808_hawkes/scene.py", "HawkesProcess"),
+    Video(809, "デラノワ数", "project/math/308_combinatorics_56/809_delannoy/scene.py", "DelannoyNumbers"),
+)

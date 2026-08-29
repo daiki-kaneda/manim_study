@@ -175,3 +175,18 @@ VIDEOS_222_233: tuple[Video, ...] = (
     Video(232, "経験分布関数", "project/math/67_probability_9/232_empirical_cdf/scene.py", "EmpiricalCDF"),
     Video(233, "バーンサイドの補題", "project/math/68_combinatorics_8/233_burnside/scene.py", "Burnside"),
 )
+
+VIDEOS_234_245: tuple[Video, ...] = (
+    Video(234, "最大値原理", "project/math/69_analysis_12/234_maximum_principle/scene.py", "MaximumPrinciple"),
+    Video(235, "ルジャンドル変換", "project/math/69_analysis_12/235_legendre/scene.py", "LegendreTransform"),
+    Video(236, "グリーン関数", "project/math/69_analysis_12/236_green_function/scene.py", "GreensFunction"),
+    Video(237, "ゲルシュゴリン", "project/math/70_linear_12/237_gershgorin/scene.py", "Gershgorin"),
+    Video(238, "クリロフ部分空間", "project/math/70_linear_12/238_krylov/scene.py", "Krylov"),
+    Video(239, "冪乗法", "project/math/70_linear_12/239_power_iteration/scene.py", "PowerIteration"),
+    Video(240, "垂足三角形", "project/math/71_geometry_12/240_orthic/scene.py", "OrthicTriangle"),
+    Video(241, "接線の長さ", "project/math/71_geometry_12/241_tangent_lengths/scene.py", "TangentLengths"),
+    Video(242, "根軸", "project/math/71_geometry_12/242_radical_axis/scene.py", "RadicalAxis"),
+    Video(243, "クーポンコレクター", "project/math/72_probability_10/243_coupon/scene.py", "CouponCollector"),
+    Video(244, "停止時刻", "project/math/72_probability_10/244_stopping_time/scene.py", "StoppingTime"),
+    Video(245, "共役分割", "project/math/73_combinatorics_9/245_conjugate_partition/scene.py", "ConjugatePartition"),
+)

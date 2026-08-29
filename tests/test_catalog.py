@@ -186,12 +186,12 @@ VIDEOS_2178_2189 = _catalog.VIDEOS_2178_2189
 VIDEOS_2190_2201 = _catalog.VIDEOS_2190_2201
 VIDEOS_2202_2213 = _catalog.VIDEOS_2202_2213
 VIDEOS_2214_2225 = _catalog.VIDEOS_2214_2225
-VIDEOS_2262_2273 = _catalog.VIDEOS_2262_2273
-VIDEOS_2274_2285 = _catalog.VIDEOS_2274_2285
-VIDEOS_2286_2297 = _catalog.VIDEOS_2286_2297
 VIDEOS_2226_2237 = _catalog.VIDEOS_2226_2237
 VIDEOS_2238_2249 = _catalog.VIDEOS_2238_2249
 VIDEOS_2250_2261 = _catalog.VIDEOS_2250_2261
+VIDEOS_2262_2273 = _catalog.VIDEOS_2262_2273
+VIDEOS_2274_2285 = _catalog.VIDEOS_2274_2285
+VIDEOS_2286_2297 = _catalog.VIDEOS_2286_2297
 
 
 class CatalogTests(unittest.TestCase):
@@ -1040,7 +1040,6 @@ class CatalogTests(unittest.TestCase):
     def test_numbers_are_2286_to_2297(self):
         nums = [v.number for v in VIDEOS_2286_2297]
         self.assertEqual(nums, list(range(2286, 2298)))
-
     def test_each_scene_file_defines_the_class(self):
         for video in (
             *VIDEOS_101_125,
@@ -1225,7 +1224,7 @@ class CatalogTests(unittest.TestCase):
             *VIDEOS_2262_2273,
             *VIDEOS_2274_2285,
             *VIDEOS_2286_2297,
-        ):
+            *VIDEOS_2286_2297,        ):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)
             text = path.read_text(encoding="utf-8")

@@ -550,3 +550,18 @@ VIDEOS_522_533: tuple[Video, ...] = (
     Video(532, "点過程強度", "project/math/192_probability_34/532_pp_intensity/scene.py", "PointProcessIntensity"),
     Video(533, "トリボナッチ", "project/math/193_combinatorics_33/533_tribonacci/scene.py", "Tribonacci"),
 )
+
+VIDEOS_534_545: tuple[Video, ...] = (
+    Video(534, "強収束", "project/math/194_analysis_37/534_strong_conv/scene.py", "StrongConvergence"),
+    Video(535, "カルデロン・ジグムント", "project/math/194_analysis_37/535_calderon/scene.py", "CalderonZygmund"),
+    Video(536, "特異積分", "project/math/194_analysis_37/536_singular_integral/scene.py", "SingularIntegral"),
+    Video(537, "前処理付きCG", "project/math/195_linear_37/537_pcg/scene.py", "PreconditionedCG"),
+    Video(538, "多グリッド", "project/math/195_linear_37/538_multigrid/scene.py", "Multigrid"),
+    Video(539, "CGS", "project/math/195_linear_37/539_cgs/scene.py", "CGS"),
+    Video(540, "ブリアンション六角形", "project/math/196_geometry_37/540_brianchon_hex/scene.py", "BrianchonHexagon"),
+    Video(541, "垂心六角形", "project/math/196_geometry_37/541_orthic_hex/scene.py", "OrthicHexagon"),
+    Video(542, "共円条件", "project/math/196_geometry_37/542_concyclic/scene.py", "ConcyclicCondition"),
+    Video(543, "ホーケス過程", "project/math/197_probability_35/543_hawkes/scene.py", "HawkesProcess"),
+    Video(544, "自己励起過程", "project/math/197_probability_35/544_self_exciting/scene.py", "SelfExciting"),
+    Video(545, "パッドヴァン", "project/math/198_combinatorics_34/545_padovan/scene.py", "Padovan"),
+)

@@ -2080,3 +2080,48 @@ VIDEOS_1746_1757: tuple[Video, ...] = (
     Video(1756, "経験一様エントロピー", "project/math/702_probability_136/1756_emp_uniform_entropy/scene.py", "EmpUniformEntropy"),
     Video(1757, "ヒープ細分", "project/math/703_combinatorics_135/1757_heap_refine/scene.py", "HeapRefine"),
 )
+
+VIDEOS_1758_1769: tuple[Video, ...] = (
+    Video(1758, "相対ログ純度対", "project/math/704_analysis_139/1758_rel_log_purity/scene.py", "RelLogPurity"),
+    Video(1759, "ログクエンチ対", "project/math/704_analysis_139/1759_log_quench_pair/scene.py", "LogQuenchPair"),
+    Video(1760, "相対ログクエンチ対", "project/math/704_analysis_139/1760_rel_log_quench/scene.py", "RelLogQuench"),
+    Video(1761, "LookaheadBoundSoft", "project/math/705_linear_139/1761_lookaheadboundsoft/scene.py", "LookaheadBoundSoft"),
+    Video(1762, "ProdigySoftBound", "project/math/705_linear_139/1762_prodigysoftbound/scene.py", "ProdigySoftBound"),
+    Video(1763, "ScheduleFreeBoundSoft", "project/math/705_linear_139/1763_schedulefreeboundsoft/scene.py", "ScheduleFreeBoundSoft"),
+    Video(1764, "垂心フォイエル弦比", "project/math/706_geometry_139/1764_h_feuer_chord/scene.py", "HFeuerChord"),
+    Video(1765, "重心フォイエル弦比", "project/math/706_geometry_139/1765_g_feuer_chord/scene.py", "GFeuerChord"),
+    Video(1766, "九点フォイエル弦比", "project/math/706_geometry_139/1766_n_feuer_chord/scene.py", "NFeuerChord"),
+    Video(1767, "局所一様エントロピー", "project/math/707_probability_137/1767_local_uniform_entropy/scene.py", "LocalUniformEntropy"),
+    Video(1768, "経験局所被覆", "project/math/707_probability_137/1768_emp_local_covering/scene.py", "EmpLocalCovering"),
+    Video(1769, "根つき森細分", "project/math/708_combinatorics_136/1769_rooted_forest_refine/scene.py", "RootedForestRefine"),
+)
+
+VIDEOS_1770_1781: tuple[Video, ...] = (
+    Video(1770, "ログ支持対", "project/math/709_analysis_140/1770_log_support_pair/scene.py", "LogSupportPair"),
+    Video(1771, "相対ログ支持対", "project/math/709_analysis_140/1771_rel_log_support/scene.py", "RelLogSupport"),
+    Video(1772, "ログ係数対", "project/math/709_analysis_140/1772_log_coeff_pair/scene.py", "LogCoeffPair"),
+    Video(1773, "AdamWSoftBound", "project/math/710_linear_140/1773_adamwsoftbound/scene.py", "AdamWSoftBound"),
+    Video(1774, "LionHardBound", "project/math/710_linear_140/1774_lionhardbound/scene.py", "LionHardBound"),
+    Video(1775, "SophiaHardBound", "project/math/710_linear_140/1775_sophiahardbound/scene.py", "SophiaHardBound"),
+    Video(1776, "内心類似フォイエル弦比", "project/math/711_geometry_140/1776_in_sym_feuer_chord/scene.py", "InSymFeuerChord"),
+    Video(1777, "傍心類似フォイエル弦比", "project/math/711_geometry_140/1777_ex_sym_feuer_chord/scene.py", "ExSymFeuerChord"),
+    Video(1778, "外心類似フォイエル弦比", "project/math/711_geometry_140/1778_o_sym_feuer_chord/scene.py", "OSymFeuerChord"),
+    Video(1779, "経験局所パッキング", "project/math/712_probability_138/1779_emp_local_packing/scene.py", "EmpLocalPacking"),
+    Video(1780, "スケール標本複雑度", "project/math/712_probability_138/1780_scale_sample_comp/scene.py", "ScaleSampleComp"),
+    Video(1781, "ラベル木細分", "project/math/713_combinatorics_137/1781_labeled_tree_refine/scene.py", "LabeledTreeRefine"),
+)
+
+VIDEOS_1782_1793: tuple[Video, ...] = (
+    Video(1782, "相対ログ係数対", "project/math/714_analysis_141/1782_rel_log_coeff/scene.py", "RelLogCoeff"),
+    Video(1783, "ログ重み対", "project/math/714_analysis_141/1783_log_weight_pair/scene.py", "LogWeightPair"),
+    Video(1784, "相対ログ重み対", "project/math/714_analysis_141/1784_rel_log_weight/scene.py", "RelLogWeight"),
+    Video(1785, "NAdamSoftHardBound", "project/math/715_linear_141/1785_nadamsofthardbound/scene.py", "NAdamSoftHardBound"),
+    Video(1786, "RMSHardBound", "project/math/715_linear_141/1786_rmshardbound/scene.py", "RMSHardBound"),
+    Video(1787, "LARSBoundSoft", "project/math/715_linear_141/1787_larsboundsoft/scene.py", "LARSBoundSoft"),
+    Video(1788, "垂心類似フォイエル弦比", "project/math/716_geometry_141/1788_h_sym_feuer_chord/scene.py", "HSymFeuerChord"),
+    Video(1789, "重心類似フォイエル弦比", "project/math/716_geometry_141/1789_g_sym_feuer_chord/scene.py", "GSymFeuerChord"),
+    Video(1790, "九点類似フォイエル弦比", "project/math/716_geometry_141/1790_n_sym_feuer_chord/scene.py", "NSymFeuerChord"),
+    Video(1791, "半径被覆数", "project/math/717_probability_139/1791_radius_covering/scene.py", "RadiusCovering"),
+    Video(1792, "半径パッキング数", "project/math/717_probability_139/1792_radius_packing/scene.py", "RadiusPacking"),
+    Video(1793, "ケイリー細分", "project/math/718_combinatorics_138/1793_cayley_refine/scene.py", "CayleyRefine"),
+)

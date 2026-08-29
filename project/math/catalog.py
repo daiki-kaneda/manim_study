@@ -1450,3 +1450,48 @@ VIDEOS_1242_1253: tuple[Video, ...] = (
     Video(1252, "ガウス型集中", "project/math/492_probability_94/1252_gaussian_conc/scene.py", "GaussianConcentration"),
     Video(1253, "モツキン路細分", "project/math/493_combinatorics_93/1253_motzkin_path_ref/scene.py", "MotzkinPathRefine"),
 )
+
+VIDEOS_1254_1265: tuple[Video, ...] = (
+    Video(1254, "丸めダウン", "project/math/494_analysis_97/1254_round_down/scene.py", "RoundDown"),
+    Video(1255, "丸めアップ", "project/math/494_analysis_97/1255_round_up/scene.py", "RoundUp"),
+    Video(1256, "小数部", "project/math/494_analysis_97/1256_fractional_part/scene.py", "FractionalPart"),
+    Video(1257, "AdamWSoft", "project/math/495_linear_97/1257_adamwsoft/scene.py", "AdamWSoft"),
+    Video(1258, "SGDMSoft", "project/math/495_linear_97/1258_sgdmsoft/scene.py", "SGDMSoft"),
+    Video(1259, "RMSSoft", "project/math/495_linear_97/1259_rmssoft/scene.py", "RMSSoft"),
+    Video(1260, "類似重心外心", "project/math/496_geometry_97/1260_sym_g_o/scene.py", "SymGO"),
+    Video(1261, "ブローカール点比", "project/math/496_geometry_97/1261_brocard_point_ratio/scene.py", "BrocardPointRatio"),
+    Video(1262, "第一等角比", "project/math/496_geometry_97/1262_first_isogonic_ratio/scene.py", "FirstIsogonicRatio"),
+    Video(1263, "劣ガウス集中", "project/math/497_probability_95/1263_subgaussian/scene.py", "SubgaussianConcentration"),
+    Video(1264, "劣指数集中", "project/math/497_probability_95/1264_subexp/scene.py", "SubexponentialConcentration"),
+    Video(1265, "ヘッケ三角形", "project/math/498_combinatorics_94/1265_hecke_triangle/scene.py", "HeckeTriangle"),
+)
+
+VIDEOS_1266_1277: tuple[Video, ...] = (
+    Video(1266, "異なる食い違い", "project/math/499_analysis_98/1266_diff_discrepancy/scene.py", "DifferentDiscrepancy"),
+    Video(1267, "最小食い違い", "project/math/499_analysis_98/1267_min_discrepancy/scene.py", "MinDiscrepancy"),
+    Video(1268, "対数端末閾値", "project/math/499_analysis_98/1268_lct_revisit/scene.py", "LCTRevisit"),
+    Video(1269, "AdaBeliefSoft", "project/math/500_linear_98/1269_adabeliefsoft/scene.py", "AdaBeliefSoft"),
+    Video(1270, "LookaheadSoft", "project/math/500_linear_98/1270_lookaheadsoft/scene.py", "LookaheadSoft"),
+    Video(1271, "SWASoft", "project/math/500_linear_98/1271_swasoft/scene.py", "SWASoft"),
+    Video(1272, "第二等角比", "project/math/501_geometry_98/1272_second_isogonic_ratio/scene.py", "SecondIsogonicRatio"),
+    Video(1273, "等角共役比", "project/math/501_geometry_98/1273_isogonal_conj_ratio/scene.py", "IsogonalConjRatio"),
+    Video(1274, "等長共役比", "project/math/501_geometry_98/1274_isotomic_conj_ratio/scene.py", "IsotomicConjRatio"),
+    Video(1275, "ヘフディング補題再訪", "project/math/502_probability_96/1275_hoeffding_lemma/scene.py", "HoeffdingLemmaRevisit"),
+    Video(1276, "チェルノフ法再訪", "project/math/502_probability_96/1276_chernoff_method/scene.py", "ChernoffMethodRevisit"),
+    Video(1277, "ガウス三角形", "project/math/503_combinatorics_95/1277_gauss_triangle/scene.py", "GaussTriangle"),
+)
+
+VIDEOS_1278_1289: tuple[Video, ...] = (
+    Video(1278, "乗法イデアル跳躍", "project/math/504_analysis_99/1278_multiplier_jump/scene.py", "MultiplierJump"),
+    Video(1279, "対数解消再訪", "project/math/504_analysis_99/1279_log_res_revisit/scene.py", "LogResRevisit"),
+    Video(1280, "単純正規交叉再訪", "project/math/504_analysis_99/1280_snc_revisit/scene.py", "SNCRevisit"),
+    Video(1281, "ProdigySoft", "project/math/505_linear_99/1281_prodigysoft/scene.py", "ProdigySoft"),
+    Video(1282, "ScheduleFreeSoft", "project/math/505_linear_99/1282_schedulefreesoft/scene.py", "ScheduleFreeSoft"),
+    Video(1283, "MuonBoundClip", "project/math/505_linear_99/1283_muonboundclip/scene.py", "MuonBoundClip"),
+    Video(1284, "等角線分比", "project/math/506_geometry_99/1284_isogonal_seg_ratio/scene.py", "IsogonalSegRatio"),
+    Video(1285, "等長線分比", "project/math/506_geometry_99/1285_isotomic_seg_ratio/scene.py", "IsotomicSegRatio"),
+    Video(1286, "チェバ比積", "project/math/506_geometry_99/1286_ceva_ratio_prod/scene.py", "CevaRatioProd"),
+    Video(1287, "モーメント母関数再訪", "project/math/507_probability_97/1287_mgf_revisit/scene.py", "MGFRevisit"),
+    Video(1288, "キュムラント母関数", "project/math/507_probability_97/1288_cgf/scene.py", "CumulantGenerating"),
+    Video(1289, "スターリング三角形細分", "project/math/508_combinatorics_96/1289_stirling_tri_ref/scene.py", "StirlingTriangleRefine"),
+)

@@ -25,8 +25,7 @@ class MirrorSymmetry(PacedScene):
         right = RoundedRectangle(width=2.6, height=1.6, corner_radius=0.1, color=ORANGE, stroke_width=3).shift(RIGHT * 2.2 + UP * 0.2)
         self.play(Create(left), Create(right),
                   FadeIn(MathTex(r"X", font_size=34).move_to(left)),
-                  FadeIn(MathTex(r"X^
-ee", font_size=34).move_to(right)), run_time=1.4)
+                  FadeIn(MathTex(r"X^\vee", font_size=34).move_to(right)), run_time=1.4)
 
         note = self.ja_text("双対な対", font_size=24)
         note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)

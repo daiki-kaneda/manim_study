@@ -805,3 +805,18 @@ VIDEOS_726_737: tuple[Video, ...] = (
     Video(736, "相関ヒストグラム", "project/math/277_probability_51/736_correlation_hist/scene.py", "CorrelationHistogram"),
     Video(737, "ホフスタッター数列", "project/math/278_combinatorics_50/737_hofstadter/scene.py", "HofstadterSequence"),
 )
+
+VIDEOS_738_749: tuple[Video, ...] = (
+    Video(738, "導来圏", "project/math/279_analysis_54/738_derived_cat/scene.py", "DerivedCategory"),
+    Video(739, "ブリッジランド安定性", "project/math/279_analysis_54/739_bridgeland/scene.py", "BridgelandStability"),
+    Video(740, "t構造の心", "project/math/279_analysis_54/740_heart/scene.py", "HeartOfTStructure"),
+    Video(741, "Sophia", "project/math/280_linear_54/741_sophia/scene.py", "Sophia"),
+    Video(742, "AdaFactor", "project/math/280_linear_54/742_adafactor/scene.py", "AdaFactor"),
+    Video(743, "MADGRAD", "project/math/280_linear_54/743_madgrad/scene.py", "MADGRAD"),
+    Video(744, "ベヴァン点", "project/math/281_geometry_54/744_bevan/scene.py", "BevanPoint"),
+    Video(745, "シュピーカー円", "project/math/281_geometry_54/745_spieker_circle/scene.py", "SpiekerCircle"),
+    Video(746, "マンダール円", "project/math/281_geometry_54/746_mandart_circle/scene.py", "MandartCircle"),
+    Video(747, "端補正", "project/math/282_probability_52/747_edge_correction/scene.py", "EdgeCorrection"),
+    Video(748, "縮小二次モーメント", "project/math/282_probability_52/748_reduced_second/scene.py", "ReducedSecondMoment"),
+    Video(749, "ペル数", "project/math/283_combinatorics_51/749_pell/scene.py", "PellNumbers"),
+)

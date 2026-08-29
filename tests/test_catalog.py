@@ -62,6 +62,7 @@ VIDEOS_690_701 = _catalog.VIDEOS_690_701
 VIDEOS_702_713 = _catalog.VIDEOS_702_713
 VIDEOS_714_725 = _catalog.VIDEOS_714_725
 VIDEOS_726_737 = _catalog.VIDEOS_726_737
+VIDEOS_738_749 = _catalog.VIDEOS_738_749
 
 
 class CatalogTests(unittest.TestCase):
@@ -273,6 +274,10 @@ class CatalogTests(unittest.TestCase):
         nums = [v.number for v in VIDEOS_726_737]
         self.assertEqual(nums, list(range(726, 738)))
 
+    def test_numbers_are_738_to_749(self):
+        nums = [v.number for v in VIDEOS_738_749]
+        self.assertEqual(nums, list(range(738, 750)))
+
     def test_each_scene_file_defines_the_class(self):
         for video in (
             *VIDEOS_101_125,
@@ -327,6 +332,7 @@ class CatalogTests(unittest.TestCase):
             *VIDEOS_702_713,
             *VIDEOS_714_725,
             *VIDEOS_726_737,
+            *VIDEOS_738_749,
         ):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)

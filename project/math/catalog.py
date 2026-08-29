@@ -2170,3 +2170,48 @@ VIDEOS_1818_1829: tuple[Video, ...] = (
     Video(1828, "一様半径パッキング", "project/math/732_probability_142/1828_uniform_radius_packing/scene.py", "UniformRadiusPacking"),
     Video(1829, "二分ヒープ細分", "project/math/733_combinatorics_141/1829_binheap_refine/scene.py", "BinHeapRefine"),
 )
+
+VIDEOS_1830_1841: tuple[Video, ...] = (
+    Video(1830, "相対ログ自己交対", "project/math/734_analysis_145/1830_rel_log_self_int/scene.py", "RelLogSelfInt"),
+    Video(1831, "ログ交多項式対", "project/math/734_analysis_145/1831_log_int_poly_pair/scene.py", "LogIntPolyPair"),
+    Video(1832, "相対ログ交多項式対", "project/math/734_analysis_145/1832_rel_log_int_poly/scene.py", "RelLogIntPoly"),
+    Video(1833, "AdamWHardBound", "project/math/735_linear_145/1833_adamwhardbound/scene.py", "AdamWHardBound"),
+    Video(1834, "LionSoftBoundClip", "project/math/735_linear_145/1834_lionsoftboundclip/scene.py", "LionSoftBoundClip"),
+    Video(1835, "SophiaSoftBoundClip", "project/math/735_linear_145/1835_sophiasoftboundclip/scene.py", "SophiaSoftBoundClip"),
+    Video(1836, "垂心類似フォイエル弧比", "project/math/736_geometry_145/1836_h_sym_feuer_arc/scene.py", "HSymFeuerArc"),
+    Video(1837, "重心類似フォイエル弧比", "project/math/736_geometry_145/1837_g_sym_feuer_arc/scene.py", "GSymFeuerArc"),
+    Video(1838, "九点類似フォイエル弧比", "project/math/736_geometry_145/1838_n_sym_feuer_arc/scene.py", "NSymFeuerArc"),
+    Video(1839, "局所一様被覆", "project/math/737_probability_143/1839_local_uniform_covering/scene.py", "LocalUniformCovering"),
+    Video(1840, "局所一様パッキング", "project/math/737_probability_143/1840_local_uniform_packing/scene.py", "LocalUniformPacking"),
+    Video(1841, "三分木細分", "project/math/738_combinatorics_142/1841_ternary_tree_refine/scene.py", "TernaryTreeRefine"),
+)
+
+VIDEOS_1842_1853: tuple[Video, ...] = (
+    Video(1842, "ログ数値類対", "project/math/739_analysis_146/1842_log_num_class_pair/scene.py", "LogNumClassPair"),
+    Video(1843, "相対ログ数値類対", "project/math/739_analysis_146/1843_rel_log_num_class/scene.py", "RelLogNumClass"),
+    Video(1844, "ログピカール対", "project/math/739_analysis_146/1844_log_picard_pair/scene.py", "LogPicardPair"),
+    Video(1845, "ApolloSoftBound", "project/math/740_linear_146/1845_apollosoftbound/scene.py", "ApolloSoftBound"),
+    Video(1846, "MuonHardBound", "project/math/740_linear_146/1846_muonhardbound/scene.py", "MuonHardBound"),
+    Video(1847, "SamSoftHardBound", "project/math/740_linear_146/1847_samsofthardbound/scene.py", "SamSoftHardBound"),
+    Video(1848, "内心フォイエル中心比", "project/math/741_geometry_146/1848_in_feuer_center/scene.py", "InFeuerCenter"),
+    Video(1849, "傍心フォイエル中心比", "project/math/741_geometry_146/1849_ex_feuer_center/scene.py", "ExFeuerCenter"),
+    Video(1850, "外心フォイエル中心比", "project/math/741_geometry_146/1850_o_feuer_center/scene.py", "OFeuerCenter"),
+    Video(1851, "経験一様被覆", "project/math/742_probability_144/1851_emp_uniform_covering/scene.py", "EmpUniformCovering"),
+    Video(1852, "経験一様パッキング", "project/math/742_probability_144/1852_emp_uniform_packing/scene.py", "EmpUniformPacking"),
+    Video(1853, "平面増加木細分", "project/math/743_combinatorics_143/1853_plane_inc_tree_refine/scene.py", "PlaneIncTreeRefine"),
+)
+
+VIDEOS_1854_1865: tuple[Video, ...] = (
+    Video(1854, "相対ログピカール対", "project/math/744_analysis_147/1854_rel_log_picard/scene.py", "RelLogPicard"),
+    Video(1855, "ログネロンセベリ対", "project/math/744_analysis_147/1855_log_ns_pair/scene.py", "LogNsPair"),
+    Video(1856, "相対ログネロンセベリ対", "project/math/744_analysis_147/1856_rel_log_ns/scene.py", "RelLogNs"),
+    Video(1857, "LARSHardBound", "project/math/745_linear_147/1857_larshardbound/scene.py", "LARSHardBound"),
+    Video(1858, "AdaFactorHardBound", "project/math/745_linear_147/1858_adafactorhardbound/scene.py", "AdaFactorHardBound"),
+    Video(1859, "NAdamBoundSoftClip", "project/math/745_linear_147/1859_nadamboundsoftclip/scene.py", "NAdamBoundSoftClip"),
+    Video(1860, "垂心フォイエル中心比", "project/math/746_geometry_147/1860_h_feuer_center/scene.py", "HFeuerCenter"),
+    Video(1861, "重心フォイエル中心比", "project/math/746_geometry_147/1861_g_feuer_center/scene.py", "GFeuerCenter"),
+    Video(1862, "九点フォイエル中心比", "project/math/746_geometry_147/1862_n_feuer_center/scene.py", "NFeuerCenter"),
+    Video(1863, "スケール一様エントロピー", "project/math/747_probability_145/1863_scale_uniform_entropy/scene.py", "ScaleUniformEntropy"),
+    Video(1864, "半径一様複雑度", "project/math/747_probability_145/1864_radius_uniform_comp/scene.py", "RadiusUniformComp"),
+    Video(1865, "順序森細分", "project/math/748_combinatorics_144/1865_ordered_forest_refine/scene.py", "OrderedForestRefine"),
+)

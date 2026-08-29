@@ -940,3 +940,18 @@ VIDEOS_834_845: tuple[Video, ...] = (
     Video(844, "ブラウン橋", "project/math/322_probability_60/844_brownian_bridge/scene.py", "BrownianBridge"),
     Video(845, "シュレーダー・ヒップ", "project/math/323_combinatorics_59/845_schroeder_hipparchus/scene.py", "SchroederHipparchus"),
 )
+
+VIDEOS_846_857: tuple[Video, ...] = (
+    Video(846, "モース理論", "project/math/324_analysis_63/846_morse/scene.py", "MorseTheory"),
+    Video(847, "ハミルトン系", "project/math/324_analysis_63/847_hamiltonian/scene.py", "HamiltonianSystem"),
+    Video(848, "ホッジ理論", "project/math/324_analysis_63/848_hodge/scene.py", "HodgeTheory"),
+    Video(849, "AdaDelta", "project/math/325_linear_63/849_adadelta/scene.py", "AdaDelta"),
+    Video(850, "QHAdam", "project/math/325_linear_63/850_qhadam/scene.py", "QHAdam"),
+    Video(851, "AdamP", "project/math/325_linear_63/851_adamp/scene.py", "AdamP"),
+    Video(852, "トリリニア極", "project/math/326_geometry_63/852_trilinear_pole/scene.py", "TrilinearPole"),
+    Video(853, "シュタイナー楕円中心", "project/math/326_geometry_63/853_steiner_ellipse/scene.py", "SteinerEllipseCenter"),
+    Video(854, "内心三角形", "project/math/326_geometry_63/854_intouch/scene.py", "IntouchTriangle"),
+    Video(855, "オルンシュタイン・ウーレンベック", "project/math/327_probability_61/855_ou/scene.py", "OrnsteinUhlenbeck"),
+    Video(856, "拡散過程", "project/math/327_probability_61/856_diffusion/scene.py", "DiffusionProcess"),
+    Video(857, "スーパーカタラン", "project/math/328_combinatorics_60/857_super_catalan/scene.py", "SuperCatalan"),
+)

@@ -43,6 +43,9 @@ manim -pql project/math/33_combinatorics_2/149_fibonacci/scene.py Fibonacci
 manim -pql project/math/34_analysis_5/150_disk_method/scene.py DiskMethod
 manim -pql project/math/36_geometry_5/156_napoleon/scene.py Napoleon
 manim -pql project/math/38_number_2/161_euler_totient/scene.py EulerTotient
+manim -pql project/math/39_analysis_6/162_surface_area/scene.py SurfaceOfRevolution
+manim -pql project/math/41_geometry_6/169_morley/scene.py Morley
+manim -pql project/math/43_combinatorics_3/173_stirling/scene.py Stirling
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -223,3 +226,15 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 159 | 指数分布 | `project/math/37_probability_3/159_exponential/` |
 | 160 | チェビシェフ | `project/math/37_probability_3/160_chebyshev/` |
 | 161 | オイラーの φ | `project/math/38_number_2/161_euler_totient/` |
+| 162 | 回転面 | `project/math/39_analysis_6/162_surface_area/` |
+| 163 | ラプラシアン | `project/math/39_analysis_6/163_laplacian/` |
+| 164 | フビニの定理 | `project/math/39_analysis_6/164_fubini/` |
+| 165 | LU 分解 | `project/math/40_linear_6/165_lu/` |
+| 166 | 正規方程式 | `project/math/40_linear_6/166_least_squares_geom/` |
+| 167 | 擬似逆 | `project/math/40_linear_6/167_pseudoinverse/` |
+| 168 | ファン・オーベル | `project/math/41_geometry_6/168_van_obel/` |
+| 169 | モーリーの定理 | `project/math/41_geometry_6/169_morley/` |
+| 170 | ブラフマグプタ | `project/math/41_geometry_6/170_brahmagupta/` |
+| 171 | 確率の木 | `project/math/42_probability_4/171_bayes_tree/` |
+| 172 | モーメント | `project/math/42_probability_4/172_moment/` |
+| 173 | スターリング数 | `project/math/43_combinatorics_3/173_stirling/` |

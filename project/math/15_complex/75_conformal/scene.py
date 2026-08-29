@@ -57,7 +57,7 @@ class Conformal(JapaneseScene):
             color=YELLOW,
         )
         self.play(Transform(self.sq, nxt), Transform(self.mark, mark2), run_time=1.1)
-        cap = self.ja_text("回しても直角のまま", font_size=24).move_to(self.note)
+        cap = self.ja_text("直角のまま", font_size=24).move_to(self.note)
         self.play(Transform(self.note, cap), run_time=0.4)
         self.hold(0.7)
 

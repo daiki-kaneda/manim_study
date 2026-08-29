@@ -39,7 +39,7 @@ class DeMorgan(JapaneseScene):
         note.to_edge(RIGHT, buff=0.35).shift(UP * 1.7)
         self.play(FadeIn(note), run_time=0.35)
         self.hold(0.7)
-        both = self.ja_text("= どちらにも入らない", font_size=24).move_to(note)
+        both = self.ja_text("どちらにも入らない", font_size=24).move_to(note)
         self.play(Transform(note, both), run_time=0.4)
         self.hold(0.7)
 

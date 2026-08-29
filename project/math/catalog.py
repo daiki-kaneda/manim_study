@@ -265,3 +265,18 @@ VIDEOS_294_305: tuple[Video, ...] = (
     Video(304, "反射原理", "project/math/97_probability_15/304_reflection/scene.py", "ReflectionPrinciple"),
     Video(305, "包除原理", "project/math/98_combinatorics_14/305_inclusion_exclusion/scene.py", "InclusionExclusion"),
 )
+
+VIDEOS_306_317: tuple[Video, ...] = (
+    Video(306, "閉グラフ定理", "project/math/99_analysis_18/306_closed_graph/scene.py", "ClosedGraph"),
+    Video(307, "リースの補題", "project/math/99_analysis_18/307_riesz_lemma/scene.py", "RieszLemma"),
+    Video(308, "ストーン・ワイエルシュトラス", "project/math/99_analysis_18/308_stone_weierstrass/scene.py", "StoneWeierstrass"),
+    Video(309, "シューア補元", "project/math/100_linear_18/309_schur_complement/scene.py", "SchurComplement"),
+    Video(310, "コンパニオン行列", "project/math/100_linear_18/310_companion/scene.py", "CompanionMatrix"),
+    Video(311, "トープリッツ行列", "project/math/100_linear_18/311_toeplitz/scene.py", "Toeplitz"),
+    Video(312, "カルノーの定理", "project/math/101_geometry_18/312_carnot/scene.py", "Carnot"),
+    Video(313, "ニュートン・ガウス線", "project/math/101_geometry_18/313_newton_gauss/scene.py", "NewtonGauss"),
+    Video(314, "ポンセレの定理", "project/math/101_geometry_18/314_poncelet/scene.py", "Poncelet"),
+    Video(315, "グリベンコ・カンテリ", "project/math/102_probability_16/315_glivenko/scene.py", "GlivenkoCantelli"),
+    Video(316, "ブートストラップ", "project/math/102_probability_16/316_bootstrap/scene.py", "Bootstrap"),
+    Video(317, "星と棒", "project/math/103_combinatorics_15/317_stars_and_bars/scene.py", "StarsAndBars"),
+)

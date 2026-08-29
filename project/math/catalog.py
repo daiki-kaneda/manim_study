@@ -2260,3 +2260,48 @@ VIDEOS_1890_1901: tuple[Video, ...] = (
     Video(1900, "一様スケールパッキング", "project/math/762_probability_148/1900_uniform_scale_packing/scene.py", "UniformScalePacking"),
     Video(1901, "ケイリー森細分", "project/math/763_combinatorics_147/1901_cayley_forest_refine/scene.py", "CayleyForestRefine"),
 )
+
+VIDEOS_1902_1913: tuple[Video, ...] = (
+    Video(1902, "相対ログアルバネーゼ対", "project/math/764_analysis_151/1902_rel_log_albanese/scene.py", "RelLogAlbanese"),
+    Video(1903, "ログクレモナ対", "project/math/764_analysis_151/1903_log_cremona_pair/scene.py", "LogCremonaPair"),
+    Video(1904, "相対ログクレモナ対", "project/math/764_analysis_151/1904_rel_log_cremona/scene.py", "RelLogCremona"),
+    Video(1905, "MuonBoundSoftClip", "project/math/765_linear_151/1905_muonboundsoftclip/scene.py", "MuonBoundSoftClip"),
+    Video(1906, "SamBoundClip", "project/math/765_linear_151/1906_samboundclip/scene.py", "SamBoundClip"),
+    Video(1907, "AdaFactorBoundClip", "project/math/765_linear_151/1907_adafactorboundclip/scene.py", "AdaFactorBoundClip"),
+    Video(1908, "垂心フォイエル半径比", "project/math/766_geometry_151/1908_h_feuer_radius/scene.py", "HFeuerRadius"),
+    Video(1909, "重心フォイエル半径比", "project/math/766_geometry_151/1909_g_feuer_radius/scene.py", "GFeuerRadius"),
+    Video(1910, "九点フォイエル半径比", "project/math/766_geometry_151/1910_n_feuer_radius/scene.py", "NFeuerRadius"),
+    Video(1911, "経験スケールエントロピー", "project/math/767_probability_149/1911_emp_scale_entropy/scene.py", "EmpScaleEntropy"),
+    Video(1912, "半径スケール複雑度", "project/math/767_probability_149/1912_radius_scale_comp/scene.py", "RadiusScaleComp"),
+    Video(1913, "三分ヒープ細分", "project/math/768_combinatorics_148/1913_ternary_heap_refine/scene.py", "TernaryHeapRefine"),
+)
+
+VIDEOS_1914_1925: tuple[Video, ...] = (
+    Video(1914, "ログカラビ対", "project/math/769_analysis_152/1914_log_calabi_pair/scene.py", "LogCalabiPair"),
+    Video(1915, "相対ログカラビ対", "project/math/769_analysis_152/1915_rel_log_calabi/scene.py", "RelLogCalabi"),
+    Video(1916, "ログカラビヤウ対", "project/math/769_analysis_152/1916_log_cy_pair/scene.py", "LogCyPair"),
+    Video(1917, "NAdamBoundClip", "project/math/770_linear_152/1917_nadamboundclip/scene.py", "NAdamBoundClip"),
+    Video(1918, "LARSBoundClip", "project/math/770_linear_152/1918_larsboundclip/scene.py", "LARSBoundClip"),
+    Video(1919, "LionWBoundHard", "project/math/770_linear_152/1919_lionwboundhard/scene.py", "LionWBoundHard"),
+    Video(1920, "内心類似フォイエル半径比", "project/math/771_geometry_152/1920_in_sym_feuer_radius/scene.py", "InSymFeuerRadius"),
+    Video(1921, "傍心類似フォイエル半径比", "project/math/771_geometry_152/1921_ex_sym_feuer_radius/scene.py", "ExSymFeuerRadius"),
+    Video(1922, "外心類似フォイエル半径比", "project/math/771_geometry_152/1922_o_sym_feuer_radius/scene.py", "OSymFeuerRadius"),
+    Video(1923, "標本スケール被覆", "project/math/772_probability_150/1923_sample_scale_covering/scene.py", "SampleScaleCovering"),
+    Video(1924, "標本スケールパッキング", "project/math/772_probability_150/1924_sample_scale_packing/scene.py", "SampleScalePacking"),
+    Video(1925, "平面三分木細分", "project/math/773_combinatorics_149/1925_plane_ternary_refine/scene.py", "PlaneTernaryRefine"),
+)
+
+VIDEOS_1926_1937: tuple[Video, ...] = (
+    Video(1926, "相対ログカラビヤウ対", "project/math/774_analysis_153/1926_rel_log_cy/scene.py", "RelLogCy"),
+    Video(1927, "ログ一般型対", "project/math/774_analysis_153/1927_log_general_type/scene.py", "LogGeneralType"),
+    Video(1928, "相対ログ一般型対", "project/math/774_analysis_153/1928_rel_log_general_type/scene.py", "RelLogGeneralType"),
+    Video(1929, "SophiaWBoundHard", "project/math/775_linear_153/1929_sophiawboundhard/scene.py", "SophiaWBoundHard"),
+    Video(1930, "LookaheadBoundClip", "project/math/775_linear_153/1930_lookaheadboundclip/scene.py", "LookaheadBoundClip"),
+    Video(1931, "ProdigySoftBoundClip", "project/math/775_linear_153/1931_prodigysoftboundclip/scene.py", "ProdigySoftBoundClip"),
+    Video(1932, "垂心類似フォイエル半径比", "project/math/776_geometry_153/1932_h_sym_feuer_radius/scene.py", "HSymFeuerRadius"),
+    Video(1933, "重心類似フォイエル半径比", "project/math/776_geometry_153/1933_g_sym_feuer_radius/scene.py", "GSymFeuerRadius"),
+    Video(1934, "九点類似フォイエル半径比", "project/math/776_geometry_153/1934_n_sym_feuer_radius/scene.py", "NSymFeuerRadius"),
+    Video(1935, "局所スケールエントロピー再訪", "project/math/777_probability_151/1935_local_scale_entropy_rev/scene.py", "LocalScaleEntropyRev"),
+    Video(1936, "一様スケールエントロピー再訪", "project/math/777_probability_151/1936_uniform_scale_entropy_rev/scene.py", "UniformScaleEntropyRev"),
+    Video(1937, "増加ヒープ細分", "project/math/778_combinatorics_150/1937_inc_heap_refine/scene.py", "IncHeapRefine"),
+)

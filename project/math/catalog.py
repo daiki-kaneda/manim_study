@@ -715,3 +715,18 @@ VIDEOS_654_665: tuple[Video, ...] = (
     Video(664, "マーク相関", "project/math/247_probability_45/664_mark_corr/scene.py", "MarkCorrelation"),
     Video(665, "交替順列", "project/math/248_combinatorics_44/665_alternating/scene.py", "AlternatingPermutations"),
 )
+
+VIDEOS_666_677: tuple[Video, ...] = (
+    Video(666, "平均曲率流", "project/math/249_analysis_48/666_mcf/scene.py", "MeanCurvatureFlow"),
+    Video(667, "リッチ流", "project/math/249_analysis_48/667_ricci/scene.py", "RicciFlow"),
+    Video(668, "ヤマベ問題", "project/math/249_analysis_48/668_yamabe/scene.py", "YamabeProblem"),
+    Video(669, "Lion", "project/math/250_linear_48/669_lion/scene.py", "LionOptimizer"),
+    Video(670, "学習率スケジュール", "project/math/250_linear_48/670_lr_schedule/scene.py", "LRSchedule"),
+    Video(671, "ウォームアップ", "project/math/250_linear_48/671_warmup/scene.py", "Warmup"),
+    Video(672, "中点三角形", "project/math/251_geometry_48/672_medial/scene.py", "MedialTriangle"),
+    Video(673, "外心中点三角形", "project/math/251_geometry_48/673_circummedial/scene.py", "CircummedialTriangle"),
+    Video(674, "第一等角中心", "project/math/251_geometry_48/674_first_isogonic/scene.py", "FirstIsogonicCenter"),
+    Video(675, "積密度", "project/math/252_probability_46/675_product_density/scene.py", "ProductDensity"),
+    Video(676, "階乗モーメント測度", "project/math/252_probability_46/676_factorial_moment/scene.py", "FactorialMoment"),
+    Video(677, "エントリンガー数", "project/math/253_combinatorics_45/677_entringer/scene.py", "EntringerNumbers"),
+)

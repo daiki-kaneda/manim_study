@@ -1,0 +1,68 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
+from manim import *
+from manim_math import PacedScene
+
+
+class UniformConvergence(PacedScene):
+    """#187 一様収束は帯の中に全部収まる（約45秒）"""
+
+    def construct(self):
+        self.show_heading("一様収束")
+        self.draw_limit()
+        self.show_band()
+        self.show_formula()
+        self.read(1.4)
+
+    def draw_limit(self):
+        self.axes = Axes(
+            x_range=[-0.2, 3.4, 1],
+            y_range=[-0.2, 2.2, 1],
+            x_length=7.6,
+            y_length=3.1,
+            tips=False,
+            axis_config={"stroke_width": 2, "include_ticks": False},
+        ).shift(DOWN * 0.2 + LEFT * 0.25)
+        self.limit = self.axes.plot(lambda x: 1.0, x_range=[0.05, 3.2], color=YELLOW, stroke_width=5)
+        self.play(Create(self.axes), run_time=0.8)
+        self.play(Create(self.limit), run_time=1.2)
+        note = self.ja_text("極限", font_size=24)
+        note.to_edge(RIGHT, buff=0.45).shift(UP * 1.65)
+        self.play(FadeIn(note), run_time=0.35)
+        self.read(0.3)
+        self.note = note
+        self.curves = VGroup()
+        for n, col in ((1, BLUE), (2, TEAL), (4, GREEN)):
+            # f_n(x) = 1 + (-1)^n / n * sin-ish bump via 1/(1+n x) style approaching 1
+            curve = self.axes.plot(
+                lambda x, nn=n: 1.0 + (0.85 / nn) * (1 - x / 3.0),
+                x_range=[0.05, 3.2],
+                color=col,
+                stroke_width=4,
+            )
+            self.play(Create(curve), run_time=0.95)
+            self.curves.add(curve)
+        cap = self.ja_text("近づく", font_size=24).move_to(self.note)
+        self.play(Transform(self.note, cap), run_time=0.5)
+        self.read(0.3)
+
+    def show_band(self):
+        eps = 0.35
+        up = self.axes.plot(lambda x: 1.0 + eps, x_range=[0.05, 3.2], color=ORANGE, stroke_width=2)
+        dn = self.axes.plot(lambda x: 1.0 - eps, x_range=[0.05, 3.2], color=ORANGE, stroke_width=2)
+        band = self.axes.get_area(up, x_range=[0.05, 3.2], color=ORANGE, opacity=0.25, bounded_graph=dn)
+        cap = self.ja_text("帯の中", font_size=24).move_to(self.note)
+        self.play(FadeIn(band), Create(up), Create(dn), Transform(self.note, cap), run_time=1.6)
+        self.read(0.45)
+
+    def show_formula(self):
+        formula = MathTex(r"\sup_x|f_n(x)-f(x)|\to 0").scale(0.9)
+        formula.to_edge(DOWN, buff=0.28)
+        self.play(Write(formula), run_time=1.9)
+        self.play(Indicate(formula, color=YELLOW), run_time=0.85)

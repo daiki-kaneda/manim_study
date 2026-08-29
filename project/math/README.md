@@ -18,6 +18,9 @@ manim -pql project/math/04_calculus/16_derivative_tangent/scene.py DerivativeTan
 manim -pql project/math/04_calculus/20_e_definition/scene.py EDefinition
 manim -pql project/math/05_identities/21_euler_formula/scene.py EulerFormula
 manim -pql project/math/06_classical/27_am_gm/scene.py AMGM
+manim -pql project/math/07_linear_algebra/31_linear_map/scene.py LinearMap
+manim -pql project/math/08_probability/36_expected_value/scene.py ExpectedValue
+manim -pql project/math/10_combinatorics/50_midpoint_recap/scene.py MidpointRecap
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -67,5 +70,25 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 28 | 内角の和 | `project/math/06_classical/28_triangle_angle_sum/` |
 | 29 | 円の面積 | `project/math/06_classical/29_circle_area/` |
 | 30 | 中間値の定理 | `project/math/06_classical/30_intermediate_value/` |
+| 31 | 線形変換 | `project/math/07_linear_algebra/31_linear_map/` |
+| 32 | 行列式 | `project/math/07_linear_algebra/32_determinant_area/` |
+| 33 | 固有ベクトル | `project/math/07_linear_algebra/33_eigenvectors/` |
+| 34 | 行列の積 | `project/math/07_linear_algebra/34_matrix_composition/` |
+| 35 | 逆行列 | `project/math/07_linear_algebra/35_inverse_matrix/` |
+| 36 | 期待値 | `project/math/08_probability/36_expected_value/` |
+| 37 | 分散 | `project/math/08_probability/37_variance/` |
+| 38 | 独立 | `project/math/08_probability/38_independence/` |
+| 39 | 大数の法則 | `project/math/08_probability/39_law_of_large_numbers/` |
+| 40 | 中心極限定理 | `project/math/08_probability/40_central_limit/` |
+| 41 | 互除法 | `project/math/09_number_theory/41_euclid_gcd/` |
+| 42 | 合同式 | `project/math/09_number_theory/42_modular_clock/` |
+| 43 | 素因数分解 | `project/math/09_number_theory/43_unique_factorization/` |
+| 44 | 中国剰余定理 | `project/math/09_number_theory/44_chinese_remainder/` |
+| 45 | フェルマー小定理 | `project/math/09_number_theory/45_fermat_little/` |
+| 46 | パスカル | `project/math/10_combinatorics/46_pascal_triangle/` |
+| 47 | 二項定理 | `project/math/10_combinatorics/47_binomial_coefficients/` |
+| 48 | 包除原理 | `project/math/10_combinatorics/48_inclusion_exclusion/` |
+| 49 | 鳩の巣原理 | `project/math/10_combinatorics/49_pigeonhole/` |
+| 50 | 前半の地図 | `project/math/10_combinatorics/50_midpoint_recap/` |
 
 以降の番号は `PLAN.md` を参照。

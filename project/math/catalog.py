@@ -490,3 +490,18 @@ VIDEOS_474_485: tuple[Video, ...] = (
     Video(484, "競合リスク", "project/math/172_probability_30/484_competing_risks/scene.py", "CompetingRisks"),
     Video(485, "ケイリーの公式", "project/math/173_combinatorics_29/485_cayley/scene.py", "CayleyFormula"),
 )
+
+VIDEOS_486_497: tuple[Video, ...] = (
+    Video(486, "超弱作用素位相", "project/math/174_analysis_33/486_ultraweak/scene.py", "UltraweakTopology"),
+    Video(487, "ストーンの定理", "project/math/174_analysis_33/487_stone/scene.py", "StonesTheorem"),
+    Video(488, "ヒレ・吉田の定理", "project/math/174_analysis_33/488_hille_yosida/scene.py", "HilleYosida"),
+    Video(489, "フランク・ウォルフェ", "project/math/175_linear_33/489_frank_wolfe/scene.py", "FrankWolfe"),
+    Video(490, "鏡面降下", "project/math/175_linear_33/490_mirror_descent/scene.py", "MirrorDescent"),
+    Video(491, "パワー法", "project/math/175_linear_33/491_power_method/scene.py", "PowerMethod"),
+    Video(492, "シャールの定理", "project/math/176_geometry_33/492_chasles/scene.py", "ChaslesTheorem"),
+    Video(493, "ナーゲル三角形", "project/math/176_geometry_33/493_nagel_tri/scene.py", "NagelTriangle"),
+    Video(494, "ジェルゴンヌ三角形", "project/math/176_geometry_33/494_gergonne_tri/scene.py", "GergonneTriangle"),
+    Video(495, "コックスモデル", "project/math/177_probability_31/495_cox/scene.py", "CoxModel"),
+    Video(496, "フィルトレーション", "project/math/177_probability_31/496_filtration/scene.py", "Filtration"),
+    Video(497, "包含排除原理", "project/math/178_combinatorics_30/497_inclusion_exclusion/scene.py", "InclusionExclusion"),
+)

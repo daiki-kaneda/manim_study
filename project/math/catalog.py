@@ -955,3 +955,18 @@ VIDEOS_846_857: tuple[Video, ...] = (
     Video(856, "拡散過程", "project/math/327_probability_61/856_diffusion/scene.py", "DiffusionProcess"),
     Video(857, "スーパーカタラン", "project/math/328_combinatorics_60/857_super_catalan/scene.py", "SuperCatalan"),
 )
+
+VIDEOS_858_869: tuple[Video, ...] = (
+    Video(858, "ケーラー多様体", "project/math/329_analysis_64/858_kahler/scene.py", "KahlerManifold"),
+    Video(859, "シンプレクティック", "project/math/329_analysis_64/859_symplectic/scene.py", "SymplecticGeometry"),
+    Video(860, "リーマン・ロッホ", "project/math/329_analysis_64/860_rr/scene.py", "RiemannRoch"),
+    Video(861, "SGDP", "project/math/330_linear_64/861_sgdp/scene.py", "SGDP"),
+    Video(862, "YellowFin", "project/math/330_linear_64/862_yellowfin/scene.py", "YellowFin"),
+    Video(863, "AggMo", "project/math/330_linear_64/863_aggmo/scene.py", "AggMo"),
+    Video(864, "共軸点", "project/math/331_geometry_64/864_coaxal/scene.py", "CoaxalPoint"),
+    Video(865, "ペダル三角形", "project/math/331_geometry_64/865_pedal/scene.py", "PedalTriangle"),
+    Video(866, "カールトン点", "project/math/331_geometry_64/866_carlton/scene.py", "CarltonPoint"),
+    Video(867, "ジャンプ拡散", "project/math/332_probability_62/867_jump_diffusion/scene.py", "JumpDiffusion"),
+    Video(868, "レヴィ過程", "project/math/332_probability_62/868_levy/scene.py", "LevyProcess"),
+    Video(869, "ベルヌーイ数", "project/math/333_combinatorics_61/869_bernoulli/scene.py", "BernoulliNumbers"),
+)

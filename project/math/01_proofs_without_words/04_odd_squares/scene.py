@@ -25,18 +25,19 @@ class OddSquares(JapaneseScene):
         self.show_title()
         self.build_layers()
         self.derive_formula()
-        self.wait(0.7)
+        self.hold(1.2)
 
     def show_title(self):
         title = self.ja_text("奇数の和は平方数", font_size=40)
-        self.play(FadeIn(title), run_time=0.45)
-        self.wait(0.2)
-        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.35)
+        self.play(FadeIn(title), run_time=0.8)
+        self.hold(0.6)
+        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.45)
         self.title = title
 
         series = MathTex(r"1+3+5+\cdots+(2n-1)").scale(1.05)
         series.next_to(self.title, DOWN, buff=0.28)
-        self.play(Write(series), run_time=0.55)
+        self.play(Write(series), run_time=1.1)
+        self.hold(0.7)
         self.series = series
 
     def _square(self, color):
@@ -53,10 +54,9 @@ class OddSquares(JapaneseScene):
         return origin + RIGHT * col * step + UP * row * step
 
     def build_layers(self):
-        origin = LEFT * 4.4 + DOWN * 2.0
+        origin = LEFT * 4.6 + DOWN * 2.2
         self.origin = origin
-        self.layers = []
-        odd_labels = VGroup()
+        self.odd_labels = VGroup()
 
         for k in range(1, self.n + 1):
             color = LAYER_COLORS[(k - 1) % len(LAYER_COLORS)]
@@ -65,15 +65,15 @@ class OddSquares(JapaneseScene):
                 sq = self._square(color)
                 sq.move_to(self._cell_center(col, row, origin))
                 group.add(sq)
-            self.layers.append(group)
-            self.play(FadeIn(group, scale=0.7), run_time=0.45)
+            self.play(FadeIn(group, scale=0.7), run_time=0.7)
 
             odd = 2 * k - 1
-            label = MathTex(str(odd), color=color, font_size=32)
-            label.next_to(self.series, DOWN, buff=0.25 + 0.45 * (k - 1)).to_edge(RIGHT, buff=1.2)
-            odd_labels.add(label)
-            self.play(FadeIn(label), run_time=0.25)
-            self.wait(0.15)
+            label = MathTex(str(odd), color=color, font_size=34)
+            label.to_edge(RIGHT, buff=1.0)
+            label.shift(DOWN * (0.35 + 0.55 * (k - 1)))
+            self.play(FadeIn(label), run_time=0.35)
+            self.odd_labels.add(label)
+            self.hold(0.7)
 
         outline = Square(
             side_length=self.n * (self.square_size + self.gap) - self.gap,
@@ -83,21 +83,21 @@ class OddSquares(JapaneseScene):
         outline.move_to(
             self._cell_center((self.n - 1) / 2, (self.n - 1) / 2, origin)
         )
-        self.play(Create(outline), run_time=0.5)
+        self.play(Create(outline), run_time=0.9)
         n_label = MathTex("n\\times n").next_to(outline, DOWN, buff=0.25)
-        self.play(FadeIn(n_label), run_time=0.3)
-        self.wait(0.3)
-        self.odd_labels = odd_labels
+        self.play(FadeIn(n_label), run_time=0.45)
+        self.hold(1.0)
         self.outline = outline
         self.n_label = n_label
 
     def derive_formula(self):
-        formula = MathTex(r"1+3+5+\cdots+(2n-1)=n^2").scale(1.15)
-        formula.to_edge(DOWN, buff=0.45)
-        self.play(Write(formula), run_time=0.7)
-        self.play(Indicate(formula, color=BLUE), run_time=0.5)
+        formula = MathTex(r"1+3+5+\cdots+(2n-1)=n^2").scale(1.1)
+        formula.to_edge(DOWN, buff=0.4)
+        self.play(Write(formula), run_time=1.2)
+        self.play(Indicate(formula, color=BLUE), run_time=0.8)
+        self.hold(1.1)
 
         example = MathTex(r"1+3+5+7=16=4^2").scale(0.9)
-        example.next_to(formula, UP, buff=0.25)
-        self.play(FadeIn(example), run_time=0.4)
-        self.wait(0.55)
+        example.next_to(formula, UP, buff=0.22)
+        self.play(FadeIn(example), run_time=0.55)
+        self.hold(1.4)

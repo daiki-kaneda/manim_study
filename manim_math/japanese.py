@@ -125,10 +125,19 @@ def ja_text(text: str, **kwargs: Any):
 
 
 class JapaneseScene(Scene):
-    """Scene base with ``ja_tex`` / ``ja_text`` for Japanese titles and mixed math."""
+    """Scene base with ``ja_tex`` / ``ja_text`` for Japanese titles and mixed math.
+
+    ``beat`` is the default linger after a visual beat. Shorts in this repo
+    target roughly 60–90 seconds. Subclasses can override ``beat``.
+    """
+
+    beat = 3.0
 
     def ja_tex(self, *args: Any, **kwargs: Any):
         return ja_tex(*args, **kwargs)
 
     def ja_text(self, text: str, **kwargs: Any):
         return ja_text(text, **kwargs)
+
+    def hold(self, beats: float = 1.0) -> None:
+        self.wait(max(0.0, self.beat * beats))

@@ -24,20 +24,20 @@ class ArithmeticSum(JapaneseScene):
         self.build_staircase()
         self.complete_rectangle()
         self.derive_formula()
-        self.wait(0.7)
+        self.hold(1.2)
 
     def show_title(self):
         title = self.ja_text("等差数列の和", font_size=42)
-        self.play(FadeIn(title), run_time=0.45)
-        self.wait(0.2)
-        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.35)
+        self.play(FadeIn(title), run_time=0.8)
+        self.hold(0.6)
+        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.45)
         self.title = title
 
     def show_question(self):
         question = MathTex(r"1+2+\cdots+n = \ ?").scale(1.15)
         question.next_to(self.title, DOWN, buff=0.3)
-        self.play(Write(question), run_time=0.6)
-        self.wait(0.35)
+        self.play(Write(question), run_time=1.1)
+        self.hold(0.9)
         self.question = question
 
     def _square(self, color):
@@ -63,8 +63,8 @@ class ArithmeticSum(JapaneseScene):
             sq.move_to(self._cell_center(col, row, origin))
             self.blue_squares.add(sq)
             animations.append(FadeIn(sq, scale=0.6))
-        self.play(LaggedStart(*animations, lag_ratio=0.08), run_time=1.2)
-        self.wait(0.25)
+        self.play(LaggedStart(*animations, lag_ratio=0.08), run_time=2.4)
+        self.hold(0.8)
 
         counts = VGroup(
             *[
@@ -74,9 +74,9 @@ class ArithmeticSum(JapaneseScene):
                 for row in range(self.n)
             ]
         )
-        self.play(FadeIn(counts), run_time=0.4)
-        self.wait(0.3)
-        self.play(FadeOut(counts), run_time=0.25)
+        self.play(FadeIn(counts), run_time=0.5)
+        self.hold(1.0)
+        self.play(FadeOut(counts), run_time=0.35)
 
     def complete_rectangle(self):
         origin = self.origin
@@ -88,7 +88,8 @@ class ArithmeticSum(JapaneseScene):
                 sq.move_to(self._cell_center(col, row, origin))
                 orange_squares.add(sq)
                 animations.append(FadeIn(sq, scale=0.6))
-        self.play(LaggedStart(*animations, lag_ratio=0.05), run_time=1.0)
+        self.play(LaggedStart(*animations, lag_ratio=0.05), run_time=2.0)
+        self.hold(0.8)
         self.orange_squares = orange_squares
 
         brace_bottom = Brace(VGroup(self.blue_squares, orange_squares), DOWN, buff=0.15)
@@ -100,23 +101,24 @@ class ArithmeticSum(JapaneseScene):
             GrowFromCenter(brace_left),
             FadeIn(label_cols),
             FadeIn(label_rows),
-            run_time=0.5,
+            run_time=0.9,
         )
-        self.wait(0.4)
+        self.hold(1.3)
         self.rect_labels = VGroup(brace_bottom, brace_left, label_cols, label_rows)
 
     def derive_formula(self):
         two_copies = MathTex(r"2S = n(n+1)").scale(1.15)
         two_copies.next_to(self.question, DOWN, buff=0.35).to_edge(RIGHT, buff=0.7)
-        self.play(Write(two_copies), run_time=0.55)
-        self.wait(0.35)
+        self.play(Write(two_copies), run_time=1.0)
+        self.hold(1.1)
 
         formula = MathTex(r"S = \frac{n(n+1)}{2}").scale(1.35)
         formula.next_to(two_copies, DOWN, buff=0.35).align_to(two_copies, RIGHT)
-        self.play(TransformMatchingTex(two_copies.copy(), formula), run_time=0.7)
-        self.play(Indicate(formula, color=BLUE), run_time=0.45)
+        self.play(Write(formula), run_time=1.1)
+        self.play(Indicate(formula, color=BLUE), run_time=0.8)
+        self.hold(1.3)
 
         example = MathTex(r"n=100 \ \Rightarrow\ 5050").scale(0.9)
         example.next_to(formula, DOWN, buff=0.3).align_to(formula, RIGHT)
-        self.play(FadeIn(example), run_time=0.4)
-        self.wait(0.6)
+        self.play(FadeIn(example), run_time=0.6)
+        self.hold(1.5)

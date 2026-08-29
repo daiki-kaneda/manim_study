@@ -20,13 +20,13 @@ class TriangleArea(JapaneseScene):
         self.show_triangle()
         self.form_parallelogram()
         self.derive_formula()
-        self.wait(0.8)
+        self.hold(1.2)
 
     def show_title(self):
         title = self.ja_text("三角形の面積", font_size=44)
-        self.play(FadeIn(title), run_time=0.5)
-        self.wait(0.25)
-        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.4)
+        self.play(FadeIn(title), run_time=0.8)
+        self.hold(0.7)
+        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.5)
         self.title = title
 
     def show_triangle(self):
@@ -44,7 +44,8 @@ class TriangleArea(JapaneseScene):
             fill_opacity=0.7,
             stroke_width=2,
         )
-        self.play(Create(self.triangle), run_time=0.7)
+        self.play(Create(self.triangle), run_time=1.4)
+        self.hold(0.6)
 
         foot = self.C.copy()
         foot[1] = self.A[1]
@@ -58,16 +59,18 @@ class TriangleArea(JapaneseScene):
             GrowFromCenter(base_brace),
             FadeIn(label_a),
             FadeIn(label_h),
-            run_time=0.6,
+            run_time=1.0,
         )
-        self.wait(0.35)
+        self.hold(1.2)
         self.guides = VGroup(height_line, base_brace, label_a, label_h)
 
     def form_parallelogram(self):
-        self.play(FadeOut(self.guides), run_time=0.3)
+        self.play(FadeOut(self.guides), run_time=0.4)
         copy = self.triangle.copy().set_color(ORANGE)
-        self.play(FadeIn(copy), run_time=0.35)
-        self.play(Rotate(copy, PI, about_point=self.mid_ab), run_time=0.8)
+        self.play(FadeIn(copy), run_time=0.6)
+        self.hold(0.5)
+        self.play(Rotate(copy, PI, about_point=self.mid_ab), run_time=1.8)
+        self.hold(1.0)
 
         parallelogram = Polygon(
             self.A,
@@ -78,16 +81,16 @@ class TriangleArea(JapaneseScene):
             fill_opacity=0,
             stroke_width=3,
         )
-        self.play(Create(parallelogram), run_time=0.5)
-        self.wait(0.25)
+        self.play(Create(parallelogram), run_time=0.9)
+        self.hold(1.0)
 
         self.copy_triangle = copy
         self.parallelogram = parallelogram
 
         caption = self.ja_text("平行四辺形", font_size=28).to_edge(DOWN)
-        self.play(FadeIn(caption), run_time=0.35)
-        self.wait(0.35)
-        self.play(FadeOut(caption), run_time=0.25)
+        self.play(FadeIn(caption), run_time=0.5)
+        self.hold(0.9)
+        self.play(FadeOut(caption), run_time=0.35)
 
     def derive_formula(self):
         para_area = MathTex(r"ah").scale(1.2)
@@ -95,21 +98,22 @@ class TriangleArea(JapaneseScene):
         row1 = VGroup(para_label, para_area).arrange(RIGHT, buff=0.2)
         row1.next_to(self.title, DOWN, buff=0.35).to_edge(RIGHT, buff=0.8)
 
-        self.play(Write(row1), run_time=0.6)
-        self.wait(0.4)
+        self.play(Write(row1), run_time=1.0)
+        self.hold(1.1)
 
         half = self.ja_text("三角形は半分", font_size=26)
         half.next_to(row1, DOWN, aligned_edge=RIGHT, buff=0.3)
-        self.play(FadeIn(half), run_time=0.4)
-        self.play(Indicate(self.triangle), run_time=0.5)
-        self.wait(0.3)
+        self.play(FadeIn(half), run_time=0.5)
+        self.play(Indicate(self.triangle), run_time=1.0)
+        self.hold(0.9)
 
         formula = MathTex(r"S = \frac{1}{2} ah").scale(1.4)
         formula.next_to(half, DOWN, buff=0.4).align_to(row1, RIGHT)
-        self.play(FadeOut(half), TransformMatchingTex(para_area.copy(), formula), run_time=0.7)
-        self.play(Indicate(formula, color=BLUE), run_time=0.5)
+        self.play(FadeOut(half), Write(formula), run_time=1.1)
+        self.play(Indicate(formula, color=BLUE), run_time=0.8)
+        self.hold(1.2)
 
         example = MathTex(r"a=4,\ h=3 \ \Rightarrow\ S=6").scale(0.85)
         example.next_to(formula, DOWN, buff=0.35).align_to(formula, RIGHT)
-        self.play(FadeIn(example), run_time=0.45)
-        self.wait(0.6)
+        self.play(FadeIn(example), run_time=0.6)
+        self.hold(1.6)

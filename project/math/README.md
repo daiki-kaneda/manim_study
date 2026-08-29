@@ -25,6 +25,8 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 
 日本語フォントは `MANIM_JAPANESE_FONT` で上書きできる。未設定なら Hannari Mincho を優先し、なければ Noto / 文泉驛などにフォールバックする。
 
+尺は `JapaneseScene.beat`（デフォルト 3 秒）で調整する。`beat = 3` だと #2〜#4 はおよそ 40〜50 秒。90 秒に近づけたいときはシーン側で `beat = 5` にする。
+
 ## 番号
 
 | # | タイトル | パス |

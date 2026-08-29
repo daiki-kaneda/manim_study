@@ -775,3 +775,18 @@ VIDEOS_702_713: tuple[Video, ...] = (
     Video(712, "モーメント母汎関数", "project/math/267_probability_49/712_mgf_func/scene.py", "MomentGeneratingFunctional"),
     Video(713, "スプリンガー数", "project/math/268_combinatorics_48/713_springer/scene.py", "SpringerNumbers"),
 )
+
+VIDEOS_714_725: tuple[Video, ...] = (
+    Video(714, "グロモフ・ウィッテン", "project/math/269_analysis_52/714_gromov_witten/scene.py", "GromovWitten"),
+    Video(715, "深谷圏", "project/math/269_analysis_52/715_fukaya/scene.py", "FukayaCategory"),
+    Video(716, "ミラー対称性", "project/math/269_analysis_52/716_mirror/scene.py", "MirrorSymmetry"),
+    Video(717, "LAMB", "project/math/270_linear_52/717_lamb/scene.py", "LAMB"),
+    Video(718, "AdaBound", "project/math/270_linear_52/718_adabound/scene.py", "AdaBound"),
+    Video(719, "Yogi", "project/math/270_linear_52/719_yogi/scene.py", "Yogi"),
+    Video(720, "外側ナポレオン", "project/math/271_geometry_52/720_outer_napoleon/scene.py", "OuterNapoleon"),
+    Video(721, "テーラー円", "project/math/271_geometry_52/721_taylor_circle/scene.py", "TaylorCircle"),
+    Video(722, "余弦円", "project/math/271_geometry_52/722_cosine_circle/scene.py", "CosineCircle"),
+    Video(723, "ヤノッシ密度", "project/math/272_probability_50/723_janossy/scene.py", "JanossyDensity"),
+    Video(724, "縮小パーム", "project/math/272_probability_50/724_reduced_palm/scene.py", "ReducedPalm"),
+    Video(725, "ウィソフ配列", "project/math/273_combinatorics_49/725_wythoff/scene.py", "WythoffArray"),
+)

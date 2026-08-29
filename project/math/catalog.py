@@ -2125,3 +2125,48 @@ VIDEOS_1782_1793: tuple[Video, ...] = (
     Video(1792, "半径パッキング数", "project/math/717_probability_139/1792_radius_packing/scene.py", "RadiusPacking"),
     Video(1793, "ケイリー細分", "project/math/718_combinatorics_138/1793_cayley_refine/scene.py", "CayleyRefine"),
 )
+
+VIDEOS_1794_1805: tuple[Video, ...] = (
+    Video(1794, "ログ多重度対", "project/math/719_analysis_142/1794_log_mult_pair/scene.py", "LogMultPair"),
+    Video(1795, "相対ログ多重度対", "project/math/719_analysis_142/1795_rel_log_mult/scene.py", "RelLogMult"),
+    Video(1796, "ログ交点数対", "project/math/719_analysis_142/1796_log_intersect_pair/scene.py", "LogIntersectPair"),
+    Video(1797, "ApolloBoundHard", "project/math/720_linear_142/1797_apolloboundhard/scene.py", "ApolloBoundHard"),
+    Video(1798, "MuonSoftBoundClip", "project/math/720_linear_142/1798_muonsoftboundclip/scene.py", "MuonSoftBoundClip"),
+    Video(1799, "SamHardBound", "project/math/720_linear_142/1799_samhardbound/scene.py", "SamHardBound"),
+    Video(1800, "内心フォイエル弧比", "project/math/721_geometry_142/1800_in_feuer_arc/scene.py", "InFeuerArc"),
+    Video(1801, "傍心フォイエル弧比", "project/math/721_geometry_142/1801_ex_feuer_arc/scene.py", "ExFeuerArc"),
+    Video(1802, "外心フォイエル弧比", "project/math/721_geometry_142/1802_o_feuer_arc/scene.py", "OFeuerArc"),
+    Video(1803, "局所半径被覆", "project/math/722_probability_140/1803_local_radius_covering/scene.py", "LocalRadiusCovering"),
+    Video(1804, "局所半径パッキング", "project/math/722_probability_140/1804_local_radius_packing/scene.py", "LocalRadiusPacking"),
+    Video(1805, "増加森細分", "project/math/723_combinatorics_139/1805_inc_forest_refine/scene.py", "IncForestRefine"),
+)
+
+VIDEOS_1806_1817: tuple[Video, ...] = (
+    Video(1806, "相対ログ交点数対", "project/math/724_analysis_143/1806_rel_log_intersect/scene.py", "RelLogIntersect"),
+    Video(1807, "ログ次数対", "project/math/724_analysis_143/1807_log_degree_pair/scene.py", "LogDegreePair"),
+    Video(1808, "相対ログ次数対", "project/math/724_analysis_143/1808_rel_log_degree/scene.py", "RelLogDegree"),
+    Video(1809, "AdaFactorSoftBound", "project/math/725_linear_143/1809_adafactorsoftbound/scene.py", "AdaFactorSoftBound"),
+    Video(1810, "NAdamHardSoft", "project/math/725_linear_143/1810_nadamhardsoft/scene.py", "NAdamHardSoft"),
+    Video(1811, "LAMBHardBound", "project/math/725_linear_143/1811_lambhardbound/scene.py", "LAMBHardBound"),
+    Video(1812, "垂心フォイエル弧比", "project/math/726_geometry_143/1812_h_feuer_arc/scene.py", "HFeuerArc"),
+    Video(1813, "重心フォイエル弧比", "project/math/726_geometry_143/1813_g_feuer_arc/scene.py", "GFeuerArc"),
+    Video(1814, "九点フォイエル弧比", "project/math/726_geometry_143/1814_n_feuer_arc/scene.py", "NFeuerArc"),
+    Video(1815, "経験半径被覆", "project/math/727_probability_141/1815_emp_radius_covering/scene.py", "EmpRadiusCovering"),
+    Video(1816, "経験半径パッキング", "project/math/727_probability_141/1816_emp_radius_packing/scene.py", "EmpRadiusPacking"),
+    Video(1817, "減少木細分", "project/math/728_combinatorics_140/1817_dec_tree_refine/scene.py", "DecTreeRefine"),
+)
+
+VIDEOS_1818_1829: tuple[Video, ...] = (
+    Video(1818, "ログ体積多項式対", "project/math/729_analysis_144/1818_log_vol_poly_pair/scene.py", "LogVolPolyPair"),
+    Video(1819, "相対ログ体積多項式対", "project/math/729_analysis_144/1819_rel_log_vol_poly/scene.py", "RelLogVolPoly"),
+    Video(1820, "ログ自己交対", "project/math/729_analysis_144/1820_log_self_intersect/scene.py", "LogSelfIntersect"),
+    Video(1821, "LookaheadHardBound", "project/math/730_linear_144/1821_lookaheadhardbound/scene.py", "LookaheadHardBound"),
+    Video(1822, "ProdigyHardBound", "project/math/730_linear_144/1822_prodigyhardbound/scene.py", "ProdigyHardBound"),
+    Video(1823, "ScheduleFreeHardBound", "project/math/730_linear_144/1823_schedulefreehardbound/scene.py", "ScheduleFreeHardBound"),
+    Video(1824, "内心類似フォイエル弧比", "project/math/731_geometry_144/1824_in_sym_feuer_arc/scene.py", "InSymFeuerArc"),
+    Video(1825, "傍心類似フォイエル弧比", "project/math/731_geometry_144/1825_ex_sym_feuer_arc/scene.py", "ExSymFeuerArc"),
+    Video(1826, "外心類似フォイエル弧比", "project/math/731_geometry_144/1826_o_sym_feuer_arc/scene.py", "OSymFeuerArc"),
+    Video(1827, "一様半径被覆", "project/math/732_probability_142/1827_uniform_radius_covering/scene.py", "UniformRadiusCovering"),
+    Video(1828, "一様半径パッキング", "project/math/732_probability_142/1828_uniform_radius_packing/scene.py", "UniformRadiusPacking"),
+    Video(1829, "二分ヒープ細分", "project/math/733_combinatorics_141/1829_binheap_refine/scene.py", "BinHeapRefine"),
+)

@@ -13,7 +13,9 @@ manim -pql project/math/01_proofs_without_words/02_triangle_area/scene.py Triang
 manim -pql project/math/01_proofs_without_words/03_arithmetic_sum/scene.py ArithmeticSum
 manim -pql project/math/01_proofs_without_words/05_sine_addition/scene.py SineAddition
 manim -pql project/math/02_geometry/06_inscribed_angle/scene.py InscribedAngle
-manim -pql project/math/03_algebra/11_sqrt2_irrational/scene.py Sqrt2Irrational
+manim -pql project/math/03_algebra/12_binomial_square/scene.py BinomialSquare
+manim -pql project/math/04_calculus/16_derivative_tangent/scene.py DerivativeTangent
+manim -pql project/math/04_calculus/20_e_definition/scene.py EDefinition
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -44,5 +46,14 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 9 | 接線と弦 | `project/math/02_geometry/09_tangent_chord/` |
 | 10 | ベクトルの加法 | `project/math/02_geometry/10_vector_parallelogram/` |
 | 11 | √2 は無理数 | `project/math/03_algebra/11_sqrt2_irrational/` |
+| 12 | (a+b)² の展開 | `project/math/03_algebra/12_binomial_square/` |
+| 13 | 等比数列の和 | `project/math/03_algebra/13_geometric_series/` |
+| 14 | a³+b³ の因数分解 | `project/math/03_algebra/14_sum_of_cubes/` |
+| 15 | 判別式 | `project/math/03_algebra/15_discriminant/` |
+| 16 | 微分 | `project/math/04_calculus/16_derivative_tangent/` |
+| 17 | 積分 | `project/math/04_calculus/17_integral_area/` |
+| 18 | 合成関数の微分 | `project/math/04_calculus/18_chain_rule/` |
+| 19 | 部分積分 | `project/math/04_calculus/19_integration_by_parts/` |
+| 20 | e の定義 | `project/math/04_calculus/20_e_definition/` |
 
 以降の番号は `PLAN.md` を参照。

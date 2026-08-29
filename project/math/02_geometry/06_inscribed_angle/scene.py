@@ -93,7 +93,7 @@ class InscribedAngle(JapaneseScene):
             MathTex(r"/\,2").scale(0.9),
         ).arrange(RIGHT, buff=0.15)
         formula.to_edge(DOWN, buff=0.4)
-        self.play(Write(formula), run_time=1.0)
+        self.play(FadeIn(formula), run_time=0.7)
         half = MathTex(r"\theta = \frac{2\theta}{2}", font_size=36)
         half.next_to(self.title, DOWN, buff=0.3).to_edge(RIGHT, buff=0.7)
         self.play(FadeIn(half), run_time=0.7)

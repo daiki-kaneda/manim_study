@@ -75,8 +75,8 @@ class SineAddition(JapaneseScene):
     def decompose_sine(self):
         foot = np.array([self.p_ab[0], self.origin[1], 0.0])
         height = DashedLine(self.p_ab, foot, color=YELLOW, stroke_width=2)
-        sin_label = MathTex(r"\sin(\alpha+\beta)", font_size=30)
-        sin_label.next_to(height, RIGHT, buff=0.12)
+        sin_label = MathTex(r"\sin(\alpha+\beta)", font_size=32)
+        sin_label.to_edge(RIGHT, buff=0.55).shift(UP * 1.6)
         self.play(Create(height), FadeIn(sin_label), run_time=0.9)
         self.hold(0.8)
 
@@ -88,10 +88,10 @@ class SineAddition(JapaneseScene):
         self.play(Create(fc), run_time=0.7)
         self.hold(0.9)
 
-        part1 = MathTex(r"\sin\alpha\cos\beta", color=GREEN, font_size=28)
-        part2 = MathTex(r"\cos\alpha\sin\beta", color=ORANGE, font_size=28)
-        parts = VGroup(part1, MathTex("+", font_size=28), part2).arrange(RIGHT, buff=0.12)
-        parts.next_to(sin_label, DOWN, aligned_edge=LEFT, buff=0.25)
+        part1 = MathTex(r"\sin\alpha\cos\beta", color=GREEN, font_size=30)
+        part2 = MathTex(r"\cos\alpha\sin\beta", color=ORANGE, font_size=30)
+        parts = VGroup(part1, MathTex("+", font_size=30), part2).arrange(RIGHT, buff=0.12)
+        parts.next_to(sin_label, DOWN, aligned_edge=RIGHT, buff=0.35)
         self.play(FadeIn(parts), run_time=0.7)
         self.hold(1.0)
         self.parts = parts

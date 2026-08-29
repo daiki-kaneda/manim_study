@@ -985,3 +985,18 @@ VIDEOS_870_881: tuple[Video, ...] = (
     Video(880, "従属過程", "project/math/337_probability_63/880_subordinator/scene.py", "Subordinator"),
     Video(881, "オイラー数", "project/math/338_combinatorics_62/881_euler_numbers/scene.py", "EulerNumbers"),
 )
+
+VIDEOS_882_893: tuple[Video, ...] = (
+    Video(882, "チャーン・ヴェイユ", "project/math/339_analysis_66/882_chern_weil/scene.py", "ChernWeil"),
+    Video(883, "グロタンディーク", "project/math/339_analysis_66/883_grothendieck/scene.py", "Grothendieck"),
+    Video(884, "指数指標", "project/math/339_analysis_66/884_chern_character/scene.py", "ChernCharacter"),
+    Video(885, "AMSGrad", "project/math/340_linear_66/885_amsgrad/scene.py", "AMSGrad"),
+    Video(886, "AdaMod", "project/math/340_linear_66/886_adamod/scene.py", "AdaMod"),
+    Video(887, "AdaHessian", "project/math/340_linear_66/887_adahessian/scene.py", "AdaHessian"),
+    Video(888, "イソゴナル共役", "project/math/341_geometry_66/888_isogonal/scene.py", "IsogonalConjugate"),
+    Video(889, "エクセントリック", "project/math/341_geometry_66/889_eccentric/scene.py", "Eccentric"),
+    Video(890, "シムソン線点", "project/math/341_geometry_66/890_simson_point/scene.py", "SimsonPoint"),
+    Video(891, "加法過程", "project/math/342_probability_64/891_additive/scene.py", "AdditiveProcess"),
+    Video(892, "セミマルチンゲール", "project/math/342_probability_64/892_semimartingale/scene.py", "Semimartingale"),
+    Video(893, "セグル数列", "project/math/343_combinatorics_63/893_segner/scene.py", "SegnerNumbers"),
+)

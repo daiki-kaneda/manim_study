@@ -535,3 +535,18 @@ VIDEOS_510_521: tuple[Video, ...] = (
     Video(520, "ガウス測度", "project/math/187_probability_33/520_gaussian_measure/scene.py", "GaussianMeasure"),
     Video(521, "フェラーズ図", "project/math/188_combinatorics_32/521_ferrers/scene.py", "FerrersDiagram"),
 )
+
+VIDEOS_522_533: tuple[Video, ...] = (
+    Video(522, "II1因子", "project/math/189_analysis_36/522_ii1/scene.py", "II1Factor"),
+    Video(523, "弱収束", "project/math/189_analysis_36/523_weak_conv/scene.py", "WeakConvergence"),
+    Video(524, "マルチンケヴィッチ", "project/math/189_analysis_36/524_marcinkiewicz/scene.py", "Marcinkiewicz"),
+    Video(525, "共役残差", "project/math/190_linear_36/525_conjugate_residual/scene.py", "ConjugateResidual"),
+    Video(526, "自然勾配法", "project/math/190_linear_36/526_natural_grad/scene.py", "NaturalGradient"),
+    Video(527, "逆冪乗法", "project/math/190_linear_36/527_inverse_power/scene.py", "InversePower"),
+    Video(528, "パスカルの六角形", "project/math/191_geometry_36/528_pascal_hex/scene.py", "PascalHexagon"),
+    Video(529, "接弦の長さ比", "project/math/191_geometry_36/529_tangent_chord_ratio/scene.py", "TangentChordRatio"),
+    Video(530, "三角形の剛性", "project/math/191_geometry_36/530_triangle_rigidity/scene.py", "TriangleRigidity"),
+    Video(531, "累積強度", "project/math/192_probability_34/531_cum_intensity/scene.py", "CumulativeIntensity"),
+    Video(532, "点過程強度", "project/math/192_probability_34/532_pp_intensity/scene.py", "PointProcessIntensity"),
+    Video(533, "トリボナッチ", "project/math/193_combinatorics_33/533_tribonacci/scene.py", "Tribonacci"),
+)

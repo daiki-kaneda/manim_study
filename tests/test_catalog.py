@@ -12,6 +12,7 @@ sys.modules[_spec.name] = _catalog
 _spec.loader.exec_module(_catalog)
 VIDEOS_101_125 = _catalog.VIDEOS_101_125
 VIDEOS_126_137 = _catalog.VIDEOS_126_137
+VIDEOS_138_149 = _catalog.VIDEOS_138_149
 
 
 class CatalogTests(unittest.TestCase):
@@ -23,8 +24,12 @@ class CatalogTests(unittest.TestCase):
         nums = [v.number for v in VIDEOS_126_137]
         self.assertEqual(nums, list(range(126, 138)))
 
+    def test_numbers_are_138_to_149(self):
+        nums = [v.number for v in VIDEOS_138_149]
+        self.assertEqual(nums, list(range(138, 150)))
+
     def test_each_scene_file_defines_the_class(self):
-        for video in (*VIDEOS_101_125, *VIDEOS_126_137):
+        for video in (*VIDEOS_101_125, *VIDEOS_126_137, *VIDEOS_138_149):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)
             text = path.read_text(encoding="utf-8")

@@ -37,6 +37,9 @@ manim -pql project/math/25_info/125_monte_carlo_pi/scene.py MonteCarloPi
 manim -pql project/math/26_analysis_3/126_arc_length/scene.py ArcLength
 manim -pql project/math/28_geometry_3/131_ceva/scene.py Ceva
 manim -pql project/math/29_probability_2/137_catalan/scene.py Catalan
+manim -pql project/math/30_analysis_4/138_substitution/scene.py Substitution
+manim -pql project/math/32_geometry_4/145_nine_point/scene.py NinePoint
+manim -pql project/math/33_combinatorics_2/149_fibonacci/scene.py Fibonacci
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -193,3 +196,15 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 135 | ポアソン | `project/math/29_probability_2/135_poisson/` |
 | 136 | 母関数 | `project/math/29_probability_2/136_generating_function/` |
 | 137 | カタラン数 | `project/math/29_probability_2/137_catalan/` |
+| 138 | 置換積分 | `project/math/30_analysis_4/138_substitution/` |
+| 139 | 広義積分 | `project/math/30_analysis_4/139_improper/` |
+| 140 | 偏微分 | `project/math/30_analysis_4/140_partial/` |
+| 141 | 線積分 | `project/math/30_analysis_4/141_line_integral/` |
+| 142 | 直交化 | `project/math/31_linear_4/142_gram_schmidt/` |
+| 143 | 対角化 | `project/math/31_linear_4/143_diagonalize/` |
+| 144 | 直交行列 | `project/math/31_linear_4/144_orthogonal_matrix/` |
+| 145 | 九点円 | `project/math/32_geometry_4/145_nine_point/` |
+| 146 | オイラー線 | `project/math/32_geometry_4/146_euler_line/` |
+| 147 | メネラウスの定理 | `project/math/32_geometry_4/147_menelaus/` |
+| 148 | 角の二等分線 | `project/math/32_geometry_4/148_angle_bisector/` |
+| 149 | フィボナッチ | `project/math/33_combinatorics_2/149_fibonacci/` |

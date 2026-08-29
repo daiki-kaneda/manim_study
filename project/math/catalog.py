@@ -565,3 +565,18 @@ VIDEOS_534_545: tuple[Video, ...] = (
     Video(544, "自己励起過程", "project/math/197_probability_35/544_self_exciting/scene.py", "SelfExciting"),
     Video(545, "パッドヴァン", "project/math/198_combinatorics_34/545_padovan/scene.py", "Padovan"),
 )
+
+VIDEOS_546_557: tuple[Video, ...] = (
+    Video(546, "バナッハ極限", "project/math/199_analysis_38/546_banach_limit/scene.py", "BanachLimit"),
+    Video(547, "極大関数", "project/math/199_analysis_38/547_maximal/scene.py", "MaximalFunction"),
+    Video(548, "リトルウッド・ペイリー", "project/math/199_analysis_38/548_littlewood_paley/scene.py", "LittlewoodPaley"),
+    Video(549, "GMRES再スタート", "project/math/200_linear_38/549_gmres_restart/scene.py", "GMRESRestart"),
+    Video(550, "領域分割", "project/math/200_linear_38/550_domain_decomp/scene.py", "DomainDecomposition"),
+    Video(551, "多色SOR", "project/math/200_linear_38/551_multicolor_sor/scene.py", "MulticolorSOR"),
+    Video(552, "トレミーの一般化", "project/math/201_geometry_38/552_ptolemy_gen/scene.py", "PtolemyGeneral"),
+    Video(553, "モザーの円", "project/math/201_geometry_38/553_moser_circle/scene.py", "MoserCircle"),
+    Video(554, "極と極線", "project/math/201_geometry_38/554_pole_polar/scene.py", "PolePolar"),
+    Video(555, "補償マルチンゲール", "project/math/202_probability_36/555_compensated/scene.py", "CompensatedMartingale"),
+    Video(556, "ハフ変換", "project/math/202_probability_36/556_hough/scene.py", "HoughTransform"),
+    Video(557, "平面木", "project/math/203_combinatorics_35/557_plane_trees/scene.py", "PlaneTrees"),
+)

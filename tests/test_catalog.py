@@ -180,6 +180,9 @@ VIDEOS_2106_2117 = _catalog.VIDEOS_2106_2117
 VIDEOS_2118_2129 = _catalog.VIDEOS_2118_2129
 VIDEOS_2130_2141 = _catalog.VIDEOS_2130_2141
 VIDEOS_2142_2153 = _catalog.VIDEOS_2142_2153
+VIDEOS_2190_2201 = _catalog.VIDEOS_2190_2201
+VIDEOS_2202_2213 = _catalog.VIDEOS_2202_2213
+VIDEOS_2214_2225 = _catalog.VIDEOS_2214_2225
 VIDEOS_2154_2165 = _catalog.VIDEOS_2154_2165
 VIDEOS_2166_2177 = _catalog.VIDEOS_2166_2177
 VIDEOS_2178_2189 = _catalog.VIDEOS_2178_2189
@@ -986,6 +989,21 @@ class CatalogTests(unittest.TestCase):
     def test_numbers_are_2178_to_2189(self):
         nums = [v.number for v in VIDEOS_2178_2189]
         self.assertEqual(nums, list(range(2178, 2190)))
+
+
+    def test_numbers_are_2190_to_2201(self):
+        nums = [v.number for v in VIDEOS_2190_2201]
+        self.assertEqual(nums, list(range(2190, 2202)))
+
+
+    def test_numbers_are_2202_to_2213(self):
+        nums = [v.number for v in VIDEOS_2202_2213]
+        self.assertEqual(nums, list(range(2202, 2214)))
+
+
+    def test_numbers_are_2214_to_2225(self):
+        nums = [v.number for v in VIDEOS_2214_2225]
+        self.assertEqual(nums, list(range(2214, 2226)))
 
     def test_each_scene_file_defines_the_class(self):
         for video in (

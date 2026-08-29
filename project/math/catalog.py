@@ -310,3 +310,18 @@ VIDEOS_330_341: tuple[Video, ...] = (
     Video(340, "経験過程", "project/math/112_probability_18/340_empirical_process/scene.py", "EmpiricalProcess"),
     Video(341, "リュカの定理", "project/math/113_combinatorics_17/341_lucas/scene.py", "LucasTheorem"),
 )
+
+VIDEOS_342_353: tuple[Video, ...] = (
+    Video(342, "フレシェ微分", "project/math/114_analysis_21/342_frechet/scene.py", "FrechetDerivative"),
+    Video(343, "ゲートー微分", "project/math/114_analysis_21/343_gateaux/scene.py", "GateauxDerivative"),
+    Video(344, "ソボレフの不等式", "project/math/114_analysis_21/344_sobolev/scene.py", "SobolevInequality"),
+    Video(345, "作用素ノルム", "project/math/115_linear_21/345_operator_norm/scene.py", "OperatorNorm"),
+    Video(346, "フォン・ノイマンの内積", "project/math/115_linear_21/346_von_neumann/scene.py", "VonNeumann"),
+    Video(347, "ブロッホ球", "project/math/115_linear_21/347_bloch/scene.py", "BlochSphere"),
+    Video(348, "接線三角形", "project/math/116_geometry_21/348_tangential_triangle/scene.py", "TangentialTriangle"),
+    Video(349, "接点三角形", "project/math/116_geometry_21/349_intouch_triangle/scene.py", "IntouchTriangle"),
+    Video(350, "オイラー反射点", "project/math/116_geometry_21/350_euler_reflection/scene.py", "EulerReflection"),
+    Video(351, "ファインマン・カッツ", "project/math/117_probability_19/351_feynman_kac/scene.py", "FeynmanKac"),
+    Video(352, "パーコレーション", "project/math/117_probability_19/352_percolation/scene.py", "Percolation"),
+    Video(353, "メビウス反転", "project/math/118_combinatorics_18/353_mobius/scene.py", "MobiusInversion"),
+)

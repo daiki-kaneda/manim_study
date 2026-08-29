@@ -1,0 +1,58 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
+from manim import *
+from manim_math import PacedScene
+
+
+import numpy as np
+
+
+class Weibull(PacedScene):
+    """#471 ワイブル分布：形状が寿命曲線を決める（約45秒）"""
+
+    def construct(self):
+        self.show_heading("ワイブル分布")
+        self.draw_pdf()
+        self.shape()
+        self.show_formula()
+        self.read(1.4)
+
+    def draw_pdf(self):
+        axes = Axes(x_range=[0, 4.2, 1], y_range=[0, 1.2, 1], x_length=6.5, y_length=2.6,
+                    tips=False, axis_config={"stroke_width": 2, "include_ticks": False}).shift(UP * 0.4)
+        k, lam = 1.5, 1.2
+        pdf = axes.plot(
+            lambda x: (k / lam) * (x / lam) ** (k - 1) * np.exp(-(x / lam) ** k) if x > 0.01 else 0,
+            x_range=[0.05, 4.0], color=BLUE, stroke_width=4,
+        )
+        self.play(Create(axes), Create(pdf), run_time=1.5)
+        note = self.ja_text("密度", font_size=24)
+        note.to_edge(RIGHT, buff=0.55).shift(UP * 1.65)
+        self.play(FadeIn(note), run_time=0.4)
+        self.read(0.3)
+        self.note = note
+        self.axes = axes
+
+    def shape(self):
+        pdf2 = self.axes.plot(
+            lambda x: (3.0 / 1.2) * (x / 1.2) ** 2 * np.exp(-(x / 1.2) ** 3) if x > 0.01 else 0,
+            x_range=[0.05, 4.0], color=ORANGE, stroke_width=4,
+        )
+        cap = self.ja_text("形状パラメータ", font_size=24).move_to(self.note)
+        self.play(Create(pdf2), Transform(self.note, cap), run_time=1.3)
+        self.read(0.25)
+        cap2 = self.ja_text("摩耗か初期故障か", font_size=24).move_to(self.note)
+        self.play(Transform(self.note, cap2), run_time=0.8)
+        self.read(0.35)
+
+    def show_formula(self):
+        formula = MathTex(r"f(x)=\frac{k}{\lambda}(x/\lambda)^{k-1}e^{-(x/\lambda)^{k}}").scale(0.72)
+        formula.to_edge(DOWN, buff=0.22)
+        self.play(Write(formula), run_time=1.9)
+        self.play(Indicate(formula, color=YELLOW), run_time=0.85)

@@ -1,0 +1,49 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
+from manim import *
+from manim_math import PacedScene
+
+
+class LargeDeviations(PacedScene):
+    """#363 大偏差：稀な事象はレート関数で減衰（約45秒）"""
+
+    def construct(self):
+        self.show_heading("大偏差原理")
+        self.draw_rate()
+        self.decay()
+        self.show_formula()
+        self.read(1.4)
+
+    def draw_rate(self):
+        self.axes = Axes(x_range=[-0.2, 4.2, 1], y_range=[0, 2.4, 1], x_length=6.5, y_length=2.8,
+                         tips=False, axis_config={"stroke_width": 2, "include_ticks": False}).shift(LEFT * 0.4 + UP * 0.2)
+        rate = self.axes.plot(lambda x: 0.35 * (x - 1.5) ** 2, x_range=[0.2, 3.8], color=BLUE, stroke_width=4)
+        self.play(Create(self.axes), Create(rate), run_time=1.4)
+        note = self.ja_text("レート関数", font_size=24)
+        note.to_edge(RIGHT, buff=0.45).shift(UP * 1.65)
+        self.play(FadeIn(note), run_time=0.4)
+        self.read(0.3)
+        self.note = note
+
+    def decay(self):
+        x0 = 3.2
+        line = DashedLine(self.axes.c2p(x0, 0), self.axes.c2p(x0, 2.0), color=ORANGE, stroke_width=3)
+        cap = self.ja_text("遠い事象", font_size=24).move_to(self.note)
+        self.play(Create(line), Transform(self.note, cap), run_time=1.1)
+        self.read(0.25)
+        exp = MathTex(r"e^{-nI}", color=YELLOW, font_size=40).shift(RIGHT * 2.6 + UP * 0.6)
+        cap2 = self.ja_text("指数減衰", font_size=24).move_to(self.note)
+        self.play(FadeIn(exp), Transform(self.note, cap2), run_time=1.2)
+        self.read(0.4)
+
+    def show_formula(self):
+        formula = MathTex(r"P(\bar X\in A)\approx e^{-n\inf_{x\in A}I(x)}").scale(0.78)
+        formula.to_edge(DOWN, buff=0.22)
+        self.play(Write(formula), run_time=2.0)
+        self.play(Indicate(formula, color=YELLOW), run_time=0.85)

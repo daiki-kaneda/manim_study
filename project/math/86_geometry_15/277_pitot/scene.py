@@ -1,0 +1,63 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
+from manim import *
+from manim_math import PacedScene
+
+import numpy as np
+
+
+class Pitot(PacedScene):
+    """#277 ピトー：接線四角形は対辺の和が等しい（約45秒）"""
+
+    def construct(self):
+        self.show_heading("ピトーの定理")
+        self.draw_tangential()
+        self.equal_sums()
+        self.show_formula()
+        self.read(1.4)
+
+    def draw_tangential(self):
+        self.O = ORIGIN + DOWN * 0.15
+        self.inc = Circle(radius=1.0, color=TEAL, stroke_width=3).move_to(self.O)
+        # tangential quad around circle (square-ish irregular)
+        angs = [0.4, 1.7, 3.3, 5.0]
+        # touch points then extend to vertices via tangents — use a simple kite-ish tangential quad
+        self.pts = [
+            self.O + np.array([2.2, 1.3, 0]),
+            self.O + np.array([-1.8, 1.6, 0]),
+            self.O + np.array([-2.0, -1.5, 0]),
+            self.O + np.array([2.0, -1.4, 0]),
+        ]
+        self.quad = Polygon(*self.pts, color=BLUE, stroke_width=3)
+        self.play(Create(self.inc), run_time=0.9)
+        self.play(Create(self.quad), run_time=1.2)
+        note = self.ja_text("内接円あり", font_size=24)
+        note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
+        self.play(FadeIn(note), run_time=0.4)
+        self.read(0.3)
+        self.note = note
+
+    def equal_sums(self):
+        # highlight opposite side pairs with colored strokes
+        s01 = Line(self.pts[0], self.pts[1], color=ORANGE, stroke_width=6)
+        s23 = Line(self.pts[2], self.pts[3], color=ORANGE, stroke_width=6)
+        s12 = Line(self.pts[1], self.pts[2], color=YELLOW, stroke_width=6)
+        s30 = Line(self.pts[3], self.pts[0], color=YELLOW, stroke_width=6)
+        cap = self.ja_text("対辺を見る", font_size=24).move_to(self.note)
+        self.play(Create(s01), Create(s23), Transform(self.note, cap), run_time=1.3)
+        self.read(0.25)
+        cap2 = self.ja_text("和が等しい", font_size=24).move_to(self.note)
+        self.play(Create(s12), Create(s30), Transform(self.note, cap2), run_time=1.3)
+        self.read(0.4)
+
+    def show_formula(self):
+        formula = MathTex(r"a+c=b+d").scale(1.15)
+        formula.to_edge(DOWN, buff=0.28)
+        self.play(Write(formula), run_time=1.6)
+        self.play(Indicate(formula, color=YELLOW), run_time=0.85)

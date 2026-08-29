@@ -1945,3 +1945,48 @@ VIDEOS_1638_1649: tuple[Video, ...] = (
     Video(1648, "ベクトル集中再訪", "project/math/657_probability_127/1648_vector_conc_revisit/scene.py", "VectorConcRevisit"),
     Video(1649, "カータラン路細分", "project/math/658_combinatorics_126/1649_catalan_path_refine/scene.py", "CatalanPathRefine"),
 )
+
+VIDEOS_1650_1661: tuple[Video, ...] = (
+    Video(1650, "相対ログフロップ対", "project/math/659_analysis_130/1650_rel_log_flop/scene.py", "RelLogFlop"),
+    Video(1651, "ログ極小モデル対", "project/math/659_analysis_130/1651_log_mmp_pair/scene.py", "LogMmpPair"),
+    Video(1652, "相対ログ極小モデル対", "project/math/659_analysis_130/1652_rel_log_mmp/scene.py", "RelLogMmp"),
+    Video(1653, "LionWSoftClip", "project/math/660_linear_130/1653_lionwsoftclip/scene.py", "LionWSoftClip"),
+    Video(1654, "SophiaWSoftClip", "project/math/660_linear_130/1654_sophiawsoftclip/scene.py", "SophiaWSoftClip"),
+    Video(1655, "AdaFactorHardClip", "project/math/660_linear_130/1655_adafactorhardclip/scene.py", "AdaFactorHardClip"),
+    Video(1656, "内心フォイエルバッハ比", "project/math/661_geometry_130/1656_in_feuerbach_ratio/scene.py", "InFeuerbachRatio"),
+    Video(1657, "傍心フォイエルバッハ比", "project/math/661_geometry_130/1657_ex_feuerbach_ratio/scene.py", "ExFeuerbachRatio"),
+    Video(1658, "外心フォイエルバッハ比", "project/math/661_geometry_130/1658_o_feuerbach_ratio/scene.py", "OFeuerbachRatio"),
+    Video(1659, "経験劣ガウス", "project/math/662_probability_128/1659_empirical_subgauss/scene.py", "EmpiricalSubgauss"),
+    Video(1660, "局所チャイニング", "project/math/662_probability_128/1660_local_chaining/scene.py", "LocalChaining"),
+    Video(1661, "根つき木細分", "project/math/663_combinatorics_127/1661_rooted_tree_refine/scene.py", "RootedTreeRefine"),
+)
+
+VIDEOS_1662_1673: tuple[Video, ...] = (
+    Video(1662, "ログ終端対", "project/math/664_analysis_131/1662_log_terminal_model/scene.py", "LogTerminalModel"),
+    Video(1663, "相対ログ終端対", "project/math/664_analysis_131/1663_rel_log_terminal_model/scene.py", "RelLogTerminalModel"),
+    Video(1664, "ログ安定対", "project/math/664_analysis_131/1664_log_stable_pair/scene.py", "LogStablePair"),
+    Video(1665, "NAdamBoundHard", "project/math/665_linear_131/1665_nadamboundhard/scene.py", "NAdamBoundHard"),
+    Video(1666, "RMSBoundHard", "project/math/665_linear_131/1666_rmsboundhard/scene.py", "RMSBoundHard"),
+    Video(1667, "LookaheadSoftHard", "project/math/665_linear_131/1667_lookaheadsofthard/scene.py", "LookaheadSoftHard"),
+    Video(1668, "垂心フォイエルバッハ比", "project/math/666_geometry_131/1668_h_feuerbach_ratio/scene.py", "HFeuerbachRatio"),
+    Video(1669, "重心フォイエルバッハ比", "project/math/666_geometry_131/1669_g_feuerbach_ratio/scene.py", "GFeuerbachRatio"),
+    Video(1670, "九点フォイエルバッハ比", "project/math/666_geometry_131/1670_n_feuerbach_ratio/scene.py", "NFeuerbachRatio"),
+    Video(1671, "一様チャイニング", "project/math/667_probability_129/1671_uniform_chaining/scene.py", "UniformChaining"),
+    Video(1672, "スケールエントロピー", "project/math/667_probability_129/1672_scale_entropy/scene.py", "ScaleEntropy"),
+    Video(1673, "二分木細分", "project/math/668_combinatorics_128/1673_binary_tree_refine/scene.py", "BinaryTreeRefine"),
+)
+
+VIDEOS_1674_1685: tuple[Video, ...] = (
+    Video(1674, "ログ半安定対", "project/math/669_analysis_132/1674_log_semistable_pair/scene.py", "LogSemistablePair"),
+    Video(1675, "相対ログ安定対", "project/math/669_analysis_132/1675_rel_log_stable_pair/scene.py", "RelLogStablePair"),
+    Video(1676, "ログ簡約対", "project/math/669_analysis_132/1676_log_slc_pair/scene.py", "LogSlcPair"),
+    Video(1677, "SAMBoundHard", "project/math/670_linear_132/1677_samboundhard/scene.py", "SAMBoundHard"),
+    Video(1678, "ProdigyBoundHard", "project/math/670_linear_132/1678_prodigyboundhard/scene.py", "ProdigyBoundHard"),
+    Video(1679, "MuonWSoftClip", "project/math/670_linear_132/1679_muonwsoftclip/scene.py", "MuonWSoftClip"),
+    Video(1680, "内心フォイエル接点比", "project/math/671_geometry_132/1680_in_feuerbach_touch/scene.py", "InFeuerbachTouch"),
+    Video(1681, "傍心フォイエル接点比", "project/math/671_geometry_132/1681_ex_feuerbach_touch/scene.py", "ExFeuerbachTouch"),
+    Video(1682, "外心フォイエル接点比", "project/math/671_geometry_132/1682_o_feuerbach_touch/scene.py", "OFeuerbachTouch"),
+    Video(1683, "半径敏感度", "project/math/672_probability_130/1683_radius_sensitivity/scene.py", "RadiusSensitivity"),
+    Video(1684, "標本依存複雑度", "project/math/672_probability_130/1684_sample_complexity/scene.py", "SampleComplexity"),
+    Video(1685, "順序木細分", "project/math/673_combinatorics_129/1685_ordered_tree_refine/scene.py", "OrderedTreeRefine"),
+)

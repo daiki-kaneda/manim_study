@@ -520,3 +520,18 @@ VIDEOS_498_509: tuple[Video, ...] = (
     Video(508, "生存関数", "project/math/182_probability_32/508_survival/scene.py", "SurvivalFunction"),
     Video(509, "リュカ数", "project/math/183_combinatorics_31/509_lucas/scene.py", "LucasNumbers"),
 )
+
+VIDEOS_510_521: tuple[Video, ...] = (
+    Video(510, "冨田竹崎", "project/math/184_analysis_35/510_tomita_takesaki/scene.py", "TomitaTakesaki"),
+    Video(511, "モジュラー理論", "project/math/184_analysis_35/511_modular/scene.py", "ModularTheory"),
+    Video(512, "リース・ソーリン", "project/math/184_analysis_35/512_riesz_thorin/scene.py", "RieszThorin"),
+    Video(513, "MINRES", "project/math/185_linear_35/513_minres/scene.py", "MINRES"),
+    Video(514, "BiCGSTAB", "project/math/185_linear_35/514_bicgstab/scene.py", "BiCGSTAB"),
+    Video(515, "ヘッセフリー", "project/math/185_linear_35/515_hessian_free/scene.py", "HessianFree"),
+    Video(516, "メネラウスの拡張", "project/math/186_geometry_35/516_menelaus_ext/scene.py", "MenelausExtension"),
+    Video(517, "等長変形", "project/math/186_geometry_35/517_isometric/scene.py", "IsometricDeformation"),
+    Video(518, "等角共役三角形", "project/math/186_geometry_35/518_isogonic/scene.py", "IsogonalTriangle"),
+    Video(519, "強度関数", "project/math/187_probability_33/519_intensity/scene.py", "IntensityFunction"),
+    Video(520, "ガウス測度", "project/math/187_probability_33/520_gaussian_measure/scene.py", "GaussianMeasure"),
+    Video(521, "フェラーズ図", "project/math/188_combinatorics_32/521_ferrers/scene.py", "FerrersDiagram"),
+)

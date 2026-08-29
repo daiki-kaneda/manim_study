@@ -1000,3 +1000,33 @@ VIDEOS_882_893: tuple[Video, ...] = (
     Video(892, "セミマルチンゲール", "project/math/342_probability_64/892_semimartingale/scene.py", "Semimartingale"),
     Video(893, "セグル数列", "project/math/343_combinatorics_63/893_segner/scene.py", "SegnerNumbers"),
 )
+
+VIDEOS_894_905: tuple[Video, ...] = (
+    Video(894, "トートロジカル類", "project/math/344_analysis_67/894_tautological/scene.py", "TautologicalClass"),
+    Video(895, "チャーン数", "project/math/344_analysis_67/895_chern_number/scene.py", "ChernNumber"),
+    Video(896, "交叉理論", "project/math/344_analysis_67/896_intersection/scene.py", "IntersectionTheory"),
+    Video(897, "AdaShift", "project/math/345_linear_67/897_adashift/scene.py", "AdaShift"),
+    Video(898, "Eve", "project/math/345_linear_67/898_eve/scene.py", "Eve"),
+    Video(899, "SWAG", "project/math/345_linear_67/899_swag/scene.py", "SWAG"),
+    Video(900, "等距離中心", "project/math/346_geometry_67/900_equidistant_center/scene.py", "EquidistantCenter"),
+    Video(901, "第一等角共役", "project/math/346_geometry_67/901_first_isogonal/scene.py", "FirstIsogonal"),
+    Video(902, "第二等角共役", "project/math/346_geometry_67/902_second_isogonal/scene.py", "SecondIsogonal"),
+    Video(903, "マルチンゲール", "project/math/347_probability_65/903_martingale/scene.py", "Martingale"),
+    Video(904, "局所時間", "project/math/347_probability_65/904_local_time/scene.py", "LocalTime"),
+    Video(905, "フィボナッチ多項式", "project/math/348_combinatorics_64/905_fib_poly/scene.py", "FibonacciPolynomials"),
+)
+
+VIDEOS_906_917: tuple[Video, ...] = (
+    Video(906, "仮想類", "project/math/349_analysis_68/906_virtual_class_short/scene.py", "VirtualClassShort"),
+    Video(907, "GW不変量", "project/math/349_analysis_68/907_gw_invariant/scene.py", "GWInvariant"),
+    Video(908, "量子リーマン・ロッホ", "project/math/349_analysis_68/908_quantum_rr/scene.py", "QuantumRR"),
+    Video(909, "GSAM", "project/math/350_linear_68/909_gsam/scene.py", "GSAM"),
+    Video(910, "ESAM", "project/math/350_linear_68/910_esam/scene.py", "ESAM"),
+    Video(911, "MadGrad", "project/math/350_linear_68/911_madgrad/scene.py", "MadGradOpt"),
+    Video(912, "配極", "project/math/351_geometry_68/912_polarity/scene.py", "Polarity"),
+    Video(913, "三点共線", "project/math/351_geometry_68/913_collinear/scene.py", "ThreeCollinear"),
+    Video(914, "ポンスレの定理", "project/math/351_geometry_68/914_poncelet/scene.py", "PonceletTheorem"),
+    Video(915, "二次変分", "project/math/352_probability_66/915_quadratic_variation/scene.py", "QuadraticVariation"),
+    Video(916, "ドレアゼ分解", "project/math/352_probability_66/916_doob_meyer/scene.py", "DoobMeyer"),
+    Video(917, "ゼッケンドルフ", "project/math/353_combinatorics_65/917_zeckendorf/scene.py", "Zeckendorf"),
+)

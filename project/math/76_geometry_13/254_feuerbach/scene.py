@@ -71,7 +71,7 @@ class Feuerbach(PacedScene):
             touch = N + (R9 - r) * (v / nrm) if R9 > r else N + R9 * (v / nrm)
         else:
             touch = I
-        cap2 = self.ja_text("九点円と接する", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("接する", font_size=24).move_to(self.note)
         self.play(FadeIn(Dot(touch, color=ORANGE, radius=0.1)), Transform(self.note, cap2), run_time=1.3)
         self.read(0.4)
 

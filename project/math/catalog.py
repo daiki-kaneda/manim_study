@@ -610,3 +610,18 @@ VIDEOS_570_581: tuple[Video, ...] = (
     Video(580, "クラスター点過程", "project/math/212_probability_38/580_cluster_pp/scene.py", "ClusterPointProcess"),
     Video(581, "根付き木", "project/math/213_combinatorics_37/581_rooted_trees/scene.py", "RootedTrees"),
 )
+
+VIDEOS_582_593: tuple[Video, ...] = (
+    Video(582, "カルデロン交換子", "project/math/214_analysis_41/582_calderon_comm/scene.py", "CalderonCommutator"),
+    Video(583, "擬微分作用素", "project/math/214_analysis_41/583_pdo/scene.py", "Pseudodifferential"),
+    Video(584, "ベゾフ空間", "project/math/214_analysis_41/584_besov/scene.py", "BesovSpace"),
+    Video(585, "シューア補完反復", "project/math/215_linear_41/585_schur_iter/scene.py", "SchurComplementIter"),
+    Video(586, "クレイロフ再利用", "project/math/215_linear_41/586_krylov_recycle/scene.py", "KrylovRecycling"),
+    Video(587, "領域分解前処理", "project/math/215_linear_41/587_dd_pre/scene.py", "DomainDecompPre"),
+    Video(588, "双曲線の焦点", "project/math/216_geometry_41/588_hyperbola_foci/scene.py", "HyperbolaFoci"),
+    Video(589, "楕円の導円", "project/math/216_geometry_41/589_director_circle/scene.py", "DirectorCircle"),
+    Video(590, "準線", "project/math/216_geometry_41/590_directrix/scene.py", "Directrix"),
+    Video(591, "ギッブス過程", "project/math/217_probability_39/591_gibbs/scene.py", "GibbsProcess"),
+    Video(592, "ストリング過程", "project/math/217_probability_39/592_string/scene.py", "StringProcess"),
+    Video(593, "モザー数", "project/math/218_combinatorics_38/593_moser_number/scene.py", "MoserNumber"),
+)

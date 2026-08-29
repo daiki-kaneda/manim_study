@@ -190,3 +190,18 @@ VIDEOS_234_245: tuple[Video, ...] = (
     Video(244, "停止時刻", "project/math/72_probability_10/244_stopping_time/scene.py", "StoppingTime"),
     Video(245, "共役分割", "project/math/73_combinatorics_9/245_conjugate_partition/scene.py", "ConjugatePartition"),
 )
+
+VIDEOS_246_257: tuple[Video, ...] = (
+    Video(246, "平均値の性質", "project/math/74_analysis_13/246_mean_value_prop/scene.py", "MeanValueProperty"),
+    Video(247, "ポアソン方程式", "project/math/74_analysis_13/247_poisson_eq/scene.py", "PoissonEquation"),
+    Video(248, "オーダー記号", "project/math/74_analysis_13/248_big_o/scene.py", "BigO"),
+    Video(249, "コレスキー分解", "project/math/75_linear_13/249_cholesky/scene.py", "Cholesky"),
+    Video(250, "ヤコビ反復", "project/math/75_linear_13/250_jacobi/scene.py", "JacobiIteration"),
+    Video(251, "ノルムの同値", "project/math/75_linear_13/251_norm_equiv/scene.py", "NormEquivalence"),
+    Video(252, "アポロニウスの定理", "project/math/76_geometry_13/252_apollonius_median/scene.py", "ApolloniusMedian"),
+    Video(253, "重心座標", "project/math/76_geometry_13/253_barycentric/scene.py", "Barycentric"),
+    Video(254, "フォイエルバッハの定理", "project/math/76_geometry_13/254_feuerbach/scene.py", "Feuerbach"),
+    Video(255, "ポアソン過程", "project/math/77_probability_11/255_poisson_process/scene.py", "PoissonProcess"),
+    Video(256, "M/M/1 待ち行列", "project/math/77_probability_11/256_mm1/scene.py", "MM1Queue"),
+    Video(257, "スターリング第一種", "project/math/78_combinatorics_10/257_stirling_first/scene.py", "StirlingFirstKind"),
+)

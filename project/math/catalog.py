@@ -2035,3 +2035,48 @@ VIDEOS_1710_1721: tuple[Video, ...] = (
     Video(1720, "標本パッキング数", "project/math/687_probability_133/1720_sample_packing/scene.py", "SamplePacking"),
     Video(1721, "大きなナラヤナ細分", "project/math/688_combinatorics_132/1721_large_narayana_refine/scene.py", "LargeNarayanaRefine"),
 )
+
+VIDEOS_1722_1733: tuple[Video, ...] = (
+    Video(1722, "ログ単純対", "project/math/689_analysis_136/1722_log_simple_pair/scene.py", "LogSimplePair"),
+    Video(1723, "相対ログ単純対", "project/math/689_analysis_136/1723_rel_log_simple/scene.py", "RelLogSimple"),
+    Video(1724, "ログ純交対", "project/math/689_analysis_136/1724_log_snc_pair/scene.py", "LogSncPair"),
+    Video(1725, "ApolloHardClip", "project/math/690_linear_136/1725_apollohardclip/scene.py", "ApolloHardClip"),
+    Video(1726, "ApolloBoundSoft", "project/math/690_linear_136/1726_apolloboundsoft/scene.py", "ApolloBoundSoft"),
+    Video(1727, "LARSSoftHard", "project/math/690_linear_136/1727_larssofthard/scene.py", "LARSSoftHard"),
+    Video(1728, "内心類似フォイエル接点比", "project/math/691_geometry_136/1728_in_sym_feuer_touch/scene.py", "InSymFeuerTouch"),
+    Video(1729, "傍心類似フォイエル接点比", "project/math/691_geometry_136/1729_ex_sym_feuer_touch/scene.py", "ExSymFeuerTouch"),
+    Video(1730, "外心類似フォイエル接点比", "project/math/691_geometry_136/1730_o_sym_feuer_touch/scene.py", "OSymFeuerTouch"),
+    Video(1731, "経験半径敏感度", "project/math/692_probability_134/1731_emp_radius_sens/scene.py", "EmpRadiusSens"),
+    Video(1732, "局所標本複雑度", "project/math/692_probability_134/1732_local_sample_comp/scene.py", "LocalSampleComp"),
+    Video(1733, "平面二分木細分", "project/math/693_combinatorics_133/1733_plane_bintree_refine/scene.py", "PlaneBinTreeRefine"),
+)
+
+VIDEOS_1734_1745: tuple[Video, ...] = (
+    Video(1734, "相対ログ純交対", "project/math/694_analysis_137/1734_rel_log_snc/scene.py", "RelLogSnc"),
+    Video(1735, "ログ余次元対", "project/math/694_analysis_137/1735_log_codim_pair/scene.py", "LogCodimPair"),
+    Video(1736, "相対ログ余次元対", "project/math/694_analysis_137/1736_rel_log_codim/scene.py", "RelLogCodim"),
+    Video(1737, "LAMBBoundHard", "project/math/695_linear_137/1737_lambboundhard/scene.py", "LAMBBoundHard"),
+    Video(1738, "MuonWHardClip", "project/math/695_linear_137/1738_muonwhardclip/scene.py", "MuonWHardClip"),
+    Video(1739, "SamSoftBound", "project/math/695_linear_137/1739_samsoftbound/scene.py", "SamSoftBound"),
+    Video(1740, "垂心類似フォイエル接点比", "project/math/696_geometry_137/1740_h_sym_feuer_touch/scene.py", "HSymFeuerTouch"),
+    Video(1741, "重心類似フォイエル接点比", "project/math/696_geometry_137/1741_g_sym_feuer_touch/scene.py", "GSymFeuerTouch"),
+    Video(1742, "九点類似フォイエル接点比", "project/math/696_geometry_137/1742_n_sym_feuer_touch/scene.py", "NSymFeuerTouch"),
+    Video(1743, "一様標本複雑度", "project/math/697_probability_135/1743_uniform_sample_comp/scene.py", "UniformSampleComp"),
+    Video(1744, "データ依存被覆", "project/math/697_probability_135/1744_data_covering/scene.py", "DataCovering"),
+    Video(1745, "増加木細分", "project/math/698_combinatorics_134/1745_increasing_tree_refine/scene.py", "IncreasingTreeRefine"),
+)
+
+VIDEOS_1746_1757: tuple[Video, ...] = (
+    Video(1746, "ログ境界対", "project/math/699_analysis_138/1746_log_boundary_pair/scene.py", "LogBoundaryPair"),
+    Video(1747, "相対ログ境界対", "project/math/699_analysis_138/1747_rel_log_boundary/scene.py", "RelLogBoundary"),
+    Video(1748, "ログ純度対", "project/math/699_analysis_138/1748_log_purity_pair/scene.py", "LogPurityPair"),
+    Video(1749, "AdamWBoundHard", "project/math/700_linear_138/1749_adamwboundhard/scene.py", "AdamWBoundHard"),
+    Video(1750, "LionWBoundSoft", "project/math/700_linear_138/1750_lionwboundsoft/scene.py", "LionWBoundSoft"),
+    Video(1751, "SophiaWBoundSoft", "project/math/700_linear_138/1751_sophiawboundsoft/scene.py", "SophiaWBoundSoft"),
+    Video(1752, "内心フォイエル弦比", "project/math/701_geometry_138/1752_in_feuer_chord/scene.py", "InFeuerChord"),
+    Video(1753, "傍心フォイエル弦比", "project/math/701_geometry_138/1753_ex_feuer_chord/scene.py", "ExFeuerChord"),
+    Video(1754, "外心フォイエル弦比", "project/math/701_geometry_138/1754_o_feuer_chord/scene.py", "OFeuerChord"),
+    Video(1755, "データ依存パッキング", "project/math/702_probability_136/1755_data_packing/scene.py", "DataPacking"),
+    Video(1756, "経験一様エントロピー", "project/math/702_probability_136/1756_emp_uniform_entropy/scene.py", "EmpUniformEntropy"),
+    Video(1757, "ヒープ細分", "project/math/703_combinatorics_135/1757_heap_refine/scene.py", "HeapRefine"),
+)

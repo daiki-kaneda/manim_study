@@ -685,3 +685,18 @@ VIDEOS_630_641: tuple[Video, ...] = (
     Video(640, "空き空間関数", "project/math/237_probability_43/640_empty_space/scene.py", "EmptySpaceF"),
     Video(641, "リオルダン数", "project/math/238_combinatorics_42/641_riordan/scene.py", "RiordanNumbers"),
 )
+
+VIDEOS_642_653: tuple[Video, ...] = (
+    Video(642, "粘性解", "project/math/239_analysis_46/642_viscosity/scene.py", "ViscositySolution"),
+    Video(643, "比較原理", "project/math/239_analysis_46/643_comparison/scene.py", "ComparisonPrinciple"),
+    Video(644, "クランダル・ライオンズ", "project/math/239_analysis_46/644_crandall/scene.py", "CrandallLions"),
+    Video(645, "ヘビーボール", "project/math/240_linear_46/645_heavy_ball/scene.py", "HeavyBall"),
+    Video(646, "モーメンタム", "project/math/240_linear_46/646_momentum/scene.py", "MomentumSGD"),
+    Video(647, "AdaGrad", "project/math/240_linear_46/647_adagrad/scene.py", "AdaGrad"),
+    Video(648, "シュタイナー楕円", "project/math/241_geometry_46/648_steiner_ell/scene.py", "SteinerEllipse"),
+    Video(649, "マンダール楕円", "project/math/241_geometry_46/649_mandart/scene.py", "MandartInellipse"),
+    Video(650, "接点三角形", "project/math/241_geometry_46/650_intouch/scene.py", "IntouchTriangle"),
+    Video(651, "最近傍関数", "project/math/242_probability_44/651_nn_g/scene.py", "NearestNeighborG"),
+    Video(652, "J関数", "project/math/242_probability_44/652_j_func/scene.py", "JFunction"),
+    Video(653, "オイラーアリアン数", "project/math/243_combinatorics_43/653_eulerian/scene.py", "EulerianNumbers"),
+)

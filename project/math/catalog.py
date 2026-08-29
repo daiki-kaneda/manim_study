@@ -40,3 +40,18 @@ VIDEOS_101_125: tuple[Video, ...] = (
     Video(124, "マルコフ連鎖", "project/math/25_info/124_markov/scene.py", "MarkovChain"),
     Video(125, "モンテカルロの π", "project/math/25_info/125_monte_carlo_pi/scene.py", "MonteCarloPi"),
 )
+
+VIDEOS_126_137: tuple[Video, ...] = (
+    Video(126, "弧長", "project/math/26_analysis_3/126_arc_length/scene.py", "ArcLength"),
+    Video(127, "連続", "project/math/26_analysis_3/127_epsilon_delta/scene.py", "EpsilonDelta"),
+    Video(128, "トレース", "project/math/26_analysis_3/128_trace/scene.py", "MatrixTrace"),
+    Video(129, "回転行列", "project/math/27_linear_3/129_rotation_matrix/scene.py", "RotationMatrix"),
+    Video(130, "特異値", "project/math/27_linear_3/130_svd/scene.py", "SVDStretch"),
+    Video(131, "チェバの定理", "project/math/28_geometry_3/131_ceva/scene.py", "Ceva"),
+    Video(132, "内接円", "project/math/28_geometry_3/132_incircle/scene.py", "Incircle"),
+    Video(133, "トレミーの定理", "project/math/28_geometry_3/133_ptolemy/scene.py", "Ptolemy"),
+    Video(134, "幾何分布", "project/math/29_probability_2/134_geometric/scene.py", "GeometricDist"),
+    Video(135, "ポアソン", "project/math/29_probability_2/135_poisson/scene.py", "Poisson"),
+    Video(136, "母関数", "project/math/29_probability_2/136_generating_function/scene.py", "GeneratingFunction"),
+    Video(137, "カタラン数", "project/math/29_probability_2/137_catalan/scene.py", "Catalan"),
+)

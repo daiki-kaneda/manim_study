@@ -127,11 +127,13 @@ def ja_text(text: str, **kwargs: Any):
 class JapaneseScene(Scene):
     """Scene base with ``ja_tex`` / ``ja_text`` for Japanese titles and mixed math.
 
-    ``beat`` is the default linger after a visual beat. Shorts in this repo
-    target roughly 60–90 seconds. Subclasses can override ``beat``.
+    Target length is about 30–60 seconds. Fill that with motion (longer
+    ``run_time``, extra visual beats). Do not pad with long idle waits.
+    ``beat`` remains for older scenes that call ``hold``.
     """
 
     beat = 3.0
+    motion_scale = 1.0
 
     def ja_tex(self, *args: Any, **kwargs: Any):
         return ja_tex(*args, **kwargs)
@@ -139,15 +141,31 @@ class JapaneseScene(Scene):
     def ja_text(self, text: str, **kwargs: Any):
         return ja_text(text, **kwargs)
 
+    def play(self, *args, **kwargs):
+        scale = self.motion_scale
+        if scale != 1.0:
+            kwargs["run_time"] = kwargs.get("run_time", 1.0) * scale
+        return super().play(*args, **kwargs)
+
     def hold(self, beats: float = 1.0) -> None:
         self.wait(max(0.0, self.beat * beats))
+
+    def read(self, seconds: float = 0.55) -> None:
+        """Brief look at the current frame, in seconds (not beats)."""
+        self.wait(max(0.0, seconds))
 
     def show_heading(self, text: str, font_size: int = 42):
         """Fade in a Japanese title, then park it at the top edge."""
         from manim import FadeIn, UP
 
         title = self.ja_text(text, font_size=font_size)
-        self.play(FadeIn(title), run_time=0.8)
-        self.hold(0.6)
-        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.45)
+        self.play(FadeIn(title), run_time=1.0)
+        self.wait(0.5)
+        self.play(title.animate.scale(0.55).to_edge(UP), run_time=0.6)
         return title
+
+
+class PacedScene(JapaneseScene):
+    """30–60 second shorts: animations are stretched, idle waits are not."""
+
+    motion_scale = 2.0

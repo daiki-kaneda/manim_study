@@ -1,6 +1,6 @@
 # 数学100本
 
-1チャンネル・BGMのみ・各本おおよそ 1〜2 分。#1–#100 に続く第2シーズンを同じフォルダで進める。
+1チャンネル・BGMのみ。新しい本は **30秒〜1分**（動きで稼ぐ。間で水増ししない）。
 
 ## 再生コマンド
 
@@ -34,6 +34,9 @@ manim -pql project/math/22_linear_algebra_2/108_rank_nullity/scene.py RankNullit
 manim -pql project/math/23_analysis_2/111_mean_value/scene.py MeanValue
 manim -pql project/math/24_geometry_2/116_euler_char/scene.py EulerCharacteristic
 manim -pql project/math/25_info/125_monte_carlo_pi/scene.py MonteCarloPi
+manim -pql project/math/26_analysis_3/126_arc_length/scene.py ArcLength
+manim -pql project/math/28_geometry_3/131_ceva/scene.py Ceva
+manim -pql project/math/29_probability_2/137_catalan/scene.py Catalan
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -47,7 +50,7 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 
 日本語フォントは `MANIM_JAPANESE_FONT` で上書きできる。未設定なら Hannari Mincho を優先し、なければ Noto / 文泉驛などにフォールバックする。
 
-尺は `JapaneseScene.beat`（デフォルト 3 秒）で調整する。`beat = 3` だと #2〜#4 はおよそ 40〜50 秒。90 秒に近づけたいときはシーン側で `beat = 5` にする。
+尺の目安は 30秒〜1分。#126 以降は `PacedScene` でアニメーションを約2倍にし、静止の待ちは `read(秒)` で短くする。古いシーンの `JapaneseScene.beat` / `hold` はそのまま。
 
 ## 番号
 
@@ -178,3 +181,15 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 123 | エントロピー | `project/math/25_info/123_entropy/` |
 | 124 | マルコフ連鎖 | `project/math/25_info/124_markov/` |
 | 125 | モンテカルロの π | `project/math/25_info/125_monte_carlo_pi/` |
+| 126 | 弧長 | `project/math/26_analysis_3/126_arc_length/` |
+| 127 | 連続 | `project/math/26_analysis_3/127_epsilon_delta/` |
+| 128 | トレース | `project/math/26_analysis_3/128_trace/` |
+| 129 | 回転行列 | `project/math/27_linear_3/129_rotation_matrix/` |
+| 130 | 特異値 | `project/math/27_linear_3/130_svd/` |
+| 131 | チェバの定理 | `project/math/28_geometry_3/131_ceva/` |
+| 132 | 内接円 | `project/math/28_geometry_3/132_incircle/` |
+| 133 | トレミーの定理 | `project/math/28_geometry_3/133_ptolemy/` |
+| 134 | 幾何分布 | `project/math/29_probability_2/134_geometric/` |
+| 135 | ポアソン | `project/math/29_probability_2/135_poisson/` |
+| 136 | 母関数 | `project/math/29_probability_2/136_generating_function/` |
+| 137 | カタラン数 | `project/math/29_probability_2/137_catalan/` |

@@ -760,3 +760,18 @@ VIDEOS_690_701: tuple[Video, ...] = (
     Video(700, "確率母関数", "project/math/262_probability_48/700_pgf/scene.py", "PGF"),
     Video(701, "ジェノッキ数", "project/math/263_combinatorics_47/701_genocchi/scene.py", "GenocchiNumbers"),
 )
+
+VIDEOS_702_713: tuple[Video, ...] = (
+    Video(702, "ドナルドソン理論", "project/math/264_analysis_51/702_donaldson/scene.py", "DonaldsonTheory"),
+    Video(703, "サイバーグ・ウィッテン", "project/math/264_analysis_51/703_seiberg_witten/scene.py", "SeibergWitten"),
+    Video(704, "フローアホモロジー", "project/math/264_analysis_51/704_floer/scene.py", "FloerHomology"),
+    Video(705, "RAdam", "project/math/265_linear_51/705_radam/scene.py", "RAdam"),
+    Video(706, "AdaBelief", "project/math/265_linear_51/706_adabelief/scene.py", "AdaBelief"),
+    Video(707, "DiffGrad", "project/math/265_linear_51/707_diffgrad/scene.py", "DiffGrad"),
+    Video(708, "ルモワーヌ円", "project/math/266_geometry_51/708_lemoine_circle/scene.py", "LemoineCircle"),
+    Video(709, "内側ナポレオン", "project/math/266_geometry_51/709_inner_napoleon/scene.py", "InnerNapoleon"),
+    Video(710, "ブロカール中点", "project/math/266_geometry_51/710_brocard_mid/scene.py", "BrocardMidpoint"),
+    Video(711, "特性汎関数", "project/math/267_probability_49/711_char_func/scene.py", "CharacteristicFunctional"),
+    Video(712, "モーメント母汎関数", "project/math/267_probability_49/712_mgf_func/scene.py", "MomentGeneratingFunctional"),
+    Video(713, "スプリンガー数", "project/math/268_combinatorics_48/713_springer/scene.py", "SpringerNumbers"),
+)

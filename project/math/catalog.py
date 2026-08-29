@@ -145,3 +145,18 @@ VIDEOS_198_209: tuple[Video, ...] = (
     Video(208, "特性関数", "project/math/57_probability_7/208_characteristic/scene.py", "CharacteristicFunction"),
     Video(209, "フック長公式", "project/math/58_combinatorics_6/209_hook_length/scene.py", "HookLength"),
 )
+
+VIDEOS_210_221: tuple[Video, ...] = (
+    Video(210, "グリーンの恒等式", "project/math/59_analysis_10/210_green_identity/scene.py", "GreenIdentity"),
+    Video(211, "平面のストークス", "project/math/59_analysis_10/211_stokes_2d/scene.py", "Stokes2D"),
+    Video(212, "ディリクレ原理", "project/math/59_analysis_10/212_dirichlet/scene.py", "DirichletPrinciple"),
+    Video(213, "ランク 1 更新", "project/math/60_linear_10/213_rank_one/scene.py", "RankOneUpdate"),
+    Video(214, "シャーマン・モリソン", "project/math/60_linear_10/214_woodbury/scene.py", "ShermanMorrison"),
+    Video(215, "正定値", "project/math/60_linear_10/215_positive_def/scene.py", "PositiveDefinite"),
+    Video(216, "デカルトの円定理", "project/math/61_geometry_10/216_descartes/scene.py", "DescartesCircle"),
+    Video(217, "オイラーの距離公式", "project/math/61_geometry_10/217_euler_distance/scene.py", "EulerDistance"),
+    Video(218, "等角共役", "project/math/61_geometry_10/218_isogonal/scene.py", "IsogonalConjugate"),
+    Video(219, "チェルノフ界", "project/math/62_probability_8/219_chernoff/scene.py", "ChernoffBound"),
+    Video(220, "エントロピー率", "project/math/62_probability_8/220_entropy_rate/scene.py", "EntropyRate"),
+    Video(221, "プリューファーコード", "project/math/63_combinatorics_7/221_prufer/scene.py", "PruferCode"),
+)

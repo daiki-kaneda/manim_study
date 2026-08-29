@@ -1720,3 +1720,48 @@ VIDEOS_1458_1469: tuple[Video, ...] = (
     Video(1468, "チャイニング再訪", "project/math/582_probability_112/1468_chaining_revisit/scene.py", "ChainingRevisit"),
     Video(1469, "アペル細分", "project/math/583_combinatorics_111/1469_appel_refine/scene.py", "AppelRefine"),
 )
+
+VIDEOS_1470_1481: tuple[Video, ...] = (
+    Video(1470, "相対豊富対", "project/math/584_analysis_115/1470_rel_ample_pair/scene.py", "RelAmplePair"),
+    Video(1471, "相対ネフ対", "project/math/584_analysis_115/1471_rel_nef_pair/scene.py", "RelNefPair"),
+    Video(1472, "相対ビッグ対", "project/math/584_analysis_115/1472_rel_big_pair/scene.py", "RelBigPair"),
+    Video(1473, "NAdamSoftClip", "project/math/585_linear_115/1473_nadamsoftclip/scene.py", "NAdamSoftClip"),
+    Video(1474, "NAdamHardClip", "project/math/585_linear_115/1474_nadamhardclip/scene.py", "NAdamHardClip"),
+    Video(1475, "NAdamSoftHard", "project/math/585_linear_115/1475_nadamsofthard/scene.py", "NAdamSoftHard"),
+    Video(1476, "内心類似中線比", "project/math/586_geometry_115/1476_in_symmedian_ratio/scene.py", "InSymmedianRatio"),
+    Video(1477, "傍心類似中線比", "project/math/586_geometry_115/1477_ex_symmedian_ratio/scene.py", "ExSymmedianRatio"),
+    Video(1478, "外心類似中線比", "project/math/586_geometry_115/1478_o_symmedian_ratio/scene.py", "OSymmedianRatio"),
+    Video(1479, "ラデマッハ再訪", "project/math/587_probability_113/1479_rademacher_revisit/scene.py", "RademacherRevisit"),
+    Video(1480, "ガウス複雑度", "project/math/587_probability_113/1480_gaussian_complexity/scene.py", "GaussianComplexity"),
+    Video(1481, "ラグランジュ細分", "project/math/588_combinatorics_112/1481_lagrange_refine/scene.py", "LagrangeRefine"),
+)
+
+VIDEOS_1482_1493: tuple[Video, ...] = (
+    Video(1482, "純端末対", "project/math/589_analysis_116/1482_plt_pair/scene.py", "PltPair"),
+    Video(1483, "純標準対", "project/math/589_analysis_116/1483_klt_pair/scene.py", "KltPair"),
+    Video(1484, "カノニカル対", "project/math/589_analysis_116/1484_canonical_pair/scene.py", "CanonicalPair"),
+    Video(1485, "LARSSoftClip", "project/math/590_linear_116/1485_larssoftclip/scene.py", "LARSSoftClip"),
+    Video(1486, "LARSHardClip", "project/math/590_linear_116/1486_larshardclip/scene.py", "LARSHardClip"),
+    Video(1487, "LAMBSoftClip", "project/math/590_linear_116/1487_lambsoftclip/scene.py", "LAMBSoftClip"),
+    Video(1488, "垂心類似中線比", "project/math/591_geometry_116/1488_h_symmedian_ratio/scene.py", "HSymmedianRatio"),
+    Video(1489, "重心類似中線比", "project/math/591_geometry_116/1489_g_symmedian_ratio/scene.py", "GSymmedianRatio"),
+    Video(1490, "九点類似中線比", "project/math/591_geometry_116/1490_n_symmedian_ratio/scene.py", "NSymmedianRatio"),
+    Video(1491, "ダドリー積分", "project/math/592_probability_114/1491_dudley_integral/scene.py", "DudleyIntegral"),
+    Video(1492, "経験被覆数", "project/math/592_probability_114/1492_empirical_covering/scene.py", "EmpiricalCovering"),
+    Video(1493, "ナーラヤナ細分", "project/math/593_combinatorics_113/1493_narayana_refine/scene.py", "NarayanaRefine"),
+)
+
+VIDEOS_1494_1505: tuple[Video, ...] = (
+    Video(1494, "フリップ対", "project/math/594_analysis_117/1494_flip_pair/scene.py", "FlipPair"),
+    Video(1495, "フロップ対", "project/math/594_analysis_117/1495_flop_pair/scene.py", "FlopPair"),
+    Video(1496, "収縮対", "project/math/594_analysis_117/1496_contraction_pair/scene.py", "ContractionPair"),
+    Video(1497, "ApolloSoft", "project/math/595_linear_117/1497_apollosoft/scene.py", "ApolloSoft"),
+    Video(1498, "ApolloHard", "project/math/595_linear_117/1498_apollohard/scene.py", "ApolloHard"),
+    Video(1499, "ApolloClip", "project/math/595_linear_117/1499_apolloclip/scene.py", "ApolloClip"),
+    Video(1500, "内心傍接円比", "project/math/596_geometry_117/1500_in_excircle_ratio/scene.py", "InExcircleRatio"),
+    Video(1501, "傍心傍接円比", "project/math/596_geometry_117/1501_ex_excircle_ratio/scene.py", "ExExcircleRatio"),
+    Video(1502, "外心傍接円比", "project/math/596_geometry_117/1502_o_excircle_ratio/scene.py", "OExcircleRatio"),
+    Video(1503, "局所被覆数", "project/math/597_probability_115/1503_local_covering/scene.py", "LocalCovering"),
+    Video(1504, "一様エントロピー", "project/math/597_probability_115/1504_uniform_entropy/scene.py", "UniformEntropy"),
+    Video(1505, "フィボナッチ細分", "project/math/598_combinatorics_114/1505_fibonacci_refine/scene.py", "FibonacciRefine"),
+)

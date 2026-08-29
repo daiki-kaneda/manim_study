@@ -123,6 +123,9 @@ VIDEOS_1422_1433 = _catalog.VIDEOS_1422_1433
 VIDEOS_1434_1445 = _catalog.VIDEOS_1434_1445
 VIDEOS_1446_1457 = _catalog.VIDEOS_1446_1457
 VIDEOS_1458_1469 = _catalog.VIDEOS_1458_1469
+VIDEOS_1470_1481 = _catalog.VIDEOS_1470_1481
+VIDEOS_1482_1493 = _catalog.VIDEOS_1482_1493
+VIDEOS_1494_1505 = _catalog.VIDEOS_1494_1505
 
 
 class CatalogTests(unittest.TestCase):
@@ -627,6 +630,21 @@ class CatalogTests(unittest.TestCase):
         nums = [v.number for v in VIDEOS_1458_1469]
         self.assertEqual(nums, list(range(1458, 1470)))
 
+
+    def test_numbers_are_1470_to_1481(self):
+        nums = [v.number for v in VIDEOS_1470_1481]
+        self.assertEqual(nums, list(range(1470, 1482)))
+
+
+    def test_numbers_are_1482_to_1493(self):
+        nums = [v.number for v in VIDEOS_1482_1493]
+        self.assertEqual(nums, list(range(1482, 1494)))
+
+
+    def test_numbers_are_1494_to_1505(self):
+        nums = [v.number for v in VIDEOS_1494_1505]
+        self.assertEqual(nums, list(range(1494, 1506)))
+
     def test_each_scene_file_defines_the_class(self):
         for video in (
             *VIDEOS_101_125,
@@ -742,6 +760,9 @@ class CatalogTests(unittest.TestCase):
             *VIDEOS_1434_1445,
             *VIDEOS_1446_1457,
             *VIDEOS_1458_1469,
+            *VIDEOS_1470_1481,
+            *VIDEOS_1482_1493,
+            *VIDEOS_1494_1505,
         ):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)

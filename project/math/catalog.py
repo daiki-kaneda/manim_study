@@ -1540,3 +1540,93 @@ VIDEOS_1314_1325: tuple[Video, ...] = (
     Video(1324, "被覆数再訪", "project/math/522_probability_100/1324_covering_revisit/scene.py", "CoveringRevisit"),
     Video(1325, "ペル三角形", "project/math/523_combinatorics_99/1325_pell_triangle/scene.py", "PellTriangle"),
 )
+
+VIDEOS_1326_1337: tuple[Video, ...] = (
+    Video(1326, "因子的端末", "project/math/524_analysis_103/1326_factorial_terminal/scene.py", "FactorialTerminal"),
+    Video(1327, "因子的正準", "project/math/524_analysis_103/1327_factorial_canonical/scene.py", "FactorialCanonical"),
+    Video(1328, "因子的klt", "project/math/524_analysis_103/1328_factorial_klt/scene.py", "FactorialKLT"),
+    Video(1329, "LionWClip", "project/math/525_linear_103/1329_lionwclip/scene.py", "LionWClip"),
+    Video(1330, "SophiaWClip", "project/math/525_linear_103/1330_sophiawclip/scene.py", "SophiaWClip"),
+    Video(1331, "MuonWClip", "project/math/525_linear_103/1331_muonwclip/scene.py", "MuonWClip"),
+    Video(1332, "スチュワート中線", "project/math/526_geometry_103/1332_stewart_median/scene.py", "StewartMedian"),
+    Video(1333, "アポロニウス比", "project/math/526_geometry_103/1333_apollonius_ratio/scene.py", "ApolloniusRatio"),
+    Video(1334, "ピタゴラス比拡張", "project/math/526_geometry_103/1334_pythagoras_ext/scene.py", "PythagorasExt"),
+    Video(1335, "PAC学習界", "project/math/527_probability_101/1335_pac_bound/scene.py", "PACBound"),
+    Video(1336, "VC次元再訪", "project/math/527_probability_101/1336_vc_revisit/scene.py", "VCRevisit"),
+    Video(1337, "カタラン細分路", "project/math/528_combinatorics_100/1337_catalan_path_ref/scene.py", "CatalanPathRefine"),
+)
+
+VIDEOS_1338_1349: tuple[Video, ...] = (
+    Video(1338, "因子的plt", "project/math/529_analysis_104/1338_factorial_plt/scene.py", "FactorialPLT"),
+    Video(1339, "因子的dlt", "project/math/529_analysis_104/1339_factorial_dlt/scene.py", "FactorialDLT"),
+    Video(1340, "因子的lc", "project/math/529_analysis_104/1340_factorial_lc/scene.py", "FactorialLC"),
+    Video(1341, "SOAPWClip", "project/math/530_linear_104/1341_soapwclip/scene.py", "SOAPWClip"),
+    Video(1342, "ShampooWClip", "project/math/530_linear_104/1342_shampoowclip/scene.py", "ShampooWClip"),
+    Video(1343, "QHMWClip", "project/math/530_linear_104/1343_qhmwclip/scene.py", "QHMWClip"),
+    Video(1344, "ヘロン比", "project/math/531_geometry_104/1344_heron_ratio/scene.py", "HeronRatio"),
+    Video(1345, "ブレッチナイダー比", "project/math/531_geometry_104/1345_bretschneider/scene.py", "BretschneiderRatio"),
+    Video(1346, "カラノイ比", "project/math/531_geometry_104/1346_carnot_ratio/scene.py", "CarnotRatio"),
+    Video(1347, "ショック数", "project/math/532_probability_102/1347_shattering/scene.py", "ShatteringNumber"),
+    Video(1348, "成長関数", "project/math/532_probability_102/1348_growth_func/scene.py", "GrowthFunction"),
+    Video(1349, "ナラヤナ細分", "project/math/533_combinatorics_101/1349_narayana_ref/scene.py", "NarayanaRefine"),
+)
+
+VIDEOS_1350_1361: tuple[Video, ...] = (
+    Video(1350, "サウアーの補題", "project/math/534_analysis_105/1350_sauer/scene.py", "SauerLemma"),
+    Video(1351, "パック数再訪", "project/math/534_analysis_105/1351_packing_revisit/scene.py", "PackingRevisit"),
+    Video(1352, "計量エントロピー", "project/math/534_analysis_105/1352_metric_entropy/scene.py", "MetricEntropy"),
+    Video(1353, "LionWSoft", "project/math/535_linear_105/1353_lionwsoft/scene.py", "LionWSoft"),
+    Video(1354, "SophiaWSoft", "project/math/535_linear_105/1354_sophiawsoft/scene.py", "SophiaWSoft"),
+    Video(1355, "MuonWSoft", "project/math/535_linear_105/1355_muonwsoft/scene.py", "MuonWSoft"),
+    Video(1356, "キャヴァリエリ比", "project/math/536_geometry_105/1356_cavalieri_ratio/scene.py", "CavalieriRatio"),
+    Video(1357, "相似比面積", "project/math/536_geometry_105/1357_sim_area_ratio/scene.py", "SimAreaRatio"),
+    Video(1358, "相似比体積", "project/math/536_geometry_105/1358_sim_vol_ratio/scene.py", "SimVolRatio"),
+    Video(1359, "経験過程集中", "project/math/537_probability_103/1359_emp_process/scene.py", "EmpiricalProcessConc"),
+    Video(1360, "汎化ギャップ", "project/math/537_probability_103/1360_gen_gap/scene.py", "GeneralizationGap"),
+    Video(1361, "デラノイ細分", "project/math/538_combinatorics_102/1361_delannoy_ref/scene.py", "DelannoyRefine"),
+)
+
+VIDEOS_1362_1373: tuple[Video, ...] = (
+    Video(1362, "QQ因子", "project/math/539_analysis_106/1362_qq_divisor/scene.py", "QQDivisor"),
+    Video(1363, "RR因子", "project/math/539_analysis_106/1363_rr_divisor/scene.py", "RRDivisor"),
+    Video(1364, "混合因子", "project/math/539_analysis_106/1364_mixed_divisor/scene.py", "MixedDivisor"),
+    Video(1365, "SOAPWSoft", "project/math/540_linear_106/1365_soapwsoft/scene.py", "SOAPWSoft"),
+    Video(1366, "ShampooWSoft", "project/math/540_linear_106/1366_shampoowsoft/scene.py", "ShampooWSoft"),
+    Video(1367, "QHMWSoft", "project/math/540_linear_106/1367_qhmwsoft/scene.py", "QHMWSoft"),
+    Video(1368, "九点円弦比", "project/math/541_geometry_106/1368_nine_chord_ratio/scene.py", "NineChordRatio"),
+    Video(1369, "内心傍接比", "project/math/541_geometry_106/1369_in_excircle_ratio/scene.py", "InExcircleRatio"),
+    Video(1370, "傍心外接比", "project/math/541_geometry_106/1370_ex_circum_ratio/scene.py", "ExCircumRatio"),
+    Video(1371, "ホフディング再訪", "project/math/542_probability_104/1371_hoeffding_revisit/scene.py", "HoeffdingRevisit"),
+    Video(1372, "バーンスタイン再訪", "project/math/542_probability_104/1372_bernstein_revisit/scene.py", "BernsteinRevisit"),
+    Video(1373, "大きなカタラン細分", "project/math/543_combinatorics_103/1373_large_catalan_ref/scene.py", "LargeCatalanRefine"),
+)
+
+VIDEOS_1374_1385: tuple[Video, ...] = (
+    Video(1374, "対数ペア", "project/math/544_analysis_107/1374_log_pair/scene.py", "LogPair"),
+    Video(1375, "相対対数ペア", "project/math/544_analysis_107/1375_rel_log_pair/scene.py", "RelLogPair"),
+    Video(1376, "準対数端末", "project/math/544_analysis_107/1376_quasi_log/scene.py", "QuasiLogTerminal"),
+    Video(1377, "AdaGradSoft", "project/math/545_linear_107/1377_adagradsoft/scene.py", "AdaGradSoft"),
+    Video(1378, "NAdamSoft", "project/math/545_linear_107/1378_nadamsoft/scene.py", "NAdamSoft"),
+    Video(1379, "RAdamSoft", "project/math/545_linear_107/1379_radamsoft/scene.py", "RAdamSoft"),
+    Video(1380, "垂心中線比", "project/math/546_geometry_107/1380_h_median_ratio/scene.py", "HMedianRatio"),
+    Video(1381, "重心中線比", "project/math/546_geometry_107/1381_g_median_ratio/scene.py", "GMedianRatio"),
+    Video(1382, "内心中線比", "project/math/546_geometry_107/1382_i_median_ratio/scene.py", "IMedianRatio"),
+    Video(1383, "ベネット再訪", "project/math/547_probability_105/1383_bennett_revisit/scene.py", "BennettRevisit"),
+    Video(1384, "アズーマ再訪", "project/math/547_probability_105/1384_azuma_revisit/scene.py", "AzumaRevisit"),
+    Video(1385, "モツキン細分路", "project/math/548_combinatorics_104/1385_motzkin_path_ref2/scene.py", "MotzkinPathRef2"),
+)
+
+VIDEOS_1386_1397: tuple[Video, ...] = (
+    Video(1386, "スネイドペア", "project/math/549_analysis_108/1386_snc_pair/scene.py", "SNCPair"),
+    Video(1387, "純対数ペア", "project/math/549_analysis_108/1387_plt_pair/scene.py", "PLTPair"),
+    Video(1388, "端末ペア", "project/math/549_analysis_108/1388_terminal_pair/scene.py", "TerminalPair"),
+    Video(1389, "SOAPWHard", "project/math/550_linear_108/1389_soapwhard/scene.py", "SOAPWHard"),
+    Video(1390, "ShampooWHard", "project/math/550_linear_108/1390_shampoowhard/scene.py", "ShampooWHard"),
+    Video(1391, "QHMWHard", "project/math/550_linear_108/1391_qhmwhard/scene.py", "QHMWHard"),
+    Video(1392, "外心中線比", "project/math/551_geometry_108/1392_o_median_ratio/scene.py", "OMedianRatio"),
+    Video(1393, "九点中線比", "project/math/551_geometry_108/1393_n_median_ratio/scene.py", "NMedianRatio"),
+    Video(1394, "傍心中線比", "project/math/551_geometry_108/1394_ex_median_ratio/scene.py", "ExMedianRatio"),
+    Video(1395, "マクディアミド再訪", "project/math/552_probability_106/1395_mcdiarmid_revisit/scene.py", "McDiarmidRevisit"),
+    Video(1396, "ブール再訪", "project/math/552_probability_106/1396_boole_revisit/scene.py", "BooleRevisit"),
+    Video(1397, "シュレーダー細分", "project/math/553_combinatorics_105/1397_schroeder_ref/scene.py", "SchroederRefine"),
+)

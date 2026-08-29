@@ -111,6 +111,12 @@ VIDEOS_1278_1289 = _catalog.VIDEOS_1278_1289
 VIDEOS_1290_1301 = _catalog.VIDEOS_1290_1301
 VIDEOS_1302_1313 = _catalog.VIDEOS_1302_1313
 VIDEOS_1314_1325 = _catalog.VIDEOS_1314_1325
+VIDEOS_1326_1337 = _catalog.VIDEOS_1326_1337
+VIDEOS_1338_1349 = _catalog.VIDEOS_1338_1349
+VIDEOS_1350_1361 = _catalog.VIDEOS_1350_1361
+VIDEOS_1362_1373 = _catalog.VIDEOS_1362_1373
+VIDEOS_1374_1385 = _catalog.VIDEOS_1374_1385
+VIDEOS_1386_1397 = _catalog.VIDEOS_1386_1397
 
 
 class CatalogTests(unittest.TestCase):
@@ -555,6 +561,36 @@ class CatalogTests(unittest.TestCase):
         nums = [v.number for v in VIDEOS_1314_1325]
         self.assertEqual(nums, list(range(1314, 1326)))
 
+
+    def test_numbers_are_1326_to_1337(self):
+        nums = [v.number for v in VIDEOS_1326_1337]
+        self.assertEqual(nums, list(range(1326, 1338)))
+
+
+    def test_numbers_are_1338_to_1349(self):
+        nums = [v.number for v in VIDEOS_1338_1349]
+        self.assertEqual(nums, list(range(1338, 1350)))
+
+
+    def test_numbers_are_1350_to_1361(self):
+        nums = [v.number for v in VIDEOS_1350_1361]
+        self.assertEqual(nums, list(range(1350, 1362)))
+
+
+    def test_numbers_are_1362_to_1373(self):
+        nums = [v.number for v in VIDEOS_1362_1373]
+        self.assertEqual(nums, list(range(1362, 1374)))
+
+
+    def test_numbers_are_1374_to_1385(self):
+        nums = [v.number for v in VIDEOS_1374_1385]
+        self.assertEqual(nums, list(range(1374, 1386)))
+
+
+    def test_numbers_are_1386_to_1397(self):
+        nums = [v.number for v in VIDEOS_1386_1397]
+        self.assertEqual(nums, list(range(1386, 1398)))
+
     def test_each_scene_file_defines_the_class(self):
         for video in (
             *VIDEOS_101_125,
@@ -658,6 +694,12 @@ class CatalogTests(unittest.TestCase):
             *VIDEOS_1290_1301,
             *VIDEOS_1302_1313,
             *VIDEOS_1314_1325,
+            *VIDEOS_1326_1337,
+            *VIDEOS_1338_1349,
+            *VIDEOS_1350_1361,
+            *VIDEOS_1362_1373,
+            *VIDEOS_1374_1385,
+            *VIDEOS_1386_1397,
         ):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)

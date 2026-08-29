@@ -46,7 +46,7 @@ class Burnside(PacedScene):
         self.read(0.25)
         # show fixed by identity vs only mono for 90°
         mono = VGroup(*[Dot(b.get_center(), radius=0.22, color=BLUE) for b in self.beads])
-        cap2 = self.ja_text("固定だけ数える", font_size=24).move_to(self.note)
+        cap2 = self.ja_text("固定点", font_size=24).move_to(self.note)
         self.play(Transform(self.beads, mono), Transform(self.note, cap2), run_time=1.3)
         self.read(0.35)
         avg = MathTex(r"\frac{1}{|G|}\sum_g \mathrm{Fix}(g)", color=YELLOW).scale(0.85)

@@ -48,8 +48,7 @@ class Narayana(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"N(n,k)=\frac1n\binom n k\binom n {k-1}").scale(0.85)
-        formula = MathTex(r"N(n,k)=rac1ninom{n}{k}inom{n}{k-1}").scale(0.9)
+        formula = MathTex(r"N(n,k)=\frac{1}{n}\binom{n}{k}\binom{n}{k-1}").scale(0.85)
         formula.to_edge(DOWN, buff=0.24)
         self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

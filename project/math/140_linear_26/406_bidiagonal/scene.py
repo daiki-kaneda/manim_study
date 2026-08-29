@@ -45,8 +45,7 @@ class Bidiagonalization(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"A=UBV^{\!*}\quad (B\ \text{bidiag})").scale(0.85)
-        formula = MathTex(r"A=UBV^{*},\ B\ \mathrm{bidiagonal}").scale(0.82)
+        formula = MathTex(r"A=UBV^{*},\ B\ \mathrm{bidiagonal}").scale(0.85)
         formula.to_edge(DOWN, buff=0.24)
         self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

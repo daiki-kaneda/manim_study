@@ -48,8 +48,7 @@ class Limacon(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"r=a+b\cos\theta").scale(1.0)
-        formula = MathTex(r"r=a+b\cos	heta").scale(1.05)
-        formula.to_edge(DOWN, buff=0.26)
-        self.play(Write(formula), run_time=1.8)
+        formula = MathTex(r"r=a+b\cos\theta").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

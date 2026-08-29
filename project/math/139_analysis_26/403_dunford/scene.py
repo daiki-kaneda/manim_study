@@ -45,7 +45,7 @@ class DunfordCalculus(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"f(A)=rac1{2\pi i}\oint f(z)(z-A)^{-1}dz").scale(0.72)
-        formula.to_edge(DOWN, buff=0.22)
-        self.play(Write(formula), run_time=2.0)
+        formula = MathTex(r"f(A)=\frac{1}{2\pi i}\oint f(z)(z-A)^{-1}\,dz").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

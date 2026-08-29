@@ -49,7 +49,7 @@ class StewartTheorem(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"b^{2}m+c^{2}n=a(d^{2}+mn)").scale(0.9)
-        formula.to_edge(DOWN, buff=0.26)
-        self.play(Write(formula), run_time=1.8)
+        formula = MathTex(r"b^{2}m+c^{2}n=a(d^{2}+mn)").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

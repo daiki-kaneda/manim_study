@@ -34,7 +34,6 @@ class TraceClass(PacedScene):
         self.note = note
 
     def summable(self):
-        brace = MathTex(r"\sum_i\sigma_i<\infty", font_size=36).shift(DOWN * 0.7)
         brace = MathTex(r"\sum_i\sigma_i<\infty", font_size=40).shift(DOWN * 0.75)
         cap = self.ja_text("和が有限", font_size=24).move_to(self.note)
         self.play(FadeIn(brace), Transform(self.note, cap), run_time=1.3)
@@ -44,7 +43,7 @@ class TraceClass(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"\|T\|_1=\sum\sigma_i(T)<\infty").scale(0.9)
+        formula = MathTex(r"\|T\|_1=\sum\sigma_i(T)<\infty").scale(0.85)
         formula.to_edge(DOWN, buff=0.24)
-        self.play(Write(formula), run_time=1.8)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

@@ -50,7 +50,7 @@ class GivensRotation(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"G=egin{pmatrix}c&s\\-s&c\end{pmatrix}").scale(0.9)
-        formula.to_edge(DOWN, buff=0.22)
-        self.play(Write(formula), run_time=1.8)
+        formula = MathTex(r"G=\begin{pmatrix}c & s \\ -s & c\end{pmatrix}").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

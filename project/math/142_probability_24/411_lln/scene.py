@@ -43,8 +43,7 @@ class LawOfLargeNumbers(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"\bar X_n\to\mathbb{E}[X]\ \mathrm{a.s.}").scale(0.9)
-        formula = MathTex(r"ar X_n	o\mathbb{E}[X]\ \mathrm{a.s.}").scale(0.95)
-        formula.to_edge(DOWN, buff=0.26)
-        self.play(Write(formula), run_time=1.8)
+        formula = MathTex(r"\bar{X}_n \to \mathbb{E}[X]\ \mathrm{a.s.}").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

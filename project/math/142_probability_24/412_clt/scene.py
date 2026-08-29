@@ -51,8 +51,7 @@ class CentralLimitTheorem(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"\frac{S_n-n\mu}{\sigma\sqrt n}\Rightarrow N(0,1)").scale(0.85)
-        formula = MathTex(r"rac{S_n-n\mu}{\sigma\sqrt{n}}\Rightarrow N(0,1)").scale(0.88)
+        formula = MathTex(r"\frac{S_n-n\mu}{\sigma\sqrt{n}}\Rightarrow N(0,1)").scale(0.85)
         formula.to_edge(DOWN, buff=0.24)
         self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

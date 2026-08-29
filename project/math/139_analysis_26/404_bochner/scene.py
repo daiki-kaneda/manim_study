@@ -46,9 +46,7 @@ class BochnerIntegral(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"\int f=\lim\int s_n\ \text{(simple)}").scale(0.85)
-        # avoid Japanese in MathTex — use ASCII label
-        formula = MathTex(r"\int f=\lim_{n}\int s_n").scale(0.95)
-        formula.to_edge(DOWN, buff=0.26)
-        self.play(Write(formula), run_time=1.8)
+        formula = MathTex(r"\int f=\lim_n\int s_n").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

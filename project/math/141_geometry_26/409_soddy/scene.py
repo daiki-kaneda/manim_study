@@ -46,8 +46,7 @@ class SoddyCircles(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"k_4=k_1+k_2+k_3\pm 2\sqrt{k_1k_2+k_2k_3+k_3k_1}").scale(0.7)
-        formula = MathTex(r"k_4=k_1+k_2+k_3\pm 2\sqrt{k_1k_2+k_2k_3+k_3k_1}").scale(0.68)
-        formula.to_edge(DOWN, buff=0.2)
-        self.play(Write(formula), run_time=2.0)
+        formula = MathTex(r"k_4=k_1+k_2+k_3\pm 2\sqrt{k_1k_2+k_2k_3+k_3k_1}").scale(0.85)
+        formula.to_edge(DOWN, buff=0.24)
+        self.play(Write(formula), run_time=1.9)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

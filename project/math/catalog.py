@@ -1235,7 +1235,7 @@ VIDEOS_1074_1085: tuple[Video, ...] = (
     Video(1079, "SophiaSoft", "project/math/420_linear_82/1079_sophiasoft/scene.py", "SophiaSoft"),
     Video(1080, "オイラー距離比", "project/math/421_geometry_82/1080_euler_dist_ratio/scene.py", "EulerDistRatio"),
     Video(1081, "内心傍心比", "project/math/421_geometry_82/1081_in_ex_ratio/scene.py", "InExRatio"),
-    Video(1082, "外接内接比", "project/math/421_geometry_82/1082_ circum_in_ratio/scene.py", "CircumInRatio"),
+    Video(1082, "外接内接比", "project/math/421_geometry_82/1082_circum_in_ratio/scene.py", "CircumInRatio"),
     Video(1083, "マクディアミド", "project/math/422_probability_80/1083_mcdiarmid/scene.py", "McDiarmid"),
     Video(1084, "ブールの不等式", "project/math/422_probability_80/1084_boole/scene.py", "BooleInequality"),
     Video(1085, "整数分割多項式", "project/math/423_combinatorics_79/1085_partition_poly/scene.py", "PartitionPolynomials"),

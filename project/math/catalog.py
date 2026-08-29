@@ -250,3 +250,18 @@ VIDEOS_282_293: tuple[Video, ...] = (
     Video(292, "KL ダイバージェンス", "project/math/92_probability_14/292_kl/scene.py", "KLDivergence"),
     Video(293, "ヴァンデルモンドの恒等式", "project/math/93_combinatorics_13/293_vandermonde/scene.py", "Vandermonde"),
 )
+
+VIDEOS_294_305: tuple[Video, ...] = (
+    Video(294, "バナッハの不動点定理", "project/math/94_analysis_17/294_banach_fixed/scene.py", "BanachFixedPoint"),
+    Video(295, "一様有界性原理", "project/math/94_analysis_17/295_uniform_boundedness/scene.py", "UniformBoundedness"),
+    Video(296, "開写像定理", "project/math/94_analysis_17/296_open_mapping/scene.py", "OpenMapping"),
+    Video(297, "ワイルの不等式", "project/math/95_linear_17/297_weyl/scene.py", "WeylInequality"),
+    Video(298, "ミニマックス定理", "project/math/95_linear_17/298_min_max/scene.py", "MinMaxTheorem"),
+    Video(299, "レゾルベント", "project/math/95_linear_17/299_resolvent/scene.py", "Resolvent"),
+    Video(300, "三線座標", "project/math/96_geometry_17/300_trilinear/scene.py", "Trilinear"),
+    Video(301, "スピーカー中心", "project/math/96_geometry_17/301_spieker/scene.py", "Spieker"),
+    Video(302, "ブローカル点", "project/math/96_geometry_17/302_brocard/scene.py", "Brocard"),
+    Video(303, "全変動距離", "project/math/97_probability_15/303_total_variation/scene.py", "TotalVariation"),
+    Video(304, "反射原理", "project/math/97_probability_15/304_reflection/scene.py", "ReflectionPrinciple"),
+    Video(305, "包除原理", "project/math/98_combinatorics_14/305_inclusion_exclusion/scene.py", "InclusionExclusion"),
+)

@@ -2215,3 +2215,48 @@ VIDEOS_1854_1865: tuple[Video, ...] = (
     Video(1864, "半径一様複雑度", "project/math/747_probability_145/1864_radius_uniform_comp/scene.py", "RadiusUniformComp"),
     Video(1865, "順序森細分", "project/math/748_combinatorics_144/1865_ordered_forest_refine/scene.py", "OrderedForestRefine"),
 )
+
+VIDEOS_1866_1877: tuple[Video, ...] = (
+    Video(1866, "ログ有理対", "project/math/749_analysis_148/1866_log_rational_pair/scene.py", "LogRationalPair"),
+    Video(1867, "相対ログ有理対", "project/math/749_analysis_148/1867_rel_log_rational/scene.py", "RelLogRational"),
+    Video(1868, "ログ双有理対", "project/math/749_analysis_148/1868_log_birational_pair/scene.py", "LogBirationalPair"),
+    Video(1869, "RMSBoundClip", "project/math/750_linear_148/1869_rmsboundclip/scene.py", "RMSBoundClip"),
+    Video(1870, "LAMBSoftBound", "project/math/750_linear_148/1870_lambsoftbound/scene.py", "LAMBSoftBound"),
+    Video(1871, "LookaheadSoftBound", "project/math/750_linear_148/1871_lookaheadsoftbound/scene.py", "LookaheadSoftBound"),
+    Video(1872, "内心類似フォイエル中心比", "project/math/751_geometry_148/1872_in_sym_feuer_center/scene.py", "InSymFeuerCenter"),
+    Video(1873, "傍心類似フォイエル中心比", "project/math/751_geometry_148/1873_ex_sym_feuer_center/scene.py", "ExSymFeuerCenter"),
+    Video(1874, "外心類似フォイエル中心比", "project/math/751_geometry_148/1874_o_sym_feuer_center/scene.py", "OSymFeuerCenter"),
+    Video(1875, "局所スケール被覆", "project/math/752_probability_146/1875_local_scale_covering/scene.py", "LocalScaleCovering"),
+    Video(1876, "局所スケールパッキング", "project/math/752_probability_146/1876_local_scale_packing/scene.py", "LocalScalePacking"),
+    Video(1877, "根つき増加木細分", "project/math/753_combinatorics_145/1877_rooted_inc_tree_refine/scene.py", "RootedIncTreeRefine"),
+)
+
+VIDEOS_1878_1889: tuple[Video, ...] = (
+    Video(1878, "相対ログ双有理対", "project/math/754_analysis_149/1878_rel_log_birational/scene.py", "RelLogBirational"),
+    Video(1879, "ログ射影対", "project/math/754_analysis_149/1879_log_proj_pair/scene.py", "LogProjPair"),
+    Video(1880, "相対ログ射影対", "project/math/754_analysis_149/1880_rel_log_proj/scene.py", "RelLogProj"),
+    Video(1881, "ProdigyBoundClip", "project/math/755_linear_149/1881_prodigyboundclip/scene.py", "ProdigyBoundClip"),
+    Video(1882, "ScheduleFreeBoundHard", "project/math/755_linear_149/1882_schedulefreeboundhard/scene.py", "ScheduleFreeBoundHard"),
+    Video(1883, "AdamWBoundClip", "project/math/755_linear_149/1883_adamwboundclip/scene.py", "AdamWBoundClip"),
+    Video(1884, "垂心類似フォイエル中心比", "project/math/756_geometry_149/1884_h_sym_feuer_center/scene.py", "HSymFeuerCenter"),
+    Video(1885, "重心類似フォイエル中心比", "project/math/756_geometry_149/1885_g_sym_feuer_center/scene.py", "GSymFeuerCenter"),
+    Video(1886, "九点類似フォイエル中心比", "project/math/756_geometry_149/1886_n_sym_feuer_center/scene.py", "NSymFeuerCenter"),
+    Video(1887, "経験スケール被覆", "project/math/757_probability_147/1887_emp_scale_covering/scene.py", "EmpScaleCovering"),
+    Video(1888, "経験スケールパッキング", "project/math/757_probability_147/1888_emp_scale_packing/scene.py", "EmpScalePacking"),
+    Video(1889, "ラベル森細分", "project/math/758_combinatorics_146/1889_labeled_forest_refine/scene.py", "LabeledForestRefine"),
+)
+
+VIDEOS_1890_1901: tuple[Video, ...] = (
+    Video(1890, "ログファノ対", "project/math/759_analysis_150/1890_log_fano_pair/scene.py", "LogFanoPair"),
+    Video(1891, "相対ログファノ対", "project/math/759_analysis_150/1891_rel_log_fano/scene.py", "RelLogFano"),
+    Video(1892, "ログアルバネーゼ対", "project/math/759_analysis_150/1892_log_albanese_pair/scene.py", "LogAlbanesePair"),
+    Video(1893, "LionWSoftBound", "project/math/760_linear_150/1893_lionwsoftbound/scene.py", "LionWSoftBound"),
+    Video(1894, "SophiaWSoftBound", "project/math/760_linear_150/1894_sophiawsoftbound/scene.py", "SophiaWSoftBound"),
+    Video(1895, "ApolloBoundClip", "project/math/760_linear_150/1895_apolloboundclip/scene.py", "ApolloBoundClip"),
+    Video(1896, "内心フォイエル半径比", "project/math/761_geometry_150/1896_in_feuer_radius/scene.py", "InFeuerRadius"),
+    Video(1897, "傍心フォイエル半径比", "project/math/761_geometry_150/1897_ex_feuer_radius/scene.py", "ExFeuerRadius"),
+    Video(1898, "外心フォイエル半径比", "project/math/761_geometry_150/1898_o_feuer_radius/scene.py", "OFeuerRadius"),
+    Video(1899, "一様スケール被覆", "project/math/762_probability_148/1899_uniform_scale_covering/scene.py", "UniformScaleCovering"),
+    Video(1900, "一様スケールパッキング", "project/math/762_probability_148/1900_uniform_scale_packing/scene.py", "UniformScalePacking"),
+    Video(1901, "ケイリー森細分", "project/math/763_combinatorics_147/1901_cayley_forest_refine/scene.py", "CayleyForestRefine"),
+)

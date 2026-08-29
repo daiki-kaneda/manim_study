@@ -1405,3 +1405,48 @@ VIDEOS_1206_1217: tuple[Video, ...] = (
     Video(1216, "集中半径", "project/math/477_probability_91/1216_concentration_radius/scene.py", "ConcentrationRadius"),
     Video(1217, "ラグランジュ多項式", "project/math/478_combinatorics_90/1217_lagrange_poly/scene.py", "LagrangePolynomials"),
 )
+
+VIDEOS_1218_1229: tuple[Video, ...] = (
+    Video(1218, "カルティエ除数", "project/math/479_analysis_94/1218_cartier/scene.py", "CartierDivisor"),
+    Video(1219, "ヴェイユ除数", "project/math/479_analysis_94/1219_weil/scene.py", "WeilDivisor"),
+    Video(1220, "Q因子", "project/math/479_analysis_94/1220_q_divisor/scene.py", "QDivisor"),
+    Video(1221, "AdamWClip", "project/math/480_linear_94/1221_adamwclip/scene.py", "AdamWClip"),
+    Video(1222, "SGDMClip", "project/math/480_linear_94/1222_sgdmclip/scene.py", "SGDMClip"),
+    Video(1223, "RMSClip", "project/math/480_linear_94/1223_rmsclip/scene.py", "RMSClip"),
+    Video(1224, "ミッテンプンクト比", "project/math/481_geometry_94/1224_mittenpunkt_ratio/scene.py", "MittenpunktRatio"),
+    Video(1225, "類似重心比", "project/math/481_geometry_94/1225_symmedian_g_ratio/scene.py", "SymmedianGRatio"),
+    Video(1226, "類似内心比", "project/math/481_geometry_94/1226_symmedian_i_ratio/scene.py", "SymmedianIRatio"),
+    Video(1227, "リプシッツ集中", "project/math/482_probability_92/1227_lipschitz_conc/scene.py", "LipschitzConcentration"),
+    Video(1228, "測度集中", "project/math/482_probability_92/1228_measure_conc/scene.py", "MeasureConcentration"),
+    Video(1229, "タッチャード多項式", "project/math/483_combinatorics_91/1229_touchard/scene.py", "TouchardPolynomials"),
+)
+
+VIDEOS_1230_1241: tuple[Video, ...] = (
+    Video(1230, "R因子", "project/math/484_analysis_95/1230_r_divisor/scene.py", "RDivisor"),
+    Video(1231, "数値的次元再訪", "project/math/484_analysis_95/1231_num_dim_revisit/scene.py", "NumDimRevisit"),
+    Video(1232, "体積多項式", "project/math/484_analysis_95/1232_volume_poly/scene.py", "VolumePolynomial"),
+    Video(1233, "AdaBeliefClip", "project/math/485_linear_95/1233_adabeliefclip/scene.py", "AdaBeliefClip"),
+    Video(1234, "LookaheadClip", "project/math/485_linear_95/1234_lookaheadclip/scene.py", "LookaheadClip"),
+    Video(1235, "SWAClip", "project/math/485_linear_95/1235_swaclip/scene.py", "SWAClip"),
+    Video(1236, "類似外心比", "project/math/486_geometry_95/1236_sym_o_ratio/scene.py", "SymORatio"),
+    Video(1237, "類似垂心比", "project/math/486_geometry_95/1237_sym_h_ratio/scene.py", "SymHRatio"),
+    Video(1238, "ブローカール比", "project/math/486_geometry_95/1238_brocard_ratio/scene.py", "BrocardRatio"),
+    Video(1239, "対数ソボレフ", "project/math/487_probability_93/1239_log_sobolev/scene.py", "LogSobolev"),
+    Video(1240, "輸送不等式", "project/math/487_probability_93/1240_transport/scene.py", "TransportInequality"),
+    Video(1241, "フォア多角形", "project/math/488_combinatorics_92/1241_fuss/scene.py", "FussPolygons"),
+)
+
+VIDEOS_1242_1253: tuple[Video, ...] = (
+    Video(1242, "ビッグ錐境界", "project/math/489_analysis_96/1242_big_cone_boundary/scene.py", "BigConeBoundary"),
+    Video(1243, "移動錐", "project/math/489_analysis_96/1243_movable_cone/scene.py", "MovableCone"),
+    Video(1244, "正値錐", "project/math/489_analysis_96/1244_positive_cone/scene.py", "PositiveCone"),
+    Video(1245, "ProdigyClip", "project/math/490_linear_96/1245_prodigyclip/scene.py", "ProdigyClip"),
+    Video(1246, "ScheduleFreeClip", "project/math/490_linear_96/1246_schedulefreeclip/scene.py", "ScheduleFreeClip"),
+    Video(1247, "MuonSoftClip", "project/math/490_linear_96/1247_muonsoftclip/scene.py", "MuonSoftClip"),
+    Video(1248, "類似九点比", "project/math/491_geometry_96/1248_sym_nine_ratio/scene.py", "SymNineRatio"),
+    Video(1249, "類似傍心比", "project/math/491_geometry_96/1249_sym_ex_ratio/scene.py", "SymExRatio"),
+    Video(1250, "類似重心線", "project/math/491_geometry_96/1250_sym_g_line/scene.py", "SymGLine"),
+    Video(1251, "ポアンカレ不等式再訪", "project/math/492_probability_94/1251_poincare_revisit/scene.py", "PoincareRevisit"),
+    Video(1252, "ガウス型集中", "project/math/492_probability_94/1252_gaussian_conc/scene.py", "GaussianConcentration"),
+    Video(1253, "モツキン路細分", "project/math/493_combinatorics_93/1253_motzkin_path_ref/scene.py", "MotzkinPathRefine"),
+)

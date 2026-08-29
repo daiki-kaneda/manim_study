@@ -1090,3 +1090,48 @@ VIDEOS_954_965: tuple[Video, ...] = (
     Video(964, "反射ブラウン", "project/math/372_probability_70/964_reflected_bm/scene.py", "ReflectedBM"),
     Video(965, "カタラン多項式", "project/math/373_combinatorics_69/965_catalan_poly/scene.py", "CatalanPolynomials"),
 )
+
+VIDEOS_966_977: tuple[Video, ...] = (
+    Video(966, "シューベルト類", "project/math/374_analysis_73/966_schubert_class/scene.py", "SchubertClass"),
+    Video(967, "シューベルト多様体", "project/math/374_analysis_73/967_schubert_var/scene.py", "SchubertVariety"),
+    Video(968, "量子シューベルト", "project/math/374_analysis_73/968_quantum_schubert/scene.py", "QuantumSchubert"),
+    Video(969, "LionW", "project/math/375_linear_73/969_lionw/scene.py", "LionW"),
+    Video(970, "SophiaW", "project/math/375_linear_73/970_sophiaw/scene.py", "SophiaW"),
+    Video(971, "MuonW", "project/math/375_linear_73/971_muonw/scene.py", "MuonW"),
+    Video(972, "接線長公式", "project/math/376_geometry_73/972_tangent_lengths/scene.py", "TangentLengths"),
+    Video(973, "半周長公式", "project/math/376_geometry_73/973_semiperimeter/scene.py", "Semiperimeter"),
+    Video(974, "角二等分定理", "project/math/376_geometry_73/974_angle_bisector/scene.py", "AngleBisectorTheorem"),
+    Video(975, "スカロホッド", "project/math/377_probability_71/975_skorokhod/scene.py", "Skorokhod"),
+    Video(976, "首回到達", "project/math/377_probability_71/976_hitting_time/scene.py", "HittingTime"),
+    Video(977, "モツキン多項式", "project/math/378_combinatorics_70/977_motzkin_poly/scene.py", "MotzkinPolynomials"),
+)
+
+VIDEOS_978_989: tuple[Video, ...] = (
+    Video(978, "ピカール群", "project/math/379_analysis_74/978_picard/scene.py", "PicardGroup"),
+    Video(979, "ネロン・セヴェリ", "project/math/379_analysis_74/979_ns/scene.py", "NeronSeveri"),
+    Video(980, "標準束", "project/math/379_analysis_74/980_canonical/scene.py", "CanonicalBundle"),
+    Video(981, "SophiaH", "project/math/380_linear_74/981_sophiah/scene.py", "SophiaH"),
+    Video(982, "MuonClip", "project/math/380_linear_74/982_muonclip/scene.py", "MuonClip"),
+    Video(983, "SOAPClip", "project/math/380_linear_74/983_soapclip/scene.py", "SOAPClip"),
+    Video(984, "余弦法則", "project/math/381_geometry_74/984_cosine_law/scene.py", "CosineLaw"),
+    Video(985, "方べきの逆", "project/math/381_geometry_74/985_power_inverse/scene.py", "PowerInverse"),
+    Video(986, "オイラー距離", "project/math/381_geometry_74/986_euler_distance/scene.py", "EulerDistance"),
+    Video(987, "キリング時間", "project/math/382_probability_72/987_killing_time/scene.py", "KillingTime"),
+    Video(988, "局所時押し出し", "project/math/382_probability_72/988_local_push/scene.py", "LocalTimePush"),
+    Video(989, "シュレーダー多項式", "project/math/383_combinatorics_71/989_schroeder_poly/scene.py", "SchroederPolynomials"),
+)
+
+VIDEOS_990_1001: tuple[Video, ...] = (
+    Video(990, "反標準束", "project/math/384_analysis_75/990_anticanonical/scene.py", "AnticanonicalBundle"),
+    Video(991, "線束", "project/math/384_analysis_75/991_line_bundle/scene.py", "LineBundle"),
+    Video(992, "豊富性", "project/math/384_analysis_75/992_ampleness/scene.py", "Ampleness"),
+    Video(993, "ScheduleFreeW", "project/math/385_linear_75/993_sfw/scene.py", "ScheduleFreeW"),
+    Video(994, "ProdigyW", "project/math/385_linear_75/994_prodigyw/scene.py", "ProdigyW"),
+    Video(995, "AdaFactorW", "project/math/385_linear_75/995_adafactorw/scene.py", "AdaFactorW"),
+    Video(996, "トレミー比", "project/math/386_geometry_75/996_ptolemy_ratio/scene.py", "PtolemyRatio"),
+    Video(997, "正弦余弦辺", "project/math/386_geometry_75/997_sine_cosine_side/scene.py", "SineCosineSide"),
+    Video(998, "外接半径公式", "project/math/386_geometry_75/998_circumradius/scene.py", "CircumradiusFormula"),
+    Video(999, "首回到達時間", "project/math/387_probability_73/999_hitting_time_dist/scene.py", "HittingTimeDistribution"),
+    Video(1000, "反射原理ブラウン", "project/math/387_probability_73/1000_reflection_bm/scene.py", "ReflectionPrincipleBM"),
+    Video(1001, "ナラヤナ多項式", "project/math/388_combinatorics_72/1001_narayana_poly/scene.py", "NarayanaPolynomials"),
+)

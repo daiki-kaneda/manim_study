@@ -1495,3 +1495,48 @@ VIDEOS_1278_1289: tuple[Video, ...] = (
     Video(1288, "キュムラント母関数", "project/math/507_probability_97/1288_cgf/scene.py", "CumulantGenerating"),
     Video(1289, "スターリング三角形細分", "project/math/508_combinatorics_96/1289_stirling_tri_ref/scene.py", "StirlingTriangleRefine"),
 )
+
+VIDEOS_1290_1301: tuple[Video, ...] = (
+    Video(1290, "端末閾値", "project/math/509_analysis_100/1290_terminal_threshold/scene.py", "TerminalThreshold"),
+    Video(1291, "正準閾値", "project/math/509_analysis_100/1291_canonical_threshold/scene.py", "CanonicalThreshold"),
+    Video(1292, "klt閾値", "project/math/509_analysis_100/1292_klt_threshold/scene.py", "KLTThreshold"),
+    Video(1293, "AdamWHard", "project/math/510_linear_100/1293_adamwhard/scene.py", "AdamWHard"),
+    Video(1294, "SGDMHard", "project/math/510_linear_100/1294_sgdmhard/scene.py", "SGDMHard"),
+    Video(1295, "RMSHard", "project/math/510_linear_100/1295_rmshard/scene.py", "RMSHard"),
+    Video(1296, "メネラウス比積", "project/math/511_geometry_100/1296_menelaus_prod/scene.py", "MenelausProd"),
+    Video(1297, "ヴァンオーベル比", "project/math/511_geometry_100/1297_van_obel/scene.py", "VanObelRatio"),
+    Video(1298, "ルモワーヌ比", "project/math/511_geometry_100/1298_lemoine_ratio/scene.py", "LemoineRatio"),
+    Video(1299, "ラデマッハー複雑度", "project/math/512_probability_98/1299_rademacher/scene.py", "RademacherComplexity"),
+    Video(1300, "経験ラデマッハー", "project/math/512_probability_98/1300_empirical_rademacher/scene.py", "EmpiricalRademacher"),
+    Video(1301, "フィボナッチ三角形", "project/math/513_combinatorics_97/1301_fib_triangle/scene.py", "FibTriangle"),
+)
+
+VIDEOS_1302_1313: tuple[Video, ...] = (
+    Video(1302, "plt閾値", "project/math/514_analysis_101/1302_plt_threshold/scene.py", "PLTThreshold"),
+    Video(1303, "dlt閾値", "project/math/514_analysis_101/1303_dlt_threshold/scene.py", "DLTThreshold"),
+    Video(1304, "lc閾値", "project/math/514_analysis_101/1304_lc_threshold/scene.py", "LCThreshold"),
+    Video(1305, "AdaBeliefHard", "project/math/515_linear_101/1305_adabeliefhard/scene.py", "AdaBeliefHard"),
+    Video(1306, "LookaheadHard", "project/math/515_linear_101/1306_lookaheadhard/scene.py", "LookaheadHard"),
+    Video(1307, "SWAHard", "project/math/515_linear_101/1307_swahard/scene.py", "SWAHard"),
+    Video(1308, "類似中線比", "project/math/516_geometry_101/1308_symmedian_ratio/scene.py", "SymmedianRatio"),
+    Video(1309, "第一ブロカール比", "project/math/516_geometry_101/1309_first_brocard_ratio/scene.py", "FirstBrocardRatio"),
+    Video(1310, "第二ブロカール比", "project/math/516_geometry_101/1310_second_brocard_ratio/scene.py", "SecondBrocardRatio"),
+    Video(1311, "一様偏差", "project/math/517_probability_99/1311_uniform_dev/scene.py", "UniformDeviation"),
+    Video(1312, "ダドリーエントロピー", "project/math/517_probability_99/1312_dudley/scene.py", "DudleyEntropy"),
+    Video(1313, "リュカ三角形", "project/math/518_combinatorics_98/1313_lucas_triangle/scene.py", "LucasTriangle"),
+)
+
+VIDEOS_1314_1325: tuple[Video, ...] = (
+    Video(1314, "純端末閾値", "project/math/519_analysis_102/1314_pure_terminal/scene.py", "PureTerminalThreshold"),
+    Video(1315, "半対数端末", "project/math/519_analysis_102/1315_semi_log_terminal/scene.py", "SemiLogTerminal"),
+    Video(1316, "ε対数端末", "project/math/519_analysis_102/1316_eps_log_terminal/scene.py", "EpsLogTerminal"),
+    Video(1317, "ProdigyHard", "project/math/520_linear_102/1317_prodigyhard/scene.py", "ProdigyHard"),
+    Video(1318, "ScheduleFreeHard", "project/math/520_linear_102/1318_schedulefreehard/scene.py", "ScheduleFreeHard"),
+    Video(1319, "MuonSoftBound", "project/math/520_linear_102/1319_muonsoftbound/scene.py", "MuonSoftBound"),
+    Video(1320, "チェバ線分比", "project/math/521_geometry_102/1320_ceva_seg_ratio/scene.py", "CevaSegRatio"),
+    Video(1321, "メネラウス線分比", "project/math/521_geometry_102/1321_menelaus_seg_ratio/scene.py", "MenelausSegRatio"),
+    Video(1322, "スチュワート比", "project/math/521_geometry_102/1322_stewart_ratio/scene.py", "StewartRatio"),
+    Video(1323, "チェイニング", "project/math/522_probability_100/1323_chaining/scene.py", "Chaining"),
+    Video(1324, "被覆数再訪", "project/math/522_probability_100/1324_covering_revisit/scene.py", "CoveringRevisit"),
+    Video(1325, "ペル三角形", "project/math/523_combinatorics_99/1325_pell_triangle/scene.py", "PellTriangle"),
+)

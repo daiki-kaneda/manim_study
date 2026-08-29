@@ -24,6 +24,11 @@ manim -pql project/math/10_combinatorics/50_midpoint_recap/scene.py MidpointReca
 manim -pql project/math/11_trig/51_law_of_sines/scene.py LawOfSines
 manim -pql project/math/12_series/60_fourier_square/scene.py FourierSquare
 manim -pql project/math/14_ode/66_slope_field/scene.py SlopeField
+manim -pql project/math/16_optimization/76_cauchy_schwarz/scene.py CauchySchwarz
+manim -pql project/math/17_graphs/81_euler_circuit/scene.py EulerCircuit
+manim -pql project/math/18_stats/87_least_squares/scene.py LeastSquares
+manim -pql project/math/19_synthesis/91_euler_identity/scene.py EulerIdentity
+manim -pql project/math/20_recap/100_closing_map/scene.py ClosingMap
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -118,5 +123,28 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 73 | 回転数 | `project/math/15_complex/73_winding_number/` |
 | 74 | 1/z | `project/math/15_complex/74_one_over_z/` |
 | 75 | 等角写像 | `project/math/15_complex/75_conformal/` |
-
-以降の番号は `PLAN.md` を参照。
+| 76 | コーシー・シュワルツ | `project/math/16_optimization/76_cauchy_schwarz/` |
+| 77 | 凸とイェンゼン | `project/math/16_optimization/77_jensen/` |
+| 78 | 同じ周なら正方形 | `project/math/16_optimization/78_isoperimetric/` |
+| 79 | 三角不等式 | `project/math/16_optimization/79_triangle_inequality/` |
+| 80 | 極値 | `project/math/16_optimization/80_critical_point/` |
+| 81 | 一筆書き | `project/math/17_graphs/81_euler_circuit/` |
+| 82 | 握手補題 | `project/math/17_graphs/82_handshake/` |
+| 83 | 木 | `project/math/17_graphs/83_tree/` |
+| 84 | 彩色 | `project/math/17_graphs/84_graph_coloring/` |
+| 85 | 最短路 | `project/math/17_graphs/85_shortest_path/` |
+| 86 | 相関 | `project/math/18_stats/86_correlation/` |
+| 87 | 最小二乗 | `project/math/18_stats/87_least_squares/` |
+| 88 | 二項分布 | `project/math/18_stats/88_binomial/` |
+| 89 | 信頼区間 | `project/math/18_stats/89_confidence_interval/` |
+| 90 | 68–95–99.7 | `project/math/18_stats/90_empirical_rule/` |
+| 91 | オイラーの等式 | `project/math/19_synthesis/91_euler_identity/` |
+| 92 | ガウス積分 | `project/math/19_synthesis/92_gaussian_integral/` |
+| 93 | 黄金比 | `project/math/19_synthesis/93_golden_ratio/` |
+| 94 | グリーンの定理 | `project/math/19_synthesis/94_green/` |
+| 95 | スケール | `project/math/19_synthesis/95_scaling/` |
+| 96 | 解析の地図 | `project/math/20_recap/96_analysis_map/` |
+| 97 | 代数の地図 | `project/math/20_recap/97_algebra_map/` |
+| 98 | 図形の地図 | `project/math/20_recap/98_geometry_map/` |
+| 99 | 偶然の地図 | `project/math/20_recap/99_chance_map/` |
+| 100 | 100本の地図 | `project/math/20_recap/100_closing_map/` |

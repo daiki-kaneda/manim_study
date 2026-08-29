@@ -1,6 +1,6 @@
 # 数学100本
 
-1チャンネル・BGMのみ・各本おおよそ 1〜2 分。まずはこのフォルダで数学100本を完走する。
+1チャンネル・BGMのみ・各本おおよそ 1〜2 分。#1–#100 に続く第2シーズンを同じフォルダで進める。
 
 ## 再生コマンド
 
@@ -29,6 +29,11 @@ manim -pql project/math/17_graphs/81_euler_circuit/scene.py EulerCircuit
 manim -pql project/math/18_stats/87_least_squares/scene.py LeastSquares
 manim -pql project/math/19_synthesis/91_euler_identity/scene.py EulerIdentity
 manim -pql project/math/20_recap/100_closing_map/scene.py ClosingMap
+manim -pql project/math/21_vector_calculus/101_gradient/scene.py Gradient
+manim -pql project/math/22_linear_algebra_2/108_rank_nullity/scene.py RankNullity
+manim -pql project/math/23_analysis_2/111_mean_value/scene.py MeanValue
+manim -pql project/math/24_geometry_2/116_euler_char/scene.py EulerCharacteristic
+manim -pql project/math/25_info/125_monte_carlo_pi/scene.py MonteCarloPi
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -148,3 +153,28 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 98 | 図形の地図 | `project/math/20_recap/98_geometry_map/` |
 | 99 | 偶然の地図 | `project/math/20_recap/99_chance_map/` |
 | 100 | 100本の地図 | `project/math/20_recap/100_closing_map/` |
+| 101 | 勾配 | `project/math/21_vector_calculus/101_gradient/` |
+| 102 | 発散 | `project/math/21_vector_calculus/102_divergence/` |
+| 103 | 回転 | `project/math/21_vector_calculus/103_curl/` |
+| 104 | 基本定理 | `project/math/21_vector_calculus/104_ftc/` |
+| 105 | 極座標の面積 | `project/math/21_vector_calculus/105_polar_area/` |
+| 106 | 像 | `project/math/22_linear_algebra_2/106_image/` |
+| 107 | 核 | `project/math/22_linear_algebra_2/107_nullspace/` |
+| 108 | 階数と核 | `project/math/22_linear_algebra_2/108_rank_nullity/` |
+| 109 | 正射影 | `project/math/22_linear_algebra_2/109_projection/` |
+| 110 | 基底の取りかえ | `project/math/22_linear_algebra_2/110_change_of_basis/` |
+| 111 | 平均値の定理 | `project/math/23_analysis_2/111_mean_value/` |
+| 112 | ロピタル | `project/math/23_analysis_2/112_lhopital/` |
+| 113 | はさみうち | `project/math/23_analysis_2/113_squeeze/` |
+| 114 | 収束半径 | `project/math/23_analysis_2/114_radius/` |
+| 115 | デルタ関数 | `project/math/23_analysis_2/115_dirac/` |
+| 116 | 多面体公式 | `project/math/24_geometry_2/116_euler_char/` |
+| 117 | ヘロンの公式 | `project/math/24_geometry_2/117_heron/` |
+| 118 | 方べきの定理 | `project/math/24_geometry_2/118_power_of_a_point/` |
+| 119 | 反転 | `project/math/24_geometry_2/119_inversion/` |
+| 120 | 立体射影 | `project/math/24_geometry_2/120_stereographic/` |
+| 121 | 誕生日 | `project/math/25_info/121_birthday/` |
+| 122 | ランダムウォーク | `project/math/25_info/122_random_walk/` |
+| 123 | エントロピー | `project/math/25_info/123_entropy/` |
+| 124 | マルコフ連鎖 | `project/math/25_info/124_markov/` |
+| 125 | モンテカルロの π | `project/math/25_info/125_monte_carlo_pi/` |

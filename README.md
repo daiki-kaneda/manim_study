@@ -4,7 +4,7 @@
 
 - 共有ライブラリ: `manim_math/`（日本語 TeX / Text、幾何ヘルパー）
 - 本番シーン: `project/`
-- 数学100本の進捗: `project/math/PLAN.md`
+- 数学動画の進捗: `project/math/PLAN.md`（#1–#100 完了、#101 から第2シーズン）
 
 ```bash
 pip install -e .

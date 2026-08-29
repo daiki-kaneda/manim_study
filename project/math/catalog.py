@@ -1360,3 +1360,48 @@ VIDEOS_1170_1181: tuple[Video, ...] = (
     Video(1180, "ヘフディング積", "project/math/462_probability_88/1180_hoeffding_prod/scene.py", "HoeffdingProduct"),
     Video(1181, "オイラー三角形", "project/math/463_combinatorics_87/1181_euler_triangle/scene.py", "EulerTriangle"),
 )
+
+VIDEOS_1182_1193: tuple[Video, ...] = (
+    Video(1182, "自己交差", "project/math/464_analysis_91/1182_self_intersection/scene.py", "SelfIntersection"),
+    Video(1183, "ネフ閾値", "project/math/464_analysis_91/1183_nef_threshold/scene.py", "NefThreshold"),
+    Video(1184, "対数標準環", "project/math/464_analysis_91/1184_log_canonical_ring/scene.py", "LogCanonicalRing"),
+    Video(1185, "RAdamClip", "project/math/465_linear_91/1185_radamclip/scene.py", "RAdamClip"),
+    Video(1186, "AdaMaxClip", "project/math/465_linear_91/1186_adamaxclip/scene.py", "AdaMaxClip"),
+    Video(1187, "DemonClip", "project/math/465_linear_91/1187_demonclip/scene.py", "DemonClip"),
+    Video(1188, "内心傍心外心", "project/math/466_geometry_91/1188_in_ex_circum/scene.py", "InExCircum"),
+    Video(1189, "オイラー線比", "project/math/466_geometry_91/1189_euler_line_ratio/scene.py", "EulerLineRatio"),
+    Video(1190, "九点円垂心比", "project/math/466_geometry_91/1190_nine_h_ratio/scene.py", "NineHRatio"),
+    Video(1191, "ベネット積", "project/math/467_probability_89/1191_bennett_prod/scene.py", "BennettProduct"),
+    Video(1192, "アズーマ積", "project/math/467_probability_89/1192_azuma_prod/scene.py", "AzumaProduct"),
+    Video(1193, "スティルチェス三角形", "project/math/468_combinatorics_88/1193_stieltjes_triangle/scene.py", "StieltjesTriangle"),
+)
+
+VIDEOS_1194_1205: tuple[Video, ...] = (
+    Video(1194, "相対標準環", "project/math/469_analysis_92/1194_relative_canonical_ring/scene.py", "RelativeCanonicalRing"),
+    Video(1195, "飯高写像再訪", "project/math/469_analysis_92/1195_iitaka_map/scene.py", "IitakaMapRevisit"),
+    Video(1196, "豊富閾値", "project/math/469_analysis_92/1196_ample_threshold/scene.py", "AmpleThreshold"),
+    Video(1197, "DiffGradSoft", "project/math/470_linear_92/1197_diffgradsoft/scene.py", "DiffGradSoft"),
+    Video(1198, "YogiSoft", "project/math/470_linear_92/1198_yogisoft/scene.py", "YogiSoft"),
+    Video(1199, "YHClip", "project/math/470_linear_92/1199_yhclip/scene.py", "YHClip"),
+    Video(1200, "傍心三角形辺", "project/math/471_geometry_92/1200_ex_tri_side/scene.py", "ExTriSide"),
+    Video(1201, "垂心三角形比", "project/math/471_geometry_92/1201_ortho_tri_ratio/scene.py", "OrthoTriRatio"),
+    Video(1202, "内心三角形比", "project/math/471_geometry_92/1202_in_tri_ratio/scene.py", "InTriRatio"),
+    Video(1203, "ドゥーブ最大", "project/math/472_probability_90/1203_doob_max/scene.py", "DoobMax"),
+    Video(1204, "ワルド積", "project/math/472_probability_90/1204_wald_prod/scene.py", "WaldProduct"),
+    Video(1205, "アペル多項式", "project/math/473_combinatorics_89/1205_appel_poly/scene.py", "AppelPolynomials"),
+)
+
+VIDEOS_1206_1217: tuple[Video, ...] = (
+    Video(1206, "交点理論積", "project/math/474_analysis_93/1206_intersection_product/scene.py", "IntersectionProduct"),
+    Video(1207, "数値的同値", "project/math/474_analysis_93/1207_numerical_equivalence/scene.py", "NumericalEquivalence"),
+    Video(1208, "線形同値差", "project/math/474_analysis_93/1208_linear_equiv_diff/scene.py", "LinearEquivDiff"),
+    Video(1209, "AdaFactorClip", "project/math/475_linear_93/1209_adafactorclip/scene.py", "AdaFactorClip"),
+    Video(1210, "LAMBClip", "project/math/475_linear_93/1210_lambclip/scene.py", "LAMBClip"),
+    Video(1211, "LARSClip", "project/math/475_linear_93/1211_larsclip/scene.py", "LARSClip"),
+    Video(1212, "ジェルゴンヌ比", "project/math/476_geometry_93/1212_gergonne_ratio/scene.py", "GergonneRatio"),
+    Video(1213, "ナーゲル比", "project/math/476_geometry_93/1213_nagel_ratio/scene.py", "NagelRatio"),
+    Video(1214, "シュピカー比", "project/math/476_geometry_93/1214_spieker_ratio/scene.py", "SpiekerRatio"),
+    Video(1215, "オプション停止", "project/math/477_probability_91/1215_optional_stopping/scene.py", "OptionalStoppingRevisit"),
+    Video(1216, "集中半径", "project/math/477_probability_91/1216_concentration_radius/scene.py", "ConcentrationRadius"),
+    Video(1217, "ラグランジュ多項式", "project/math/478_combinatorics_90/1217_lagrange_poly/scene.py", "LagrangePolynomials"),
+)

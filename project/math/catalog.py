@@ -820,3 +820,18 @@ VIDEOS_738_749: tuple[Video, ...] = (
     Video(748, "縮小二次モーメント", "project/math/282_probability_52/748_reduced_second/scene.py", "ReducedSecondMoment"),
     Video(749, "ペル数", "project/math/283_combinatorics_51/749_pell/scene.py", "PellNumbers"),
 )
+
+VIDEOS_750_761: tuple[Video, ...] = (
+    Video(750, "傾き安定性", "project/math/284_analysis_55/750_tilt/scene.py", "TiltStability"),
+    Video(751, "DT不変量", "project/math/284_analysis_55/751_dt/scene.py", "DTInvariant"),
+    Video(752, "ドナルドソン・トーマス", "project/math/284_analysis_55/752_donaldson_thomas/scene.py", "DonaldsonThomas"),
+    Video(753, "LARS", "project/math/285_linear_55/753_lars/scene.py", "LARS"),
+    Video(754, "Fromage", "project/math/285_linear_55/754_fromage/scene.py", "Fromage"),
+    Video(755, "Apollo", "project/math/285_linear_55/755_apollo/scene.py", "Apollo"),
+    Video(756, "コンウェイ円", "project/math/286_geometry_55/756_conway_circle/scene.py", "ConwayCircle"),
+    Video(757, "イフ中心", "project/math/286_geometry_55/757_yff/scene.py", "YffCenter"),
+    Video(758, "等脚中線点", "project/math/286_geometry_55/758_isoscelizers/scene.py", "IsoscelizersPoint"),
+    Video(759, "ハードコア過程", "project/math/287_probability_53/759_hard_core/scene.py", "HardCoreProcess"),
+    Video(760, "ソフトコア過程", "project/math/287_probability_53/760_soft_core/scene.py", "SoftCoreProcess"),
+    Video(761, "ペル・リュカ数", "project/math/288_combinatorics_52/761_pell_lucas/scene.py", "PellLucasNumbers"),
+)

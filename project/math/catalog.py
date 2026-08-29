@@ -340,3 +340,18 @@ VIDEOS_354_365: tuple[Video, ...] = (
     Video(364, "サノフの定理", "project/math/122_probability_20/364_sanov/scene.py", "SanovTheorem"),
     Video(365, "ゼッケンドルフの定理", "project/math/123_combinatorics_19/365_zeckendorf/scene.py", "Zeckendorf"),
 )
+
+VIDEOS_366_377: tuple[Video, ...] = (
+    Video(366, "自己共役作用素", "project/math/124_analysis_23/366_self_adjoint/scene.py", "SelfAdjoint"),
+    Video(367, "ユニタリ群", "project/math/124_analysis_23/367_unitary_group/scene.py", "UnitaryGroup"),
+    Video(368, "フレドホルムの択一", "project/math/124_analysis_23/368_fredholm/scene.py", "FredholmAlternative"),
+    Video(369, "行列対数", "project/math/125_linear_23/369_matrix_log/scene.py", "MatrixLogarithm"),
+    Video(370, "パデ近似", "project/math/125_linear_23/370_pade/scene.py", "PadeApproximation"),
+    Video(371, "GMRES", "project/math/125_linear_23/371_gmres/scene.py", "GMRES"),
+    Video(372, "共円五点", "project/math/126_geometry_23/372_cocircular5/scene.py", "CocircularFive"),
+    Video(373, "反相似", "project/math/126_geometry_23/373_antisimilarity/scene.py", "Antisimilarity"),
+    Video(374, "ポンスレ・スタイナー", "project/math/126_geometry_23/374_poncelet_steiner/scene.py", "PonceletSteiner"),
+    Video(375, "エルゴード定理", "project/math/127_probability_21/375_ergodic/scene.py", "ErgodicTheorem"),
+    Video(376, "マルチンゲール収束", "project/math/127_probability_21/376_martingale/scene.py", "MartingaleConvergence"),
+    Video(377, "ベル多項式", "project/math/128_combinatorics_20/377_bell_poly/scene.py", "BellPolynomials"),
+)

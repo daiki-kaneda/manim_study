@@ -835,3 +835,18 @@ VIDEOS_750_761: tuple[Video, ...] = (
     Video(760, "ソフトコア過程", "project/math/287_probability_53/760_soft_core/scene.py", "SoftCoreProcess"),
     Video(761, "ペル・リュカ数", "project/math/288_combinatorics_52/761_pell_lucas/scene.py", "PellLucasNumbers"),
 )
+
+VIDEOS_762_773: tuple[Video, ...] = (
+    Video(762, "PT不変量", "project/math/289_analysis_56/762_pt/scene.py", "PTInvariant"),
+    Video(763, "ゴパクマール・ヴァーファ", "project/math/289_analysis_56/763_gv/scene.py", "GopakumarVafa"),
+    Video(764, "GW-DT対応", "project/math/289_analysis_56/764_gwdt/scene.py", "GWDTCorrespondence"),
+    Video(765, "Shampoo", "project/math/290_linear_56/765_shampoo/scene.py", "Shampoo"),
+    Video(766, "Adai", "project/math/290_linear_56/766_adai/scene.py", "Adai"),
+    Video(767, "Padam", "project/math/290_linear_56/767_padam/scene.py", "Padam"),
+    Video(768, "モーリー三角形", "project/math/291_geometry_56/768_morley/scene.py", "MorleyTriangle"),
+    Video(769, "コスニタ点", "project/math/291_geometry_56/769_kosnita/scene.py", "KosnitaPoint"),
+    Video(770, "エクセター点", "project/math/291_geometry_56/770_exeter/scene.py", "ExeterPoint"),
+    Video(771, "シュトラウス過程", "project/math/292_probability_54/771_strauss/scene.py", "StraussProcess"),
+    Video(772, "面積相互作用", "project/math/292_probability_54/772_area_interaction/scene.py", "AreaInteraction"),
+    Video(773, "怠惰な料理人", "project/math/293_combinatorics_53/773_lazy_caterer/scene.py", "LazyCaterer"),
+)

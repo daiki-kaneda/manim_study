@@ -6,7 +6,13 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from manim_math.geometry import odd_layer_cells, odd_square_layers, polar, staircase_cells
+from manim_math.geometry import (
+    apply_2d,
+    odd_layer_cells,
+    odd_square_layers,
+    polar,
+    staircase_cells,
+)
 from manim_math.japanese import get_japanese_font
 from manim_math.path_setup import add_repo_root_to_syspath
 
@@ -40,6 +46,12 @@ class GeometryTests(unittest.TestCase):
     def test_odd_layer_rejects_invalid_k(self):
         with self.assertRaises(ValueError):
             odd_layer_cells(0)
+
+    def test_apply_2d_shear(self):
+        out = apply_2d([[2, 1], [0, 1]], (1, 1))
+        self.assertAlmostEqual(out[0], 3.0)
+        self.assertAlmostEqual(out[1], 1.0)
+        self.assertAlmostEqual(out[2], 0.0)
 
 
 class PathAndFontTests(unittest.TestCase):

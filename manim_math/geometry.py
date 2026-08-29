@@ -41,3 +41,11 @@ def polar(radius: float, angle: float) -> tuple[float, float, float]:
     from math import cos, sin
 
     return (radius * cos(angle), radius * sin(angle), 0.0)
+
+
+def apply_2d(matrix: list[list[float]] | tuple, vec) -> tuple[float, float, float]:
+    """Apply a 2x2 matrix to an (x, y) or (x, y, z) vector. z is always 0."""
+    x, y = float(vec[0]), float(vec[1])
+    a, b = matrix[0]
+    c, d = matrix[1]
+    return (a * x + b * y, c * x + d * y, 0.0)

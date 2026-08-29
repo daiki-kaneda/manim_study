@@ -895,3 +895,18 @@ VIDEOS_798_809: tuple[Video, ...] = (
     Video(808, "ホークス過程", "project/math/307_probability_57/808_hawkes/scene.py", "HawkesProcess"),
     Video(809, "デラノワ数", "project/math/308_combinatorics_56/809_delannoy/scene.py", "DelannoyNumbers"),
 )
+
+VIDEOS_810_821: tuple[Video, ...] = (
+    Video(810, "陳類", "project/math/309_analysis_60/810_chern/scene.py", "ChernClass"),
+    Video(811, "超平面配置", "project/math/309_analysis_60/811_arrangement/scene.py", "HyperplaneArrangement"),
+    Video(812, "交点数", "project/math/309_analysis_60/812_intersection/scene.py", "IntersectionNumber"),
+    Video(813, "Kron", "project/math/310_linear_60/813_kron/scene.py", "Kron"),
+    Video(814, "SM3", "project/math/310_linear_60/814_sm3/scene.py", "SM3"),
+    Video(815, "K-FAC", "project/math/310_linear_60/815_kfac/scene.py", "KFAC"),
+    Video(816, "第二ナポレオン", "project/math/311_geometry_60/816_napoleon2/scene.py", "SecondNapoleon"),
+    Video(817, "キーペルト点", "project/math/311_geometry_60/817_kiepert/scene.py", "KiepertPoint"),
+    Video(818, "コンウェイ点", "project/math/311_geometry_60/818_conway/scene.py", "ConwayPoint"),
+    Video(819, "クラスター過程", "project/math/312_probability_58/819_cluster/scene.py", "ClusterProcess"),
+    Video(820, "バートレット過程", "project/math/312_probability_58/820_bartlett/scene.py", "BartlettProcess"),
+    Video(821, "ファイン数", "project/math/313_combinatorics_57/821_fine/scene.py", "FineNumbers"),
+)

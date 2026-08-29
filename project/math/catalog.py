@@ -595,3 +595,18 @@ VIDEOS_558_569: tuple[Video, ...] = (
     Video(568, "マーク付き点過程", "project/math/207_probability_37/568_marked_pp/scene.py", "MarkedPointProcess"),
     Video(569, "整数の分割", "project/math/208_combinatorics_36/569_integer_partitions/scene.py", "IntegerPartitions"),
 )
+
+VIDEOS_570_581: tuple[Video, ...] = (
+    Video(570, "ハードスペース", "project/math/209_analysis_40/570_hardy/scene.py", "HardySpace"),
+    Video(571, "T1定理", "project/math/209_analysis_40/571_t1/scene.py", "T1Theorem"),
+    Video(572, "ウェーブレット", "project/math/209_analysis_40/572_wavelet/scene.py", "Wavelet"),
+    Video(573, "ILU", "project/math/210_linear_40/573_ilu/scene.py", "ILU"),
+    Video(574, "SSOR", "project/math/210_linear_40/574_ssor/scene.py", "SSOR"),
+    Video(575, "ガウス・ザイデル前処理", "project/math/210_linear_40/575_gs_pre/scene.py", "GaussSeidelPre"),
+    Video(576, "直角双曲線", "project/math/211_geometry_40/576_rect_hyperbola/scene.py", "RectangularHyperbola"),
+    Video(577, "配景軸", "project/math/211_geometry_40/577_perspective_axis/scene.py", "PerspectiveAxis"),
+    Video(578, "極三角形", "project/math/211_geometry_40/578_polar_triangle/scene.py", "PolarTriangle"),
+    Video(579, "決定点過程", "project/math/212_probability_38/579_determinantal/scene.py", "DeterminantalPP"),
+    Video(580, "クラスター点過程", "project/math/212_probability_38/580_cluster_pp/scene.py", "ClusterPointProcess"),
+    Video(581, "根付き木", "project/math/213_combinatorics_37/581_rooted_trees/scene.py", "RootedTrees"),
+)

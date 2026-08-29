@@ -74,8 +74,8 @@ class Convolution(PacedScene):
             ng = self._g(s)
             nov = self._overlap(s)
             cap = self.ja_text(label, font_size=24).move_to(self.note)
-            self.play(Transform(g, ng), Transform(ov, nov), Transform(self.note, cap), run_time=1.35)
-            self.read(0.35)
+            self.play(Transform(g, ng), Transform(ov, nov), Transform(self.note, cap), run_time=1.2)
+            self.read(0.28)
 
     def show_formula(self):
         formula = MathTex(r"(f*g)(t)=\int f(\tau)g(t-\tau)\,d\tau").scale(0.78)

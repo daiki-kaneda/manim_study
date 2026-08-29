@@ -34,17 +34,17 @@ class EulerTotient(PacedScene):
             p = self.origin + RIGHT * (r * math.cos(ang)) + UP * (r * math.sin(ang))
             self.dots.add(Dot(p, radius=0.08, color=WHITE))
             self.labs.add(MathTex(str(k), font_size=22).move_to(p + 0.38 * (p - self.origin)))
-        self.play(LaggedStart(*[FadeIn(d, scale=0.4) for d in self.dots], lag_ratio=0.06), run_time=1.8)
-        self.play(FadeIn(self.labs), run_time=0.6)
+        self.play(LaggedStart(*[FadeIn(d, scale=0.4) for d in self.dots], lag_ratio=0.06), run_time=1.4)
+        self.play(FadeIn(self.labs), run_time=0.5)
         note = self.ja_text("12 個", font_size=24)
-        note.to_edge(RIGHT, buff=0.45).shift(UP * 1.65)
+        note.to_edge(RIGHT, buff=0.55).shift(UP * 1.65)
         self.play(FadeIn(note), run_time=0.4)
-        self.read(0.4)
+        self.read(0.3)
         self.note = note
 
     def highlight_coprime(self):
         good = {1, 5, 7, 11}
-        cap = self.ja_text("互いに素", font_size=24).move_to(self.note)
+        cap = self.ja_text("素な点", font_size=24).move_to(self.note)
         anims = []
         for k, d in enumerate(self.dots):
             if k in good:
@@ -53,15 +53,13 @@ class EulerTotient(PacedScene):
             else:
                 anims.append(d.animate.set_opacity(0.25))
                 anims.append(self.labs[k].animate.set_opacity(0.25))
-        self.play(*anims, Transform(self.note, cap), run_time=1.8)
-        self.read(0.4)
+        self.play(*anims, Transform(self.note, cap), run_time=0.95)
+        self.read(0.3)
         count = MathTex(r"\varphi(12)=4", color=YELLOW, font_size=40)
-        count.next_to(self.origin, DOWN, buff=0.15)
-        # place to the right of circle instead to avoid overlap
-        count.move_to(self.origin + RIGHT * 3.45 + DOWN * 0.35)
-        cap2 = self.ja_text("4 個残る", font_size=24).move_to(self.note)
-        self.play(FadeIn(count), Transform(self.note, cap2), run_time=1.1)
-        self.read(0.45)
+        count.move_to(self.origin + RIGHT * 3.35 + DOWN * 0.35)
+        cap2 = self.ja_text("4 個", font_size=24).move_to(self.note)
+        self.play(FadeIn(count), Transform(self.note, cap2), run_time=0.85)
+        self.read(0.35)
 
     def show_formula(self):
         formula = MathTex(r"\varphi(n)=n\prod_{p\mid n}\bigl(1-\tfrac{1}{p}\bigr)").scale(0.82)

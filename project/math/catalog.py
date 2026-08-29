@@ -1810,3 +1810,48 @@ VIDEOS_1530_1541: tuple[Video, ...] = (
     Video(1540, "メトリックエントロピー", "project/math/612_probability_118/1540_metric_entropy/scene.py", "MetricEntropy"),
     Video(1541, "ゼッケンドルフ細分", "project/math/613_combinatorics_117/1541_zeckendorf_refine/scene.py", "ZeckendorfRefine"),
 )
+
+VIDEOS_1542_1553: tuple[Video, ...] = (
+    Video(1542, "端末対", "project/math/614_analysis_121/1542_terminal_pair/scene.py", "TerminalPair"),
+    Video(1543, "標準対", "project/math/614_analysis_121/1543_canonical_sing_pair/scene.py", "CanonicalSingPair"),
+    Video(1544, "ログ豊富対", "project/math/614_analysis_121/1544_log_ample_pair/scene.py", "LogAmplePair"),
+    Video(1545, "SAMSoftClip", "project/math/615_linear_121/1545_samsoftclip/scene.py", "SAMSoftClip"),
+    Video(1546, "SAMSoftHard", "project/math/615_linear_121/1546_samsofthard/scene.py", "SAMSoftHard"),
+    Video(1547, "LookaheadSoftClip", "project/math/615_linear_121/1547_lookaheadsoftclip/scene.py", "LookaheadSoftClip"),
+    Video(1548, "垂心スピーカー比", "project/math/616_geometry_121/1548_h_spieker_ratio/scene.py", "HSpiekerRatio"),
+    Video(1549, "重心スピーカー比", "project/math/616_geometry_121/1549_g_spieker_ratio/scene.py", "GSpiekerRatio"),
+    Video(1550, "九点スピーカー比", "project/math/616_geometry_121/1550_n_spieker_ratio/scene.py", "NSpiekerRatio"),
+    Video(1551, "マッカーサー再訪", "project/math/617_probability_119/1551_mcdiarmid_revisit/scene.py", "McDiarmidRevisit"),
+    Video(1552, "経験エントロピー", "project/math/617_probability_119/1552_empirical_entropy/scene.py", "EmpiricalEntropy"),
+    Video(1553, "トリボナッチ細分", "project/math/618_combinatorics_118/1553_tribonacci_refine/scene.py", "TribonacciRefine"),
+)
+
+VIDEOS_1554_1565: tuple[Video, ...] = (
+    Video(1554, "ログネフ対", "project/math/619_analysis_122/1554_log_nef_pair/scene.py", "LogNefPair"),
+    Video(1555, "ログビッグ対", "project/math/619_analysis_122/1555_log_big_pair/scene.py", "LogBigPair"),
+    Video(1556, "ログ擬有効対", "project/math/619_analysis_122/1556_log_psef_pair/scene.py", "LogPsefPair"),
+    Video(1557, "LAMBHardClip", "project/math/620_linear_122/1557_lambhardclip/scene.py", "LAMBHardClip"),
+    Video(1558, "LARSBound", "project/math/620_linear_122/1558_larsbound/scene.py", "LARSBound"),
+    Video(1559, "MuonBoundSoft", "project/math/620_linear_122/1559_muonboundsoft/scene.py", "MuonBoundSoft"),
+    Video(1560, "内心シュタイナー比", "project/math/621_geometry_122/1560_in_steiner_ratio/scene.py", "InSteinerRatio"),
+    Video(1561, "傍心シュタイナー比", "project/math/621_geometry_122/1561_ex_steiner_ratio/scene.py", "ExSteinerRatio"),
+    Video(1562, "外心シュタイナー比", "project/math/621_geometry_122/1562_o_steiner_ratio/scene.py", "OSteinerRatio"),
+    Video(1563, "局所ラデマッハ再訪", "project/math/622_probability_120/1563_local_rademacher_revisit/scene.py", "LocalRademacherRevisit"),
+    Video(1564, "鎖状エントロピー", "project/math/622_probability_120/1564_chaining_entropy/scene.py", "ChainingEntropy"),
+    Video(1565, "テトラナッチ細分", "project/math/623_combinatorics_119/1565_tetranacci_refine/scene.py", "TetranacciRefine"),
+)
+
+VIDEOS_1566_1577: tuple[Video, ...] = (
+    Video(1566, "相対端末対", "project/math/624_analysis_123/1566_rel_terminal_pair/scene.py", "RelTerminalPair"),
+    Video(1567, "相対標準対", "project/math/624_analysis_123/1567_rel_can_sing_pair/scene.py", "RelCanSingPair"),
+    Video(1568, "相対ログ豊富対", "project/math/624_analysis_123/1568_rel_log_ample_pair/scene.py", "RelLogAmplePair"),
+    Video(1569, "ProdigySoftHard", "project/math/625_linear_123/1569_prodigysofthard/scene.py", "ProdigySoftHard"),
+    Video(1570, "ScheduleFreeHardClip", "project/math/625_linear_123/1570_schedulefreehardclip/scene.py", "ScheduleFreeHardClip"),
+    Video(1571, "SophiaWHard", "project/math/625_linear_123/1571_sophiawhard/scene.py", "SophiaWHard"),
+    Video(1572, "垂心ジェルゴンヌ比", "project/math/626_geometry_123/1572_h_gergonne_ratio/scene.py", "HGergonneRatio"),
+    Video(1573, "重心ナーゲル比", "project/math/626_geometry_123/1573_g_nagel_ratio/scene.py", "GNagelRatio"),
+    Video(1574, "九点ミッテン比", "project/math/626_geometry_123/1574_n_mitten_ratio/scene.py", "NMittenRatio"),
+    Video(1575, "双対被覆数", "project/math/627_probability_121/1575_dual_covering/scene.py", "DualCovering"),
+    Video(1576, "スケール敏感度", "project/math/627_probability_121/1576_scale_sensitivity/scene.py", "ScaleSensitivity"),
+    Video(1577, "大きなフィボナッチ細分", "project/math/628_combinatorics_120/1577_large_fib_refine/scene.py", "LargeFibRefine"),
+)

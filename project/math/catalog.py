@@ -1630,3 +1630,48 @@ VIDEOS_1386_1397: tuple[Video, ...] = (
     Video(1396, "ブール再訪", "project/math/552_probability_106/1396_boole_revisit/scene.py", "BooleRevisit"),
     Video(1397, "シュレーダー細分", "project/math/553_combinatorics_105/1397_schroeder_ref/scene.py", "SchroederRefine"),
 )
+
+VIDEOS_1398_1409: tuple[Video, ...] = (
+    Video(1398, "乗法イデアル対", "project/math/554_analysis_109/1398_multiplier_pair/scene.py", "MultiplierPair"),
+    Video(1399, "跳躍イデアル対", "project/math/554_analysis_109/1399_jumping_pair/scene.py", "JumpingPair"),
+    Video(1400, "対数的閾値対", "project/math/554_analysis_109/1400_lct_pair/scene.py", "LCTPair"),
+    Video(1401, "AdaDeltaSoft", "project/math/555_linear_109/1401_adadeltasoft/scene.py", "AdaDeltaSoft"),
+    Video(1402, "AdamaxSoft", "project/math/555_linear_109/1402_adamaxsoft/scene.py", "AdamaxSoft"),
+    Video(1403, "DemonSoft", "project/math/555_linear_109/1403_demonsoft/scene.py", "DemonSoft"),
+    Video(1404, "中線面積比", "project/math/556_geometry_109/1404_median_area_ratio/scene.py", "MedianAreaRatio"),
+    Video(1405, "角二等分比", "project/math/556_geometry_109/1405_angle_bisector_ratio/scene.py", "AngleBisectorRatio"),
+    Video(1406, "傍接弦比", "project/math/556_geometry_109/1406_ex_tangent_ratio/scene.py", "ExTangentRatio"),
+    Video(1407, "経験ラデマッハー再訪", "project/math/557_probability_107/1407_emp_rad_revisit/scene.py", "EmpRadRevisit"),
+    Video(1408, "PACベイズ", "project/math/557_probability_107/1408_pac_bayes/scene.py", "PACBayes"),
+    Video(1409, "ベル三角形細分", "project/math/558_combinatorics_106/1409_bell_tri_ref/scene.py", "BellTriangleRefine"),
+)
+
+VIDEOS_1410_1421: tuple[Video, ...] = (
+    Video(1410, "乗法イデアル濾過", "project/math/559_analysis_110/1410_multiplier_filtration/scene.py", "MultiplierFiltration"),
+    Video(1411, "跳躍数列", "project/math/559_analysis_110/1411_jumping_sequence/scene.py", "JumpingSequence"),
+    Video(1412, "相対LCT", "project/math/559_analysis_110/1412_relative_lct/scene.py", "RelativeLCT"),
+    Video(1413, "DiffGradHard", "project/math/560_linear_110/1413_diffgradhard/scene.py", "DiffGradHard"),
+    Video(1414, "YogiHard", "project/math/560_linear_110/1414_yogihard/scene.py", "YogiHard"),
+    Video(1415, "YHSoft", "project/math/560_linear_110/1415_yhsoft/scene.py", "YHSoft"),
+    Video(1416, "接点弦比", "project/math/561_geometry_110/1416_contact_chord_ratio/scene.py", "ContactChordRatio"),
+    Video(1417, "垂足弦比", "project/math/561_geometry_110/1417_pedal_chord_ratio/scene.py", "PedalChordRatio"),
+    Video(1418, "中点弦比", "project/math/561_geometry_110/1418_midpoint_chord_ratio/scene.py", "MidpointChordRatio"),
+    Video(1419, "マージン界", "project/math/562_probability_108/1419_margin_bound/scene.py", "MarginBound"),
+    Video(1420, "局所ラデマッハー", "project/math/562_probability_108/1420_local_rademacher/scene.py", "LocalRademacher"),
+    Video(1421, "オイラー細分", "project/math/563_combinatorics_107/1421_euler_refine/scene.py", "EulerRefine"),
+)
+
+VIDEOS_1422_1433: tuple[Video, ...] = (
+    Video(1422, "Nadelイデアル対", "project/math/564_analysis_111/1422_nadel_pair/scene.py", "NadelPair"),
+    Video(1423, "川又対", "project/math/564_analysis_111/1423_kawamata_pair/scene.py", "KawamataPair"),
+    Video(1424, "端末対の体積", "project/math/564_analysis_111/1424_terminal_volume/scene.py", "TerminalVolume"),
+    Video(1425, "AdaFactorSoft", "project/math/565_linear_111/1425_adafactorsoft/scene.py", "AdaFactorSoft"),
+    Video(1426, "LAMBSoft", "project/math/565_linear_111/1426_lambsoft/scene.py", "LAMBSoft"),
+    Video(1427, "LARSSoft", "project/math/565_linear_111/1427_larssoft/scene.py", "LARSSoft"),
+    Video(1428, "角二等分長", "project/math/566_geometry_111/1428_bisector_length/scene.py", "BisectorLength"),
+    Video(1429, "中線長比", "project/math/566_geometry_111/1429_median_length_ratio/scene.py", "MedianLengthRatio"),
+    Video(1430, "高さ比", "project/math/566_geometry_111/1430_altitude_ratio/scene.py", "AltitudeRatio"),
+    Video(1431, "安定性汎化", "project/math/567_probability_109/1431_stability_gen/scene.py", "StabilityGeneralization"),
+    Video(1432, "アルゴリズム安定性", "project/math/567_probability_109/1432_alg_stability/scene.py", "AlgorithmicStability"),
+    Video(1433, "エルミート細分", "project/math/568_combinatorics_108/1433_hermite_refine/scene.py", "HermiteRefine"),
+)

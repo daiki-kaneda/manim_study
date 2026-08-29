@@ -925,3 +925,18 @@ VIDEOS_822_833: tuple[Video, ...] = (
     Video(832, "ガウス過程回帰", "project/math/317_probability_59/832_gpr/scene.py", "GaussianProcessRegression"),
     Video(833, "大きなシュレーダー", "project/math/318_combinatorics_58/833_large_schroeder/scene.py", "LargeSchroeder"),
 )
+
+VIDEOS_834_845: tuple[Video, ...] = (
+    Video(834, "ワイル指標", "project/math/319_analysis_62/834_weyl_character/scene.py", "WeylCharacter"),
+    Video(835, "ヒルツェブルフ", "project/math/319_analysis_62/835_hirzebruch/scene.py", "Hirzebruch"),
+    Video(836, "トーリック多様体", "project/math/319_analysis_62/836_toric/scene.py", "ToricVariety"),
+    Video(837, "Adagrad", "project/math/320_linear_62/837_adagrad/scene.py", "Adagrad"),
+    Video(838, "Lars", "project/math/320_linear_62/838_lars/scene.py", "Lars"),
+    Video(839, "AdaSmooth", "project/math/320_linear_62/839_adasmooth/scene.py", "AdaSmooth"),
+    Video(840, "九点円中心", "project/math/321_geometry_62/840_nine_point/scene.py", "NinePointCenter"),
+    Video(841, "クローソン点", "project/math/321_geometry_62/841_clawson/scene.py", "ClawsonPoint"),
+    Video(842, "イソトミカル共役", "project/math/321_geometry_62/842_isotomic/scene.py", "IsotomicConjugate"),
+    Video(843, "ウィーナー過程", "project/math/322_probability_60/843_wiener/scene.py", "WienerProcess"),
+    Video(844, "ブラウン橋", "project/math/322_probability_60/844_brownian_bridge/scene.py", "BrownianBridge"),
+    Video(845, "シュレーダー・ヒップ", "project/math/323_combinatorics_59/845_schroeder_hipparchus/scene.py", "SchroederHipparchus"),
+)

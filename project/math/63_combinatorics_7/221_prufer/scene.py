@@ -31,10 +31,17 @@ class PruferCode(PacedScene):
         }
         self.dots = {i: Dot(p, radius=0.14, color=WHITE) for i, p in positions.items()}
         self.labs = {i: MathTex(str(i), font_size=26).next_to(self.dots[i], UP, buff=0.08) for i in positions}
-        edges = [(1, 3), (2, 3), (3, 4), (3, 5)]
-        self.lines = VGroup(*[Line(positions[a], positions[b], color=GREY_B, stroke_width=3) for a, b in edges])
+        edge_list = [(1, 3), (2, 3), (3, 4), (3, 5)]
+        self.edge_mobs = {
+            frozenset(e): Line(positions[e[0]], positions[e[1]], color=GREY_B, stroke_width=3)
+            for e in edge_list
+        }
         self.play(LaggedStart(*[FadeIn(d, scale=0.5) for d in self.dots.values()], lag_ratio=0.1), run_time=1.3)
-        self.play(FadeIn(VGroup(*self.labs.values())), Create(self.lines), run_time=1.2)
+        self.play(
+            FadeIn(VGroup(*self.labs.values())),
+            LaggedStart(*[Create(l) for l in self.edge_mobs.values()], lag_ratio=0.08),
+            run_time=1.2,
+        )
         note = self.ja_text("木", font_size=24)
         note.to_edge(RIGHT, buff=0.6).shift(UP * 1.65)
         self.play(FadeIn(note), run_time=0.4)
@@ -42,13 +49,13 @@ class PruferCode(PacedScene):
         self.note = note
 
     def encode(self):
-        # Prüfer for this tree: repeatedly remove smallest leaf
-        # leaves initially {1,2,4,5}; remove 1 record 3; remove 2 record 3; remove 4 record 3 → code (3,3,3)
+        # remove 1→3, 2→3, 4→3 → code (3,3,3); leave 3—5
         code_slots = VGroup(*[MathTex(r"\_", font_size=36) for _ in range(3)])
         code_slots.arrange(RIGHT, buff=0.35).to_edge(DOWN, buff=1.15)
         self.play(FadeIn(code_slots), run_time=0.5)
         sequence = [(1, 3, 0), (2, 3, 1), (4, 3, 2)]
         for leaf, parent, idx in sequence:
+            edge = self.edge_mobs[frozenset((leaf, parent))]
             self.play(self.dots[leaf].animate.set_color(RED), run_time=0.45)
             cap = self.ja_text("葉を落とす", font_size=24).move_to(self.note)
             self.play(Transform(self.note, cap), run_time=0.35)
@@ -56,6 +63,7 @@ class PruferCode(PacedScene):
             self.play(
                 FadeOut(self.dots[leaf]),
                 FadeOut(self.labs[leaf]),
+                FadeOut(edge),
                 FadeIn(num),
                 run_time=0.7,
             )

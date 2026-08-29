@@ -66,7 +66,7 @@ class PruferCode(PacedScene):
         self.read(0.35)
 
     def show_formula(self):
-        formula = MathTex(r"\#\{\text{trees on }n\}=n^{n-2}").scale(0.85)
-        formula.to_edge(DOWN, buff=0.22)
-        self.play(Write(formula), run_time=1.9)
+        formula = MathTex(r"n^{n-2}").scale(1.3)
+        formula.to_edge(DOWN, buff=0.28)
+        self.play(Write(formula), run_time=1.6)
         self.play(Indicate(formula, color=YELLOW), run_time=0.85)

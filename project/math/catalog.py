@@ -850,3 +850,18 @@ VIDEOS_762_773: tuple[Video, ...] = (
     Video(772, "面積相互作用", "project/math/292_probability_54/772_area_interaction/scene.py", "AreaInteraction"),
     Video(773, "怠惰な料理人", "project/math/293_combinatorics_53/773_lazy_caterer/scene.py", "LazyCaterer"),
 )
+
+VIDEOS_774_785: tuple[Video, ...] = (
+    Video(774, "安定写像", "project/math/294_analysis_57/774_stable_maps/scene.py", "StableMaps"),
+    Video(775, "仮想基本類", "project/math/294_analysis_57/775_virtual_class/scene.py", "VirtualClass"),
+    Video(776, "安定対", "project/math/294_analysis_57/776_stable_pairs/scene.py", "StablePairs"),
+    Video(777, "ASAM", "project/math/295_linear_57/777_asam/scene.py", "ASAM"),
+    Video(778, "Muon", "project/math/295_linear_57/778_muon/scene.py", "Muon"),
+    Video(779, "SOAP", "project/math/295_linear_57/779_soap/scene.py", "SOAP"),
+    Video(780, "シュピーカー点", "project/math/296_geometry_57/780_spieker/scene.py", "SpiekerCenter"),
+    Video(781, "フォイエルバッハ点", "project/math/296_geometry_57/781_feuerbach/scene.py", "FeuerbachPoint"),
+    Video(782, "デロングシャン点", "project/math/296_geometry_57/782_delongchamps/scene.py", "DeLongchampsPoint"),
+    Video(783, "ギブス点過程", "project/math/297_probability_55/783_gibbs/scene.py", "GibbsPointProcess"),
+    Video(784, "パーマネント過程", "project/math/297_probability_55/784_permanental/scene.py", "PermanentalProcess"),
+    Video(785, "ケーキ数", "project/math/298_combinatorics_54/785_cake/scene.py", "CakeNumbers"),
+)

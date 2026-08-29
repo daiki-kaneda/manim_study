@@ -1,4 +1,14 @@
+from pathlib import Path
+import sys
+
+for _parent in Path(__file__).resolve().parents:
+    if (_parent / "manim_math" / "__init__.py").is_file():
+        sys.path.insert(0, str(_parent))
+        break
+
 from manim import *
+from manim_math import JapaneseScene
+
 # ピタゴラスの定理の証明解説の構成
 # 1.辺にラベルがついた直角三角形を表示して定理の内容を紹介
 # 2.いっぺんの長さがa+bとなるような正方形を表示する
@@ -8,21 +18,8 @@ from manim import *
 # (6.まとめ)
 
 
-from manim import *
-
-class PythagorasTheorem(Scene):
+class PythagorasTheorem(JapaneseScene):
     def construct(self):
-        self.japanese_tex_template = TexTemplate(
-            tex_compiler='xelatex', 
-            output_format='.xdv',    
-            documentclass='\\documentclass[preview]{standalone}',
-            preamble=r"""
-            \usepackage{amsmath}
-            \usepackage{amssymb}
-            \usepackage{fontspec} 
-            \setmainfont{HannariMincho-Regular} 
-            """
-    )
         self.a_val=2.5
         self.b_val=3.5
         # 1. 定理の紹介
@@ -160,7 +157,7 @@ class PythagorasTheorem(Scene):
         self.wait(1)
         self.play(self.main_group.animate.shift(LEFT*2.5))
 
-        self.eq1_final = Tex("空欄の面積 = $c^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT)
+        self.eq1_final = self.ja_tex(r"空欄の面積 = $c^2$").next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT)
 
         self.blank_area1 = MathTex("c^2").shift(LEFT*2.5)
         self.play(Create(self.blank_area1))
@@ -202,7 +199,7 @@ class PythagorasTheorem(Scene):
             )
         ))
         self.wait(1.5)
-        self.eq2_final = Tex("空欄の面積 = $a^2 + b^2$",tex_template = self.japanese_tex_template).next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT).shift(DOWN)
+        self.eq2_final = self.ja_tex(r"空欄の面積 = $a^2 + b^2$").next_to(self.large_square_main.get_critical_point(UR),DR).shift(RIGHT).shift(DOWN)
         self.play(Write(self.eq2_final))
 
 

@@ -64,7 +64,7 @@ class Eigenvectors(JapaneseScene):
             if is_eig:
                 highlights.append(arr)
         self.play(*anims, run_time=1.15)
-        stay = self.ja_text("黄色い線上は向きが同じ", font_size=24).move_to(self.note)
+        stay = self.ja_text("黄と橙は向きが同じ", font_size=24).move_to(self.note)
         self.play(Transform(self.note, stay), run_time=0.4)
         for arr in highlights:
             self.play(Indicate(arr, color=WHITE), run_time=0.45)

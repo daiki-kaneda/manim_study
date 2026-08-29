@@ -70,7 +70,7 @@ class LinearMap(JapaneseScene):
             Transform(self.l2, nl2),
             run_time=1.2,
         )
-        mapped = self.ja_text("列ベクトルが基底の行き先", font_size=24).move_to(self.note)
+        mapped = self.ja_text("列が基底の行き先", font_size=26).move_to(self.note)
         self.play(Transform(self.note, mapped), run_time=0.4)
         self.hold(0.8)
 

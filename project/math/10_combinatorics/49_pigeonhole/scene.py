@@ -54,6 +54,7 @@ class Pigeonhole(JapaneseScene):
         crowded = self.ja_text("どれか 1 つに 2 羽", font_size=24).move_to(self.cap)
         self.play(Transform(self.cap, crowded), run_time=0.4)
         self.hold(0.8)
+        self.play(FadeOut(self.cap), run_time=0.3)
 
     def show_formula(self):
         row = VGroup(

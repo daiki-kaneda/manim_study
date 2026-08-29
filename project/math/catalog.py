@@ -1180,3 +1180,48 @@ VIDEOS_1026_1037: tuple[Video, ...] = (
     Video(1036, "任意停止", "project/math/402_probability_76/1036_optional_stopping/scene.py", "OptionalStopping"),
     Video(1037, "切手問題", "project/math/403_combinatorics_75/1037_postage/scene.py", "PostageStamp"),
 )
+
+VIDEOS_1038_1049: tuple[Video, ...] = (
+    Video(1038, "飯高次元", "project/math/404_analysis_79/1038_iitaka/scene.py", "IitakaDimension"),
+    Video(1039, "小平次元", "project/math/404_analysis_79/1039_kodaira/scene.py", "KodairaDimension"),
+    Video(1040, "体積関数", "project/math/404_analysis_79/1040_volume/scene.py", "VolumeFunction"),
+    Video(1041, "LionClip", "project/math/405_linear_79/1041_lionclip/scene.py", "LionClip"),
+    Video(1042, "SophiaClip", "project/math/405_linear_79/1042_sophiaclip/scene.py", "SophiaClip"),
+    Video(1043, "MuonSoft", "project/math/405_linear_79/1043_muonsoft/scene.py", "MuonSoft"),
+    Video(1044, "三辺面積比", "project/math/406_geometry_79/1044_side_area_ratio/scene.py", "SideAreaRatio"),
+    Video(1045, "オイラー線分比", "project/math/406_geometry_79/1045_euler_ratio/scene.py", "EulerLineRatio"),
+    Video(1046, "九点円半径", "project/math/406_geometry_79/1046_nine_point_r/scene.py", "NinePointRadius"),
+    Video(1047, "ドゥーブ不等式", "project/math/407_probability_77/1047_doob/scene.py", "DoobInequality"),
+    Video(1048, "アズーマ不等式", "project/math/407_probability_77/1048_azuma/scene.py", "AzumaInequality"),
+    Video(1049, "フロベニウス数", "project/math/408_combinatorics_76/1049_frobenius_number/scene.py", "FrobeniusNumber"),
+)
+
+VIDEOS_1050_1061: tuple[Video, ...] = (
+    Video(1050, "漸近リーマンロッホ", "project/math/409_analysis_80/1050_asymptotic_rr/scene.py", "AsymptoticRR"),
+    Video(1051, "乗法イデアル", "project/math/409_analysis_80/1051_multiplier/scene.py", "MultiplierIdeal"),
+    Video(1052, "対数的閾値", "project/math/409_analysis_80/1052_lct/scene.py", "LogCanonicalThreshold"),
+    Video(1053, "SOAPSoft", "project/math/410_linear_80/1053_soapsoft/scene.py", "SOAPSoft"),
+    Video(1054, "ShampooClip", "project/math/410_linear_80/1054_shampooclip/scene.py", "ShampooClip"),
+    Video(1055, "AdoptClip", "project/math/410_linear_80/1055_adoptclip/scene.py", "AdoptClip"),
+    Video(1056, "傍心距離", "project/math/411_geometry_80/1056_excenter_dist/scene.py", "ExcenterDistance"),
+    Video(1057, "九点円中心線", "project/math/411_geometry_80/1057_nine_point_line/scene.py", "NinePointLine"),
+    Video(1058, "外心内心距離", "project/math/411_geometry_80/1058_oi_distance/scene.py", "OIDistance"),
+    Video(1059, "ホフディング", "project/math/412_probability_78/1059_hoeffding/scene.py", "Hoeffding"),
+    Video(1060, "バーンスタイン不等式", "project/math/412_probability_78/1060_bernstein/scene.py", "BernsteinInequality"),
+    Video(1061, "硬貨問題", "project/math/413_combinatorics_77/1061_coin_problem/scene.py", "CoinProblem"),
+)
+
+VIDEOS_1062_1073: tuple[Video, ...] = (
+    Video(1062, "対数解消", "project/math/414_analysis_81/1062_log_resolution/scene.py", "LogResolution"),
+    Video(1063, "単純正規交叉", "project/math/414_analysis_81/1063_snc/scene.py", "SimpleNormalCrossings"),
+    Video(1064, "跳躍数", "project/math/414_analysis_81/1064_jumping_numbers/scene.py", "JumpingNumbers"),
+    Video(1065, "KronClip", "project/math/415_linear_81/1065_kronclip/scene.py", "KronClip"),
+    Video(1066, "LaPropW", "project/math/415_linear_81/1066_lapropw/scene.py", "LaPropW"),
+    Video(1067, "QHMClip", "project/math/415_linear_81/1067_qhmclip/scene.py", "QHMClip"),
+    Video(1068, "内心外心線", "project/math/416_geometry_81/1068_oi_line/scene.py", "OILine"),
+    Video(1069, "垂心外心比", "project/math/416_geometry_81/1069_ho_ratio/scene.py", "HORatio"),
+    Video(1070, "傍心内心距離", "project/math/416_geometry_81/1070_ii_distance/scene.py", "IIADistance"),
+    Video(1071, "オプションサンプリング", "project/math/417_probability_79/1071_optional_sampling/scene.py", "OptionalSampling"),
+    Video(1072, "ワルド等式", "project/math/417_probability_79/1072_wald/scene.py", "WaldIdentity"),
+    Video(1073, "ナラヤナ三角形", "project/math/418_combinatorics_78/1073_narayana_triangle/scene.py", "NarayanaTriangle"),
+)

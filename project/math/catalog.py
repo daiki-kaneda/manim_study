@@ -235,3 +235,18 @@ VIDEOS_270_281: tuple[Video, ...] = (
     Video(280, "全分散の法則", "project/math/87_probability_13/280_total_variance/scene.py", "TotalVariance"),
     Video(281, "ホッケースティック恒等式", "project/math/88_combinatorics_12/281_hockey_stick/scene.py", "HockeyStick"),
 )
+
+VIDEOS_282_293: tuple[Video, ...] = (
+    Video(282, "ワイエルシュトラスの M 判定", "project/math/89_analysis_16/282_weierstrass_m/scene.py", "WeierstrassMTest"),
+    Video(283, "ファトゥの補題", "project/math/89_analysis_16/283_fatou/scene.py", "FatouLemma"),
+    Video(284, "優収束定理", "project/math/89_analysis_16/284_dominated/scene.py", "DominatedConvergence"),
+    Video(285, "SOR 法", "project/math/90_linear_16/285_sor/scene.py", "SORMethod"),
+    Video(286, "共役勾配法", "project/math/90_linear_16/286_cg/scene.py", "ConjugateGradient"),
+    Video(287, "行列式補題", "project/math/90_linear_16/287_matrix_det_lemma/scene.py", "MatrixDetLemma"),
+    Video(288, "ジェルゴンヌ点", "project/math/91_geometry_16/288_gergonne/scene.py", "Gergonne"),
+    Video(289, "ナーゲル点", "project/math/91_geometry_16/289_nagel/scene.py", "NagelPoint"),
+    Video(290, "ルモワーヌ点", "project/math/91_geometry_16/290_lemoine/scene.py", "Lemoine"),
+    Video(291, "ヘフディングの不等式", "project/math/92_probability_14/291_hoeffding/scene.py", "Hoeffding"),
+    Video(292, "KL ダイバージェンス", "project/math/92_probability_14/292_kl/scene.py", "KLDivergence"),
+    Video(293, "ヴァンデルモンドの恒等式", "project/math/93_combinatorics_13/293_vandermonde/scene.py", "Vandermonde"),
+)

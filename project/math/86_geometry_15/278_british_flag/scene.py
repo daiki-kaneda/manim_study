@@ -40,8 +40,8 @@ class BritishFlag(PacedScene):
         pdot = Dot(P, color=ORANGE, radius=0.1)
         segs = VGroup(
             Line(P, self.A, color=YELLOW, stroke_width=3),
-            Line(P, self.B, color=YELLOW, stroke_width=3),
-            Line(P, self.C, color=TEAL, stroke_width=3),
+            Line(P, self.B, color=TEAL, stroke_width=3),
+            Line(P, self.C, color=YELLOW, stroke_width=3),
             Line(P, self.D, color=TEAL, stroke_width=3),
         )
         cap = self.ja_text("点 P", font_size=24).move_to(self.note)

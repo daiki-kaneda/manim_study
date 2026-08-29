@@ -31,6 +31,8 @@ def odd_layer_cells(k: int) -> list[tuple[int, int]]:
     return cells
 
 
-def odd_square_layers(n: int) -> list[list[tuple[int, int]]]:
-    """Layers 1..n that together tile an n×n square."""
-    return [odd_layer_cells(k) for k in range(1, n + 1)]
+def polar(radius: float, angle: float) -> tuple[float, float, float]:
+    """Return a 3D point at the given polar angle (radians), z=0."""
+    from math import cos, sin
+
+    return (radius * cos(angle), radius * sin(angle), 0.0)

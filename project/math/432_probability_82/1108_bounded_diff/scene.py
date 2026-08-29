@@ -17,6 +17,7 @@ class BoundedDifferences(PacedScene):
         self.show_heading("有界差不等式")
         self.draw()
         self.mid()
+        self.derive()
         self.show_formula()
         self.read(1.4)
 
@@ -39,8 +40,31 @@ class BoundedDifferences(PacedScene):
         self.play(Transform(self.note, cap2), run_time=0.8)
         self.read(0.35)
 
+    
+    def derive(self):
+        if getattr(self, "note", None) is not None:
+            cap = self.ja_text("途中式", font_size=24).move_to(self.note)
+            self.play(Transform(self.note, cap), run_time=0.75)
+        else:
+            self.note = self.ja_text("途中式", font_size=24)
+            self.note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
+            self.play(FadeIn(self.note), run_time=0.5)
+        self.read(0.2)
+        eq = MathTex("P(|f-"+chr(92)+"mathbb"+"{E}f|"+chr(92)+"ge"+" t)"+chr(92)+"le"+" 2e^{-2t^2/"+chr(92)+"sum"+" c_i^2}").scale(0.62)
+        eq.to_edge(DOWN, buff=0.2)
+        self.play(Write(eq), run_time=1.35)
+        self.read(0.3)
+        cap2 = self.ja_text("整理", font_size=24).move_to(self.note)
+        self.play(Transform(self.note, cap2), run_time=0.75)
+        self.read(0.2)
+        eq2 = MathTex("P(|f-"+chr(92)+"mathbb"+"{E}f|"+chr(92)+"ge"+" t)"+chr(92)+"le"+" 2e^{-2t^2/"+chr(92)+"sum"+" c_i^2}").scale(0.62)
+        eq2.move_to(eq)
+        self.play(Transform(eq, eq2), run_time=1.25)
+        self.read(0.35)
+        self.proof_eq = eq
+
     def show_formula(self):
         formula = MathTex("P(|f-"+chr(92)+"mathbb"+"{E}f|"+chr(92)+"ge"+" t)"+chr(92)+"le"+" 2e^{-2t^2/"+chr(92)+"sum"+" c_i^2}").scale(0.68)
-        formula.to_edge(DOWN, buff=0.2)
-        self.play(Write(formula), run_time=1.9)
-        self.play(Indicate(formula, color=YELLOW), run_time=0.85)
+        formula.move_to(self.proof_eq)
+        self.play(Transform(self.proof_eq, formula), run_time=1.9)
+        self.play(Indicate(self.proof_eq, color=YELLOW), run_time=0.85)

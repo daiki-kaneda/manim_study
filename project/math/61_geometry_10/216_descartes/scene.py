@@ -18,6 +18,7 @@ class DescartesCircle(PacedScene):
         self.show_heading("デカルトの円定理")
         self.draw_three()
         self.fourth()
+        self.derive()
         self.show_formula()
         self.read(1.4)
 
@@ -46,8 +47,31 @@ class DescartesCircle(PacedScene):
         self.play(Create(c4), Transform(self.note, cap), run_time=1.5)
         self.read(0.45)
 
+    
+    def derive(self):
+        if getattr(self, "note", None) is not None:
+            cap = self.ja_text("途中式", font_size=24).move_to(self.note)
+            self.play(Transform(self.note, cap), run_time=0.6)
+        else:
+            self.note = self.ja_text("途中式", font_size=24)
+            self.note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
+            self.play(FadeIn(self.note), run_time=0.5)
+        self.read(0.2)
+        eq = MathTex(r"k_4").scale(0.62)
+        eq.to_edge(DOWN, buff=0.2)
+        self.play(Write(eq), run_time=1.05)
+        self.read(0.3)
+        cap2 = self.ja_text("整理", font_size=24).move_to(self.note)
+        self.play(Transform(self.note, cap2), run_time=0.75)
+        self.read(0.2)
+        eq2 = MathTex(r"k_4=k_1+k_2+k_3\pm 2\sqrt{k_1k_2+k_2k_3+k_3k_1}").scale(0.62)
+        eq2.move_to(eq)
+        self.play(Transform(eq, eq2), run_time=1.0)
+        self.read(0.35)
+        self.proof_eq = eq
+
     def show_formula(self):
         formula = MathTex(r"k_4=k_1+k_2+k_3\pm 2\sqrt{k_1k_2+k_2k_3+k_3k_1}").scale(0.55)
-        formula.to_edge(DOWN, buff=0.24)
-        self.play(Write(formula), run_time=2.1)
-        self.play(Indicate(formula, color=YELLOW), run_time=0.85)
+        formula.move_to(self.proof_eq)
+        self.play(Transform(self.proof_eq, formula), run_time=2.1)
+        self.play(Indicate(self.proof_eq, color=YELLOW), run_time=0.85)

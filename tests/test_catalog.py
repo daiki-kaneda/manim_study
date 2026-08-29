@@ -111,6 +111,60 @@ VIDEOS_1278_1289 = _catalog.VIDEOS_1278_1289
 VIDEOS_1290_1301 = _catalog.VIDEOS_1290_1301
 VIDEOS_1302_1313 = _catalog.VIDEOS_1302_1313
 VIDEOS_1314_1325 = _catalog.VIDEOS_1314_1325
+VIDEOS_1326_1337 = _catalog.VIDEOS_1326_1337
+VIDEOS_1338_1349 = _catalog.VIDEOS_1338_1349
+VIDEOS_1350_1361 = _catalog.VIDEOS_1350_1361
+VIDEOS_1362_1373 = _catalog.VIDEOS_1362_1373
+VIDEOS_1374_1385 = _catalog.VIDEOS_1374_1385
+VIDEOS_1386_1397 = _catalog.VIDEOS_1386_1397
+VIDEOS_1398_1409 = _catalog.VIDEOS_1398_1409
+VIDEOS_1410_1421 = _catalog.VIDEOS_1410_1421
+VIDEOS_1422_1433 = _catalog.VIDEOS_1422_1433
+VIDEOS_1434_1445 = _catalog.VIDEOS_1434_1445
+VIDEOS_1446_1457 = _catalog.VIDEOS_1446_1457
+VIDEOS_1458_1469 = _catalog.VIDEOS_1458_1469
+VIDEOS_1470_1481 = _catalog.VIDEOS_1470_1481
+VIDEOS_1482_1493 = _catalog.VIDEOS_1482_1493
+VIDEOS_1494_1505 = _catalog.VIDEOS_1494_1505
+VIDEOS_1506_1517 = _catalog.VIDEOS_1506_1517
+VIDEOS_1518_1529 = _catalog.VIDEOS_1518_1529
+VIDEOS_1530_1541 = _catalog.VIDEOS_1530_1541
+VIDEOS_1542_1553 = _catalog.VIDEOS_1542_1553
+VIDEOS_1554_1565 = _catalog.VIDEOS_1554_1565
+VIDEOS_1566_1577 = _catalog.VIDEOS_1566_1577
+VIDEOS_1578_1589 = _catalog.VIDEOS_1578_1589
+VIDEOS_1590_1601 = _catalog.VIDEOS_1590_1601
+VIDEOS_1602_1613 = _catalog.VIDEOS_1602_1613
+VIDEOS_1614_1625 = _catalog.VIDEOS_1614_1625
+VIDEOS_1626_1637 = _catalog.VIDEOS_1626_1637
+VIDEOS_1638_1649 = _catalog.VIDEOS_1638_1649
+VIDEOS_1650_1661 = _catalog.VIDEOS_1650_1661
+VIDEOS_1662_1673 = _catalog.VIDEOS_1662_1673
+VIDEOS_1674_1685 = _catalog.VIDEOS_1674_1685
+VIDEOS_1686_1697 = _catalog.VIDEOS_1686_1697
+VIDEOS_1698_1709 = _catalog.VIDEOS_1698_1709
+VIDEOS_1710_1721 = _catalog.VIDEOS_1710_1721
+VIDEOS_1722_1733 = _catalog.VIDEOS_1722_1733
+VIDEOS_1734_1745 = _catalog.VIDEOS_1734_1745
+VIDEOS_1746_1757 = _catalog.VIDEOS_1746_1757
+VIDEOS_1758_1769 = _catalog.VIDEOS_1758_1769
+VIDEOS_1770_1781 = _catalog.VIDEOS_1770_1781
+VIDEOS_1782_1793 = _catalog.VIDEOS_1782_1793
+VIDEOS_1794_1805 = _catalog.VIDEOS_1794_1805
+VIDEOS_1806_1817 = _catalog.VIDEOS_1806_1817
+VIDEOS_1818_1829 = _catalog.VIDEOS_1818_1829
+VIDEOS_1830_1841 = _catalog.VIDEOS_1830_1841
+VIDEOS_1842_1853 = _catalog.VIDEOS_1842_1853
+VIDEOS_1854_1865 = _catalog.VIDEOS_1854_1865
+VIDEOS_1866_1877 = _catalog.VIDEOS_1866_1877
+VIDEOS_1878_1889 = _catalog.VIDEOS_1878_1889
+VIDEOS_1890_1901 = _catalog.VIDEOS_1890_1901
+VIDEOS_1902_1913 = _catalog.VIDEOS_1902_1913
+VIDEOS_1914_1925 = _catalog.VIDEOS_1914_1925
+VIDEOS_1926_1937 = _catalog.VIDEOS_1926_1937
+VIDEOS_1938_1949 = _catalog.VIDEOS_1938_1949
+VIDEOS_1950_1961 = _catalog.VIDEOS_1950_1961
+VIDEOS_1962_1973 = _catalog.VIDEOS_1962_1973
 
 
 class CatalogTests(unittest.TestCase):
@@ -555,6 +609,276 @@ class CatalogTests(unittest.TestCase):
         nums = [v.number for v in VIDEOS_1314_1325]
         self.assertEqual(nums, list(range(1314, 1326)))
 
+
+    def test_numbers_are_1326_to_1337(self):
+        nums = [v.number for v in VIDEOS_1326_1337]
+        self.assertEqual(nums, list(range(1326, 1338)))
+
+
+    def test_numbers_are_1338_to_1349(self):
+        nums = [v.number for v in VIDEOS_1338_1349]
+        self.assertEqual(nums, list(range(1338, 1350)))
+
+
+    def test_numbers_are_1350_to_1361(self):
+        nums = [v.number for v in VIDEOS_1350_1361]
+        self.assertEqual(nums, list(range(1350, 1362)))
+
+
+    def test_numbers_are_1362_to_1373(self):
+        nums = [v.number for v in VIDEOS_1362_1373]
+        self.assertEqual(nums, list(range(1362, 1374)))
+
+
+    def test_numbers_are_1374_to_1385(self):
+        nums = [v.number for v in VIDEOS_1374_1385]
+        self.assertEqual(nums, list(range(1374, 1386)))
+
+
+    def test_numbers_are_1386_to_1397(self):
+        nums = [v.number for v in VIDEOS_1386_1397]
+        self.assertEqual(nums, list(range(1386, 1398)))
+
+
+    def test_numbers_are_1398_to_1409(self):
+        nums = [v.number for v in VIDEOS_1398_1409]
+        self.assertEqual(nums, list(range(1398, 1410)))
+
+
+    def test_numbers_are_1410_to_1421(self):
+        nums = [v.number for v in VIDEOS_1410_1421]
+        self.assertEqual(nums, list(range(1410, 1422)))
+
+
+    def test_numbers_are_1422_to_1433(self):
+        nums = [v.number for v in VIDEOS_1422_1433]
+        self.assertEqual(nums, list(range(1422, 1434)))
+
+
+    def test_numbers_are_1434_to_1445(self):
+        nums = [v.number for v in VIDEOS_1434_1445]
+        self.assertEqual(nums, list(range(1434, 1446)))
+
+
+    def test_numbers_are_1446_to_1457(self):
+        nums = [v.number for v in VIDEOS_1446_1457]
+        self.assertEqual(nums, list(range(1446, 1458)))
+
+
+    def test_numbers_are_1458_to_1469(self):
+        nums = [v.number for v in VIDEOS_1458_1469]
+        self.assertEqual(nums, list(range(1458, 1470)))
+
+
+    def test_numbers_are_1470_to_1481(self):
+        nums = [v.number for v in VIDEOS_1470_1481]
+        self.assertEqual(nums, list(range(1470, 1482)))
+
+
+    def test_numbers_are_1482_to_1493(self):
+        nums = [v.number for v in VIDEOS_1482_1493]
+        self.assertEqual(nums, list(range(1482, 1494)))
+
+
+    def test_numbers_are_1494_to_1505(self):
+        nums = [v.number for v in VIDEOS_1494_1505]
+        self.assertEqual(nums, list(range(1494, 1506)))
+
+
+    def test_numbers_are_1506_to_1517(self):
+        nums = [v.number for v in VIDEOS_1506_1517]
+        self.assertEqual(nums, list(range(1506, 1518)))
+
+
+    def test_numbers_are_1518_to_1529(self):
+        nums = [v.number for v in VIDEOS_1518_1529]
+        self.assertEqual(nums, list(range(1518, 1530)))
+
+
+    def test_numbers_are_1530_to_1541(self):
+        nums = [v.number for v in VIDEOS_1530_1541]
+        self.assertEqual(nums, list(range(1530, 1542)))
+
+
+    def test_numbers_are_1542_to_1553(self):
+        nums = [v.number for v in VIDEOS_1542_1553]
+        self.assertEqual(nums, list(range(1542, 1554)))
+
+
+    def test_numbers_are_1554_to_1565(self):
+        nums = [v.number for v in VIDEOS_1554_1565]
+        self.assertEqual(nums, list(range(1554, 1566)))
+
+
+    def test_numbers_are_1566_to_1577(self):
+        nums = [v.number for v in VIDEOS_1566_1577]
+        self.assertEqual(nums, list(range(1566, 1578)))
+
+
+    def test_numbers_are_1578_to_1589(self):
+        nums = [v.number for v in VIDEOS_1578_1589]
+        self.assertEqual(nums, list(range(1578, 1590)))
+
+
+    def test_numbers_are_1590_to_1601(self):
+        nums = [v.number for v in VIDEOS_1590_1601]
+        self.assertEqual(nums, list(range(1590, 1602)))
+
+
+    def test_numbers_are_1602_to_1613(self):
+        nums = [v.number for v in VIDEOS_1602_1613]
+        self.assertEqual(nums, list(range(1602, 1614)))
+
+
+    def test_numbers_are_1614_to_1625(self):
+        nums = [v.number for v in VIDEOS_1614_1625]
+        self.assertEqual(nums, list(range(1614, 1626)))
+
+
+    def test_numbers_are_1626_to_1637(self):
+        nums = [v.number for v in VIDEOS_1626_1637]
+        self.assertEqual(nums, list(range(1626, 1638)))
+
+
+    def test_numbers_are_1638_to_1649(self):
+        nums = [v.number for v in VIDEOS_1638_1649]
+        self.assertEqual(nums, list(range(1638, 1650)))
+
+
+    def test_numbers_are_1650_to_1661(self):
+        nums = [v.number for v in VIDEOS_1650_1661]
+        self.assertEqual(nums, list(range(1650, 1662)))
+
+
+    def test_numbers_are_1662_to_1673(self):
+        nums = [v.number for v in VIDEOS_1662_1673]
+        self.assertEqual(nums, list(range(1662, 1674)))
+
+
+    def test_numbers_are_1674_to_1685(self):
+        nums = [v.number for v in VIDEOS_1674_1685]
+        self.assertEqual(nums, list(range(1674, 1686)))
+
+
+    def test_numbers_are_1686_to_1697(self):
+        nums = [v.number for v in VIDEOS_1686_1697]
+        self.assertEqual(nums, list(range(1686, 1698)))
+
+
+    def test_numbers_are_1698_to_1709(self):
+        nums = [v.number for v in VIDEOS_1698_1709]
+        self.assertEqual(nums, list(range(1698, 1710)))
+
+
+    def test_numbers_are_1710_to_1721(self):
+        nums = [v.number for v in VIDEOS_1710_1721]
+        self.assertEqual(nums, list(range(1710, 1722)))
+
+
+    def test_numbers_are_1722_to_1733(self):
+        nums = [v.number for v in VIDEOS_1722_1733]
+        self.assertEqual(nums, list(range(1722, 1734)))
+
+
+    def test_numbers_are_1734_to_1745(self):
+        nums = [v.number for v in VIDEOS_1734_1745]
+        self.assertEqual(nums, list(range(1734, 1746)))
+
+
+    def test_numbers_are_1746_to_1757(self):
+        nums = [v.number for v in VIDEOS_1746_1757]
+        self.assertEqual(nums, list(range(1746, 1758)))
+
+
+    def test_numbers_are_1758_to_1769(self):
+        nums = [v.number for v in VIDEOS_1758_1769]
+        self.assertEqual(nums, list(range(1758, 1770)))
+
+
+    def test_numbers_are_1770_to_1781(self):
+        nums = [v.number for v in VIDEOS_1770_1781]
+        self.assertEqual(nums, list(range(1770, 1782)))
+
+
+    def test_numbers_are_1782_to_1793(self):
+        nums = [v.number for v in VIDEOS_1782_1793]
+        self.assertEqual(nums, list(range(1782, 1794)))
+
+
+    def test_numbers_are_1794_to_1805(self):
+        nums = [v.number for v in VIDEOS_1794_1805]
+        self.assertEqual(nums, list(range(1794, 1806)))
+
+
+    def test_numbers_are_1806_to_1817(self):
+        nums = [v.number for v in VIDEOS_1806_1817]
+        self.assertEqual(nums, list(range(1806, 1818)))
+
+
+    def test_numbers_are_1818_to_1829(self):
+        nums = [v.number for v in VIDEOS_1818_1829]
+        self.assertEqual(nums, list(range(1818, 1830)))
+
+
+    def test_numbers_are_1830_to_1841(self):
+        nums = [v.number for v in VIDEOS_1830_1841]
+        self.assertEqual(nums, list(range(1830, 1842)))
+
+
+    def test_numbers_are_1842_to_1853(self):
+        nums = [v.number for v in VIDEOS_1842_1853]
+        self.assertEqual(nums, list(range(1842, 1854)))
+
+
+    def test_numbers_are_1854_to_1865(self):
+        nums = [v.number for v in VIDEOS_1854_1865]
+        self.assertEqual(nums, list(range(1854, 1866)))
+
+
+    def test_numbers_are_1866_to_1877(self):
+        nums = [v.number for v in VIDEOS_1866_1877]
+        self.assertEqual(nums, list(range(1866, 1878)))
+
+
+    def test_numbers_are_1878_to_1889(self):
+        nums = [v.number for v in VIDEOS_1878_1889]
+        self.assertEqual(nums, list(range(1878, 1890)))
+
+
+    def test_numbers_are_1890_to_1901(self):
+        nums = [v.number for v in VIDEOS_1890_1901]
+        self.assertEqual(nums, list(range(1890, 1902)))
+
+
+    def test_numbers_are_1902_to_1913(self):
+        nums = [v.number for v in VIDEOS_1902_1913]
+        self.assertEqual(nums, list(range(1902, 1914)))
+
+
+    def test_numbers_are_1914_to_1925(self):
+        nums = [v.number for v in VIDEOS_1914_1925]
+        self.assertEqual(nums, list(range(1914, 1926)))
+
+
+    def test_numbers_are_1926_to_1937(self):
+        nums = [v.number for v in VIDEOS_1926_1937]
+        self.assertEqual(nums, list(range(1926, 1938)))
+
+
+    def test_numbers_are_1938_to_1949(self):
+        nums = [v.number for v in VIDEOS_1938_1949]
+        self.assertEqual(nums, list(range(1938, 1950)))
+
+
+    def test_numbers_are_1950_to_1961(self):
+        nums = [v.number for v in VIDEOS_1950_1961]
+        self.assertEqual(nums, list(range(1950, 1962)))
+
+
+    def test_numbers_are_1962_to_1973(self):
+        nums = [v.number for v in VIDEOS_1962_1973]
+        self.assertEqual(nums, list(range(1962, 1974)))
+
     def test_each_scene_file_defines_the_class(self):
         for video in (
             *VIDEOS_101_125,
@@ -658,6 +982,60 @@ class CatalogTests(unittest.TestCase):
             *VIDEOS_1290_1301,
             *VIDEOS_1302_1313,
             *VIDEOS_1314_1325,
+            *VIDEOS_1326_1337,
+            *VIDEOS_1338_1349,
+            *VIDEOS_1350_1361,
+            *VIDEOS_1362_1373,
+            *VIDEOS_1374_1385,
+            *VIDEOS_1386_1397,
+            *VIDEOS_1398_1409,
+            *VIDEOS_1410_1421,
+            *VIDEOS_1422_1433,
+            *VIDEOS_1434_1445,
+            *VIDEOS_1446_1457,
+            *VIDEOS_1458_1469,
+            *VIDEOS_1470_1481,
+            *VIDEOS_1482_1493,
+            *VIDEOS_1494_1505,
+            *VIDEOS_1506_1517,
+            *VIDEOS_1518_1529,
+            *VIDEOS_1530_1541,
+            *VIDEOS_1542_1553,
+            *VIDEOS_1554_1565,
+            *VIDEOS_1566_1577,
+            *VIDEOS_1578_1589,
+            *VIDEOS_1590_1601,
+            *VIDEOS_1602_1613,
+            *VIDEOS_1614_1625,
+            *VIDEOS_1626_1637,
+            *VIDEOS_1638_1649,
+            *VIDEOS_1650_1661,
+            *VIDEOS_1662_1673,
+            *VIDEOS_1674_1685,
+            *VIDEOS_1686_1697,
+            *VIDEOS_1698_1709,
+            *VIDEOS_1710_1721,
+            *VIDEOS_1722_1733,
+            *VIDEOS_1734_1745,
+            *VIDEOS_1746_1757,
+            *VIDEOS_1758_1769,
+            *VIDEOS_1770_1781,
+            *VIDEOS_1782_1793,
+            *VIDEOS_1794_1805,
+            *VIDEOS_1806_1817,
+            *VIDEOS_1818_1829,
+            *VIDEOS_1830_1841,
+            *VIDEOS_1842_1853,
+            *VIDEOS_1854_1865,
+            *VIDEOS_1866_1877,
+            *VIDEOS_1878_1889,
+            *VIDEOS_1890_1901,
+            *VIDEOS_1902_1913,
+            *VIDEOS_1914_1925,
+            *VIDEOS_1926_1937,
+            *VIDEOS_1938_1949,
+            *VIDEOS_1950_1961,
+            *VIDEOS_1962_1973,
         ):
             path = ROOT / video.path
             self.assertTrue(path.is_file(), msg=video.path)

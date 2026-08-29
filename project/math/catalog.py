@@ -970,3 +970,18 @@ VIDEOS_858_869: tuple[Video, ...] = (
     Video(868, "レヴィ過程", "project/math/332_probability_62/868_levy/scene.py", "LevyProcess"),
     Video(869, "ベルヌーイ数", "project/math/333_combinatorics_61/869_bernoulli/scene.py", "BernoulliNumbers"),
 )
+
+VIDEOS_870_881: tuple[Video, ...] = (
+    Video(870, "セール双対", "project/math/334_analysis_65/870_serre/scene.py", "SerreDuality"),
+    Video(871, "ド・ラーム", "project/math/334_analysis_65/871_de_rham/scene.py", "DeRham"),
+    Video(872, "アティヤ・シンガー", "project/math/334_analysis_65/872_atiyah_singer/scene.py", "AtiyahSinger"),
+    Video(873, "Fire", "project/math/335_linear_65/873_fire/scene.py", "Fire"),
+    Video(874, "Pid", "project/math/335_linear_65/874_pid/scene.py", "Pid"),
+    Video(875, "AccSGD", "project/math/335_linear_65/875_accsgd/scene.py", "AccSGD"),
+    Video(876, "等距離点", "project/math/336_geometry_65/876_equidistant/scene.py", "EquidistantPoint"),
+    Video(877, "共円点", "project/math/336_geometry_65/877_concyclic/scene.py", "ConcyclicPoints"),
+    Video(878, "ピボット定理", "project/math/336_geometry_65/878_pivot/scene.py", "PivotTheorem"),
+    Video(879, "安定過程", "project/math/337_probability_63/879_stable/scene.py", "StableProcess"),
+    Video(880, "従属過程", "project/math/337_probability_63/880_subordinator/scene.py", "Subordinator"),
+    Video(881, "オイラー数", "project/math/338_combinatorics_62/881_euler_numbers/scene.py", "EulerNumbers"),
+)

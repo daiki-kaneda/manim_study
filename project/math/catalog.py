@@ -2350,3 +2350,453 @@ VIDEOS_1962_1973: tuple[Video, ...] = (
     Video(1972, "経験一様スケールパッキング", "project/math/792_probability_154/1972_emp_unif_scale_pack/scene.py", "EmpUnifScalePack"),
     Video(1973, "ラベル三分木細分", "project/math/793_combinatorics_153/1973_labeled_ternary_refine/scene.py", "LabeledTernaryRefine"),
 )
+
+VIDEOS_1974_1985: tuple[Video, ...] = (
+    Video(1974, "相対ログ随伴ネフ対", "project/math/794_analysis_157/1974_rel_log_adj_nef/scene.py", "RelLogAdjNef"),
+    Video(1975, "ログ随伴ビッグ対", "project/math/794_analysis_157/1975_log_adj_big/scene.py", "LogAdjBig"),
+    Video(1976, "相対ログ随伴ビッグ対", "project/math/794_analysis_157/1976_rel_log_adj_big/scene.py", "RelLogAdjBig"),
+    Video(1977, "LionWBoundClip", "project/math/795_linear_157/1977_lionwboundclip/scene.py", "LionWBoundClip"),
+    Video(1978, "SophiaWBoundClip", "project/math/795_linear_157/1978_sophiawboundclip/scene.py", "SophiaWBoundClip"),
+    Video(1979, "ApolloSoftBoundClip", "project/math/795_linear_157/1979_apollosoftboundclip/scene.py", "ApolloSoftBoundClip"),
+    Video(1980, "垂心類似九点弦比", "project/math/796_geometry_157/1980_h_sym_nine_chord/scene.py", "HSymNineChord"),
+    Video(1981, "重心類似九点弦比", "project/math/796_geometry_157/1981_g_sym_nine_chord/scene.py", "GSymNineChord"),
+    Video(1982, "九点類似弦比", "project/math/796_geometry_157/1982_n_sym_nine_chord/scene.py", "NSymNineChord"),
+    Video(1983, "局所一様スケール被覆", "project/math/797_probability_155/1983_local_unif_scale_cov/scene.py", "LocalUnifScaleCov"),
+    Video(1984, "局所一様スケールパッキング", "project/math/797_probability_155/1984_local_unif_scale_pack/scene.py", "LocalUnifScalePack"),
+    Video(1985, "順序三分木細分", "project/math/798_combinatorics_154/1985_ordered_ternary_refine/scene.py", "OrderedTernaryRefine"),
+)
+
+VIDEOS_1986_1997: tuple[Video, ...] = (
+    Video(1986, "ログ随伴擬有効対", "project/math/799_analysis_158/1986_log_adj_psef/scene.py", "LogAdjPsef"),
+    Video(1987, "相対ログ随伴擬有効対", "project/math/799_analysis_158/1987_rel_log_adj_psef/scene.py", "RelLogAdjPsef"),
+    Video(1988, "ログ随伴移動対", "project/math/799_analysis_158/1988_log_adj_movable/scene.py", "LogAdjMovable"),
+    Video(1989, "MuonHardBoundClip", "project/math/800_linear_158/1989_muonhardboundclip/scene.py", "MuonHardBoundClip"),
+    Video(1990, "SamHardBoundClip", "project/math/800_linear_158/1990_samhardboundclip/scene.py", "SamHardBoundClip"),
+    Video(1991, "AdaFactorSoftBoundClip", "project/math/800_linear_158/1991_adafactorsoftboundclip/scene.py", "AdaFactorSoftBoundClip"),
+    Video(1992, "内心九点弧比", "project/math/801_geometry_158/1992_in_nine_arc/scene.py", "InNineArc"),
+    Video(1993, "傍心九点弧比", "project/math/801_geometry_158/1993_ex_nine_arc/scene.py", "ExNineArc"),
+    Video(1994, "外心九点弧比", "project/math/801_geometry_158/1994_o_nine_arc/scene.py", "ONineArc"),
+    Video(1995, "一様標本スケール被覆", "project/math/802_probability_156/1995_unif_sample_scale_cov/scene.py", "UnifSampleScaleCov"),
+    Video(1996, "一様標本スケールパッキング", "project/math/802_probability_156/1996_unif_sample_scale_pack/scene.py", "UnifSampleScalePack"),
+    Video(1997, "平面増加森細分", "project/math/803_combinatorics_155/1997_plane_inc_forest_refine/scene.py", "PlaneIncForestRefine"),
+)
+
+VIDEOS_1998_2009: tuple[Video, ...] = (
+    Video(1998, "相対ログ随伴移動対", "project/math/804_analysis_159/1998_rel_log_adj_mov/scene.py", "RelLogAdjMov"),
+    Video(1999, "ログ随伴正値対", "project/math/804_analysis_159/1999_log_adj_pos/scene.py", "LogAdjPos"),
+    Video(2000, "相対ログ随伴正値対", "project/math/804_analysis_159/2000_rel_log_adj_pos/scene.py", "RelLogAdjPos"),
+    Video(2001, "NAdamHardBoundClip", "project/math/805_linear_159/2001_nadamhardboundclip/scene.py", "NAdamHardBoundClip"),
+    Video(2002, "LARSHardBoundClip", "project/math/805_linear_159/2002_larshardboundclip/scene.py", "LARSHardBoundClip"),
+    Video(2003, "LAMBSoftBoundClip", "project/math/805_linear_159/2003_lambsoftboundclip/scene.py", "LAMBSoftBoundClip"),
+    Video(2004, "垂心九点弧比", "project/math/806_geometry_159/2004_h_nine_arc/scene.py", "HNineArc"),
+    Video(2005, "重心九点弧比", "project/math/806_geometry_159/2005_g_nine_arc/scene.py", "GNineArc"),
+    Video(2006, "九点円弧比", "project/math/806_geometry_159/2006_n_nine_arc/scene.py", "NNineArc"),
+    Video(2007, "半径データ複雑度", "project/math/807_probability_157/2007_radius_data_comp/scene.py", "RadiusDataComp"),
+    Video(2008, "スケール一様被覆再訪", "project/math/807_probability_157/2008_scale_unif_cov_rev/scene.py", "ScaleUnifCovRev"),
+    Video(2009, "ケイリー三分木細分", "project/math/808_combinatorics_156/2009_cayley_ternary_refine/scene.py", "CayleyTernaryRefine"),
+)
+
+VIDEOS_2010_2021: tuple[Video, ...] = (
+    Video(2010, "ログ随伴体積対", "project/math/809_analysis_160/2010_log_adj_vol/scene.py", "LogAdjVol"),
+    Video(2011, "相対ログ随伴体積対", "project/math/809_analysis_160/2011_rel_log_adj_vol/scene.py", "RelLogAdjVol"),
+    Video(2012, "ログ随伴数値次元対", "project/math/809_analysis_160/2012_log_adj_num_dim/scene.py", "LogAdjNumDim"),
+    Video(2013, "RMSHardBoundClip", "project/math/810_linear_160/2013_rmshardboundclip/scene.py", "RMSHardBoundClip"),
+    Video(2014, "LookaheadSoftBoundClip", "project/math/810_linear_160/2014_lookaheadsoftboundclip/scene.py", "LookaheadSoftBoundClip"),
+    Video(2015, "ProdigyHardBoundClip", "project/math/810_linear_160/2015_prodigyhardboundclip/scene.py", "ProdigyHardBoundClip"),
+    Video(2016, "内心類似九点弧比", "project/math/811_geometry_160/2016_in_sym_nine_arc/scene.py", "InSymNineArc"),
+    Video(2017, "傍心類似九点弧比", "project/math/811_geometry_160/2017_ex_sym_nine_arc/scene.py", "ExSymNineArc"),
+    Video(2018, "外心類似九点弧比", "project/math/811_geometry_160/2018_o_sym_nine_arc/scene.py", "OSymNineArc"),
+    Video(2019, "局所データ半径被覆", "project/math/812_probability_158/2019_local_data_radius_cov/scene.py", "LocalDataRadiusCov"),
+    Video(2020, "局所データ半径パッキング", "project/math/812_probability_158/2020_local_data_radius_pack/scene.py", "LocalDataRadiusPack"),
+    Video(2021, "根つき増加森細分", "project/math/813_combinatorics_157/2021_rooted_inc_forest/scene.py", "RootedIncForest"),
+)
+
+VIDEOS_2022_2033: tuple[Video, ...] = (
+    Video(2022, "相対ログ随伴数値次元対", "project/math/814_analysis_161/2022_rel_log_adj_num_dim/scene.py", "RelLogAdjNumDim"),
+    Video(2023, "ログ随伴飯高対", "project/math/814_analysis_161/2023_log_adj_iitaka/scene.py", "LogAdjIitaka"),
+    Video(2024, "相対ログ随伴飯高対", "project/math/814_analysis_161/2024_rel_log_adj_iitaka/scene.py", "RelLogAdjIitaka"),
+    Video(2025, "ScheduleFreeHardBoundClip", "project/math/815_linear_161/2025_schedulefreehardboundclip/scene.py", "ScheduleFreeHardBoundClip"),
+    Video(2026, "AdamWHardBoundClip", "project/math/815_linear_161/2026_adamwhardboundclip/scene.py", "AdamWHardBoundClip"),
+    Video(2027, "LionSoftBoundHard", "project/math/815_linear_161/2027_lionsoftboundhard/scene.py", "LionSoftBoundHard"),
+    Video(2028, "垂心類似九点弧比", "project/math/816_geometry_161/2028_h_sym_nine_arc/scene.py", "HSymNineArc"),
+    Video(2029, "重心類似九点弧比", "project/math/816_geometry_161/2029_g_sym_nine_arc/scene.py", "GSymNineArc"),
+    Video(2030, "九点類似弧比", "project/math/816_geometry_161/2030_n_sym_nine_arc/scene.py", "NSymNineArc"),
+    Video(2031, "経験局所スケール被覆", "project/math/817_probability_159/2031_emp_local_scale_cov/scene.py", "EmpLocalScaleCov"),
+    Video(2032, "経験局所スケールパッキング", "project/math/817_probability_159/2032_emp_local_scale_pack/scene.py", "EmpLocalScalePack"),
+    Video(2033, "ラベル増加木細分", "project/math/818_combinatorics_158/2033_labeled_inc_tree/scene.py", "LabeledIncTree"),
+)
+
+VIDEOS_2034_2045: tuple[Video, ...] = (
+    Video(2034, "ログ随伴フリップ対", "project/math/819_analysis_162/2034_log_adj_flip/scene.py", "LogAdjFlip"),
+    Video(2035, "相対ログ随伴フリップ対", "project/math/819_analysis_162/2035_rel_log_adj_flip/scene.py", "RelLogAdjFlip"),
+    Video(2036, "ログ随伴フロップ対", "project/math/819_analysis_162/2036_log_adj_flop/scene.py", "LogAdjFlop"),
+    Video(2037, "SophiaSoftBoundHard", "project/math/820_linear_162/2037_sophiasoftboundhard/scene.py", "SophiaSoftBoundHard"),
+    Video(2038, "ApolloHardBoundClip", "project/math/820_linear_162/2038_apollohardboundclip/scene.py", "ApolloHardBoundClip"),
+    Video(2039, "MuonSoftBoundHard", "project/math/820_linear_162/2039_muonsoftboundhard/scene.py", "MuonSoftBoundHard"),
+    Video(2040, "内心九点中心弦比", "project/math/821_geometry_162/2040_in_nine_center_chord/scene.py", "InNineCenterChord"),
+    Video(2041, "傍心九点中心弦比", "project/math/821_geometry_162/2041_ex_nine_center_chord/scene.py", "ExNineCenterChord"),
+    Video(2042, "外心九点中心弦比", "project/math/821_geometry_162/2042_o_nine_center_chord/scene.py", "ONineCenterChord"),
+    Video(2043, "一様データ半径被覆", "project/math/822_probability_160/2043_unif_data_radius_cov/scene.py", "UnifDataRadiusCov"),
+    Video(2044, "一様データ半径パッキング", "project/math/822_probability_160/2044_unif_data_radius_pack/scene.py", "UnifDataRadiusPack"),
+    Video(2045, "三分増加木細分", "project/math/823_combinatorics_159/2045_ternary_inc_tree/scene.py", "TernaryIncTree"),
+)
+
+VIDEOS_2046_2057: tuple[Video, ...] = (
+    Video(2046, "相対ログ随伴フロップ対", "project/math/824_analysis_163/2046_rel_log_adj_flop/scene.py", "RelLogAdjFlop"),
+    Video(2047, "ログ随伴収縮対", "project/math/824_analysis_163/2047_log_adj_contraction/scene.py", "LogAdjContraction"),
+    Video(2048, "相対ログ随伴収縮対", "project/math/824_analysis_163/2048_rel_log_adj_contraction/scene.py", "RelLogAdjContraction"),
+    Video(2049, "RMSSoftBoundHard", "project/math/825_linear_163/2049_rmssoftboundhard/scene.py", "RMSSoftBoundHard"),
+    Video(2050, "LookaheadHardBoundClip", "project/math/825_linear_163/2050_lookaheadhardboundclip/scene.py", "LookaheadHardBoundClip"),
+    Video(2051, "ProdigySoftBoundHard", "project/math/825_linear_163/2051_prodigysoftboundhard/scene.py", "ProdigySoftBoundHard"),
+    Video(2052, "垂心九点中心弦比", "project/math/826_geometry_163/2052_h_nine_center_chord/scene.py", "HNineCenterChord"),
+    Video(2053, "重心九点中心弦比", "project/math/826_geometry_163/2053_g_nine_center_chord/scene.py", "GNineCenterChord"),
+    Video(2054, "九点中心弦比", "project/math/826_geometry_163/2054_nine_center_chord/scene.py", "NineCenterChord"),
+    Video(2055, "局所経験半径被覆", "project/math/827_probability_161/2055_local_emp_radius_cov/scene.py", "LocalEmpRadiusCov"),
+    Video(2056, "局所経験半径パッキング", "project/math/827_probability_161/2056_local_emp_radius_pack/scene.py", "LocalEmpRadiusPack"),
+    Video(2057, "二分増加森細分", "project/math/828_combinatorics_160/2057_binary_inc_forest/scene.py", "BinaryIncForest"),
+)
+
+VIDEOS_2058_2069: tuple[Video, ...] = (
+    Video(2058, "ログ随伴終端対", "project/math/829_analysis_164/2058_log_adj_terminal/scene.py", "LogAdjTerminal"),
+    Video(2059, "相対ログ随伴終端対", "project/math/829_analysis_164/2059_rel_log_adj_terminal/scene.py", "RelLogAdjTerminal"),
+    Video(2060, "ログ随伴極小対", "project/math/829_analysis_164/2060_log_adj_minimal/scene.py", "LogAdjMinimal"),
+    Video(2061, "ScheduleFreeSoftBoundHard", "project/math/830_linear_164/2061_schedulefreesoftboundhard/scene.py", "ScheduleFreeSoftBoundHard"),
+    Video(2062, "AdamWSoftBoundHard", "project/math/830_linear_164/2062_adamwsoftboundhard/scene.py", "AdamWSoftBoundHard"),
+    Video(2063, "LionHardBoundClip", "project/math/830_linear_164/2063_lionhardboundclip/scene.py", "LionHardBoundClip"),
+    Video(2064, "内心九点弦弧比", "project/math/831_geometry_164/2064_in_nine_chord_arc/scene.py", "InNineChordArc"),
+    Video(2065, "傍心九点弦弧比", "project/math/831_geometry_164/2065_ex_nine_chord_arc/scene.py", "ExNineChordArc"),
+    Video(2066, "外心九点弦弧比", "project/math/831_geometry_164/2066_o_nine_chord_arc/scene.py", "ONineChordArc"),
+    Video(2067, "一様局所スケール被覆", "project/math/832_probability_162/2067_unif_local_scale_cov/scene.py", "UnifLocalScaleCov"),
+    Video(2068, "一様局所スケールパッキング", "project/math/832_probability_162/2068_unif_local_scale_pack/scene.py", "UnifLocalScalePack"),
+    Video(2069, "根つきラベル増加木細分", "project/math/833_combinatorics_161/2069_rooted_labeled_inc_tree/scene.py", "RootedLabeledIncTree"),
+)
+
+VIDEOS_2070_2081: tuple[Video, ...] = (
+    Video(2070, "相対ログ随伴極小対", "project/math/834_analysis_165/2070_rel_log_adj_minimal/scene.py", "RelLogAdjMinimal"),
+    Video(2071, "ログ随伴終局対", "project/math/834_analysis_165/2071_log_adj_final/scene.py", "LogAdjFinal"),
+    Video(2072, "相対ログ随伴終局対", "project/math/834_analysis_165/2072_rel_log_adj_final/scene.py", "RelLogAdjFinal"),
+    Video(2073, "SophiaHardBoundClip", "project/math/835_linear_165/2073_sophiahardboundclip/scene.py", "SophiaHardBoundClip"),
+    Video(2074, "ApolloSoftBoundHard", "project/math/835_linear_165/2074_apollosoftboundhard/scene.py", "ApolloSoftBoundHard"),
+    Video(2075, "MuonHardSoftBound", "project/math/835_linear_165/2075_muonhardsoftbound/scene.py", "MuonHardSoftBound"),
+    Video(2076, "垂心九点弦弧比", "project/math/836_geometry_165/2076_h_nine_chord_arc/scene.py", "HNineChordArc"),
+    Video(2077, "重心九点弦弧比", "project/math/836_geometry_165/2077_g_nine_chord_arc/scene.py", "GNineChordArc"),
+    Video(2078, "九点弦弧比", "project/math/836_geometry_165/2078_nine_chord_arc/scene.py", "NineChordArc"),
+    Video(2079, "経験データ半径被覆", "project/math/837_probability_163/2079_emp_data_radius_cov/scene.py", "EmpDataRadiusCov"),
+    Video(2080, "経験データ半径パッキング", "project/math/837_probability_163/2080_emp_data_radius_pack/scene.py", "EmpDataRadiusPack"),
+    Video(2081, "ケイリー増加森細分", "project/math/838_combinatorics_162/2081_cayley_inc_forest/scene.py", "CayleyIncForest"),
+)
+
+VIDEOS_2082_2093: tuple[Video, ...] = (
+    Video(2082, "ログ随伴標準対", "project/math/839_analysis_166/2082_log_adj_canonical/scene.py", "LogAdjCanonical"),
+    Video(2083, "相対ログ随伴標準対", "project/math/839_analysis_166/2083_rel_log_adj_canonical/scene.py", "RelLogAdjCanonical"),
+    Video(2084, "ログ随伴正則対", "project/math/839_analysis_166/2084_log_adj_regular/scene.py", "LogAdjRegular"),
+    Video(2085, "RMSClipHardBound", "project/math/840_linear_166/2085_rmscliphardbound/scene.py", "RMSClipHardBound"),
+    Video(2086, "LookaheadSoftBoundHard", "project/math/840_linear_166/2086_lookaheadsoftboundhard/scene.py", "LookaheadSoftBoundHard"),
+    Video(2087, "ProdigyHardSoftBound", "project/math/840_linear_166/2087_prodigyhardsoftbound/scene.py", "ProdigyHardSoftBound"),
+    Video(2088, "内心九点弧弦比", "project/math/841_geometry_166/2088_in_nine_arc_chord/scene.py", "InNineArcChord"),
+    Video(2089, "傍心九点弧弦比", "project/math/841_geometry_166/2089_ex_nine_arc_chord/scene.py", "ExNineArcChord"),
+    Video(2090, "外心九点弧弦比", "project/math/841_geometry_166/2090_o_nine_arc_chord/scene.py", "ONineArcChord"),
+    Video(2091, "局所一様半径被覆", "project/math/842_probability_164/2091_local_unif_radius_cov/scene.py", "LocalUnifRadiusCov"),
+    Video(2092, "局所一様半径パッキング", "project/math/842_probability_164/2092_local_unif_radius_pack/scene.py", "LocalUnifRadiusPack"),
+    Video(2093, "三分増加森細分", "project/math/843_combinatorics_163/2093_ternary_inc_forest/scene.py", "TernaryIncForest"),
+)
+
+VIDEOS_2094_2105: tuple[Video, ...] = (
+    Video(2094, "相対ログ随伴正則対", "project/math/844_analysis_167/2094_rel_log_adj_regular/scene.py", "RelLogAdjRegular"),
+    Video(2095, "ログ随伴平滑対", "project/math/844_analysis_167/2095_log_adj_smooth/scene.py", "LogAdjSmooth"),
+    Video(2096, "相対ログ随伴平滑対", "project/math/844_analysis_167/2096_rel_log_adj_smooth/scene.py", "RelLogAdjSmooth"),
+    Video(2097, "ScheduleFreeHardSoftBound", "project/math/845_linear_167/2097_schedulefreehardsoftbound/scene.py", "ScheduleFreeHardSoftBound"),
+    Video(2098, "AdamWHardSoftBound", "project/math/845_linear_167/2098_adamwhardsoftbound/scene.py", "AdamWHardSoftBound"),
+    Video(2099, "LionClipSoftBound", "project/math/845_linear_167/2099_lionclipsoftbound/scene.py", "LionClipSoftBound"),
+    Video(2100, "垂心九点弧弦比", "project/math/846_geometry_167/2100_h_nine_arc_chord/scene.py", "HNineArcChord"),
+    Video(2101, "重心九点弧弦比", "project/math/846_geometry_167/2101_g_nine_arc_chord/scene.py", "GNineArcChord"),
+    Video(2102, "九点弧弦比", "project/math/846_geometry_167/2102_nine_arc_chord/scene.py", "NineArcChord"),
+    Video(2103, "経験一様半径被覆", "project/math/847_probability_165/2103_emp_unif_radius_cov/scene.py", "EmpUnifRadiusCov"),
+    Video(2104, "経験一様半径パッキング", "project/math/847_probability_165/2104_emp_unif_radius_pack/scene.py", "EmpUnifRadiusPack"),
+    Video(2105, "ラベル増加森細分", "project/math/848_combinatorics_164/2105_labeled_inc_forest/scene.py", "LabeledIncForest"),
+)
+
+VIDEOS_2106_2117: tuple[Video, ...] = (
+    Video(2106, "ログ随伴準正則対", "project/math/849_analysis_168/2106_log_adj_semiregular/scene.py", "LogAdjSemiregular"),
+    Video(2107, "相対ログ随伴準正則対", "project/math/849_analysis_168/2107_rel_log_adj_semiregular/scene.py", "RelLogAdjSemiregular"),
+    Video(2108, "ログ随伴準平滑対", "project/math/849_analysis_168/2108_log_adj_semismooth/scene.py", "LogAdjSemismooth"),
+    Video(2109, "SophiaClipSoftBound", "project/math/850_linear_168/2109_sophiaclipsoftbound/scene.py", "SophiaClipSoftBound"),
+    Video(2110, "ApolloHardSoftBound", "project/math/850_linear_168/2110_apollohardsoftbound/scene.py", "ApolloHardSoftBound"),
+    Video(2111, "MuonBoundSoftHard", "project/math/850_linear_168/2111_muonboundsofthard/scene.py", "MuonBoundSoftHard"),
+    Video(2112, "内心類似九点中心弧比", "project/math/851_geometry_168/2112_in_sym_nine_center_arc/scene.py", "InSymNineCenterArc"),
+    Video(2113, "傍心類似九点中心弧比", "project/math/851_geometry_168/2113_ex_sym_nine_center_arc/scene.py", "ExSymNineCenterArc"),
+    Video(2114, "外心類似九点中心弧比", "project/math/851_geometry_168/2114_o_sym_nine_center_arc/scene.py", "OSymNineCenterArc"),
+    Video(2115, "一様経験半径被覆", "project/math/852_probability_166/2115_unif_emp_radius_cov/scene.py", "UnifEmpRadiusCov"),
+    Video(2116, "一様経験半径パッキング", "project/math/852_probability_166/2116_unif_emp_radius_pack/scene.py", "UnifEmpRadiusPack"),
+    Video(2117, "無根増加森細分", "project/math/853_combinatorics_165/2117_unrooted_inc_forest/scene.py", "UnrootedIncForest"),
+)
+
+VIDEOS_2118_2129: tuple[Video, ...] = (
+    Video(2118, "相対ログ随伴準平滑対", "project/math/854_analysis_169/2118_rel_log_adj_semismooth/scene.py", "RelLogAdjSemismooth"),
+    Video(2119, "ログ随伴純粋対", "project/math/854_analysis_169/2119_log_adj_pure/scene.py", "LogAdjPure"),
+    Video(2120, "相対ログ随伴純粋対", "project/math/854_analysis_169/2120_rel_log_adj_pure/scene.py", "RelLogAdjPure"),
+    Video(2121, "RMSBoundSoftHard", "project/math/855_linear_169/2121_rmsboundsofthard/scene.py", "RMSBoundSoftHard"),
+    Video(2122, "LookaheadClipHardBound", "project/math/855_linear_169/2122_lookaheadcliphardbound/scene.py", "LookaheadClipHardBound"),
+    Video(2123, "ProdigyClipSoftBound", "project/math/855_linear_169/2123_prodigyclipsoftbound/scene.py", "ProdigyClipSoftBound"),
+    Video(2124, "垂心類似九点中心弧比", "project/math/856_geometry_169/2124_h_sym_nine_center_arc/scene.py", "HSymNineCenterArc"),
+    Video(2125, "重心類似九点中心弧比", "project/math/856_geometry_169/2125_g_sym_nine_center_arc/scene.py", "GSymNineCenterArc"),
+    Video(2126, "九点類似中心弧比", "project/math/856_geometry_169/2126_n_sym_nine_center_arc/scene.py", "NSymNineCenterArc"),
+    Video(2127, "局所データスケール被覆", "project/math/857_probability_167/2127_local_data_scale_cov/scene.py", "LocalDataScaleCov"),
+    Video(2128, "局所データスケールパッキング", "project/math/857_probability_167/2128_local_data_scale_pack/scene.py", "LocalDataScalePack"),
+    Video(2129, "有向増加森細分", "project/math/858_combinatorics_166/2129_directed_inc_forest/scene.py", "DirectedIncForest"),
+)
+
+VIDEOS_2130_2141: tuple[Video, ...] = (
+    Video(2130, "ログ随伴純正則対", "project/math/859_analysis_170/2130_log_adj_pure_regular/scene.py", "LogAdjPureRegular"),
+    Video(2131, "相対ログ随伴純正則対", "project/math/859_analysis_170/2131_rel_log_adj_pure_regular/scene.py", "RelLogAdjPureRegular"),
+    Video(2132, "ログ随伴純平滑対", "project/math/859_analysis_170/2132_log_adj_pure_smooth/scene.py", "LogAdjPureSmooth"),
+    Video(2133, "ScheduleFreeClipSoftBound", "project/math/860_linear_170/2133_schedulefreeclipsoftbound/scene.py", "ScheduleFreeClipSoftBound"),
+    Video(2134, "AdamWClipSoftBound", "project/math/860_linear_170/2134_adamwclipsoftbound/scene.py", "AdamWClipSoftBound"),
+    Video(2135, "LionBoundSoftHard", "project/math/860_linear_170/2135_lionboundsofthard/scene.py", "LionBoundSoftHard"),
+    Video(2136, "内心九点弦半径比", "project/math/861_geometry_170/2136_in_nine_chord_radius/scene.py", "InNineChordRadius"),
+    Video(2137, "傍心九点弦半径比", "project/math/861_geometry_170/2137_ex_nine_chord_radius/scene.py", "ExNineChordRadius"),
+    Video(2138, "外心九点弦半径比", "project/math/861_geometry_170/2138_o_nine_chord_radius/scene.py", "ONineChordRadius"),
+    Video(2139, "経験局所半径被覆", "project/math/862_probability_168/2139_emp_local_radius_cov/scene.py", "EmpLocalRadiusCov"),
+    Video(2140, "経験局所半径パッキング", "project/math/862_probability_168/2140_emp_local_radius_pack/scene.py", "EmpLocalRadiusPack"),
+    Video(2141, "平面根つき増加森細分", "project/math/863_combinatorics_167/2141_planar_rooted_inc_forest/scene.py", "PlanarRootedIncForest"),
+)
+
+VIDEOS_2142_2153: tuple[Video, ...] = (
+    Video(2142, "相対ログ随伴純平滑対", "project/math/864_analysis_171/2142_rel_log_adj_pure_smooth/scene.py", "RelLogAdjPureSmooth"),
+    Video(2143, "ログ随伴準終端対", "project/math/864_analysis_171/2143_log_adj_semiterminal/scene.py", "LogAdjSemiterminal"),
+    Video(2144, "相対ログ随伴準終端対", "project/math/864_analysis_171/2144_rel_log_adj_semiterminal/scene.py", "RelLogAdjSemiterminal"),
+    Video(2145, "SophiaBoundSoftHard", "project/math/865_linear_171/2145_sophiaboundsofthard/scene.py", "SophiaBoundSoftHard"),
+    Video(2146, "ApolloClipSoftBound", "project/math/865_linear_171/2146_apolloclipsoftbound/scene.py", "ApolloClipSoftBound"),
+    Video(2147, "MuonClipSoftBound", "project/math/865_linear_171/2147_muonclipsoftbound/scene.py", "MuonClipSoftBound"),
+    Video(2148, "垂心九点弦半径比", "project/math/866_geometry_171/2148_h_nine_chord_radius/scene.py", "HNineChordRadius"),
+    Video(2149, "重心九点弦半径比", "project/math/866_geometry_171/2149_g_nine_chord_radius/scene.py", "GNineChordRadius"),
+    Video(2150, "九点弦半径比", "project/math/866_geometry_171/2150_nine_chord_radius/scene.py", "NineChordRadius"),
+    Video(2151, "一様データスケール被覆", "project/math/867_probability_169/2151_unif_data_scale_cov/scene.py", "UnifDataScaleCov"),
+    Video(2152, "一様データスケールパッキング", "project/math/867_probability_169/2152_unif_data_scale_pack/scene.py", "UnifDataScalePack"),
+    Video(2153, "増加林細分", "project/math/868_combinatorics_168/2153_inc_grove/scene.py", "IncGrove"),
+)
+
+VIDEOS_2154_2165: tuple[Video, ...] = (
+    Video(2154, "ログ随伴準正対", "project/math/869_analysis_172/2154_log_adj_semipositive/scene.py", "LogAdjSemipositive"),
+    Video(2155, "相対ログ随伴準正対", "project/math/869_analysis_172/2155_rel_log_adj_semipositive/scene.py", "RelLogAdjSemipositive"),
+    Video(2156, "ログ随伴強終端対", "project/math/869_analysis_172/2156_log_adj_strong_terminal/scene.py", "LogAdjStrongTerminal"),
+    Video(2157, "RMSHardSoftBound", "project/math/870_linear_172/2157_rmshardsoftbound/scene.py", "RMSHardSoftBound"),
+    Video(2158, "LookaheadBoundSoftHard", "project/math/870_linear_172/2158_lookaheadboundsofthard/scene.py", "LookaheadBoundSoftHard"),
+    Video(2159, "ProdigyBoundSoftHard", "project/math/870_linear_172/2159_prodigyboundsofthard/scene.py", "ProdigyBoundSoftHard"),
+    Video(2160, "内心九点弧半径比", "project/math/871_geometry_172/2160_in_nine_arc_radius/scene.py", "InNineArcRadius"),
+    Video(2161, "傍心九点弧半径比", "project/math/871_geometry_172/2161_ex_nine_arc_radius/scene.py", "ExNineArcRadius"),
+    Video(2162, "外心九点弧半径比", "project/math/871_geometry_172/2162_o_nine_arc_radius/scene.py", "ONineArcRadius"),
+    Video(2163, "局所経験スケール被覆", "project/math/872_probability_170/2163_local_emp_scale_cov/scene.py", "LocalEmpScaleCov"),
+    Video(2164, "局所経験スケールパッキング", "project/math/872_probability_170/2164_local_emp_scale_pack/scene.py", "LocalEmpScalePack"),
+    Video(2165, "二分増加林細分", "project/math/873_combinatorics_169/2165_binary_inc_grove/scene.py", "BinaryIncGrove"),
+)
+
+VIDEOS_2166_2177: tuple[Video, ...] = (
+    Video(2166, "相対ログ随伴強終端対", "project/math/874_analysis_173/2166_rel_log_adj_strong_terminal/scene.py", "RelLogAdjStrongTerminal"),
+    Video(2167, "ログ随伴弱終端対", "project/math/874_analysis_173/2167_log_adj_weak_terminal/scene.py", "LogAdjWeakTerminal"),
+    Video(2168, "相対ログ随伴弱終端対", "project/math/874_analysis_173/2168_rel_log_adj_weak_terminal/scene.py", "RelLogAdjWeakTerminal"),
+    Video(2169, "ScheduleFreeBoundSoftHard", "project/math/875_linear_173/2169_schedulefreeboundsofthard/scene.py", "ScheduleFreeBoundSoftHard"),
+    Video(2170, "AdamWBoundSoftHard", "project/math/875_linear_173/2170_adamwboundsofthard/scene.py", "AdamWBoundSoftHard"),
+    Video(2171, "LionClipHardBound", "project/math/875_linear_173/2171_lioncliphardbound/scene.py", "LionClipHardBound"),
+    Video(2172, "垂心九点弧半径比", "project/math/876_geometry_173/2172_h_nine_arc_radius/scene.py", "HNineArcRadius"),
+    Video(2173, "重心九点弧半径比", "project/math/876_geometry_173/2173_g_nine_arc_radius/scene.py", "GNineArcRadius"),
+    Video(2174, "九点弧半径比", "project/math/876_geometry_173/2174_nine_arc_radius/scene.py", "NineArcRadius"),
+    Video(2175, "経験データスケール被覆", "project/math/877_probability_171/2175_emp_data_scale_cov/scene.py", "EmpDataScaleCov"),
+    Video(2176, "経験データスケールパッキング", "project/math/877_probability_171/2176_emp_data_scale_pack/scene.py", "EmpDataScalePack"),
+    Video(2177, "三分増加林細分", "project/math/878_combinatorics_170/2177_ternary_inc_grove/scene.py", "TernaryIncGrove"),
+)
+
+VIDEOS_2178_2189: tuple[Video, ...] = (
+    Video(2178, "ログ随伴強正則対", "project/math/879_analysis_174/2178_log_adj_strong_regular/scene.py", "LogAdjStrongRegular"),
+    Video(2179, "相対ログ随伴強正則対", "project/math/879_analysis_174/2179_rel_log_adj_strong_regular/scene.py", "RelLogAdjStrongRegular"),
+    Video(2180, "ログ随伴弱正則対", "project/math/879_analysis_174/2180_log_adj_weak_regular/scene.py", "LogAdjWeakRegular"),
+    Video(2181, "SophiaClipHardBound", "project/math/880_linear_174/2181_sophiacliphardbound/scene.py", "SophiaClipHardBound"),
+    Video(2182, "ApolloBoundSoftHard", "project/math/880_linear_174/2182_apolloboundsofthard/scene.py", "ApolloBoundSoftHard"),
+    Video(2183, "MuonBoundHardSoft", "project/math/880_linear_174/2183_muonboundhardsoft/scene.py", "MuonBoundHardSoft"),
+    Video(2184, "内心類似九点弦弧比", "project/math/881_geometry_174/2184_in_sym_nine_chord_arc/scene.py", "InSymNineChordArc"),
+    Video(2185, "傍心類似九点弦弧比", "project/math/881_geometry_174/2185_ex_sym_nine_chord_arc/scene.py", "ExSymNineChordArc"),
+    Video(2186, "外心類似九点弦弧比", "project/math/881_geometry_174/2186_o_sym_nine_chord_arc/scene.py", "OSymNineChordArc"),
+    Video(2187, "一様経験スケール被覆", "project/math/882_probability_172/2187_unif_emp_scale_cov/scene.py", "UnifEmpScaleCov"),
+    Video(2188, "一様経験スケールパッキング", "project/math/882_probability_172/2188_unif_emp_scale_pack/scene.py", "UnifEmpScalePack"),
+    Video(2189, "ラベル増加林細分", "project/math/883_combinatorics_171/2189_labeled_inc_grove/scene.py", "LabeledIncGrove"),
+)
+
+VIDEOS_2190_2201: tuple[Video, ...] = (
+    Video(2190, "相対ログ随伴弱正則対", "project/math/884_analysis_175/2190_rel_log_adj_weak_regular/scene.py", "RelLogAdjWeakRegular"),
+    Video(2191, "ログ随伴強平滑対", "project/math/884_analysis_175/2191_log_adj_strong_smooth/scene.py", "LogAdjStrongSmooth"),
+    Video(2192, "相対ログ随伴強平滑対", "project/math/884_analysis_175/2192_rel_log_adj_strong_smooth/scene.py", "RelLogAdjStrongSmooth"),
+    Video(2193, "RMSClipSoftBound", "project/math/885_linear_175/2193_rmsclipsoftbound/scene.py", "RMSClipSoftBound"),
+    Video(2194, "LookaheadClipSoftBound", "project/math/885_linear_175/2194_lookaheadclipsoftbound/scene.py", "LookaheadClipSoftBound"),
+    Video(2195, "ProdigyClipHardBound", "project/math/885_linear_175/2195_prodigycliphardbound/scene.py", "ProdigyClipHardBound"),
+    Video(2196, "垂心類似九点弦弧比", "project/math/886_geometry_175/2196_h_sym_nine_chord_arc/scene.py", "HSymNineChordArc"),
+    Video(2197, "重心類似九点弦弧比", "project/math/886_geometry_175/2197_g_sym_nine_chord_arc/scene.py", "GSymNineChordArc"),
+    Video(2198, "九点類似弦弧比", "project/math/886_geometry_175/2198_n_sym_nine_chord_arc/scene.py", "NSymNineChordArc"),
+    Video(2199, "局所一様データ被覆", "project/math/887_probability_173/2199_local_unif_data_cov/scene.py", "LocalUnifDataCov"),
+    Video(2200, "局所一様データパッキング", "project/math/887_probability_173/2200_local_unif_data_pack/scene.py", "LocalUnifDataPack"),
+    Video(2201, "根つき増加林細分", "project/math/888_combinatorics_172/2201_rooted_inc_grove/scene.py", "RootedIncGrove"),
+)
+
+VIDEOS_2202_2213: tuple[Video, ...] = (
+    Video(2202, "ログ随伴弱平滑対", "project/math/889_analysis_176/2202_log_adj_weak_smooth/scene.py", "LogAdjWeakSmooth"),
+    Video(2203, "相対ログ随伴弱平滑対", "project/math/889_analysis_176/2203_rel_log_adj_weak_smooth/scene.py", "RelLogAdjWeakSmooth"),
+    Video(2204, "ログ随伴準標準対", "project/math/889_analysis_176/2204_log_adj_semiclassical/scene.py", "LogAdjSemiclassical"),
+    Video(2205, "ScheduleFreeClipHardBound", "project/math/890_linear_176/2205_schedulefreecliphardbound/scene.py", "ScheduleFreeClipHardBound"),
+    Video(2206, "AdamWClipHardBound", "project/math/890_linear_176/2206_adamwcliphardbound/scene.py", "AdamWClipHardBound"),
+    Video(2207, "LionHardSoftBound", "project/math/890_linear_176/2207_lionhardsoftbound/scene.py", "LionHardSoftBound"),
+    Video(2208, "内心九点中心弧比", "project/math/891_geometry_176/2208_in_nine_center_arc/scene.py", "InNineCenterArc"),
+    Video(2209, "傍心九点中心弧比", "project/math/891_geometry_176/2209_ex_nine_center_arc/scene.py", "ExNineCenterArc"),
+    Video(2210, "外心九点中心弧比", "project/math/891_geometry_176/2210_o_nine_center_arc/scene.py", "ONineCenterArc"),
+    Video(2211, "経験一様データ被覆", "project/math/892_probability_174/2211_emp_unif_data_cov/scene.py", "EmpUnifDataCov"),
+    Video(2212, "経験一様データパッキング", "project/math/892_probability_174/2212_emp_unif_data_pack/scene.py", "EmpUnifDataPack"),
+    Video(2213, "無根増加林細分", "project/math/893_combinatorics_173/2213_unrooted_inc_grove/scene.py", "UnrootedIncGrove"),
+)
+
+VIDEOS_2214_2225: tuple[Video, ...] = (
+    Video(2214, "相対ログ随伴準標準対", "project/math/894_analysis_177/2214_rel_log_adj_semiclassical/scene.py", "RelLogAdjSemiclassical"),
+    Video(2215, "ログ随伴強標準対", "project/math/894_analysis_177/2215_log_adj_strong_canonical/scene.py", "LogAdjStrongCanonical"),
+    Video(2216, "相対ログ随伴強標準対", "project/math/894_analysis_177/2216_rel_log_adj_strong_canonical/scene.py", "RelLogAdjStrongCanonical"),
+    Video(2217, "SophiaHardSoftBound", "project/math/895_linear_177/2217_sophiahardsoftbound/scene.py", "SophiaHardSoftBound"),
+    Video(2218, "ApolloClipHardBound", "project/math/895_linear_177/2218_apollocliphardbound/scene.py", "ApolloClipHardBound"),
+    Video(2219, "MuonClipHardBound", "project/math/895_linear_177/2219_muoncliphardbound/scene.py", "MuonClipHardBound"),
+    Video(2220, "垂心九点中心弧比", "project/math/896_geometry_177/2220_h_nine_center_arc/scene.py", "HNineCenterArc"),
+    Video(2221, "重心九点中心弧比", "project/math/896_geometry_177/2221_g_nine_center_arc/scene.py", "GNineCenterArc"),
+    Video(2222, "九点中心弧比", "project/math/896_geometry_177/2222_nine_center_arc/scene.py", "NineCenterArc"),
+    Video(2223, "一様局所半径被覆", "project/math/897_probability_175/2223_unif_local_radius_cov/scene.py", "UnifLocalRadiusCov"),
+    Video(2224, "一様局所半径パッキング", "project/math/897_probability_175/2224_unif_local_radius_pack/scene.py", "UnifLocalRadiusPack"),
+    Video(2225, "有向増加林細分", "project/math/898_combinatorics_174/2225_directed_inc_grove/scene.py", "DirectedIncGrove"),
+)
+
+VIDEOS_2226_2237: tuple[Video, ...] = (
+    Video(2226, "ログ随伴弱標準対", "project/math/899_analysis_178/2226_log_adj_weak_canonical/scene.py", "LogAdjWeakCanonical"),
+    Video(2227, "相対ログ随伴弱標準対", "project/math/899_analysis_178/2227_rel_log_adj_weak_canonical/scene.py", "RelLogAdjWeakCanonical"),
+    Video(2228, "ログ随伴準極小対", "project/math/899_analysis_178/2228_log_adj_semiminimal/scene.py", "LogAdjSemiminimal"),
+    Video(2229, "RMSBoundHardSoft", "project/math/900_linear_178/2229_rmsboundhardsoft/scene.py", "RMSBoundHardSoft"),
+    Video(2230, "LookaheadHardSoftBound", "project/math/900_linear_178/2230_lookaheadhardsoftbound/scene.py", "LookaheadHardSoftBound"),
+    Video(2231, "ProdigySoftHardBound", "project/math/900_linear_178/2231_prodigysofthardbound/scene.py", "ProdigySoftHardBound"),
+    Video(2232, "内心類似九点弧弦比", "project/math/901_geometry_178/2232_in_sym_nine_arc_chord/scene.py", "InSymNineArcChord"),
+    Video(2233, "傍心類似九点弧弦比", "project/math/901_geometry_178/2233_ex_sym_nine_arc_chord/scene.py", "ExSymNineArcChord"),
+    Video(2234, "外心類似九点弧弦比", "project/math/901_geometry_178/2234_o_sym_nine_arc_chord/scene.py", "OSymNineArcChord"),
+    Video(2235, "局所スケールデータ被覆", "project/math/902_probability_176/2235_local_scale_data_cov/scene.py", "LocalScaleDataCov"),
+    Video(2236, "局所スケールデータパッキング", "project/math/902_probability_176/2236_local_scale_data_pack/scene.py", "LocalScaleDataPack"),
+    Video(2237, "平面増加林細分", "project/math/903_combinatorics_175/2237_planar_inc_grove/scene.py", "PlanarIncGrove"),
+)
+
+VIDEOS_2238_2249: tuple[Video, ...] = (
+    Video(2238, "相対ログ随伴準極小対", "project/math/904_analysis_179/2238_rel_log_adj_semiminimal/scene.py", "RelLogAdjSemiminimal"),
+    Video(2239, "ログ随伴準終局対", "project/math/904_analysis_179/2239_log_adj_semifinal/scene.py", "LogAdjSemifinal"),
+    Video(2240, "相対ログ随伴準終局対", "project/math/904_analysis_179/2240_rel_log_adj_semifinal/scene.py", "RelLogAdjSemifinal"),
+    Video(2241, "ScheduleFreeHardBoundSoft", "project/math/905_linear_179/2241_schedulefreehardboundsoft/scene.py", "ScheduleFreeHardBoundSoft"),
+    Video(2242, "AdamWHardBoundSoft", "project/math/905_linear_179/2242_adamwhardboundsoft/scene.py", "AdamWHardBoundSoft"),
+    Video(2243, "LionSoftHardBound", "project/math/905_linear_179/2243_lionsofthardbound/scene.py", "LionSoftHardBound"),
+    Video(2244, "垂心類似九点弧弦比", "project/math/906_geometry_179/2244_h_sym_nine_arc_chord/scene.py", "HSymNineArcChord"),
+    Video(2245, "重心類似九点弧弦比", "project/math/906_geometry_179/2245_g_sym_nine_arc_chord/scene.py", "GSymNineArcChord"),
+    Video(2246, "九点類似弧弦比", "project/math/906_geometry_179/2246_n_sym_nine_arc_chord/scene.py", "NSymNineArcChord"),
+    Video(2247, "経験スケールデータ被覆", "project/math/907_probability_177/2247_emp_scale_data_cov/scene.py", "EmpScaleDataCov"),
+    Video(2248, "経験スケールデータパッキング", "project/math/907_probability_177/2248_emp_scale_data_pack/scene.py", "EmpScaleDataPack"),
+    Video(2249, "ケイリー増加林細分", "project/math/908_combinatorics_176/2249_cayley_inc_grove/scene.py", "CayleyIncGrove"),
+)
+
+VIDEOS_2250_2261: tuple[Video, ...] = (
+    Video(2250, "ログ随伴準フリップ対", "project/math/909_analysis_180/2250_log_adj_semiflip/scene.py", "LogAdjSemiflip"),
+    Video(2251, "相対ログ随伴準フリップ対", "project/math/909_analysis_180/2251_rel_log_adj_semiflip/scene.py", "RelLogAdjSemiflip"),
+    Video(2252, "ログ随伴準フロップ対", "project/math/909_analysis_180/2252_log_adj_semiflop/scene.py", "LogAdjSemiflop"),
+    Video(2253, "SophiaSoftHardBound", "project/math/910_linear_180/2253_sophiasofthardbound/scene.py", "SophiaSoftHardBound"),
+    Video(2254, "ApolloHardBoundSoft", "project/math/910_linear_180/2254_apollohardboundsoft/scene.py", "ApolloHardBoundSoft"),
+    Video(2255, "MuonHardBoundSoft", "project/math/910_linear_180/2255_muonhardboundsoft/scene.py", "MuonHardBoundSoft"),
+    Video(2256, "内心九点弧心比", "project/math/911_geometry_180/2256_in_nine_arc_center/scene.py", "InNineArcCenter"),
+    Video(2257, "傍心九点弧心比", "project/math/911_geometry_180/2257_ex_nine_arc_center/scene.py", "ExNineArcCenter"),
+    Video(2258, "外心九点弧心比", "project/math/911_geometry_180/2258_o_nine_arc_center/scene.py", "ONineArcCenter"),
+    Video(2259, "一様スケールデータ被覆", "project/math/912_probability_178/2259_unif_scale_data_cov/scene.py", "UnifScaleDataCov"),
+    Video(2260, "一様スケールデータパッキング", "project/math/912_probability_178/2260_unif_scale_data_pack/scene.py", "UnifScaleDataPack"),
+    Video(2261, "増加林根細分", "project/math/913_combinatorics_177/2261_inc_grove_root/scene.py", "IncGroveRoot"),
+)
+
+VIDEOS_2262_2273: tuple[Video, ...] = (
+    Video(2262, "相対ログ随伴準フロップ対", "project/math/914_analysis_181/2262_rel_log_adj_semiflop/scene.py", "RelLogAdjSemiflop"),
+    Video(2263, "ログ随伴準収縮対", "project/math/914_analysis_181/2263_log_adj_semicontraction/scene.py", "LogAdjSemicontraction"),
+    Video(2264, "相対ログ随伴準収縮対", "project/math/914_analysis_181/2264_rel_log_adj_semicontraction/scene.py", "RelLogAdjSemicontraction"),
+    Video(2265, "RMSSoftHardBound", "project/math/915_linear_181/2265_rmssofthardbound/scene.py", "RMSSoftHardBound"),
+    Video(2266, "LookaheadSoftHardBound", "project/math/915_linear_181/2266_lookaheadsofthardbound/scene.py", "LookaheadSoftHardBound"),
+    Video(2267, "ProdigyBoundHardSoft", "project/math/915_linear_181/2267_prodigyboundhardsoft/scene.py", "ProdigyBoundHardSoft"),
+    Video(2268, "垂心九点弧心比", "project/math/916_geometry_181/2268_h_nine_arc_center/scene.py", "HNineArcCenter"),
+    Video(2269, "重心九点弧心比", "project/math/916_geometry_181/2269_g_nine_arc_center/scene.py", "GNineArcCenter"),
+    Video(2270, "九点弧心比", "project/math/916_geometry_181/2270_nine_arc_center/scene.py", "NineArcCenter"),
+    Video(2271, "局所半径データ被覆", "project/math/917_probability_179/2271_local_radius_data_cov/scene.py", "LocalRadiusDataCov"),
+    Video(2272, "局所半径データパッキング", "project/math/917_probability_179/2272_local_radius_data_pack/scene.py", "LocalRadiusDataPack"),
+    Video(2273, "二分増加根林細分", "project/math/918_combinatorics_178/2273_binary_inc_root_grove/scene.py", "BinaryIncRootGrove"),
+)
+
+VIDEOS_2274_2285: tuple[Video, ...] = (
+    Video(2274, "ログ随伴準移動対", "project/math/919_analysis_182/2274_log_adj_semimove/scene.py", "LogAdjSemimove"),
+    Video(2275, "相対ログ随伴準移動対", "project/math/919_analysis_182/2275_rel_log_adj_semimove/scene.py", "RelLogAdjSemimove"),
+    Video(2276, "ログ随伴準正値対", "project/math/919_analysis_182/2276_log_adj_semipositive_pair/scene.py", "LogAdjSemipositivePair"),
+    Video(2277, "ScheduleFreeSoftHardBound", "project/math/920_linear_182/2277_schedulefreesofthardbound/scene.py", "ScheduleFreeSoftHardBound"),
+    Video(2278, "AdamWSoftHardBound", "project/math/920_linear_182/2278_adamwsofthardbound/scene.py", "AdamWSoftHardBound"),
+    Video(2279, "LionBoundHardSoft", "project/math/920_linear_182/2279_lionboundhardsoft/scene.py", "LionBoundHardSoft"),
+    Video(2280, "内心九点弦心比", "project/math/921_geometry_182/2280_in_nine_chord_center/scene.py", "InNineChordCenter"),
+    Video(2281, "傍心九点弦心比", "project/math/921_geometry_182/2281_ex_nine_chord_center/scene.py", "ExNineChordCenter"),
+    Video(2282, "外心九点弦心比", "project/math/921_geometry_182/2282_o_nine_chord_center/scene.py", "ONineChordCenter"),
+    Video(2283, "経験半径データ被覆", "project/math/922_probability_180/2283_emp_radius_data_cov/scene.py", "EmpRadiusDataCov"),
+    Video(2284, "経験半径データパッキング", "project/math/922_probability_180/2284_emp_radius_data_pack/scene.py", "EmpRadiusDataPack"),
+    Video(2285, "三分増加根林細分", "project/math/923_combinatorics_179/2285_ternary_inc_root_grove/scene.py", "TernaryIncRootGrove"),
+)
+
+VIDEOS_2286_2297: tuple[Video, ...] = (
+    Video(2286, "相対ログ随伴準正値対", "project/math/924_analysis_183/2286_rel_log_adj_semipositive_pair/scene.py", "RelLogAdjSemipositivePair"),
+    Video(2287, "ログ随伴準体積対", "project/math/924_analysis_183/2287_log_adj_semivolume/scene.py", "LogAdjSemivolume"),
+    Video(2288, "相対ログ随伴準体積対", "project/math/924_analysis_183/2288_rel_log_adj_semivolume/scene.py", "RelLogAdjSemivolume"),
+    Video(2289, "SophiaBoundHardSoft", "project/math/925_linear_183/2289_sophiaboundhardsoft/scene.py", "SophiaBoundHardSoft"),
+    Video(2290, "ApolloSoftHardBound", "project/math/925_linear_183/2290_apollosofthardbound/scene.py", "ApolloSoftHardBound"),
+    Video(2291, "MuonClipBoundHard", "project/math/925_linear_183/2291_muonclipboundhard/scene.py", "MuonClipBoundHard"),
+    Video(2292, "垂心九点弦心比", "project/math/926_geometry_183/2292_h_nine_chord_center/scene.py", "HNineChordCenter"),
+    Video(2293, "重心九点弦心比", "project/math/926_geometry_183/2293_g_nine_chord_center/scene.py", "GNineChordCenter"),
+    Video(2294, "九点弦心比", "project/math/926_geometry_183/2294_nine_chord_center/scene.py", "NineChordCenter"),
+    Video(2295, "一様半径データ被覆", "project/math/927_probability_181/2295_unif_radius_data_cov/scene.py", "UnifRadiusDataCov"),
+    Video(2296, "一様半径データパッキング", "project/math/927_probability_181/2296_unif_radius_data_pack/scene.py", "UnifRadiusDataPack"),
+    Video(2297, "ラベル増加根林細分", "project/math/928_combinatorics_180/2297_labeled_inc_root_grove/scene.py", "LabeledIncRootGrove"),
+)
+
+VIDEOS_2298_2309: tuple[Video, ...] = (
+    Video(2298, "ログ随伴準数値次元対", "project/math/929_analysis_184/2298_log_adj_seminum_dim/scene.py", "LogAdjSeminumDim"),
+    Video(2299, "相対ログ随伴準数値次元対", "project/math/929_analysis_184/2299_rel_log_adj_seminum_dim/scene.py", "RelLogAdjSeminumDim"),
+    Video(2300, "ログ随伴準飯高対", "project/math/929_analysis_184/2300_log_adj_semiiitaka/scene.py", "LogAdjSemiIitaka"),
+    Video(2301, "RMSHardBoundSoft", "project/math/930_linear_184/2301_rmshardboundsoft/scene.py", "RMSHardBoundSoft"),
+    Video(2302, "LookaheadBoundHardSoft", "project/math/930_linear_184/2302_lookaheadboundhardsoft/scene.py", "LookaheadBoundHardSoft"),
+    Video(2303, "ProdigyHardBoundSoft", "project/math/930_linear_184/2303_prodigyhardboundsoft/scene.py", "ProdigyHardBoundSoft"),
+    Video(2304, "内心類似九点弧心比", "project/math/931_geometry_184/2304_in_sym_nine_arc_center/scene.py", "InSymNineArcCenter"),
+    Video(2305, "傍心類似九点弧心比", "project/math/931_geometry_184/2305_ex_sym_nine_arc_center/scene.py", "ExSymNineArcCenter"),
+    Video(2306, "外心類似九点弧心比", "project/math/931_geometry_184/2306_o_sym_nine_arc_center/scene.py", "OSymNineArcCenter"),
+    Video(2307, "局所被覆データ半径", "project/math/932_probability_182/2307_local_cov_data_radius/scene.py", "LocalCovDataRadius"),
+    Video(2308, "局所パッキングデータ半径", "project/math/932_probability_182/2308_local_pack_data_radius/scene.py", "LocalPackDataRadius"),
+    Video(2309, "根つき増加根林細分", "project/math/933_combinatorics_181/2309_rooted_inc_root_grove/scene.py", "RootedIncRootGrove"),
+)
+
+VIDEOS_2310_2321: tuple[Video, ...] = (
+    Video(2310, "相対ログ随伴準飯高対", "project/math/934_analysis_185/2310_rel_log_adj_semiiitaka/scene.py", "RelLogAdjSemiIitaka"),
+    Video(2311, "ログ随伴準飯高次元対", "project/math/934_analysis_185/2311_log_adj_semiiitaka_dim/scene.py", "LogAdjSemiIitakaDim"),
+    Video(2312, "相対ログ随伴準飯高次元対", "project/math/934_analysis_185/2312_rel_log_adj_semiiitaka_dim/scene.py", "RelLogAdjSemiIitakaDim"),
+    Video(2313, "ScheduleFreeBoundHardSoft", "project/math/935_linear_185/2313_schedulefreeboundhardsoft/scene.py", "ScheduleFreeBoundHardSoft"),
+    Video(2314, "AdamWBoundHardSoft", "project/math/935_linear_185/2314_adamwboundhardsoft/scene.py", "AdamWBoundHardSoft"),
+    Video(2315, "LionClipBoundHard", "project/math/935_linear_185/2315_lionclipboundhard/scene.py", "LionClipBoundHard"),
+    Video(2316, "垂心類似九点弧心比", "project/math/936_geometry_185/2316_h_sym_nine_arc_center/scene.py", "HSymNineArcCenter"),
+    Video(2317, "重心類似九点弧心比", "project/math/936_geometry_185/2317_g_sym_nine_arc_center/scene.py", "GSymNineArcCenter"),
+    Video(2318, "九点類似弧心比", "project/math/936_geometry_185/2318_n_sym_nine_arc_center/scene.py", "NSymNineArcCenter"),
+    Video(2319, "経験被覆データ半径", "project/math/937_probability_183/2319_emp_cov_data_radius/scene.py", "EmpCovDataRadius"),
+    Video(2320, "経験パッキングデータ半径", "project/math/937_probability_183/2320_emp_pack_data_radius/scene.py", "EmpPackDataRadius"),
+    Video(2321, "無根増加根林細分", "project/math/938_combinatorics_182/2321_unrooted_inc_root_grove/scene.py", "UnrootedIncRootGrove"),
+)
+
+VIDEOS_2322_2333: tuple[Video, ...] = (
+    Video(2322, "ログ随伴準数値対", "project/math/939_analysis_186/2322_log_adj_seminumeric/scene.py", "LogAdjSeminumeric"),
+    Video(2323, "相対ログ随伴準数値対", "project/math/939_analysis_186/2323_rel_log_adj_seminumeric/scene.py", "RelLogAdjSeminumeric"),
+    Video(2324, "ログ随伴準κ対", "project/math/939_analysis_186/2324_log_adj_semikappa/scene.py", "LogAdjSemiKappa"),
+    Video(2325, "SophiaClipBoundHard", "project/math/940_linear_186/2325_sophiaclipboundhard/scene.py", "SophiaClipBoundHard"),
+    Video(2326, "ApolloBoundHardSoft", "project/math/940_linear_186/2326_apolloboundhardsoft/scene.py", "ApolloBoundHardSoft"),
+    Video(2327, "MuonSoftClipHard", "project/math/940_linear_186/2327_muonsoftcliphard/scene.py", "MuonSoftClipHard"),
+    Video(2328, "内心九点弧弦心比", "project/math/941_geometry_186/2328_in_nine_arc_chord_center/scene.py", "InNineArcChordCenter"),
+    Video(2329, "傍心九点弧弦心比", "project/math/941_geometry_186/2329_ex_nine_arc_chord_center/scene.py", "ExNineArcChordCenter"),
+    Video(2330, "外心九点弧弦心比", "project/math/941_geometry_186/2330_o_nine_arc_chord_center/scene.py", "ONineArcChordCenter"),
+    Video(2331, "一様被覆データ半径", "project/math/942_probability_184/2331_unif_cov_data_radius/scene.py", "UnifCovDataRadius"),
+    Video(2332, "一様パッキングデータ半径", "project/math/942_probability_184/2332_unif_pack_data_radius/scene.py", "UnifPackDataRadius"),
+    Video(2333, "有向増加根林細分", "project/math/943_combinatorics_183/2333_directed_inc_root_grove/scene.py", "DirectedIncRootGrove"),
+)

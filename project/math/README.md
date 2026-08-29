@@ -40,6 +40,9 @@ manim -pql project/math/29_probability_2/137_catalan/scene.py Catalan
 manim -pql project/math/30_analysis_4/138_substitution/scene.py Substitution
 manim -pql project/math/32_geometry_4/145_nine_point/scene.py NinePoint
 manim -pql project/math/33_combinatorics_2/149_fibonacci/scene.py Fibonacci
+manim -pql project/math/34_analysis_5/150_disk_method/scene.py DiskMethod
+manim -pql project/math/36_geometry_5/156_napoleon/scene.py Napoleon
+manim -pql project/math/38_number_2/161_euler_totient/scene.py EulerTotient
 
 # 本番相当（1080p）
 manim -pqh project/math/01_proofs_without_words/02_triangle_area/scene.py TriangleArea
@@ -208,3 +211,15 @@ manim -pqh project/proofs_without_words/pythagoras_theorem/pythagoras_theorem.py
 | 147 | メネラウスの定理 | `project/math/32_geometry_4/147_menelaus/` |
 | 148 | 角の二等分線 | `project/math/32_geometry_4/148_angle_bisector/` |
 | 149 | フィボナッチ | `project/math/33_combinatorics_2/149_fibonacci/` |
+| 150 | 回転体 | `project/math/34_analysis_5/150_disk_method/` |
+| 151 | ヤコビアン | `project/math/34_analysis_5/151_jacobian/` |
+| 152 | 畳み込み | `project/math/34_analysis_5/152_convolution/` |
+| 153 | スペクトル定理 | `project/math/35_linear_5/153_spectral/` |
+| 154 | 消去法 | `project/math/35_linear_5/154_elimination/` |
+| 155 | クラメルの公式 | `project/math/35_linear_5/155_cramer/` |
+| 156 | ナポレオンの定理 | `project/math/36_geometry_5/156_napoleon/` |
+| 157 | シムソン線 | `project/math/36_geometry_5/157_simson/` |
+| 158 | ヴィヴィアニ | `project/math/36_geometry_5/158_viviani/` |
+| 159 | 指数分布 | `project/math/37_probability_3/159_exponential/` |
+| 160 | チェビシェフ | `project/math/37_probability_3/160_chebyshev/` |
+| 161 | オイラーの φ | `project/math/38_number_2/161_euler_totient/` |

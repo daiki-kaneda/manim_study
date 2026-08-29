@@ -640,3 +640,18 @@ VIDEOS_594_605: tuple[Video, ...] = (
     Video(604, "マーク強度", "project/math/222_probability_40/604_mark_intensity/scene.py", "MarkIntensity"),
     Video(605, "セット分割", "project/math/223_combinatorics_39/605_set_partitions/scene.py", "SetPartitions"),
 )
+
+VIDEOS_606_617: tuple[Video, ...] = (
+    Video(606, "可制御性", "project/math/224_analysis_43/606_controllability/scene.py", "Controllability"),
+    Video(607, "可観測性", "project/math/224_analysis_43/607_observability/scene.py", "Observability"),
+    Video(608, "一意接続性", "project/math/224_analysis_43/608_unique_cont/scene.py", "UniqueContinuation"),
+    Video(609, "BFGS", "project/math/225_linear_43/609_bfgs/scene.py", "BFGS"),
+    Video(610, "DFP法", "project/math/225_linear_43/610_dfp/scene.py", "DFP"),
+    Video(611, "信頼領域法", "project/math/225_linear_43/611_trust_region/scene.py", "TrustRegion"),
+    Video(612, "放物線の定義", "project/math/226_geometry_43/612_parabola_def/scene.py", "ParabolaDefinition"),
+    Video(613, "放物線の反射", "project/math/226_geometry_43/613_parabola_refl/scene.py", "ParabolaReflection"),
+    Video(614, "通径", "project/math/226_geometry_43/614_latus_rectum/scene.py", "LatusRectum"),
+    Video(615, "パーム分布", "project/math/227_probability_41/615_palm/scene.py", "PalmDistribution"),
+    Video(616, "キャンベル公式", "project/math/227_probability_41/616_campbell/scene.py", "CampbellFormula"),
+    Video(617, "順序ベル数", "project/math/228_combinatorics_40/617_ordered_bell/scene.py", "OrderedBell"),
+)

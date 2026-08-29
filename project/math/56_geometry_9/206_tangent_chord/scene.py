@@ -50,10 +50,8 @@ class TangentChord(PacedScene):
         self.note = note
 
     def mark_angles(self):
-        from manim.mobject.geometry.arc import Angle
-
         ang1 = Angle(self.tang, self.chord, radius=0.45, color=ORANGE)
-        # inscribed angle at C subtended by arc TB: angle BCT? angle TCB between CT and CB
+        # inscribed angle at C subtended by arc TB
         ct = Line(self.C, self.T, color=TEAL, stroke_width=3)
         cb = Line(self.C, self.B, color=TEAL, stroke_width=3)
         self.play(Create(ct), Create(cb), FadeIn(Dot(self.C, color=TEAL, radius=0.08)), run_time=1.3)

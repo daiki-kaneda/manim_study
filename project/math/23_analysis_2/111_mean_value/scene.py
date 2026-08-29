@@ -22,18 +22,18 @@ class MeanValue(JapaneseScene):
         self.hold(1.2)
 
     def _f(self, x):
-        return 0.35 * (x - 1.4) ** 2 + 0.7 * np.sin(1.1 * x) + 1.1
+        return 0.32 * x * x + 0.45
 
     def draw_curve(self):
         self.axes = Axes(
             x_range=[0, 4.4, 1],
-            y_range=[0, 4.0, 1],
+            y_range=[0, 4.2, 1],
             x_length=7.4,
             y_length=3.6,
             tips=False,
             axis_config={"stroke_width": 2, "include_ticks": False},
         ).shift(DOWN * 0.2 + LEFT * 0.5)
-        curve = self.axes.plot(lambda x: 0.35 * (x - 1.4) ** 2 + 0.7 * np.sin(1.1 * x) + 1.1, x_range=[0.3, 4.0], color=BLUE, stroke_width=5)
+        curve = self.axes.plot(lambda x: 0.32 * x * x + 0.45, x_range=[0.3, 3.6], color=BLUE, stroke_width=5)
         self.play(Create(self.axes), run_time=0.45)
         self.play(Create(curve), run_time=0.75)
         self.hold(0.3)
@@ -47,7 +47,7 @@ class MeanValue(JapaneseScene):
         return Line(mid - d * half, mid + d * half, color=color, stroke_width=5)
 
     def secant_and_tangent(self):
-        a, b = 0.7, 3.5
+        a, b = 0.8, 3.2
         sec = self._line_through(a, b)
         da = Dot(self.axes.c2p(a, self._f(a)), color=ORANGE, radius=0.07)
         db = Dot(self.axes.c2p(b, self._f(b)), color=ORANGE, radius=0.07)
@@ -55,8 +55,8 @@ class MeanValue(JapaneseScene):
         note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
         self.play(Create(sec), FadeIn(da), FadeIn(db), FadeIn(note), run_time=0.7)
         self.hold(0.45)
-        c = 2.05
-        tan = self._line_through(c - 0.08, c + 0.08, color=YELLOW, half=2.0)
+        c = (a + b) / 2
+        tan = self._line_through(c - 0.08, c + 0.08, color=YELLOW, half=2.2)
         dc = Dot(self.axes.c2p(c, self._f(c)), color=YELLOW, radius=0.08)
         self.play(Create(tan), FadeIn(dc), run_time=0.7)
         cap = self.ja_text("同じ傾き", font_size=24).move_to(note)

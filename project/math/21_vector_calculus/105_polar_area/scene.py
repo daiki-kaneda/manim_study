@@ -27,15 +27,13 @@ class PolarArea(JapaneseScene):
         axes_y = Line(self.origin + DOWN * 0.3, self.origin + UP * 3.1, color=GREY, stroke_width=2)
         self.play(Create(axes_x), Create(axes_y), run_time=0.4)
         self.arc = Sector(
-            inner_radius=0,
-            outer_radius=r,
+            radius=r,
             angle=70 * DEGREES,
             start_angle=15 * DEGREES,
             color=BLUE,
             fill_opacity=0.45,
             stroke_width=2,
-            arc_center=self.origin,
-        )
+        ).shift(self.origin)
         self.play(FadeIn(self.arc), run_time=0.7)
         note = self.ja_text("扇形", font_size=24)
         note.to_edge(RIGHT, buff=0.4).shift(UP * 1.65)
@@ -53,15 +51,13 @@ class PolarArea(JapaneseScene):
         for i in range(n):
             wedges.add(
                 Sector(
-                    inner_radius=0,
-                    outer_radius=self.r,
+                    radius=self.r,
                     angle=span,
                     start_angle=start + i * span,
                     color=colors[i],
                     fill_opacity=0.55,
                     stroke_width=1,
-                    arc_center=self.origin,
-                )
+                ).shift(self.origin)
             )
         self.play(FadeOut(self.arc), FadeIn(wedges), run_time=0.7)
         cap = self.ja_text("細い扇の和", font_size=24).move_to(self.note)

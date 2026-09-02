@@ -1,10 +1,12 @@
 ---
-description: 数学200本・アルゴリズム200本の独立カリキュラム（5〜10分、Manim日本語）
+description: 旧・数学200本・アルゴリズム200本（教科書順。凍結。新規本は150本シリーズへ）
 globs: project/curriculum_math_200/**,project/curriculum_algorithm_200/**
-alwaysApply: true
+alwaysApply: false
 ---
 
-# 200本カリキュラム（数学 / アルゴリズム）
+# 200本カリキュラム（数学 / アルゴリズム）【凍結】
+
+**新規の本は作らない。** 自己完結シリーズは `project/curriculum_math_150/` と `project/curriculum_programming_150/`。この200本は教科書順の別シリーズとして残す。アルゴリズム側の既存コードは削除しない。
 
 数学とアルゴリズムは **独立した200本シリーズ** である。統合しない。番号も混ぜない。
 

@@ -17,3 +17,13 @@ manim -pql project/math/01_proofs_without_words/02_triangle_area/scene.py Triang
 ```
 
 日本語フォントは環境変数 `MANIM_JAPANESE_FONT` で指定できる（未設定なら Hannari Mincho を優先）。
+
+ローカルで背景・BGMを載せる（ffmpeg、手元のファイルパスを使う）:
+
+```bash
+cp local/media.env.example local/media.env   # MANIM_BG_PATH / MANIM_BGM_PATH を編集
+scripts/add_bg_bgm.sh --input media/videos/.../TriangleArea.mp4
+# または都度指定
+scripts/add_bg_bgm.sh --input media/videos/.../TriangleArea.mp4 \
+  --bg /path/to/bg.png --bgm /path/to/bgm.mp3 --output out/preview.mp4
+```

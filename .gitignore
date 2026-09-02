@@ -7,3 +7,5 @@ venv/
 *.egg-info/
 dist/
 build/
+local/media.env
+*_muxed.mp4

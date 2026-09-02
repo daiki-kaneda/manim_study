@@ -172,14 +172,14 @@ class PacedScene(JapaneseScene):
 
 
 class LessonScene(JapaneseScene):
-    """5–10 minute curriculum lesson. ``play()`` stays at 1x.
+    """5–10 minute curriculum lessons (math / algorithm 200).
 
-    Use this for ``curriculum_math_200`` / ``curriculum_algorithm_200``.
-    Do not subclass ``PacedScene`` (that stretches motion for 30–60s shorts).
+    Motion is not stretched. Do not subclass ``PacedScene``
+    (that stretches motion for 30–60s shorts).
     """
 
     motion_scale = 1.0
-    beat = 0.8
+    beat = 1.0
 
     def wipe(self, *keep):
         """Fade out every top-level mobject except ``keep``."""
@@ -193,8 +193,18 @@ class LessonScene(JapaneseScene):
         for m in victims:
             self.remove(m)
 
-    def linger(self, text: str = "", extra: float = 0.0) -> None:
-        """Give time to read ``text``. Scales with length; not idle padding."""
+    def linger(self, text_or_seconds: str | float = "", extra: float = 0.0) -> None:
+        """Keep the current frame on screen long enough to read.
+
+        - ``linger(3.5)``: wait that many wall-clock seconds (definitions / results).
+        - ``linger("本文", extra=0.4)``: scale with Japanese length; not idle padding.
+        """
+        if isinstance(text_or_seconds, (int, float)) and not isinstance(
+            text_or_seconds, bool
+        ):
+            super().wait(max(0.0, float(text_or_seconds) + extra))
+            return
+        text = str(text_or_seconds)
         seconds = 1.15 + 0.08 * len(text)
         self.read(min(3.2, max(1.15, seconds)) + extra)
 
@@ -219,3 +229,43 @@ class LessonScene(JapaneseScene):
         mob.next_to(chip, DOWN, buff=buff)
         mob.align_to(chip, LEFT)
         return mob
+
+    def aligned_table(self, rows, **kwargs):
+        """Numeric comparison table with per-column left alignment.
+
+        ``rows`` is a list of rows, each a list of LaTeX strings (``MathTable``)
+        or already-built mobjects (``MobjectTable``).
+        """
+        from manim import GREY_B, LEFT, MathTable, MobjectTable, VMobject
+
+        n_cols = len(rows[0])
+        kwargs.setdefault("h_buff", 0.55)
+        kwargs.setdefault("v_buff", 0.32)
+        kwargs.setdefault("include_outer_lines", True)
+        kwargs.setdefault("include_inner_lines", True)
+        kwargs.setdefault(
+            "line_config",
+            {"stroke_width": 1.2, "color": GREY_B},
+        )
+        kwargs.setdefault(
+            "arrange_in_grid_config",
+            {
+                "col_alignments": "l" * n_cols,
+                "cell_alignment": LEFT,
+            },
+        )
+        first = rows[0][0]
+        if isinstance(first, VMobject):
+            return MobjectTable(rows, **kwargs)
+        kwargs.setdefault("element_to_mobject_config", {"font_size": 28})
+        return MathTable(rows, **kwargs)
+
+    def reveal_table(self, table, row_wait: float = 0.7) -> None:
+        """Fade table rows in from top to bottom. Hide entries first so columns stay aligned."""
+        rows = list(table.get_rows())
+        for row in rows:
+            row.set_opacity(0)
+        self.add(table)
+        for i, row in enumerate(rows):
+            self.play(row.animate.set_opacity(1), run_time=0.4)
+            self.wait(row_wait if i > 0 else 0.35)

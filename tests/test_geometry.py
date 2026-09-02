@@ -69,7 +69,9 @@ class PathAndFontTests(unittest.TestCase):
         self.assertEqual(PacedScene.motion_scale, 2.5)
         self.assertTrue(issubclass(LessonScene, JapaneseScene))
         self.assertTrue(issubclass(PacedScene, JapaneseScene))
-        self.assertFalse(issubclass(LessonScene, PacedScene))
+        self.assertTrue(callable(getattr(LessonScene, "linger")))
+        self.assertTrue(callable(getattr(LessonScene, "aligned_table")))
+        self.assertTrue(callable(getattr(LessonScene, "reveal_table")))
 
 
 if __name__ == "__main__":

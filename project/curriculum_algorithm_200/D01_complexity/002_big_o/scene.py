@@ -75,7 +75,7 @@ class BigO(LessonScene):
         return labels
 
     def hook(self):
-        question = self.ja_text("答えが同じでも、遅さが全然違うことがある。", font_size=30)
+        question = self.ja_text("n が大きくなると、仕事の増え方が全然違うことがある。", font_size=28)
         question.next_to(self.header, DOWN, buff=0.45)
         self.play(FadeIn(question), run_time=0.6)
         self.wait(1.4)
@@ -87,35 +87,40 @@ class BigO(LessonScene):
         self.play(FadeIn(card_a, shift=LEFT * 0.2), FadeIn(card_b, shift=RIGHT * 0.2), run_time=0.8)
         self.wait(1.3)
 
-        rows = VGroup()
-        heads = VGroup(
-            MathTex(r"n", font_size=26, color=GREY_B),
-            self.ja_text("A の回数", font_size=22, color=BLUE),
-            self.ja_text("B の回数", font_size=22, color=ORANGE),
-        ).arrange(RIGHT, buff=0.7)
-        rows.add(heads)
-        specs = [
-            (r"n=5", r"5", r"5\times 5=25"),
-            (r"n=10", r"10", r"10\times 10=100"),
-            (r"n=1000", r"1000", r"1000\times 1000=1{,}000{,}000"),
-        ]
-        for n_tex, a_tex, b_tex in specs:
-            n_lab = MathTex(n_tex, font_size=30)
-            a_lab = MathTex(a_tex, font_size=30, color=BLUE)
-            b_lab = MathTex(b_tex, font_size=30, color=ORANGE)
-            row = VGroup(n_lab, a_lab, b_lab).arrange(RIGHT, buff=0.85)
-            rows.add(row)
-        rows.arrange(DOWN, buff=0.18, aligned_edge=LEFT)
-        rows.next_to(cards, DOWN, buff=0.3)
-        self.play(FadeIn(heads), run_time=0.35)
-        for row in rows[1:]:
-            self.play(FadeIn(row), run_time=0.45)
-            self.wait(1.1)
+        count_table = self.aligned_table(
+            [
+                [
+                    MathTex(r"n", font_size=26, color=GREY_B),
+                    self.ja_text("A の回数", font_size=22, color=BLUE),
+                    self.ja_text("B の回数", font_size=22, color=ORANGE),
+                ],
+                [
+                    MathTex(r"5", font_size=30),
+                    MathTex(r"5", font_size=30, color=BLUE),
+                    MathTex(r"5\times 5=25", font_size=30, color=ORANGE),
+                ],
+                [
+                    MathTex(r"10", font_size=30),
+                    MathTex(r"10", font_size=30, color=BLUE),
+                    MathTex(r"10\times 10=100", font_size=30, color=ORANGE),
+                ],
+                [
+                    MathTex(r"1000", font_size=30),
+                    MathTex(r"1000", font_size=30, color=BLUE),
+                    MathTex(r"1000\times 1000=1{,}000{,}000", font_size=30, color=ORANGE),
+                ],
+            ],
+            h_buff=0.5,
+            v_buff=0.2,
+        )
+        count_table.scale(0.85)
+        count_table.next_to(cards, DOWN, buff=0.22)
+        self.reveal_table(count_table, row_wait=1.1)
 
         cap = self._caption("n を大きくすると、B の仕事だけが急に膨らむ。今日は、この増え方をどう書くかをやる。")
         self.play(FadeIn(cap), run_time=0.5)
         self.wait(2.0)
-        self._clear(VGroup(question, cards, rows, cap))
+        self._clear(VGroup(question, cards, count_table, cap))
 
     def _program_card(self, title, body, formula, color):
         box = RoundedRectangle(
@@ -424,30 +429,18 @@ class BigO(LessonScene):
         self.play(Write(start), run_time=0.7)
         self.wait(1.1)
 
-        headers = VGroup(
-            MathTex(r"n", font_size=28),
-            MathTex(r"3n", font_size=28),
-            MathTex(r"+5", font_size=28),
-            MathTex(r"T(n)", font_size=28),
-        ).arrange(RIGHT, buff=0.85)
-        data = [
-            (r"10", r"30", r"5", r"35"),
-            (r"100", r"300", r"5", r"305"),
-            (r"1000", r"3000", r"5", r"3005"),
-        ]
-        table_rows = VGroup()
-        for row in data:
-            table_rows.add(VGroup(*[MathTex(cell, font_size=28) for cell in row]).arrange(RIGHT, buff=0.7))
-        table = VGroup(headers, *table_rows).arrange(DOWN, buff=0.18)
-        table.next_to(start, DOWN, buff=0.35)
-        self.play(FadeIn(headers), run_time=0.35)
-        for row, (n, three, five, t) in zip(table_rows, data):
-            self.play(FadeIn(row[0]), run_time=0.2)
-            self.wait(0.25)
-            self.play(FadeIn(row[1]), run_time=0.25)
-            self.play(FadeIn(row[2]), run_time=0.25)
-            self.play(FadeIn(row[3]), run_time=0.25)
-            self.wait(0.7)
+        table = self.aligned_table(
+            [
+                [r"n", r"3n", r"+5", r"T(n)"],
+                [r"10", r"30", r"5", r"35"],
+                [r"100", r"300", r"5", r"305"],
+                [r"1000", r"3000", r"5", r"3005"],
+            ],
+            h_buff=0.7,
+            v_buff=0.28,
+        )
+        table.next_to(start, DOWN, buff=0.32)
+        self.reveal_table(table, row_wait=0.7)
 
         note = self.ja_text("n が大きいと、足してある 5 はほとんど見えない。3 倍という定数も、「何倍で増えるか」には効かない。", font_size=22)
         note.to_edge(DOWN, buff=0.28)
@@ -463,6 +456,7 @@ class BigO(LessonScene):
         for row in defn_g:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.2)
+        self.linger(3.5)
 
         self.play(FadeOut(defn_g), run_time=0.35)
         steps = VGroup(
@@ -474,9 +468,14 @@ class BigO(LessonScene):
             MathTex(r"3n+5 = O(n)", font_size=40, color=YELLOW),
         ).arrange(DOWN, buff=0.18)
         steps.next_to(start, DOWN, buff=0.32)
-        for row in steps:
+        for i, row in enumerate(steps):
             self.play(FadeIn(row), run_time=0.4)
-            self.wait(1.15)
+            if i >= 4:
+                self.linger(3.2)
+            else:
+                self.wait(1.15)
+        self.play(Indicate(steps[-1], color=YELLOW), run_time=0.8)
+        self.linger(2.5)
 
         extra = VGroup(
             self.ja_text("3n+5 は", font_size=24),
@@ -518,31 +517,21 @@ class BigO(LessonScene):
         self.wait(0.4)
         self.play(FadeOut(rows), run_time=0.35)
 
-        col_heads = [
-            r"n",
-            r"1",
-            r"\log n",
-            r"n",
-            r"n\log n",
-            r"n^2",
-            r"2^n",
-        ]
-        data = [
-            [r"2", r"1", r"1", r"2", r"2", r"4", r"4"],
-            [r"4", r"1", r"2", r"4", r"8", r"16", r"16"],
-            [r"8", r"1", r"3", r"8", r"24", r"64", r"256"],
-            [r"16", r"1", r"4", r"16", r"64", r"256", r"65536"],
-        ]
-        header_row = VGroup(*[MathTex(h, font_size=26) for h in col_heads]).arrange(RIGHT, buff=0.42)
-        table_rows = VGroup()
-        for raw in data:
-            table_rows.add(VGroup(*[MathTex(c, font_size=26) for c in raw]).arrange(RIGHT, buff=0.42))
-        table = VGroup(header_row, *table_rows).arrange(DOWN, buff=0.16)
-        table.next_to(heading, DOWN, buff=0.3)
-        self.play(FadeIn(header_row), run_time=0.35)
-        for row in table_rows:
-            self.play(FadeIn(row), run_time=0.4)
-            self.wait(0.85)
+        table = self.aligned_table(
+            [
+                [r"n", r"1", r"\log n", r"n", r"n\log n", r"n^2", r"2^n"],
+                [r"2", r"1", r"1", r"2", r"2", r"4", r"4"],
+                [r"4", r"1", r"2", r"4", r"8", r"16", r"16"],
+                [r"8", r"1", r"3", r"8", r"24", r"64", r"256"],
+                [r"16", r"1", r"4", r"16", r"64", r"256", r"65536"],
+            ],
+            h_buff=0.42,
+            v_buff=0.26,
+            element_to_mobject_config={"font_size": 26},
+        )
+        table.scale(0.92)
+        table.next_to(heading, DOWN, buff=0.28)
+        self.reveal_table(table, row_wait=0.85)
 
         note = self.ja_text("n=16 のとき、2^n だけ桁が違う。", font_size=24)
         note.next_to(table, DOWN, buff=0.28)

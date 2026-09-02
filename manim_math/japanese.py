@@ -176,6 +176,48 @@ class LessonScene(JapaneseScene):
     motion_scale = 1.0
     beat = 1.0
 
+    def linger(self, seconds: float = 3.0) -> None:
+        """Keep a definition or key result on screen long enough to read.
+
+        Use this for statements that later steps rely on. Wall-clock seconds,
+        not scaled by a scene-level ``wait`` override. Do not use it to pad.
+        """
+        super().wait(max(0.0, seconds))
+
+    def aligned_table(self, rows, **kwargs):
+        """Numeric comparison table with per-column left alignment.
+
+        ``rows`` is a list of rows, each a list of LaTeX strings (``MathTable``)
+        or already-built mobjects (``MobjectTable``).
+        """
+        from manim import GREY_B, MathTable, MobjectTable, VMobject
+
+        n_cols = len(rows[0])
+        kwargs.setdefault("h_buff", 0.55)
+        kwargs.setdefault("v_buff", 0.32)
+        kwargs.setdefault("include_outer_lines", True)
+        kwargs.setdefault("include_inner_lines", True)
+        kwargs.setdefault(
+            "line_config",
+            {"stroke_width": 1.2, "color": GREY_B},
+        )
+        kwargs.setdefault("arrange_in_grid_config", {"col_alignments": "l" * n_cols})
+        first = rows[0][0]
+        if isinstance(first, VMobject):
+            return MobjectTable(rows, **kwargs)
+        kwargs.setdefault("element_to_mobject_config", {"font_size": 28})
+        return MathTable(rows, **kwargs)
+
+    def reveal_table(self, table, row_wait: float = 0.7) -> None:
+        """Fade table rows in from top to bottom. Hide entries first so columns stay aligned."""
+        rows = list(table.get_rows())
+        for row in rows:
+            row.set_opacity(0)
+        self.add(table)
+        for i, row in enumerate(rows):
+            self.play(row.animate.set_opacity(1), run_time=0.4)
+            self.wait(row_wait if i > 0 else 0.35)
+
 
 class PacedScene(JapaneseScene):
     """30–60 second shorts: animations are stretched, idle waits are not."""

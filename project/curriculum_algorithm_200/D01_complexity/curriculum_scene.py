@@ -1,4 +1,4 @@
-"""Shared helpers for D01 curriculum lessons #4–#7."""
+"""Shared helpers for D01 curriculum lessons #4–#10."""
 
 from pathlib import Path
 import sys
@@ -151,9 +151,13 @@ class CurriculumScene(LessonScene):
         self.wait(1.5)
         self._clear(VGroup(heading, group, cap))
 
-    def _formula_rows(self, rows, under, buff=0.4):
-        """Stack formula rows under ``under`` (the previous body, not a second chip)."""
-        block = VGroup(*rows).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
+    def _formula_rows(self, rows, under, buff=0.4, row_buff=0.32):
+        """Stack formula rows under ``under`` (the previous body, not a second chip).
+
+        ``row_buff`` is the gap between rows. Keep it >= 0.32 when a row has
+        MathTex exponents; 0.2 lets n^d collide with the next line.
+        """
+        block = VGroup(*rows).arrange(DOWN, buff=row_buff, aligned_edge=LEFT)
         self.stack_below(block, under, buff=buff)
         for row in block:
             self.play(FadeIn(row), run_time=0.4)

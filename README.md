@@ -7,6 +7,7 @@
 - 数学動画の進捗: `project/math/PLAN.md`（#126 以降は 30秒〜1分、`PacedScene`）
 - 数学 200本カリキュラム（高校〜大学レベル、1本5〜10分）のロードマップ: `project/curriculum_math_200/ROADMAP.md`
 - アルゴリズム 200本カリキュラム（高校〜大学レベル、1本5〜10分）のロードマップ: `project/curriculum_algorithm_200/ROADMAP.md`
+- 200本ディレクトリ計画: `project/curriculum_math_200/DIRECTORIES.md` / `project/curriculum_algorithm_200/DIRECTORIES.md`
 - Cursor プロジェクトルール: `.cursor/rules/curriculum-roadmaps.mdc`（数学200本とアルゴリズム200本を独立シリーズとして扱う）
 
 ```bash

@@ -50,10 +50,12 @@ class TimeSpaceComplexity(LessonScene):
             return
         self.play(FadeOut(group), run_time=0.4)
 
-    def _caption(self, text, font_size=26):
-        cap = self.ja_text(text, font_size=font_size)
-        cap.to_edge(DOWN, buff=0.22)
-        return cap
+    def _caption(self, *lines, font_size=24):
+        parts = VGroup(*[self.ja_text(line, font_size=font_size) for line in lines])
+        parts.arrange(DOWN, buff=0.08)
+        parts.to_edge(DOWN, buff=0.18)
+        parts.set_x(0)
+        return parts
 
     def _boxes(self, values, side=0.72, color=BLUE, font_size=30):
         group = VGroup()
@@ -290,7 +292,8 @@ class TimeSpaceComplexity(LessonScene):
             self.play(FadeIn(card, shift=UP * 0.08), run_time=0.4)
             self.wait(1.05)
         cap = self._caption(
-            "最後に、配列に同じ値が2つあるかを探す例で、時間と空間を最初から最後まで通す。"
+            "最後に、配列に同じ値が2つあるかを探す例で、",
+            "時間と空間を最初から最後まで通す。",
         )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
@@ -380,7 +383,10 @@ class TimeSpaceComplexity(LessonScene):
         self.play(FadeIn(definition), run_time=0.5)
         self.linger(3.4)
 
-        cap = self._caption("時計の秒数ではなく、「n が増えたとき、仕事が何回増えるか」が時間のほう。")
+        cap = self._caption(
+            "時計の秒数ではなく、",
+            "「n が増えたとき、仕事が何回増えるか」が時間のほう。",
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -995,7 +1001,8 @@ class TimeSpaceComplexity(LessonScene):
             self.play(FadeIn(row), run_time=0.45)
             self.wait(1.4)
         cap = self._caption(
-            "「何秒か」と「何バイトか」より先に、「n が増えたとき、回数とマスがどう増えるか」を見る。"
+            "「何秒か」と「何バイトか」より先に、",
+            "「n が増えたとき、回数とマスがどう増えるか」を見る。",
         )
         self.play(FadeIn(cap), run_time=0.45)
         self.wait(1.9)

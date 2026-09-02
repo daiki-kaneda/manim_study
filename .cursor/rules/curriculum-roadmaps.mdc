@@ -1,0 +1,33 @@
+---
+description: 数学200本・アルゴリズム200本の独立カリキュラム（5〜10分、Manim日本語）
+globs: project/curriculum_math_200/**,project/curriculum_algorithm_200/**
+alwaysApply: true
+---
+
+# 200本カリキュラム（数学 / アルゴリズム）
+
+数学とアルゴリズムは **独立した200本シリーズ** である。統合しない。番号も混ぜない。
+
+| シリーズ | 本数 | 尺 | ロードマップ |
+|---|---|---|---|
+| 数学 | 200 | 5〜10分 | `project/curriculum_math_200/ROADMAP.md` |
+| アルゴリズム | 200 | 5〜10分 | `project/curriculum_algorithm_200/ROADMAP.md` |
+
+既存の短尺シリーズ `project/math/`（`PLAN.md`、30秒〜1分、`PacedScene`）とは別シリーズ。番号・尺・基底クラスを流用しない。
+
+## 制作の前提
+
+- Manim、日本語。`ja_text` / `ja_tex`（`manim_math/japanese.py`）を使う。
+- `MathTex` / `ja_tex` に日本語を入れない。日本語は `ja_text`。
+- ナレーション・BGM・背景はこのフェーズの対象外。
+- 不自然な待ち時間で尺を稼がない。可視化と途中式のアニメーションで埋める。
+- 長尺用は `PacedScene`（`motion_scale=2.5`）を使わない。`LessonScene`（仮称、`motion_scale=1.0`）を別途用意する。
+
+## 実装するとき
+
+- 題材・順番は該当ロードマップに従う。新規本を足す／削る／統合する場合は先に ROADMAP を更新する。
+- 各本は `storyboard.md`（秒表）と `scene.py` をセットにする。
+- 数学: `project/curriculum_math_200/{A|B}_<番号3桁>_<スラッグ>/`
+- アルゴリズム: `project/curriculum_algorithm_200/D<章2桁>_<番号3桁>_<スラッグ>/`
+- 数学の1本: 見出し → 具体例 → 図解 → 定義/定理 → 導出 → まとめ
+- アルゴリズムの1本: 見出し → 小さな入力例 → ステップ可視化 → 計算量 → 擬似コード → まとめ

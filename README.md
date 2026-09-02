@@ -18,12 +18,26 @@ manim -pql project/math/01_proofs_without_words/02_triangle_area/scene.py Triang
 
 日本語フォントは環境変数 `MANIM_JAPANESE_FONT` で指定できる（未設定なら Hannari Mincho を優先）。
 
-ローカルで背景・BGMを載せる（ffmpeg、手元のファイルパスを使う）:
+動画のビルド（生成 → 任意で背景/BGM → ローカル保存 → 任意で YouTube）はクリーンアーキテクチャのユースケース `video_pipeline` 経由。Manim / ffmpeg / YouTube はポートの向こうに隠す。
 
 ```bash
-cp local/media.env.example local/media.env   # MANIM_BG_PATH / MANIM_BGM_PATH を編集
-scripts/add_bg_bgm.sh --input media/videos/.../TriangleArea.mp4
-# または都度指定
+# ローカル保存のみ
+python -m video_pipeline --scene project/math/01_proofs_without_words/02_triangle_area/scene.py \
+  --name TriangleArea --output-dir out/videos --quality l
+
+# 背景・BGM を載せて保存（パスはフラグまたは local/media.env）
+python -m video_pipeline --scene .../scene.py --name TriangleArea \
+  --bg /path/to/bg.png --bgm /path/to/bgm.mp3 --output-dir out/videos
+
+# YouTube へも上げる（local/youtube_token.json、pip install -e '.[youtube]'）
+python -m video_pipeline --scene .../scene.py --name TriangleArea \
+  --upload --title "三角形の面積" --privacy unlisted
+```
+
+ffmpeg を直接叩く場合:
+
+```bash
+cp local/media.env.example local/media.env
 scripts/add_bg_bgm.sh --input media/videos/.../TriangleArea.mp4 \
-  --bg /path/to/bg.png --bgm /path/to/bgm.mp3 --output out/preview.mp4
+  --bg /path/to/bg.png --bgm /path/to/bgm.mp3
 ```

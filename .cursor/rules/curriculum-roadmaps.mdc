@@ -47,7 +47,7 @@ alwaysApply: true
 
 - Manim、日本語。`ja_text` / `ja_tex`（`manim_math/japanese.py`）を使う。
 - `MathTex` / `ja_tex` に日本語を入れない。日本語は `ja_text`。
-- ナレーション・BGM・背景はシーン内では扱わない。ローカルで載せるときは `scripts/add_bg_bgm.sh`（パスは `--bg` / `--bgm` または `local/media.env`）。
+- ナレーション・BGM・背景はシーン内では扱わない。ビルドは `python -m video_pipeline`（生成・後処理・保存・任意アップロード）。Manim / ffmpeg / YouTube はポートの向こう。ffmpeg 単体なら `scripts/add_bg_bgm.sh`。
 - 長尺用は `PacedScene`（`motion_scale=2.5`）を使わない。`LessonScene`（仮称、`motion_scale=1.0`）を別途用意する。
 
 ## 1本の作業順（必須）

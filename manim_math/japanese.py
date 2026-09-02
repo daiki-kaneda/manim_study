@@ -190,7 +190,7 @@ class LessonScene(JapaneseScene):
         ``rows`` is a list of rows, each a list of LaTeX strings (``MathTable``)
         or already-built mobjects (``MobjectTable``).
         """
-        from manim import GREY_B, MathTable, MobjectTable, VMobject
+        from manim import GREY_B, LEFT, MathTable, MobjectTable, VMobject
 
         n_cols = len(rows[0])
         kwargs.setdefault("h_buff", 0.55)
@@ -201,7 +201,13 @@ class LessonScene(JapaneseScene):
             "line_config",
             {"stroke_width": 1.2, "color": GREY_B},
         )
-        kwargs.setdefault("arrange_in_grid_config", {"col_alignments": "l" * n_cols})
+        kwargs.setdefault(
+            "arrange_in_grid_config",
+            {
+                "col_alignments": "l" * n_cols,
+                "cell_alignment": LEFT,
+            },
+        )
         first = rows[0][0]
         if isinstance(first, VMobject):
             return MobjectTable(rows, **kwargs)

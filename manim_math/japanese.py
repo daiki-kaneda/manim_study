@@ -169,3 +169,26 @@ class PacedScene(JapaneseScene):
     """30–60 second shorts: animations are stretched, idle waits are not."""
 
     motion_scale = 2.5
+
+
+class LessonScene(JapaneseScene):
+    """5–10 minute curriculum lesson. ``play()`` stays at 1x.
+
+    Use this for ``curriculum_math_200`` / ``curriculum_algorithm_200``.
+    Do not subclass ``PacedScene`` (that stretches motion for 30–60s shorts).
+    """
+
+    motion_scale = 1.0
+    beat = 0.8
+
+    def wipe(self, *keep):
+        """Fade out every top-level mobject except ``keep``."""
+        from manim import FadeOut
+
+        keep_set = set(keep)
+        victims = [m for m in list(self.mobjects) if m not in keep_set]
+        if not victims:
+            return
+        self.play(*[FadeOut(m) for m in victims], run_time=0.45)
+        for m in victims:
+            self.remove(m)

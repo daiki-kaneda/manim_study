@@ -70,3 +70,15 @@ alwaysApply: true
 - 例: `project/curriculum_algorithm_200/D04_sorting/039_quick_sort/`
 - ディレクトリ名は ASCII 小文字・数字・アンダースコアのみ。日本語は使わない。
 - STEP には定義・導出・操作を載せる。実例は STEP のあとで、小さな具体例を最初から最後まで通す。
+
+## 画面レイアウト（左切れ禁止）
+
+STEP 見出しは短いチップとして左上に置く（`LessonScene.step_label`）。
+その直下に長い日本語を置くとき、**`next_to(chip, DOWN)` だけを使ってはいけない。**
+
+Manim の `next_to(anchor, DOWN)` は左右を **中央揃え** する。短いチップが左端にあると、長い文の左半分がフレーム外に出る。
+
+- 本文・見出しの続きは `LessonScene.below_chip(mob, chip)` を使う。左端をチップに揃え、右へ伸ばす。
+- `next_to(chip, DOWN)` のあとに必ず `align_to(chip, LEFT)` するか、`below_chip` に任せる。
+- 2列の対比など幅の広いブロックは、左揃えせず `set_x(0)` で画面中央に置く。
+- 配置したあと、mobject の左端が `-config.frame_width / 2` より左に出ていないかを疑う。

@@ -2,7 +2,7 @@
 
 数学の定理・証明を日本語で短尺（1〜2分）にする練習および本番用リポジトリ。
 
-- 共有ライブラリ: `manim_math/`（日本語 TeX / Text、幾何ヘルパー）
+- 共有ライブラリ: `manim_math/`（日本語 TeX / Text、幾何ヘルパー。長尺は `LessonScene`）
 - 本番シーン: `project/`
 - 数学動画の進捗: `project/math/PLAN.md`（#126 以降は 30秒〜1分、`PacedScene`）
 - 数学 200本カリキュラム（高校〜大学レベル、1本5〜10分）のロードマップ: `project/curriculum_math_200/ROADMAP.md`

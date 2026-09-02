@@ -17,6 +17,13 @@ ALGO_001 = (
     / "D01_complexity"
     / "001_what_is_an_algorithm"
 )
+ALGO_003 = (
+    ROOT
+    / "project"
+    / "curriculum_algorithm_200"
+    / "D01_complexity"
+    / "003_time_space_complexity"
+)
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -72,8 +79,39 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertGreaterEqual(fixed.get_left()[0], frame_left + 0.05)
         self.assertAlmostEqual(fixed.get_left()[0], chip.get_left()[0], places=5)
 
+    def test_algo_003_has_storyboard_and_scene(self):
+        story = (ALGO_003 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (ALGO_003 / "scene.py").read_text(encoding="utf-8")
+        self.assertIn("フック", story)
+        self.assertIn("今日のゴール", story)
+        self.assertIn("全体像", story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertIn("まとめ", story)
+        self.assertIn("次回予告", story)
+        self.assertIn("答えは同じなのに、メモリの使い方が全然違うことがある。", story)
+        self.assertIn("追加メモリ", story)
+        self.assertIn("#4 最良・最悪・平均計算量", story)
+        self.assertIn("class TimeSpaceComplexity(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.step_label(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn("答えは同じなのに、メモリの使い方が全然違うことがある。", scene)
+        self.assertIn("#4 最良・最悪・平均計算量", scene)
+
     def test_algo_001_mathtex_has_no_japanese(self):
-        scene = (ALGO_001 / "scene.py").read_text(encoding="utf-8")
+        self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")
+
+    def test_algo_003_mathtex_has_no_japanese(self):
+        self._assert_no_japanese_in_mathtex(ALGO_003 / "scene.py")
+
+    def _assert_no_japanese_in_mathtex(self, path: Path):
+        scene = path.read_text(encoding="utf-8")
         for kind in ("MathTex", "ja_tex"):
             for match in re.finditer(rf"{kind}\((.*?)\)", scene, flags=re.S):
                 self.assertFalse(

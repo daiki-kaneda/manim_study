@@ -204,6 +204,7 @@ class CurriculumLessonTests(unittest.TestCase):
         eight = (ALGO_008 / "scene.py").read_text(encoding="utf-8")
         nine = (ALGO_009 / "scene.py").read_text(encoding="utf-8")
         self.assertIn("FadeOut(VGroup(lead, rows))", eight)
+        self.assertIn("FadeOut(VGroup(lead, defs))", eight)
         self.assertIn("このいちばん下を「葉」と呼びます", eight)
         self.assertIn("この割った値を、償却コストと呼びます", nine)
         self.assertNotIn("保証の書き方を混ぜない", nine)

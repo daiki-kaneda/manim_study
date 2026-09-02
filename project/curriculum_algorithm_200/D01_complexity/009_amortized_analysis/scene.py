@@ -113,13 +113,13 @@ class AmortizedAnalysis(CurriculumScene):
         self.stack_below(r3, r2, buff=0.16)
         self.play(FadeIn(r3), run_time=0.4)
         self.wait(1.05)
-        self.play(FadeOut(VGroup(r1, r2, r3)), run_time=0.3)
+        self.play(FadeOut(VGroup(lead, r1, r2, r3)), run_time=0.3)
         rules = VGroup(
             self.ja_text("空きがあるときは、新しい値を1個書くだけです。仕事は 1 です。", font_size=22),
             self.ja_text("満杯のときは、いま入っている個数をコピーしてから、1 個書きます。", font_size=22),
             self.ja_text("そのときの仕事は、「コピーの個数 + 1」です。", font_size=22),
-        ).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
-        self.stack_below(rules, lead, buff=0.28)
+        ).arrange(DOWN, buff=0.28, aligned_edge=LEFT)
+        self.below_chip(rules, chip, buff=0.4)
         for row in rules:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(1.1)

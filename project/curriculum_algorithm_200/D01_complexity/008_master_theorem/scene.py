@@ -341,7 +341,7 @@ class MasterTheorem(CurriculumScene):
         self.below_chip(lead, chip)
         self.play(FadeIn(lead), run_time=0.4)
         self.wait(1.3)
-        rows = self._formula_rows(
+        defs = self._formula_rows(
             [
                 self._mix(
                     self.ja_text("自分の仕事を", font_size=20),
@@ -355,19 +355,27 @@ class MasterTheorem(CurriculumScene):
                     MathTex(r"d=\log_b a", font_size=28),
                     self.ja_text(" です。", font_size=20),
                 ),
-                self._mix(MathTex(r"c<d", font_size=28, color=GREEN), self.ja_text(" なら、葉のほうが大きい。場合1です。", font_size=20)),
-                self._mix(MathTex(r"c=d", font_size=28, color=YELLOW), self.ja_text(" なら、同じくらい。場合2です。", font_size=20)),
-                self._mix(MathTex(r"c>d", font_size=28, color=ORANGE), self.ja_text(" なら、自分の仕事のほうが大きい。場合3です。", font_size=20)),
             ],
             lead,
-            buff=0.18,
+            buff=0.32,
+            row_buff=0.36,
         )
-        self.play(FadeOut(VGroup(lead, rows)), run_time=0.3)
-        intro = self.ja_text(
-            "さっきの3つの式で、指数を確認します。どちらも子が2つで半分なので、葉の指数は 1 です。",
-            font_size=20,
-        )
-        self.below_chip(intro, chip, buff=0.32)
+        self.play(FadeOut(VGroup(lead, defs)), run_time=0.3)
+        cases = VGroup(
+            self._mix(MathTex(r"c<d", font_size=30, color=GREEN), self.ja_text(" なら、葉のほうが大きい。場合1です。", font_size=22)),
+            self._mix(MathTex(r"c=d", font_size=30, color=YELLOW), self.ja_text(" なら、同じくらい。場合2です。", font_size=22)),
+            self._mix(MathTex(r"c>d", font_size=30, color=ORANGE), self.ja_text(" なら、自分の仕事のほうが大きい。場合3です。", font_size=22)),
+        ).arrange(DOWN, buff=0.36, aligned_edge=LEFT)
+        self.below_chip(cases, chip, buff=0.4)
+        for row in cases:
+            self.play(FadeIn(row), run_time=0.4)
+            self.wait(1.15)
+        self.play(FadeOut(cases), run_time=0.3)
+        intro = VGroup(
+            self.ja_text("さっきの3つの式で、指数を確認します。", font_size=22),
+            self.ja_text("どちらも子が2つで半分なので、葉の指数は 1 です。", font_size=22),
+        ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
+        self.below_chip(intro, chip, buff=0.36)
         self.play(FadeIn(intro), run_time=0.35)
         self.wait(1.2)
         checks = VGroup(
@@ -395,8 +403,8 @@ class MasterTheorem(CurriculumScene):
                 MathTex(r"2>1", font_size=26, color=ORANGE),
                 self.ja_text(" で場合3。", font_size=20),
             ),
-        ).arrange(DOWN, buff=0.22, aligned_edge=LEFT)
-        self.stack_below(checks, intro, buff=0.24)
+        ).arrange(DOWN, buff=0.36, aligned_edge=LEFT)
+        self.stack_below(checks, intro, buff=0.36)
         for row in checks:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.15)

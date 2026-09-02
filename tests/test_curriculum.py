@@ -24,6 +24,11 @@ ALGO_003 = (
     / "D01_complexity"
     / "003_time_space_complexity"
 )
+ALGO_D01 = ROOT / "project" / "curriculum_algorithm_200" / "D01_complexity"
+ALGO_004 = ALGO_D01 / "004_best_worst_average"
+ALGO_005 = ALGO_D01 / "005_omega_theta"
+ALGO_006 = ALGO_D01 / "006_recursion_complexity"
+ALGO_007 = ALGO_D01 / "007_recursion_tree"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -103,6 +108,48 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("self.linger(3.", scene)
         self.assertIn("答えは同じなのに、メモリの使い方が全然違うことがある。", scene)
         self.assertIn("#4 最良・最悪・平均計算量", scene)
+
+    def test_algo_004_to_007_have_storyboard_and_scene(self):
+        specs = [
+            (
+                ALGO_004,
+                "BestWorstAverage",
+                "同じ手順でも、入力によって回数が全然違うことがある。",
+                "#5 漸近記法",
+            ),
+            (
+                ALGO_005,
+                "OmegaTheta",
+                "O と書くと上から抑えているだけなので、ゆるいことがある。",
+                "#6 再帰と計算量の関係",
+            ),
+            (
+                ALGO_006,
+                "RecursionComplexity",
+                "答えは同じなのに、呼び出しの積み方が違うことがある。",
+                "#7 再帰木による計算量の見積もり",
+            ),
+            (
+                ALGO_007,
+                "RecursionTree",
+                "一度に2つ呼び出すと、一本道ではなく、枝が分かれる。",
+                "#8 マスター定理",
+            ),
+        ]
+        for folder, cls, hook, nxt in specs:
+            with self.subTest(folder=folder.name):
+                story = (folder / "storyboard.md").read_text(encoding="utf-8")
+                scene = (folder / "scene.py").read_text(encoding="utf-8")
+                for part in ("フック", "今日のゴール", "全体像", "STEP 1", "実例", "まとめ", "次回予告"):
+                    self.assertIn(part, story)
+                self.assertIn(hook, story)
+                self.assertIn(hook, scene)
+                self.assertIn(nxt, scene)
+                self.assertIn(f"class {cls}(CurriculumScene)", scene)
+                self.assertNotIn("PacedScene", scene)
+                self.assertIn("self.below_chip(", scene)
+                self.assertIn("self.linger(3.", scene)
+                self._assert_no_japanese_in_mathtex(folder / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

@@ -239,9 +239,9 @@ class MasterTheorem(CurriculumScene):
         self.wait(1.3)
         self.play(FadeOut(VGroup(lead, table, note)), run_time=0.3)
         examples = VGroup(
-            self._mix(MathTex(r"T(n)=2T(n/2)+1", font_size=26), self.ja_text("  場合1  ", font_size=22), MathTex(r"\Theta(n)", font_size=26, color=GREEN)),
-            self._mix(MathTex(r"T(n)=2T(n/2)+n", font_size=26), self.ja_text("  場合2  ", font_size=22), MathTex(r"\Theta(n\log n)", font_size=26, color=YELLOW)),
-            self._mix(MathTex(r"T(n)=2T(n/2)+n^{2}", font_size=26), self.ja_text("  場合3  ", font_size=22), MathTex(r"\Theta(n^{2})", font_size=26, color=ORANGE)),
+            self._mix(MathTex(r"T(n)=2T(n/2)+1", font_size=26), self.ja_text("場合1", font_size=22), MathTex(r"\Theta(n)", font_size=26, color=GREEN), buff=0.22),
+            self._mix(MathTex(r"T(n)=2T(n/2)+n", font_size=26), self.ja_text("場合2", font_size=22), MathTex(r"\Theta(n\log n)", font_size=26, color=YELLOW), buff=0.22),
+            self._mix(MathTex(r"T(n)=2T(n/2)+n^{2}", font_size=26), self.ja_text("場合3", font_size=22), MathTex(r"\Theta(n^{2})", font_size=26, color=ORANGE), buff=0.22),
         ).arrange(DOWN, buff=0.28, aligned_edge=LEFT)
         self.below_chip(examples, chip, buff=0.4)
         for row in examples:
@@ -259,7 +259,10 @@ class MasterTheorem(CurriculumScene):
         definition.to_edge(DOWN, buff=0.55)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.5)
-        cap = self._caption("場合3は、子の仕事の合計が自分よりちゃんと小さいとき、という条件がつく。今回はそこまで深く入らない。")
+        cap = self._caption(
+            "場合3は、子の仕事の合計が自分よりちゃんと小さいとき、という条件がつく。",
+            "今回はそこまで深く入らない。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)

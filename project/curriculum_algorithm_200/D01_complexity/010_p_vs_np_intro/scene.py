@@ -75,7 +75,10 @@ class PVsNPIntro(CurriculumScene):
         cards.set_x(0)
         self.play(FadeIn(cards), run_time=0.7)
         self.wait(1.3)
-        cap = self._caption("仕事は同じ「10 になる組があるか」。違うのは、探すか、証拠を見るか。今回はこの違いをクラスにする。")
+        cap = self._caption(
+            "仕事は同じ「10 になる組があるか」。違うのは、探すか、証拠を見るか。",
+            "今回はこの違いをクラスにする。",
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self._clear(VGroup(q, src, goal, cards, cap))
@@ -157,8 +160,9 @@ class PVsNPIntro(CurriculumScene):
         definition.to_edge(DOWN, buff=0.18)
         self.play(FadeOut(search), FadeIn(definition), run_time=0.4)
         self.linger(3.5)
+        self.play(FadeOut(definition), run_time=0.3)
         cap = self._caption("探す手順が遅くても、証拠さえあれば確認は速い、というのが NP。")
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.5)
         self.wipe(self.header)
 
@@ -224,8 +228,12 @@ class PVsNPIntro(CurriculumScene):
         definition.to_edge(DOWN, buff=0.22)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.5)
-        cap = self._caption("今回は証明しない。覚えるのは、「確認は速いが、探すのは難しそうな問題の、いちばん硬い層」。")
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        cap = self._caption(
+            "今回は証明しない。覚えるのは、",
+            "確認は速いが探すのは難しそうな問題の、いちばん硬い層、ということ。",
+        )
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 

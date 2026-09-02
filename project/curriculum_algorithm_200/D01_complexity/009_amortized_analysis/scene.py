@@ -80,7 +80,10 @@ class AmortizedAnalysis(CurriculumScene):
         copy_note.next_to(nxt, DOWN, buff=0.16)
         self.play(FadeIn(nxt), FadeIn(copy_note), run_time=0.55)
         self.wait(1.2)
-        cap = self._caption("コピーは満杯のときだけ。毎回4回コピーするわけではない。今回は、連続した追加で数え直す。")
+        cap = self._caption(
+            "コピーは満杯のときだけ。毎回4回コピーするわけではない。",
+            "今回は、連続した追加で数え直す。",
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self._clear(VGroup(q, src, full, nxt, copy_note, cap))
@@ -103,15 +106,15 @@ class AmortizedAnalysis(CurriculumScene):
         self.stack_below(r3, r2, buff=0.18)
         self.play(FadeIn(r3), run_time=0.4)
         self.wait(1.0)
-        rules = VGroup(
-            self.ja_text("空きがある: 書く仕事は 1。", font_size=22),
-            self.ja_text("満杯: いま入っている個数をコピーしてから、1 を書く。", font_size=22),
-        ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        rules.next_to(r3, RIGHT, buff=0.45)
-        rules.align_to(r1, UP)
-        for row in rules:
-            self.play(FadeIn(row), run_time=0.35)
-            self.wait(1.05)
+        rule_a = self.ja_text("空きがある: 書く仕事は 1。", font_size=22)
+        rule_a.next_to(r1, RIGHT, buff=0.5)
+        rule_a.align_to(r1, UP)
+        self.play(FadeIn(rule_a), run_time=0.35)
+        self.wait(1.05)
+        rule_b = self.ja_text("満杯: いま入っている個数をコピーしてから、1 を書く。", font_size=22)
+        self.stack_below(rule_b, rule_a, buff=0.2)
+        self.play(FadeIn(rule_b), run_time=0.35)
+        self.wait(1.05)
         definition = self.ja_text("倍増配列では、満杯の追加だけがコピーを伴う。空きがある追加は書くだけ。", font_size=20, color=YELLOW)
         definition.to_edge(DOWN, buff=0.22)
         self.play(FadeIn(definition), run_time=0.45)

@@ -13,6 +13,14 @@ from manim_math import LessonScene
 class BigO(LessonScene):
     """#2 計算量とビッグO記法（約9分）"""
 
+    def wait(self, duration=1.0, **kwargs):
+        # 日本語の文を読める長さにする。切替の短い wait はそのまま。
+        if duration >= 1.0:
+            duration *= 1.9
+        elif duration >= 0.7:
+            duration *= 1.4
+        return super().wait(duration, **kwargs)
+
     def construct(self):
         self.header = self._open_header()
         self.hook()
@@ -80,6 +88,12 @@ class BigO(LessonScene):
         self.wait(1.3)
 
         rows = VGroup()
+        heads = VGroup(
+            MathTex(r"n", font_size=26, color=GREY_B),
+            self.ja_text("A の回数", font_size=22, color=BLUE),
+            self.ja_text("B の回数", font_size=22, color=ORANGE),
+        ).arrange(RIGHT, buff=0.7)
+        rows.add(heads)
         specs = [
             (r"n=5", r"5", r"5\times 5=25"),
             (r"n=10", r"10", r"10\times 10=100"),
@@ -92,8 +106,9 @@ class BigO(LessonScene):
             row = VGroup(n_lab, a_lab, b_lab).arrange(RIGHT, buff=0.85)
             rows.add(row)
         rows.arrange(DOWN, buff=0.18, aligned_edge=LEFT)
-        rows.next_to(cards, DOWN, buff=0.35)
-        for row in rows:
+        rows.next_to(cards, DOWN, buff=0.3)
+        self.play(FadeIn(heads), run_time=0.35)
+        for row in rows[1:]:
             self.play(FadeIn(row), run_time=0.45)
             self.wait(1.1)
 
@@ -103,7 +118,15 @@ class BigO(LessonScene):
         self._clear(VGroup(question, cards, rows, cap))
 
     def _program_card(self, title, body, formula, color):
-        box = RoundedRectangle(width=5.4, height=2.15, corner_radius=0.12, color=color, stroke_width=2)
+        box = RoundedRectangle(
+            width=5.4,
+            height=2.15,
+            corner_radius=0.12,
+            color=color,
+            stroke_width=3,
+            fill_color=color,
+            fill_opacity=0.18,
+        )
         t = self.ja_text(title, font_size=26, color=color)
         b = self.ja_text(body, font_size=22)
         f = MathTex(formula, font_size=32, color=color)
@@ -226,9 +249,17 @@ class BigO(LessonScene):
         self._clear(VGroup(heading, line1, line3, eqs, cap))
 
     def _pc_card(self, name, seconds, color):
-        box = RoundedRectangle(width=3.6, height=1.5, corner_radius=0.1, color=color, stroke_width=2)
+        box = RoundedRectangle(
+            width=3.6,
+            height=1.5,
+            corner_radius=0.1,
+            color=color,
+            stroke_width=3,
+            fill_color=color,
+            fill_opacity=0.2,
+        )
         n = self.ja_text(name, font_size=24)
-        s = self.ja_text(seconds, font_size=30, color=color)
+        s = self.ja_text(seconds, font_size=30, color=YELLOW)
         col = VGroup(n, s).arrange(DOWN, buff=0.14).move_to(box)
         return VGroup(box, col)
 
@@ -353,7 +384,7 @@ class BigO(LessonScene):
                 k += 1
                 cell = grid[r][c]
                 self.play(
-                    cell.animate.set_fill(ORANGE, opacity=0.7).set_stroke(YELLOW),
+                    cell.animate.set_fill(ORANGE, opacity=0.85).set_stroke(YELLOW),
                     total.animate.set_value(k),
                     run_time=0.28,
                 )
@@ -361,10 +392,11 @@ class BigO(LessonScene):
                 self.ja_text(f"外側 i={r + 1} のとき、内側が 3 回。ここまで", font_size=22),
                 MathTex(str((r + 1) * n), font_size=26),
             ).arrange(RIGHT, buff=0.1)
+            if len(notes) == 0:
+                note.next_to(total_row, DOWN, buff=0.3).align_to(total_row, LEFT)
+            else:
+                note.next_to(notes[-1], DOWN, buff=0.14).align_to(notes[-1], LEFT)
             notes.add(note)
-        notes.arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        notes.next_to(total_row, DOWN, buff=0.35).align_to(total_row, LEFT)
-        for note in notes:
             self.play(FadeIn(note), run_time=0.35)
             self.wait(0.9)
 
@@ -515,38 +547,42 @@ class BigO(LessonScene):
         note = self.ja_text("n=16 のとき、2^n だけ桁が違う。", font_size=24)
         note.next_to(table, DOWN, buff=0.28)
         self.play(FadeIn(note), run_time=0.4)
-        self.wait(0.8)
+        self.wait(1.4)
 
+        self.play(FadeOut(table), FadeOut(note), run_time=0.4)
         labels = [r"1", r"\log n", r"n", r"n\log n", r"n^2", r"2^n"]
         values = [1, 4, 16, 64, 256, 65536]
-        unit = 2.4 / 256
+        unit = 3.0 / 256
         bars = VGroup()
         for lab, val, color in zip(
             labels,
             values,
             [GREY_B, BLUE, TEAL, GREEN, ORANGE, RED],
         ):
-            height = min(val * unit, 3.6)
-            rect = Rectangle(width=0.7, height=max(height, 0.12), color=color, fill_opacity=0.85, stroke_width=0)
-            rect.align_to(ORIGIN, DOWN)
-            name = MathTex(lab, font_size=20)
-            name.next_to(rect, DOWN, buff=0.1)
-            num = MathTex(str(val), font_size=18, color=color)
-            num.next_to(rect, UP, buff=0.08)
-            bars.add(VGroup(rect, name, num))
-        bars.arrange(RIGHT, buff=0.28, aligned_edge=DOWN)
-        bars.scale(0.72)
-        bars.to_edge(DOWN, buff=0.22)
-        self.play(FadeOut(note), FadeIn(bars), run_time=0.6)
-        boom = self.ja_text("2^n の棒は、この画面では上に突き抜ける。", font_size=22, color=RED)
-        boom.next_to(table, DOWN, buff=0.2)
+            height = min(val * unit, 4.2)
+            rect = Rectangle(
+                width=0.85,
+                height=max(height, 0.12),
+                color=color,
+                fill_opacity=0.9,
+                stroke_width=0,
+            )
+            name = MathTex(lab, font_size=22)
+            num = MathTex(str(val), font_size=20, color=color)
+            col = VGroup(num, rect, name).arrange(DOWN, buff=0.1)
+            bars.add(col)
+        bars.arrange(RIGHT, buff=0.32, aligned_edge=DOWN)
+        bars.next_to(heading, DOWN, buff=0.35)
+        self.play(LaggedStart(*[FadeIn(b, shift=UP * 0.2) for b in bars], lag_ratio=0.12), run_time=1.2)
+        boom = self.ja_text("2^n の棒は、この画面では上に突き抜ける。", font_size=24, color=RED)
+        boom.to_edge(DOWN, buff=0.28)
         self.play(FadeIn(boom), run_time=0.4)
-        self.wait(1.6)
+        self.wait(2.0)
         cap = self.ja_text("ビッグOは「このグループの増え方」を指す名前だと思ってよい。", font_size=24)
-        cap.to_edge(DOWN, buff=0.18)
+        cap.to_edge(DOWN, buff=0.28)
         self.play(FadeOut(bars), FadeOut(boom), FadeIn(cap), run_time=0.45)
         self.wait(1.7)
-        self._clear(VGroup(heading, table, cap))
+        self._clear(VGroup(heading, cap))
 
     def worked_example(self):
         heading = self._section_title("実例  同じ値が2つあるか")

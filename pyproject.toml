@@ -9,5 +9,11 @@ description = "Shared Manim helpers for Japanese math explanation videos"
 requires-python = ">=3.10"
 dependencies = ["manim>=0.18"]
 
+[project.optional-dependencies]
+youtube = ["google-api-python-client>=2.0", "google-auth-oauthlib>=1.2"]
+
+[project.scripts]
+build-video = "video_pipeline.cli:main"
+
 [tool.setuptools.packages.find]
-include = ["manim_math*"]
+include = ["manim_math*", "video_pipeline*"]

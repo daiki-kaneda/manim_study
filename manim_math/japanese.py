@@ -165,24 +165,70 @@ class JapaneseScene(Scene):
         return title
 
 
+class PacedScene(JapaneseScene):
+    """30–60 second shorts: animations are stretched, idle waits are not."""
+
+    motion_scale = 2.5
+
+
 class LessonScene(JapaneseScene):
     """5–10 minute curriculum lessons (math / algorithm 200).
 
-    Motion is not stretched. ``beat`` is 1 second so ``hold`` is a short
-    reading pause, not the 3-second wait used by short-form scenes.
-    Do not use ``PacedScene`` (``motion_scale=2.5``) for these lessons.
+    Motion is not stretched. Do not subclass ``PacedScene``
+    (that stretches motion for 30–60s shorts).
     """
 
     motion_scale = 1.0
     beat = 1.0
 
-    def linger(self, seconds: float = 3.0) -> None:
-        """Keep a definition or key result on screen long enough to read.
+    def wipe(self, *keep):
+        """Fade out every top-level mobject except ``keep``."""
+        from manim import FadeOut
 
-        Use this for statements that later steps rely on. Wall-clock seconds,
-        not scaled by a scene-level ``wait`` override. Do not use it to pad.
+        keep_set = set(keep)
+        victims = [m for m in list(self.mobjects) if m not in keep_set]
+        if not victims:
+            return
+        self.play(*[FadeOut(m) for m in victims], run_time=0.45)
+        for m in victims:
+            self.remove(m)
+
+    def linger(self, text_or_seconds: str | float = "", extra: float = 0.0) -> None:
+        """Keep the current frame on screen long enough to read.
+
+        - ``linger(3.5)``: wait that many wall-clock seconds (definitions / results).
+        - ``linger("本文", extra=0.4)``: scale with Japanese length; not idle padding.
         """
-        super().wait(max(0.0, seconds))
+        if isinstance(text_or_seconds, (int, float)) and not isinstance(
+            text_or_seconds, bool
+        ):
+            super().wait(max(0.0, float(text_or_seconds) + extra))
+            return
+        text = str(text_or_seconds)
+        seconds = 1.15 + 0.08 * len(text)
+        self.read(min(3.2, max(1.15, seconds)) + extra)
+
+    def step_label(self, text: str, font_size: int = 24):
+        """Park a short STEP chip at the top-left."""
+        from manim import LEFT, UP, YELLOW
+
+        label = self.ja_text(text, font_size=font_size, color=YELLOW)
+        label.to_edge(UP, buff=1.02).to_edge(LEFT, buff=0.4)
+        return label
+
+    @staticmethod
+    def below_chip(mob, chip, buff: float = 0.35):
+        """Place ``mob`` under a left-edge chip without clipping the left side.
+
+        ``next_to(chip, DOWN)`` centers on ``chip``. A short chip parked at the
+        left edge then pushes a longer line past the left of the frame.
+        Always left-align to the chip instead.
+        """
+        from manim import DOWN, LEFT
+
+        mob.next_to(chip, DOWN, buff=buff)
+        mob.align_to(chip, LEFT)
+        return mob
 
     def aligned_table(self, rows, **kwargs):
         """Numeric comparison table with per-column left alignment.
@@ -223,9 +269,3 @@ class LessonScene(JapaneseScene):
         for i, row in enumerate(rows):
             self.play(row.animate.set_opacity(1), run_time=0.4)
             self.wait(row_wait if i > 0 else 0.35)
-
-
-class PacedScene(JapaneseScene):
-    """30–60 second shorts: animations are stretched, idle waits are not."""
-
-    motion_scale = 2.5

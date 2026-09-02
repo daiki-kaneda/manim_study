@@ -7,3 +7,8 @@ venv/
 *.egg-info/
 dist/
 build/
+local/media.env
+local/youtube_token.json
+local/youtube_client_secrets.json
+out/
+*_muxed.mp4

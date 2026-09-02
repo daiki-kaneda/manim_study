@@ -47,7 +47,7 @@ alwaysApply: true
 
 - Manim、日本語。`ja_text` / `ja_tex`（`manim_math/japanese.py`）を使う。
 - `MathTex` / `ja_tex` に日本語を入れない。日本語は `ja_text`。
-- ナレーション・BGM・背景はこのフェーズの対象外。
+- ナレーション・BGM・背景はシーン内では扱わない。ビルドは `python -m video_pipeline`（生成・後処理・保存・任意アップロード）。Manim / ffmpeg / YouTube はポートの向こう。ffmpeg 単体なら `scripts/add_bg_bgm.sh`。
 - 長尺用は `PacedScene`（`motion_scale=2.5`）を使わない。`LessonScene`（仮称、`motion_scale=1.0`）を別途用意する。
 
 ## 1本の作業順（必須）
@@ -74,5 +74,17 @@ alwaysApply: true
 ## 画面の約束（再発防止）
 
 - **文言と図を食い違わせない。** 「答えが同じ」と言うなら、画面の2つの手順は本当に同じ答えを出す例にする。別の仕事を並べるなら、文も「仕事の増え方が違う」のように図に合わせて書く。フックの一文は、直後の図と対応しているかを実装前に読み返す。
-- **定義・結論など、あとで使う難しい結果は長く残す。** 出した直後に消したり、次の行へすぐ進んだりしない。目安は3秒以上読む時間を取る（`LessonScene.linger`）。不自然な空白で尺を稼ぐこととは別である。
+- **定義・結論など、あとで使う難しい結果は長く残す。** 出した直後に消したり、次の行へすぐ進んだりしない。目安は3秒以上読む時間を取る（`LessonScene.linger` に秒数を渡す）。不自然な空白で尺を稼ぐこととは別である。
 - **数値の比較表は Manim の表を使う。** `MathTable` / `MobjectTable` / `Table` を使い、列ごとに揃える（`arrange_in_grid_config` で `col_alignments` を `"l" * 列数`、`cell_alignment` を `LEFT`）。行ごとに `arrange(RIGHT)` しただけだと、桁の違う列がずれるので使わない。
+
+## 画面レイアウト（左切れ禁止）
+
+STEP 見出しは短いチップとして左上に置く（`LessonScene.step_label`）。
+その直下に長い日本語を置くとき、**`next_to(chip, DOWN)` だけを使ってはいけない。**
+
+Manim の `next_to(anchor, DOWN)` は左右を **中央揃え** する。短いチップが左端にあると、長い文の左半分がフレーム外に出る。
+
+- 本文・見出しの続きは `LessonScene.below_chip(mob, chip)` を使う。左端をチップに揃え、右へ伸ばす。
+- `next_to(chip, DOWN)` のあとに必ず `align_to(chip, LEFT)` するか、`below_chip` に任せる。
+- 2列の対比など幅の広いブロックは、左揃えせず `set_x(0)` で画面中央に置く。
+- 配置したあと、mobject の左端が `-config.frame_width / 2` より左に出ていないかを疑う。

@@ -1,4 +1,4 @@
-"""Shared helpers for D01 curriculum lessons #4–#7."""
+"""Shared helpers for D01 curriculum lessons #4–#10."""
 
 from pathlib import Path
 import sys

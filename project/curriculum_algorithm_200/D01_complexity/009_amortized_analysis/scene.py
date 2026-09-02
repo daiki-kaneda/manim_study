@@ -85,7 +85,8 @@ class AmortizedAnalysis(CurriculumScene):
         self.play(FadeIn(nxt), FadeIn(copy_note), run_time=0.55)
         self.wait(1.25)
         cap = self._caption(
-            "コピーは、箱がいっぱいになったときだけ起きます。毎回4個コピーするわけではありません。",
+            "コピーは、箱がいっぱいになったときだけ起きます。",
+            "毎回4個コピーするわけではありません。",
             "今回は、追加を何回か続けたときの合計から、1回あたりを数え直します。",
         )
         self.play(FadeIn(cap), run_time=0.4)
@@ -135,7 +136,8 @@ class AmortizedAnalysis(CurriculumScene):
             "高い操作はあります。",
             "次は、そのコピーが何回起きるかを、全部足してみます。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 
@@ -184,7 +186,8 @@ class AmortizedAnalysis(CurriculumScene):
             "高い1回はあるのに、全部足すと 2n くらいにしかなりません。",
             "次は、これを回数で割ります。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 
@@ -192,7 +195,8 @@ class AmortizedAnalysis(CurriculumScene):
         chip = self._chip("STEP 3  割る")
         lead = VGroup(
             self.ja_text("合計だけだと「全部でどれだけ働いたか」です。", font_size=22),
-            self.ja_text("1回の追加あたりに直すには、合計を追加した回数で割ります。この割った値を、償却コストと呼びます。", font_size=20),
+            self.ja_text("1回の追加あたりに直すには、合計を追加した回数で割ります。", font_size=20),
+            self.ja_text("この割った値を、償却コストと呼びます。", font_size=20),
         ).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
         self.below_chip(lead, chip)
         self.play(FadeIn(lead), run_time=0.4)
@@ -226,7 +230,8 @@ class AmortizedAnalysis(CurriculumScene):
             "たまにコピーが来ても、長い目で割ると定数に収まります。",
             "この見方を償却解析と呼びます。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 
@@ -289,7 +294,8 @@ class AmortizedAnalysis(CurriculumScene):
             "1回の遅さが致命的なら最悪。続けて使うときの合計が知りたいなら償却。",
             "目的で使い分けます。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self.wipe(self.header)
 

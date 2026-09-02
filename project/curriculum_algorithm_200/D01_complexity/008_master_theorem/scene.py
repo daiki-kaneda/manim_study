@@ -170,7 +170,8 @@ class MasterTheorem(CurriculumScene):
             "この3つが読めれば、あとは葉の仕事と比べるだけです。",
             "次で葉の個数を出します。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 
@@ -230,7 +231,8 @@ class MasterTheorem(CurriculumScene):
             "下の仕事が勝つか、自分の仕事が勝つか、同じくらいか。",
             "この3つで場合が分かれます。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 
@@ -334,7 +336,8 @@ class MasterTheorem(CurriculumScene):
             "場合3には、子の仕事の合計が自分よりちゃんと小さい、という追加の条件がつきます。",
             "今回は名前だけ覚えて、証明には入りません。",
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self.wipe(self.header)
 
@@ -469,7 +472,8 @@ class MasterTheorem(CurriculumScene):
                 font_size=22,
             )
         )
-        self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
+        self.play(FadeOut(definition), run_time=0.3)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
 

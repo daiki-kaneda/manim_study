@@ -362,10 +362,10 @@ class MasterTheorem(CurriculumScene):
         )
         self.play(FadeOut(VGroup(lead, defs)), run_time=0.3)
         cases = VGroup(
-            self._mix(MathTex(r"c<d", font_size=30, color=GREEN), self.ja_text(" なら、葉のほうが大きい。場合1です。", font_size=22)),
-            self._mix(MathTex(r"c=d", font_size=30, color=YELLOW), self.ja_text(" なら、同じくらい。場合2です。", font_size=22)),
-            self._mix(MathTex(r"c>d", font_size=30, color=ORANGE), self.ja_text(" なら、自分の仕事のほうが大きい。場合3です。", font_size=22)),
-        ).arrange(DOWN, buff=0.36, aligned_edge=LEFT)
+            self._mix(MathTex(r"c<d", font_size=30, color=GREEN), self.ja_text(" なら、葉のほうが大きい。場合1です。", font_size=22), buff=0.18),
+            self._mix(MathTex(r"c=d", font_size=30, color=YELLOW), self.ja_text(" なら、同じくらい。場合2です。", font_size=22), buff=0.18),
+            self._mix(MathTex(r"c>d", font_size=30, color=ORANGE), self.ja_text(" なら、自分の仕事のほうが大きい。場合3です。", font_size=22), buff=0.18),
+        ).arrange(DOWN, buff=0.42, aligned_edge=LEFT)
         self.below_chip(cases, chip, buff=0.4)
         for row in cases:
             self.play(FadeIn(row), run_time=0.4)
@@ -381,29 +381,26 @@ class MasterTheorem(CurriculumScene):
         checks = VGroup(
             self._mix(
                 MathTex(r"+1", font_size=26),
-                self.ja_text(" は定数なので", font_size=20),
+                self.ja_text(" は定数です。指数は", font_size=20),
                 MathTex(r"c=0", font_size=26),
-                self.ja_text("。", font_size=20),
-                MathTex(r"0<1", font_size=26, color=GREEN),
-                self.ja_text(" で場合1。", font_size=20),
+                self.ja_text("。葉より小さいので場合1です。", font_size=20),
+                buff=0.16,
             ),
             self._mix(
                 MathTex(r"+n", font_size=26),
-                self.ja_text(" は", font_size=20),
+                self.ja_text(" は指数", font_size=20),
                 MathTex(r"c=1", font_size=26),
-                self.ja_text("。", font_size=20),
-                MathTex(r"1=1", font_size=26, color=YELLOW),
-                self.ja_text(" で場合2。", font_size=20),
+                self.ja_text("。葉と同じなので場合2です。", font_size=20),
+                buff=0.16,
             ),
             self._mix(
                 MathTex(r"+n^{2}", font_size=26),
-                self.ja_text(" は", font_size=20),
+                self.ja_text(" は指数", font_size=20),
                 MathTex(r"c=2", font_size=26),
-                self.ja_text("。", font_size=20),
-                MathTex(r"2>1", font_size=26, color=ORANGE),
-                self.ja_text(" で場合3。", font_size=20),
+                self.ja_text("。葉より大きいので場合3です。", font_size=20),
+                buff=0.16,
             ),
-        ).arrange(DOWN, buff=0.36, aligned_edge=LEFT)
+        ).arrange(DOWN, buff=0.4, aligned_edge=LEFT)
         self.stack_below(checks, intro, buff=0.36)
         for row in checks:
             self.play(FadeIn(row), run_time=0.4)
@@ -435,7 +432,7 @@ class MasterTheorem(CurriculumScene):
         self.play(FadeOut(VGroup(target, steps)), run_time=0.3)
         check = VGroup(
             self.ja_text("前回、n=8 の木を手で足すと 32 になりました。場合2の型と合うか見ます。", font_size=20),
-            self._mix(MathTex(r"\log_2 8=3", font_size=28), self.ja_text("。段は 3 段下がって葉です。", font_size=20)),
+            self._mix(MathTex(r"\log_2 8=3", font_size=28), self.ja_text(" です。段は 3 段下がって葉です。", font_size=20), buff=0.16),
             MathTex(r"8\cdot(3+1)=32", font_size=30),
             self._line(
                 "いちばん大きい項が ",
@@ -445,7 +442,7 @@ class MasterTheorem(CurriculumScene):
                 " は型に含まれます。",
                 font_size=20,
             ),
-        ).arrange(DOWN, buff=0.18, aligned_edge=LEFT)
+        ).arrange(DOWN, buff=0.28, aligned_edge=LEFT)
         self.below_chip(check, chip, buff=0.32)
         for row in check:
             self.play(FadeIn(row), run_time=0.35)

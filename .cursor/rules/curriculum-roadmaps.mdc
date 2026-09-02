@@ -50,10 +50,19 @@ alwaysApply: true
 - ナレーション・BGM・背景はこのフェーズの対象外。
 - 長尺用は `PacedScene`（`motion_scale=2.5`）を使わない。`LessonScene`（仮称、`motion_scale=1.0`）を別途用意する。
 
+## 1本の作業順（必須）
+
+各動画は **必ず `storyboard.md` を先に書く**。`scene.py` を先に書かない。storyboard がない本のシーン実装に進まない。
+
+1. 該当本のディレクトリを `DIRECTORIES.md` のパスで用意する。
+2. **`storyboard.md` を作成する。** 上の構成テンプレートに沿った秒表と、各パートで画面に出す内容（日本語の説明文・途中式・図の動き）を書く。
+3. storyboard が揃ってから `scene.py` を実装する。storyboard のパート順・秒表・説明を追う。
+4. 実装中に構成を変えたら、先に `storyboard.md` を直してから `scene.py` を直す。
+
 ## 実装するとき
 
 - 題材・順番は該当ロードマップに従う。新規本を足す／削る／統合する場合は先に ROADMAP を更新する。
-- 各本は `storyboard.md`（上のテンプレートに沿った秒表）と `scene.py` をセットにする。
+- 各本は `storyboard.md`（上のテンプレートに沿った秒表）と `scene.py` をセットにする。storyboard が正本、scene はそれを映像にしたものである。
 - ディレクトリ名は `project/curriculum_math_200/DIRECTORIES.md` と `project/curriculum_algorithm_200/DIRECTORIES.md` に従う。ソースは `scripts/curriculum_catalog.py`。
 - 数学: `project/curriculum_math_200/{A|B}{章2桁}_{章スラッグ}/{番号3桁}_{レッスンスラッグ}/`
 - アルゴリズム: `project/curriculum_algorithm_200/D{章2桁}_{章スラッグ}/{番号3桁}_{レッスンスラッグ}/`

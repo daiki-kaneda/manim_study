@@ -366,6 +366,7 @@
 - ディレクトリは章フォルダの下に本フォルダを置く。一覧は `DIRECTORIES.md`（ソース: `scripts/curriculum_catalog.py`）。
   - `project/curriculum_algorithm_200/D{章2桁}_{章スラッグ}/{番号3桁}_{レッスンスラッグ}/{scene.py, storyboard.md}`
   - 例: `project/curriculum_algorithm_200/D04_sorting/039_quick_sort/`
+- 各動画は **必ず先に `storyboard.md` を書き、そのあと `scene.py` を実装する。** storyboard なしでシーン実装に進まない。
 - 1本の構成は次のテンプレートを基準にする（約9分）。STEP の数と各パートの長さは、トピックの難易度に応じてわかりやすくなるように柔軟に変える。
   - 0:00 フック / 0:15 今日のゴール / 0:30 全体像 / 1:00 STEP 1 / 2:30 STEP 2 / 4:00 STEP 3 / 5:30 STEP 4 / 7:00 実例 / 8:30 まとめ / 9:00 次回予告
 - **ステップバイステップ**で説明し、途中の操作・状態変化を飛ばさない（動画が長くなってもよい）。

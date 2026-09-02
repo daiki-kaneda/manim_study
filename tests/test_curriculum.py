@@ -24,6 +24,11 @@ ALGO_003 = (
     / "D01_complexity"
     / "003_time_space_complexity"
 )
+ALGO_D01 = ROOT / "project" / "curriculum_algorithm_200" / "D01_complexity"
+ALGO_004 = ALGO_D01 / "004_best_worst_average"
+ALGO_005 = ALGO_D01 / "005_omega_theta"
+ALGO_006 = ALGO_D01 / "006_recursion_complexity"
+ALGO_007 = ALGO_D01 / "007_recursion_tree"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -35,6 +40,7 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertTrue(hasattr(LessonScene, "wipe"))
         self.assertTrue(hasattr(LessonScene, "below_chip"))
         self.assertTrue(hasattr(LessonScene, "step_label"))
+        self.assertTrue(hasattr(LessonScene, "stack_below"))
 
     def test_algo_001_has_storyboard_and_scene(self):
         story = (ALGO_001 / "storyboard.md").read_text(encoding="utf-8")
@@ -104,6 +110,75 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("答えは同じなのに、メモリの使い方が全然違うことがある。", scene)
         self.assertIn("#4 最良・最悪・平均計算量", scene)
 
+    def test_algo_004_to_007_have_storyboard_and_scene(self):
+        specs = [
+            (
+                ALGO_004,
+                "BestWorstAverage",
+                "同じ手順でも、入力によって回数が全然違うことがある。",
+                "#5 漸近記法",
+            ),
+            (
+                ALGO_005,
+                "OmegaTheta",
+                "O と書くと上から抑えているだけなので、ゆるいことがある。",
+                "#6 再帰と計算量の関係",
+            ),
+            (
+                ALGO_006,
+                "RecursionComplexity",
+                "答えは同じなのに、呼び出しの積み方が違うことがある。",
+                "#7 再帰木による計算量の見積もり",
+            ),
+            (
+                ALGO_007,
+                "RecursionTree",
+                "一度に2つ呼び出すと、一本道ではなく、枝が分かれる。",
+                "#8 マスター定理",
+            ),
+        ]
+        for folder, cls, hook, nxt in specs:
+            with self.subTest(folder=folder.name):
+                story = (folder / "storyboard.md").read_text(encoding="utf-8")
+                scene = (folder / "scene.py").read_text(encoding="utf-8")
+                for part in ("フック", "今回のゴール", "全体像", "STEP 1", "実例", "まとめ", "次回予告"):
+                    self.assertIn(part, story)
+                self.assertNotIn("今日のゴール", story)
+                self.assertNotIn("今日", scene)
+                self.assertIn(hook, story)
+                self.assertIn(hook, scene)
+                self.assertIn(nxt, scene)
+                self.assertIn(f"class {cls}(CurriculumScene)", scene)
+                self.assertNotIn("PacedScene", scene)
+                self.assertIn("self.stack_below(", scene)
+                self.assertIn("self.below_chip(", scene)
+                self.assertIn("self.linger(3.", scene)
+                self._assert_no_japanese_in_mathtex(folder / "scene.py")
+                self._assert_no_hardcoded_exponents_in_japanese(folder / "scene.py")
+
+    def test_stack_below_keeps_long_line_on_screen(self):
+        try:
+            from manim import DOWN, LEFT, UP, config
+            from manim_math.japanese import ja_text
+        except ImportError:
+            self.skipTest("manim is not installed")
+
+        prev = ja_text("目標", font_size=24)
+        prev.to_edge(UP, buff=1.4).to_edge(LEFT, buff=0.4)
+        line = ja_text("T(4)=T(3)+1=T(2)+2=T(1)+3=4=n の長い式", font_size=28)
+        frame_left = -config.frame_width / 2
+
+        clipped = line.copy().next_to(prev, DOWN, buff=0.22)
+        self.assertLess(
+            clipped.get_left()[0],
+            frame_left + 0.05,
+            msg="sanity: next_to(DOWN) on a short prev must be the clipping case",
+        )
+
+        fixed = LessonScene.stack_below(line.copy(), prev, buff=0.22)
+        self.assertGreaterEqual(fixed.get_left()[0], frame_left + 0.05)
+        self.assertAlmostEqual(fixed.get_left()[0], prev.get_left()[0], places=5)
+
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")
 
@@ -118,6 +193,23 @@ class CurriculumLessonTests(unittest.TestCase):
                     re.search(r"[ぁ-んァ-ン一-龯]", match.group(1)),
                     msg=match.group(0)[:80],
                 )
+
+    def _assert_no_hardcoded_exponents_in_japanese(self, path: Path):
+        scene = path.read_text(encoding="utf-8")
+        stripped = re.sub(
+            r"(?:MathTex|ja_tex)\((?:[^()]|\([^()]*\))*\)",
+            "",
+            scene,
+            flags=re.S,
+        )
+        match = re.search(
+            r"n\^\{2\}|n\^2|2\^n|2\^\{n\}|log_\{2\}|O\(n\^",
+            stripped,
+        )
+        self.assertIsNone(
+            match,
+            msg=f"{path.name}: hardcoded math in Japanese text: {match.group(0) if match else ''}",
+        )
 
 
 if __name__ == "__main__":

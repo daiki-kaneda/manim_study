@@ -230,6 +230,24 @@ class LessonScene(JapaneseScene):
         mob.align_to(chip, LEFT)
         return mob
 
+    @staticmethod
+    def stack_below(mob, prev, buff: float = 0.32):
+        """Place ``mob`` under ``prev``, left-aligned, without clipping left.
+
+        ``next_to(prev, DOWN)`` centers on ``prev``. A longer line then hangs
+        off the left of the frame. Always left-align; if that still crosses
+        the frame edge, shift right.
+        """
+        from manim import DOWN, LEFT, RIGHT, config
+
+        mob.next_to(prev, DOWN, buff=buff)
+        mob.align_to(prev, LEFT)
+        frame_left = -config.frame_width / 2 + 0.05
+        overflow = frame_left - mob.get_left()[0]
+        if overflow > 0:
+            mob.shift(RIGHT * overflow)
+        return mob
+
     def aligned_table(self, rows, **kwargs):
         """Numeric comparison table with per-column left alignment.
 

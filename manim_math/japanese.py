@@ -192,3 +192,8 @@ class LessonScene(JapaneseScene):
         self.play(*[FadeOut(m) for m in victims], run_time=0.45)
         for m in victims:
             self.remove(m)
+
+    def linger(self, text: str = "", extra: float = 0.0) -> None:
+        """Give time to read ``text``. Scales with length; not idle padding."""
+        seconds = 1.15 + 0.08 * len(text)
+        self.read(min(3.2, max(1.15, seconds)) + extra)

@@ -24,6 +24,8 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertEqual(LessonScene.motion_scale, 1.0)
         self.assertGreater(PacedScene.motion_scale, 1.0)
         self.assertTrue(issubclass(LessonScene, PacedScene.__bases__[0]))
+        self.assertTrue(hasattr(LessonScene, "linger"))
+        self.assertTrue(hasattr(LessonScene, "wipe"))
 
     def test_algo_001_has_storyboard_and_scene(self):
         story = (ALGO_001 / "storyboard.md").read_text(encoding="utf-8")

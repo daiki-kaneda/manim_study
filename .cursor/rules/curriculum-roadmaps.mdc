@@ -54,6 +54,10 @@ alwaysApply: true
 
 - 題材・順番は該当ロードマップに従う。新規本を足す／削る／統合する場合は先に ROADMAP を更新する。
 - 各本は `storyboard.md`（上のテンプレートに沿った秒表）と `scene.py` をセットにする。
-- 数学: `project/curriculum_math_200/{A|B}_<番号3桁>_<スラッグ>/`
-- アルゴリズム: `project/curriculum_algorithm_200/D<章2桁>_<番号3桁>_<スラッグ>/`
+- ディレクトリ名は `project/curriculum_math_200/DIRECTORIES.md` と `project/curriculum_algorithm_200/DIRECTORIES.md` に従う。ソースは `scripts/curriculum_catalog.py`。
+- 数学: `project/curriculum_math_200/{A|B}{章2桁}_{章スラッグ}/{番号3桁}_{レッスンスラッグ}/`
+- アルゴリズム: `project/curriculum_algorithm_200/D{章2桁}_{章スラッグ}/{番号3桁}_{レッスンスラッグ}/`
+- 例: `project/curriculum_math_200/A01_algebra/001_expand_and_factor/`
+- 例: `project/curriculum_algorithm_200/D04_sorting/039_quick_sort/`
+- ディレクトリ名は ASCII 小文字・数字・アンダースコアのみ。日本語は使わない。
 - STEP には定義・導出・操作を載せる。実例は STEP のあとで、小さな具体例を最初から最後まで通す。

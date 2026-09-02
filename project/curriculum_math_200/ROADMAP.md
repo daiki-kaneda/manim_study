@@ -364,8 +364,9 @@
   ただし本シリーズは1本5〜10分と長いため、既存の `PacedScene`（30〜60秒想定、`motion_scale=2.5`）は使わず、
   新たに `LessonScene`（仮称、`motion_scale=1.0` 程度）のような基底クラスを別途用意するのが妥当。
 - 日本語は `ja_text` で表示し、`MathTex` / `ja_tex` 側には日本語を混在させない方針を踏襲する。
-- ディレクトリ構成は既存の `project/math/` に合わせ、例えば
-  `project/curriculum_math_200/{A|B}_<番号3桁>_<スラッグ>/{scene.py, storyboard.md}` のような形を想定。
+- ディレクトリは章フォルダの下に本フォルダを置く。一覧は `DIRECTORIES.md`（ソース: `scripts/curriculum_catalog.py`）。
+  - `project/curriculum_math_200/{A|B}{章2桁}_{章スラッグ}/{番号3桁}_{レッスンスラッグ}/{scene.py, storyboard.md}`
+  - 例: `project/curriculum_math_200/A01_algebra/001_expand_and_factor/`
 - 1本の構成は次のテンプレートを基準にする（約9分）。STEP の数と各パートの長さは、トピックの難易度に応じてわかりやすくなるように柔軟に変える。
   - 0:00 フック / 0:15 今日のゴール / 0:30 全体像 / 1:00 STEP 1 / 2:30 STEP 2 / 4:00 STEP 3 / 5:30 STEP 4 / 7:00 実例 / 8:30 まとめ / 9:00 次回予告
 - **ステップバイステップ**で説明し、**途中式を省かない**（動画が長くなってもよい）。ジャンプや「同様に」で飛ばさない。

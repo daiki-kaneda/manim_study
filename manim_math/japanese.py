@@ -197,3 +197,25 @@ class LessonScene(JapaneseScene):
         """Give time to read ``text``. Scales with length; not idle padding."""
         seconds = 1.15 + 0.08 * len(text)
         self.read(min(3.2, max(1.15, seconds)) + extra)
+
+    def step_label(self, text: str, font_size: int = 24):
+        """Park a short STEP chip at the top-left."""
+        from manim import LEFT, UP, YELLOW
+
+        label = self.ja_text(text, font_size=font_size, color=YELLOW)
+        label.to_edge(UP, buff=1.02).to_edge(LEFT, buff=0.4)
+        return label
+
+    @staticmethod
+    def below_chip(mob, chip, buff: float = 0.35):
+        """Place ``mob`` under a left-edge chip without clipping the left side.
+
+        ``next_to(chip, DOWN)`` centers on ``chip``. A short chip parked at the
+        left edge then pushes a longer line past the left of the frame.
+        Always left-align to the chip instead.
+        """
+        from manim import DOWN, LEFT
+
+        mob.next_to(chip, DOWN, buff=buff)
+        mob.align_to(chip, LEFT)
+        return mob

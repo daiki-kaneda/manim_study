@@ -26,6 +26,8 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertTrue(issubclass(LessonScene, PacedScene.__bases__[0]))
         self.assertTrue(hasattr(LessonScene, "linger"))
         self.assertTrue(hasattr(LessonScene, "wipe"))
+        self.assertTrue(hasattr(LessonScene, "below_chip"))
+        self.assertTrue(hasattr(LessonScene, "step_label"))
 
     def test_algo_001_has_storyboard_and_scene(self):
         story = (ALGO_001 / "storyboard.md").read_text(encoding="utf-8")
@@ -43,6 +45,32 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("2 は 7 より小さい", scene)
         self.assertIn("9 は 7 より大きい", scene)
         self.assertIn("4 は 9 より小さい", scene)
+        self.assertIn("self.below_chip(bad_a", scene)
+        self.assertIn("self.below_chip(bad_b", scene)
+        self.assertIn("self.below_chip(five", scene)
+
+    def test_below_chip_keeps_long_line_on_screen(self):
+        try:
+            from manim import DOWN, LEFT, UP, config
+            from manim_math.japanese import ja_text
+        except ImportError:
+            self.skipTest("manim is not installed")
+
+        chip = ja_text("STEP 2  性質", font_size=24)
+        chip.to_edge(UP, buff=1.02).to_edge(LEFT, buff=0.4)
+        line = ja_text("悪い例 A   終わりの条件がない", font_size=28)
+        frame_left = -config.frame_width / 2
+
+        clipped = line.copy().next_to(chip, DOWN, buff=0.35)
+        self.assertLess(
+            clipped.get_left()[0],
+            frame_left + 0.05,
+            msg="sanity: next_to(DOWN) on a left chip must be the clipping case",
+        )
+
+        fixed = LessonScene.below_chip(line.copy(), chip, buff=0.35)
+        self.assertGreaterEqual(fixed.get_left()[0], frame_left + 0.05)
+        self.assertAlmostEqual(fixed.get_left()[0], chip.get_left()[0], places=5)
 
     def test_algo_001_mathtex_has_no_japanese(self):
         scene = (ALGO_001 / "scene.py").read_text(encoding="utf-8")

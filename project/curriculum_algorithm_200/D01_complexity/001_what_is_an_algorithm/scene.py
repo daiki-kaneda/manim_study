@@ -112,7 +112,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
     def part_step1(self):
         self.wipe(self.title)
-        label = self._step_chip("STEP 1  定義")
+        label = self.step_label("STEP 1  定義")
         self.play(FadeIn(label), run_time=0.4)
         lines = [
             "アルゴリズムは、問題を解くための手順です。",
@@ -124,9 +124,9 @@ class WhatIsAnAlgorithm(LessonScene):
         for i, text in enumerate(lines):
             t = self.ja_text(text, font_size=28)
             if i == 0:
-                t.next_to(label, DOWN, buff=0.4).align_to(label, LEFT)
+                self.below_chip(t, label, buff=0.4)
             else:
-                t.next_to(shown[-1], DOWN, buff=0.24).align_to(shown[0], LEFT)
+                self.below_chip(t, shown[-1], buff=0.24)
             self._fit_left(t)
             self.play(FadeIn(t), run_time=0.5)
             shown.add(t)
@@ -159,7 +159,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         recap_title = self.ja_text("いまのところ、こう押さえます。", font_size=28)
-        recap_title.next_to(label, DOWN, buff=0.4).align_to(label, LEFT)
+        self.below_chip(recap_title, label, buff=0.4)
         recap_lines = [
             "・問題がある",
             "・入力がある",
@@ -167,7 +167,7 @@ class WhatIsAnAlgorithm(LessonScene):
             "・出力が出て、そこで終わる",
         ]
         recap = self._stack(*recap_lines, size=30)
-        recap.next_to(recap_title, DOWN, buff=0.32).align_to(recap_title, LEFT)
+        self.below_chip(recap, recap_title, buff=0.32)
         self._reveal(recap_title)
         for line, src in zip(recap, recap_lines):
             self.play(FadeIn(line), run_time=0.4)
@@ -175,7 +175,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
     def part_step2(self):
         self.wipe(self.title)
-        label = self._step_chip("STEP 2  性質")
+        label = self.step_label("STEP 2  性質")
         self.play(FadeIn(label), run_time=0.4)
         props = [
             ("1. 有限性", ["いつかは必ず終わります。", "無限に回り続ける手順は、アルゴリズムとは呼びません。"]),
@@ -189,7 +189,7 @@ class WhatIsAnAlgorithm(LessonScene):
             body = self._stack(*descs, size=24)
             block.add(VGroup(head, body).arrange(DOWN, aligned_edge=LEFT, buff=0.08))
         block.arrange(DOWN, aligned_edge=LEFT, buff=0.26)
-        block.next_to(label, DOWN, buff=0.3).align_to(label, LEFT)
+        self.below_chip(block, label, buff=0.3)
         self._fit_left(block)
         for pair, (_name, descs) in zip(block, props):
             self.play(FadeIn(pair), run_time=0.5)
@@ -197,7 +197,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         bad_a = self.ja_text("悪い例 A   終わりの条件がない", font_size=28, color=RED)
-        bad_a.next_to(label, DOWN, buff=0.35)
+        self.below_chip(bad_a, label)
         self._reveal(bad_a)
         counter = self.ja_text("1", font_size=64)
         how = self.ja_text("1 を足して、また 1 を足して…", font_size=28)
@@ -218,7 +218,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         bad_b = self.ja_text("悪い例 B   指示があいまい", font_size=28, color=RED)
-        bad_b.next_to(label, DOWN, buff=0.35)
+        self.below_chip(bad_b, label)
         vague = self.ja_text("「大きな数を、うまく探してください。」", font_size=32)
         vague.shift(UP * 0.1)
         why = self._stack(
@@ -233,14 +233,14 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         good = self.ja_text("同じ問題の、よい書き方", font_size=28, color=GREEN)
-        good.next_to(label, DOWN, buff=0.4)
+        self.below_chip(good, label, buff=0.4)
         good_body = self._stack(
             "左端から順に見て、",
             "今までの最大より大きければ書き換える。",
             "終わり方と、各ステップが決まっています。",
             size=30,
         )
-        good_body.next_to(good, DOWN, buff=0.4)
+        self.below_chip(good_body, good, buff=0.4)
         self._reveal(good)
         for line in good_body:
             self.play(FadeIn(line), run_time=0.45)
@@ -248,14 +248,14 @@ class WhatIsAnAlgorithm(LessonScene):
 
     def part_step3(self):
         self.wipe(self.title)
-        label = self._step_chip("STEP 3  書き方")
+        label = self.step_label("STEP 3  書き方")
         self.play(FadeIn(label), run_time=0.4)
         intro = self._stack(
             "同じ「いちばん大きい数を探す」を、",
             "3通りの書き方で見てみます。",
             size=28,
         )
-        intro.next_to(label, DOWN, buff=0.35)
+        self.below_chip(intro, label)
         cards = self._fit(self._array(VALUES, side=0.9, font_size=32))
         cards.next_to(intro, DOWN, buff=0.4)
         cards.set_x(0)
@@ -266,7 +266,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         way1 = self.ja_text("書き方 1   ことば", font_size=28, color=YELLOW)
-        way1.next_to(label, DOWN, buff=0.28).align_to(label, LEFT)
+        self.below_chip(way1, label, buff=0.28)
         words = [
             "いちばん左の数を、候補にする。",
             "左から2番目から、右端まで順番に見る。",
@@ -280,9 +280,9 @@ class WhatIsAnAlgorithm(LessonScene):
         for i, text in enumerate(words):
             t = self.ja_text(text, font_size=26)
             if i == 0:
-                t.next_to(way1, DOWN, buff=0.28).align_to(way1, LEFT)
+                self.below_chip(t, way1, buff=0.28)
             else:
-                t.next_to(shown[-1], DOWN, buff=0.18).align_to(shown[0], LEFT)
+                self.below_chip(t, shown[-1], buff=0.18)
             self._fit_left(t)
             self.play(FadeIn(t), run_time=0.4)
             shown.add(t)
@@ -290,7 +290,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         way2 = self.ja_text("書き方 2   流れ図", font_size=28, color=YELLOW)
-        way2.next_to(label, DOWN, buff=0.2).align_to(label, LEFT)
+        self.below_chip(way2, label, buff=0.2)
         self.play(FadeIn(way2), run_time=0.35)
         flow = self._build_flowchart()
         flow.scale(0.78).next_to(way2, DOWN, buff=0.12)
@@ -315,7 +315,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         way3 = self.ja_text("書き方 3   擬似コード", font_size=28, color=YELLOW)
-        way3.next_to(label, DOWN, buff=0.3).align_to(label, LEFT)
+        self.below_chip(way3, label, buff=0.3)
         self.play(FadeIn(way3), run_time=0.4)
         code_lines = [
             (0, "候補を、列の左端にする"),
@@ -330,7 +330,7 @@ class WhatIsAnAlgorithm(LessonScene):
             t.shift(RIGHT * 0.42 * indent)
             code.add(t)
         code.arrange(DOWN, aligned_edge=LEFT, buff=0.22)
-        code.next_to(way3, DOWN, buff=0.35).align_to(way3, LEFT).shift(RIGHT * 0.1)
+        self.below_chip(code, way3, buff=0.35).shift(RIGHT * 0.1)
         for t, (_ind, text) in zip(code, code_lines):
             self.play(FadeIn(t), run_time=0.4)
             self.linger(text)
@@ -340,7 +340,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
     def part_step4(self):
         self.wipe(self.title)
-        label = self._step_chip("STEP 4  なぜ大事か")
+        label = self.step_label("STEP 4  なぜ大事か")
         self.play(FadeIn(label), run_time=0.4)
 
         messy_h = self.ja_text("場当たり", font_size=26, color=RED)
@@ -368,7 +368,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
         self.wipe(self.title, label)
         five = self.ja_text("5個なら、どちらでもなんとかなることが多いです。", font_size=28)
-        five.next_to(label, DOWN, buff=0.35)
+        self.below_chip(five, label)
         small = self._fit(self._array(VALUES, side=0.78, font_size=28))
         small.next_to(five, DOWN, buff=0.3)
         small.set_x(0)
@@ -389,7 +389,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
     def part_example(self):
         self.wipe(self.title)
-        label = self._step_chip("実例  最大値を探す")
+        label = self.step_label("実例  最大値を探す")
         self.play(FadeIn(label), run_time=0.4)
         cards = self._fit(self._array(VALUES, side=1.15, font_size=40), 8.6)
         cards.move_to(UP * 1.35 + LEFT * 0.7)
@@ -474,7 +474,7 @@ class WhatIsAnAlgorithm(LessonScene):
 
     def part_summary(self):
         self.wipe(self.title)
-        label = self._step_chip("まとめ")
+        label = self.step_label("まとめ")
         self.play(FadeIn(label), run_time=0.35)
         lines = [
             "アルゴリズムは、問題を解く有限で明確な手順です。",
@@ -487,9 +487,9 @@ class WhatIsAnAlgorithm(LessonScene):
         for i, text in enumerate(lines):
             t = self.ja_text(text, font_size=26)
             if i == 0:
-                t.next_to(label, DOWN, buff=0.42).align_to(label, LEFT)
+                self.below_chip(t, label, buff=0.42)
             else:
-                t.next_to(shown[-1], DOWN, buff=0.28).align_to(shown[0], LEFT)
+                self.below_chip(t, shown[-1], buff=0.28)
             self._fit_left(t)
             self.play(FadeIn(t), run_time=0.45)
             shown.add(t)
@@ -511,11 +511,6 @@ class WhatIsAnAlgorithm(LessonScene):
             if hasattr(m, "text") and isinstance(m.text, str) and m.text:
                 texts.append(m.text)
         self.linger("".join(texts) if texts else " ")
-
-    def _step_chip(self, text):
-        t = self.ja_text(text, font_size=24, color=YELLOW)
-        t.to_edge(UP, buff=1.02).to_edge(LEFT, buff=0.4)
-        return t
 
     def _stack(self, *lines, size=28):
         group = VGroup(*[self.ja_text(line, font_size=size) for line in lines])

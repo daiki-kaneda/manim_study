@@ -166,7 +166,10 @@ class MasterTheorem(CurriculumScene):
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.5)
-        cap = self._caption("この3つが読めれば、あとは葉の仕事と比べるだけです。次で葉の個数を出します。")
+        cap = self._caption(
+            "この3つが読めれば、あとは葉の仕事と比べるだけです。",
+            "次で葉の個数を出します。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -223,7 +226,10 @@ class MasterTheorem(CurriculumScene):
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.5)
-        cap = self._caption("下の仕事が勝つか、自分の仕事が勝つか、同じくらいか。この3つで場合が分かれます。")
+        cap = self._caption(
+            "下の仕事が勝つか、自分の仕事が勝つか、同じくらいか。",
+            "この3つで場合が分かれます。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -478,7 +484,10 @@ class MasterTheorem(CurriculumScene):
         for row in items:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.35)
-        cap = self._caption("前回の木の足し算は、場合2の「どの段も同じなので、段数を掛ける」でした。")
+        cap = self._caption(
+            "前回の木の足し算は、場合2でした。",
+            "どの段も同じなので、段数を掛ける、というやつです。",
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)

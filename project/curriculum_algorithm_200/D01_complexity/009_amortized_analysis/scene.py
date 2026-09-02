@@ -131,7 +131,10 @@ class AmortizedAnalysis(CurriculumScene):
         definition.to_edge(DOWN, buff=0.2)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.4)
-        cap = self._caption("高い操作はあります。次は、そのコピーが何回起きるかを、全部足してみます。")
+        cap = self._caption(
+            "高い操作はあります。",
+            "次は、そのコピーが何回起きるかを、全部足してみます。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -177,7 +180,10 @@ class AmortizedAnalysis(CurriculumScene):
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.4)
-        cap = self._caption("高い1回はあるのに、全部足すと 2n くらいにしかなりません。次は、これを回数で割ります。")
+        cap = self._caption(
+            "高い1回はあるのに、全部足すと 2n くらいにしかなりません。",
+            "次は、これを回数で割ります。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -216,7 +222,10 @@ class AmortizedAnalysis(CurriculumScene):
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.5)
-        cap = self._caption("たまにコピーが来ても、長い目で割ると定数に収まります。この見方を償却解析と呼びます。")
+        cap = self._caption(
+            "たまにコピーが来ても、長い目で割ると定数に収まります。",
+            "この見方を償却解析と呼びます。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -276,7 +285,10 @@ class AmortizedAnalysis(CurriculumScene):
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.4)
-        cap = self._caption("1回の遅さが致命的なら最悪。続けて使うときの合計が知りたいなら償却。目的で使い分けます。")
+        cap = self._caption(
+            "1回の遅さが致命的なら最悪。続けて使うときの合計が知りたいなら償却。",
+            "目的で使い分けます。",
+        )
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self.wipe(self.header)
@@ -342,7 +354,10 @@ class AmortizedAnalysis(CurriculumScene):
         for row in items:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.35)
-        cap = self._caption("高い1回があっても、起き方がまばらなら、合計を割ると小さく見えることがあります。それが償却です。")
+        cap = self._caption(
+            "高い1回があっても、起き方がまばらなら、合計を割ると小さく見えることがあります。",
+            "それが償却です。",
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)

@@ -94,7 +94,7 @@ class BestWorstAverage(CurriculumScene):
         cards.set_x(0)
         self.play(LaggedStart(*[FadeIn(c) for c in cards], lag_ratio=0.15), run_time=1.0)
         self.wait(1.4)
-        cap = self._caption("手順は同じなのに、回数は 1 回、3 回、4 回。今日はこの違いをどう数えるかをやる。")
+        cap = self._caption("手順は同じなのに、回数は 1 回、3 回、4 回。今回はこの違いをどう数えるかをやる。")
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self._clear(VGroup(q, src, note, cards, cap))
@@ -222,7 +222,7 @@ class BestWorstAverage(CurriculumScene):
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.4)
-        cap = self._caption("見つからない場合を入れると平均はもっと n に近づく。今日は「見つかる」だけ。")
+        cap = self._caption("見つからない場合を入れると平均はもっと n に近づく。今回は「見つかる」だけ。")
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.5)
         self.wipe(self.header)
@@ -318,7 +318,7 @@ class BestWorstAverage(CurriculumScene):
             MathTex(r"\dfrac{1+2+3+4}{4}=\dfrac{10}{4}=2.5", font_size=32),
             MathTex(r"=\dfrac{4+1}{2}", font_size=32),
         ).arrange(DOWN, buff=0.2)
-        formulas.next_to(avg_t, DOWN, buff=0.28)
+        self.stack_below(formulas, avg_t, buff=0.28)
         for row in formulas:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.05)
@@ -370,12 +370,11 @@ class BestWorstAverage(CurriculumScene):
         self.play(FadeIn(nxt), run_time=0.45)
         self.wait(1.15)
         body = VGroup(
-            self.ja_text("今日は、どの入力で数えるかを分けた。", font_size=26),
+            self.ja_text("今回は、どの入力で数えるかを分けた。", font_size=26),
             self.ja_text("次回は、上から抑える O だけでなく、", font_size=26),
             self.ja_text("下から抑える Ω と、両方つく Θ を並べる。", font_size=26),
         ).arrange(DOWN, buff=0.26, aligned_edge=LEFT)
-        body.next_to(nxt, DOWN, buff=0.4)
-        body.align_to(nxt, LEFT)
+        self.stack_below(body, nxt, buff=0.4)
         for row in body:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.15)

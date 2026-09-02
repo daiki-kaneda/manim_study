@@ -21,7 +21,12 @@ class RecursionComplexity(CurriculumScene):
             [
                 "再帰は、同じ手順を、より小さい入力でもう一度使う。",
                 "終わる条件（ベース）がないと、積み重ねが止まらない。",
-                "回数は漸化式 T(n)=T(n-1)+定数 で書いて、ほどいて求める。",
+                self._line(
+                    "回数は漸化式 ",
+                    MathTex(r"T(n)=T(n-1)+c", font_size=28),
+                    " で書いて、ほどいて求める。",
+                    font_size=26,
+                ),
             ]
         )
         self._show_overview(
@@ -29,7 +34,12 @@ class RecursionComplexity(CurriculumScene):
                 "STEP 1 … ベースと再帰呼び出し",
                 "STEP 2 … 待ちの枠が積まれる様子（追加メモリ）",
                 "STEP 3 … 1回の仕事と、小さい呼び出しを式にする",
-                "STEP 4 … 式を一段ずつほどいて T(n)=n にする",
+                self._line(
+                    "STEP 4 … 式を一段ずつほどいて ",
+                    MathTex(r"T(n)=n", font_size=26),
+                    " にする",
+                    font_size=24,
+                ),
             ],
             ["最後に、n=4 の合計を、呼び出しから戻りまで最初から最後まで通す。"],
         )
@@ -86,7 +96,7 @@ class RecursionComplexity(CurriculumScene):
         for fr in frames:
             self.play(FadeIn(fr, shift=UP * 0.1), run_time=0.35)
             self.wait(0.7)
-        cap = self._caption("答えはどちらも 10。違うのは、待ちの枠が何段積まれるか。")
+        cap = self._caption("答えはどちらも 10。違うのは、待ちの枠が何段積まれるか。今回はその数え方をやる。")
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self._clear(VGroup(q, eq, stack, cap))
@@ -101,7 +111,7 @@ class RecursionComplexity(CurriculumScene):
             self._mix(MathTex(r"n=1", font_size=28), self.ja_text("のとき、答えは 1。ここで終わる（ベース）。", font_size=22)),
             self._mix(MathTex(r"n\ge 2", font_size=28), self.ja_text("のとき、答えは n + sum(n-1)。", font_size=22)),
         ).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
-        rules.next_to(lead, DOWN, buff=0.3)
+        self.stack_below(rules, lead, buff=0.3)
         for row in rules:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.1)
@@ -111,7 +121,7 @@ class RecursionComplexity(CurriculumScene):
             MathTex(r"\mathrm{sum}(2)=2+\mathrm{sum}(1)", font_size=30),
             MathTex(r"\mathrm{sum}(1)=1", font_size=30, color=GREEN),
         ).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
-        unfold.next_to(rules, DOWN, buff=0.28)
+        self.stack_below(unfold, rules, buff=0.28)
         for row in unfold:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(0.95)
@@ -130,35 +140,37 @@ class RecursionComplexity(CurriculumScene):
         self.below_chip(lead, chip)
         self.play(FadeIn(lead), run_time=0.4)
         self.wait(1.2)
-        stack = VGroup()
         labels = [
             (r"\mathrm{sum}(4)", "4 + ?"),
             (r"\mathrm{sum}(3)", "3 + ?"),
             (r"\mathrm{sum}(2)", "2 + ?"),
             (r"\mathrm{sum}(1)", "1"),
         ]
-        base_y = -1.6
-        for i, (lab, body) in enumerate(labels):
-            fr = self._frame(lab, body)
-            fr.move_to(DOWN * (base_y - 0) + UP * (0.95 * i))
-            fr.set_x(0)
-            stack.add(fr)
+        frames = [self._frame(lab, body) for lab, body in labels]
+        stack = VGroup(*frames).arrange(UP, buff=0.1)
+        self.stack_below(stack, lead, buff=0.28)
+        for fr in frames:
             self.play(FadeIn(fr, shift=UP * 0.12), run_time=0.4)
             self.wait(0.75)
-        note = self.ja_text("いちばん高く積まれた段数が、追加メモリの目安。今は 4 段。一般には n 段。", font_size=22)
-        note.to_edge(DOWN, buff=0.55)
+        note = VGroup(
+            self.ja_text("いちばん高く積まれた段数が、", font_size=22),
+            self.ja_text("追加メモリの目安。", font_size=22),
+            self.ja_text("今は 4 段。一般には n 段。", font_size=22),
+        ).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
+        extra = VGroup(
+            self._mix(self.ja_text("追加の増え方は", font_size=22), MathTex(r"O(n)", font_size=30, color=ORANGE), self.ja_text("。", font_size=22)),
+            self._mix(self.ja_text("ループの合計は追加 1 マスで", font_size=22), MathTex(r"O(1)", font_size=30, color=BLUE), self.ja_text("。", font_size=22)),
+        ).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
+        side = VGroup(note, extra).arrange(DOWN, buff=0.22, aligned_edge=LEFT)
+        side.next_to(stack, RIGHT, buff=0.4)
+        side.align_to(stack, UP)
         self.play(FadeIn(note), run_time=0.35)
         self.wait(1.3)
-        extra = VGroup(
-            self._mix(self.ja_text("追加の増え方は", font_size=24), MathTex(r"O(n)", font_size=32, color=ORANGE), self.ja_text("。", font_size=24)),
-            self._mix(self.ja_text("ループの合計は追加 1 マスで", font_size=24), MathTex(r"O(1)", font_size=32, color=BLUE), self.ja_text("。", font_size=24)),
-        ).arrange(DOWN, buff=0.18)
-        extra.next_to(note, UP, buff=0.2)
         for row in extra:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(1.1)
         cap = self._caption("時間だけでなく、待ちの枠の段数も n で増える。")
-        self.play(FadeOut(note), FadeIn(cap), run_time=0.4)
+        self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.5)
         self.wipe(self.header)
 
@@ -174,15 +186,15 @@ class RecursionComplexity(CurriculumScene):
                 self._mix(MathTex(r"n\ge 2:", font_size=28), MathTex(r"T(n)=T(n-1)+1", font_size=32)),
                 self.ja_text("「+1」は、戻ってきた値に n を足す仕事。", font_size=22),
             ],
-            chip,
-            buff=0.45,
+            lead,
+            buff=0.32,
         )
         definition = self.ja_text("再帰の回数は、T(n) を T(小さい入力) で書く漸化式になる。", font_size=24, color=YELLOW)
         definition.next_to(rows, DOWN, buff=0.4)
         definition.set_x(0)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.4)
-        cap = self._caption("木に広がる再帰は次回。今日は、1段ずつ小さくなる一本道。")
+        cap = self._caption("木に広がる再帰は次回。今回は、1段ずつ小さくなる一本道。")
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.5)
         self.wipe(self.header)
@@ -221,7 +233,7 @@ class RecursionComplexity(CurriculumScene):
             MathTex(r"\mathrm{sum}(1)\to 1", font_size=26, color=GREEN),
             self.ja_text("スタックは 4 段。呼び出しは 4 回。", font_size=22),
         ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        down.next_to(goal, DOWN, buff=0.22)
+        self.stack_below(down, goal, buff=0.22)
         for row in down:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(0.9)
@@ -232,9 +244,9 @@ class RecursionComplexity(CurriculumScene):
             MathTex(r"\mathrm{sum}(2)=2+1=3", font_size=26),
             MathTex(r"\mathrm{sum}(3)=3+3=6", font_size=26),
             MathTex(r"\mathrm{sum}(4)=4+6=10", font_size=26, color=YELLOW),
-            MathTex(r"T(4)=T(3)+1=T(2)+2=T(1)+3=4=n", font_size=26),
+            MathTex(r"T(4)=T(3)+1=T(2)+2=T(1)+3=4=n", font_size=24),
         ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        up.next_to(goal, DOWN, buff=0.22)
+        self.stack_below(up, goal, buff=0.22)
         for row in up:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(0.95)
@@ -248,7 +260,7 @@ class RecursionComplexity(CurriculumScene):
         items = VGroup(
             self.ja_text("1. 再帰はベースで止まり、小さい入力でもう一度自分を呼ぶ。", font_size=24),
             self.ja_text("2. 待ちの枠の段数は追加メモリ。一本道なら Θ(n)。", font_size=24),
-            self.ja_text("3. 回数は漸化式をほどいて求める。今日は T(n)=n。", font_size=24),
+            self._line("3. 回数は漸化式をほどいて求める。今回は ", MathTex(r"T(n)=n", font_size=28), "。", font_size=24),
         ).arrange(DOWN, buff=0.32, aligned_edge=LEFT)
         self.below_chip(items, chip, buff=0.45)
         for row in items:
@@ -266,12 +278,11 @@ class RecursionComplexity(CurriculumScene):
         self.play(FadeIn(nxt), run_time=0.45)
         self.wait(1.15)
         body = VGroup(
-            self.ja_text("今日は一本道だった。", font_size=26),
+            self.ja_text("今回は一本道だった。", font_size=26),
             self.ja_text("次回は、一度に2つ呼び出す木になる再帰で、", font_size=26),
             self.ja_text("段ごとの仕事を足して見積もる。", font_size=26),
         ).arrange(DOWN, buff=0.26, aligned_edge=LEFT)
-        body.next_to(nxt, DOWN, buff=0.4)
-        body.align_to(nxt, LEFT)
+        self.stack_below(body, nxt, buff=0.4)
         for row in body:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.15)

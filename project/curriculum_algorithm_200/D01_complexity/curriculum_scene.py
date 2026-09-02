@@ -35,11 +35,29 @@ class CurriculumScene(LessonScene):
         self.play(FadeOut(group), run_time=0.4)
 
     def _caption(self, *lines, font_size=24):
-        parts = VGroup(*[self.ja_text(line, font_size=font_size) for line in lines])
+        parts = VGroup()
+        for line in lines:
+            if isinstance(line, str):
+                parts.add(self.ja_text(line, font_size=font_size))
+            else:
+                parts.add(line)
         parts.arrange(DOWN, buff=0.08)
         parts.to_edge(DOWN, buff=0.18)
         parts.set_x(0)
         return parts
+
+    def _line(self, *chunks, font_size=24, color=None, buff=0.08):
+        """One horizontal line: Japanese strings mixed with MathTex."""
+        parts = []
+        for chunk in chunks:
+            if isinstance(chunk, str):
+                kw = {"font_size": font_size}
+                if color is not None:
+                    kw["color"] = color
+                parts.append(self.ja_text(chunk, **kw))
+            else:
+                parts.append(chunk)
+        return self._mix(*parts, buff=buff)
 
     def _boxes(self, values, side=0.72, color=BLUE, font_size=30):
         group = VGroup()
@@ -74,17 +92,27 @@ class CurriculumScene(LessonScene):
             fill_opacity=0.18,
         )
         t = self.ja_text(title, font_size=24, color=color)
-        b = self.ja_text(body, font_size=20)
-        e = self.ja_text(extra, font_size=20, color=color)
-        col = VGroup(t, b, e).arrange(DOWN, buff=0.12)
+        b = body if not isinstance(body, str) else self.ja_text(body, font_size=20)
+        if extra is None:
+            col = VGroup(t, b)
+        elif isinstance(extra, str):
+            col = VGroup(t, b, self.ja_text(extra, font_size=20, color=color))
+        else:
+            col = VGroup(t, b, extra)
+        col.arrange(DOWN, buff=0.12)
         col.move_to(box.get_center())
         return VGroup(box, col)
 
+    def _as_line(self, line, font_size=26):
+        if isinstance(line, str):
+            return self.ja_text(line, font_size=font_size)
+        return line
+
     def _show_goals(self, lines):
-        heading = self.ja_text("今日のゴール", font_size=28)
+        heading = self.ja_text("今回のゴール", font_size=28)
         heading.next_to(self.header, DOWN, buff=0.32)
         self.play(FadeIn(heading), run_time=0.45)
-        items = VGroup(*[self.ja_text(line, font_size=26) for line in lines])
+        items = VGroup(*[self._as_line(line, font_size=26) for line in lines])
         items.arrange(DOWN, buff=0.36, aligned_edge=LEFT)
         items.next_to(heading, DOWN, buff=0.45)
         items.set_x(0)
@@ -95,7 +123,7 @@ class CurriculumScene(LessonScene):
         self._clear(VGroup(heading, items))
 
     def _show_overview(self, cards, caption_lines):
-        heading = self.ja_text("今日の流れ", font_size=28)
+        heading = self.ja_text("今回の流れ", font_size=28)
         heading.next_to(self.header, DOWN, buff=0.32)
         self.play(FadeIn(heading), run_time=0.4)
         group = VGroup()
@@ -109,7 +137,7 @@ class CurriculumScene(LessonScene):
                 stroke_width=2,
                 fill_opacity=0.12,
             )
-            lab = self.ja_text(text, font_size=24)
+            lab = self._as_line(text, font_size=24)
             lab.move_to(box)
             group.add(VGroup(box, lab))
         group.arrange(DOWN, buff=0.14)
@@ -123,9 +151,10 @@ class CurriculumScene(LessonScene):
         self.wait(1.5)
         self._clear(VGroup(heading, group, cap))
 
-    def _formula_rows(self, rows, chip, buff=0.4):
+    def _formula_rows(self, rows, under, buff=0.4):
+        """Stack formula rows under ``under`` (the previous body, not a second chip)."""
         block = VGroup(*rows).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
-        self.below_chip(block, chip, buff=buff)
+        self.stack_below(block, under, buff=buff)
         for row in block:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.0)

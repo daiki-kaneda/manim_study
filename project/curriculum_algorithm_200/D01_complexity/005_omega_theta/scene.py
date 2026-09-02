@@ -55,8 +55,15 @@ class OmegaTheta(CurriculumScene):
         self.play(FadeIn(tline), run_time=0.4)
         self.wait(1.1)
         cards = VGroup(
-            self._card("きつい抑え", "n と同じ速さ", "T(n) = O(n)", BLUE, width=5.3, height=2.0),
-            self._card("ゆるい抑え", "式としては正しい", "T(n) = O(n^{2}) もある", GREY_B, width=5.3, height=2.0),
+            self._card("きつい抑え", "n と同じ速さ", MathTex(r"T(n)=O(n)", font_size=22, color=BLUE), BLUE, width=5.3, height=2.0),
+            self._card(
+                "ゆるい抑え",
+                "式としては正しい",
+                self._line(MathTex(r"T(n)=O(n^{2})", font_size=22, color=GREY_B), " もある", font_size=20, color=GREY_B),
+                GREY_B,
+                width=5.3,
+                height=2.0,
+            ),
         ).arrange(RIGHT, buff=0.4)
         cards.next_to(tline, DOWN, buff=0.32)
         cards.set_x(0)
@@ -83,8 +90,14 @@ class OmegaTheta(CurriculumScene):
         table.set_x(0)
         self.reveal_table(table, row_wait=0.95)
         cap = self._caption(
-            "n は n^{2} より小さい。だから O(n^{2}) でも上から抑えられている。",
-            "でも、実際の増え方は n のほう。今日はその使い分けをやる。",
+            self._line(
+                "n は ",
+                MathTex(r"n^{2}", font_size=28),
+                " より小さい。だから ",
+                MathTex(r"O(n^{2})", font_size=28),
+                " でも上から抑えられている。",
+            ),
+            "でも、実際の増え方は n のほう。今回はその使い分けをやる。",
         )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.8)
@@ -102,7 +115,7 @@ class OmegaTheta(CurriculumScene):
             MathTex(r"n\le 1\cdot n\quad (n\ge 1)", font_size=30),
             MathTex(r"n=O(n)", font_size=34, color=BLUE),
         ).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
-        rows.next_to(lead, DOWN, buff=0.32)
+        self.stack_below(rows, lead, buff=0.32)
         for row in rows:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.0)
@@ -112,7 +125,7 @@ class OmegaTheta(CurriculumScene):
             MathTex(r"n=O(n^2)", font_size=32, color=GREY_B),
             self.ja_text("ただし、これはゆるい。", font_size=22, color=ORANGE),
         ).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
-        loose.next_to(rows, DOWN, buff=0.28)
+        self.stack_below(loose, rows, buff=0.28)
         for row in loose:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(1.0)
@@ -138,14 +151,14 @@ class OmegaTheta(CurriculumScene):
         rows = VGroup(
             MathTex(r"n\ge 1\cdot n\quad (n\ge 1)", font_size=32),
             MathTex(r"n=\Omega(n)", font_size=34, color=GREEN),
-        ).arrange(DOWN, buff=0.22)
-        rows.next_to(lead, DOWN, buff=0.32)
+        ).arrange(DOWN, buff=0.22, aligned_edge=LEFT)
+        self.stack_below(rows, lead, buff=0.32)
         for row in rows:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.05)
         self.play(FadeOut(rows), run_time=0.3)
-        why = self.ja_text("n は n^{2} の下からは抑えられない。", font_size=24)
-        self.below_chip(why, chip, buff=0.35)
+        why = self._line("n は ", MathTex(r"n^{2}", font_size=30), " の下からは抑えられない。", font_size=24)
+        self.stack_below(why, lead, buff=0.35)
         self.play(FadeIn(why), run_time=0.35)
         checks = VGroup(
             MathTex(r"n=10:\ 10\ge C\cdot 100 \Rightarrow C\le 0.1", font_size=28),
@@ -154,7 +167,7 @@ class OmegaTheta(CurriculumScene):
             self.ja_text("一つの固定した C では、いつまでも成り立たない。", font_size=22),
             MathTex(r"n \neq \Omega(n^2)", font_size=34, color=RED),
         ).arrange(DOWN, buff=0.18, aligned_edge=LEFT)
-        checks.next_to(why, DOWN, buff=0.28)
+        self.stack_below(checks, why, buff=0.28)
         for row in checks:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.05)
@@ -184,8 +197,8 @@ class OmegaTheta(CurriculumScene):
                 self._mix(self.ja_text("定数", font_size=24), MathTex(r"c_1=1,\ c_2=1", font_size=28), self.ja_text("を取る。", font_size=24)),
                 MathTex(r"c_1\cdot n \le n \le c_2\cdot n", font_size=32),
             ],
-            chip,
-            buff=0.4,
+            lead,
+            buff=0.32,
         )
         definition = self.ja_text(
             "T(n)=Θ(f(n)) は、T(n)=O(f(n)) かつ T(n)=Ω(f(n)) のとき。増え方が f(n) の型そのもの。",
@@ -211,10 +224,10 @@ class OmegaTheta(CurriculumScene):
                     self.ja_text("T=n の例", font_size=20, color=GREY_B),
                 ],
                 [MathTex(r"O(n)", font_size=26, color=BLUE), self.ja_text("上から n で抑える", font_size=20), self.ja_text("正しい（きつい）", font_size=20)],
-                [MathTex(r"O(n^2)", font_size=26, color=GREY_B), self.ja_text("上から n^{2} で抑える", font_size=20), self.ja_text("正しい（ゆるい）", font_size=20)],
+                [MathTex(r"O(n^2)", font_size=26, color=GREY_B), self._line("上から ", MathTex(r"n^{2}", font_size=22), " で抑える", font_size=20), self.ja_text("正しい（ゆるい）", font_size=20)],
                 [MathTex(r"\Omega(n)", font_size=26, color=GREEN), self.ja_text("下から n で抑える", font_size=20), self.ja_text("正しい", font_size=20)],
                 [MathTex(r"\Theta(n)", font_size=26, color=YELLOW), self.ja_text("上下とも n", font_size=20), self.ja_text("正しい", font_size=20)],
-                [MathTex(r"\Theta(n^2)", font_size=26, color=RED), self.ja_text("上下とも n^{2}", font_size=20), self.ja_text("正しくない", font_size=20)],
+                [MathTex(r"\Theta(n^2)", font_size=26, color=RED), self._line("上下とも ", MathTex(r"n^{2}", font_size=22), font_size=20), self.ja_text("正しくない", font_size=20)],
             ],
             h_buff=0.38,
             v_buff=0.16,
@@ -239,27 +252,27 @@ class OmegaTheta(CurriculumScene):
         self.play(FadeIn(target), run_time=0.4)
         self.wait(1.0)
         up_t = self.ja_text("上から（O）", font_size=24, color=BLUE)
-        up_t.next_to(target, DOWN, buff=0.28)
+        self.stack_below(up_t, target, buff=0.28)
         ups = VGroup(
             MathTex(r"3n+5 \le 3n+5n \quad (n\ge 1)", font_size=28),
             MathTex(r"=8n", font_size=28),
             MathTex(r"T(n)\le 8n", font_size=28),
             MathTex(r"T(n)=O(n)", font_size=32, color=BLUE),
         ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        ups.next_to(up_t, DOWN, buff=0.16)
+        self.stack_below(ups, up_t, buff=0.16)
         self.play(FadeIn(up_t), run_time=0.3)
         for row in ups:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(0.95)
         self.play(FadeOut(VGroup(up_t, ups)), run_time=0.3)
         lo_t = self.ja_text("下から（Ω）", font_size=24, color=GREEN)
-        lo_t.next_to(target, DOWN, buff=0.28)
+        self.stack_below(lo_t, target, buff=0.28)
         los = VGroup(
             MathTex(r"3n+5 \ge 3n", font_size=28),
             MathTex(r"T(n)\ge 3n", font_size=28),
             MathTex(r"T(n)=\Omega(n)", font_size=32, color=GREEN),
         ).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
-        los.next_to(lo_t, DOWN, buff=0.16)
+        self.stack_below(los, lo_t, buff=0.16)
         self.play(FadeIn(lo_t), run_time=0.3)
         for row in los:
             self.play(FadeIn(row), run_time=0.35)
@@ -279,7 +292,7 @@ class OmegaTheta(CurriculumScene):
             MathTex(r"n=1:\ 8,\quad 3\le 8\le 8", font_size=28),
             MathTex(r"n=4:\ 17,\quad 12\le 17\le 32", font_size=28),
         ).arrange(DOWN, buff=0.16)
-        checks.next_to(both, DOWN, buff=0.28)
+        self.stack_below(checks, both, buff=0.28)
         for row in checks:
             self.play(FadeIn(row), run_time=0.35)
             self.wait(1.05)
@@ -299,7 +312,15 @@ class OmegaTheta(CurriculumScene):
         for row in items:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.35)
-        cap = self._caption("「O(n^{2})」と見たら、本当に n^{2} なのか、それともゆるいのかを疑う。")
+        cap = self._caption(
+            self._line(
+                "「",
+                MathTex(r"O(n^{2})", font_size=28),
+                "」と見たら、本当に ",
+                MathTex(r"n^{2}", font_size=28),
+                " なのか、それともゆるいのかを疑う。",
+            )
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -311,12 +332,11 @@ class OmegaTheta(CurriculumScene):
         self.play(FadeIn(nxt), run_time=0.45)
         self.wait(1.15)
         body = VGroup(
-            self.ja_text("今日は、増え方を上と下から挟んだ。", font_size=26),
+            self.ja_text("今回は、増え方を上と下から挟んだ。", font_size=26),
             self.ja_text("次回は、自分自身を呼び出す手順で、", font_size=26),
             self.ja_text("回数とスタックがどう増えるかを見る。", font_size=26),
         ).arrange(DOWN, buff=0.26, aligned_edge=LEFT)
-        body.next_to(nxt, DOWN, buff=0.4)
-        body.align_to(nxt, LEFT)
+        self.stack_below(body, nxt, buff=0.4)
         for row in body:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.15)

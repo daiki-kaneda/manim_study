@@ -26,9 +26,14 @@ class RecursionTree(CurriculumScene):
         )
         self._show_overview(
             [
-                "STEP 1 … 漸化式 T(n)=2T(n/2)+n を木にする",
+                self._line(
+                    "STEP 1 … 漸化式 ",
+                    MathTex(r"T(n)=2T(n/2)+n", font_size=26),
+                    " を木にする",
+                    font_size=24,
+                ),
                 "STEP 2 … 各ノードの仕事を書き、段で足す",
-                "STEP 3 … 半分にすると、段数は log_{2} n くらい",
+                "STEP 3 … 半分にすると、段数は対数くらい",
                 "STEP 4 … 段の合計 × 段数 で T(n) を出す",
             ],
             ["最後に n=8 の木を、根から葉まで15ノード全部通す。"],
@@ -112,7 +117,7 @@ class RecursionTree(CurriculumScene):
         self.play(FadeIn(root), run_time=0.35)
         self.play(Create(e1), Create(e2), FadeIn(left), FadeIn(right), run_time=0.6)
         self.wait(1.2)
-        cap = self._caption("前回の sum は子が1つだった。今日は子が2つ。仕事の数え方を、木でやる。")
+        cap = self._caption("前回の sum は子が1つだった。今回は子が2つ。仕事の数え方を、木でやる。")
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self._clear(VGroup(q, boxes, work, root, left, right, e1, e2, cap))
@@ -126,9 +131,16 @@ class RecursionTree(CurriculumScene):
         rows = VGroup(
             self._mix(self.ja_text("ベース:", font_size=22), MathTex(r"T(1)=\Theta(1)", font_size=28)),
             self._mix(MathTex(r"n>1:", font_size=26), MathTex(r"T(n)=2T(n/2)+n", font_size=30)),
-            self.ja_text("「2T(n/2)」が左右の子、「+n」が自分の仕事。", font_size=22),
+            self._line(
+                "「",
+                MathTex(r"2T(n/2)", font_size=26),
+                "」が左右の子、「",
+                MathTex(r"+n", font_size=26),
+                "」が自分の仕事。",
+                font_size=22,
+            ),
         ).arrange(DOWN, buff=0.18, aligned_edge=LEFT)
-        rows.next_to(lead, DOWN, buff=0.28)
+        self.stack_below(rows, lead, buff=0.28)
         for row in rows:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.05)
@@ -195,6 +207,7 @@ class RecursionTree(CurriculumScene):
         self.below_chip(lead, chip)
         self.play(FadeIn(lead), run_time=0.4)
         self.wait(1.15)
+        self.play(FadeOut(lead), run_time=0.3)
         rows = self._formula_rows(
             [
                 MathTex(r"8", font_size=32),
@@ -208,7 +221,7 @@ class RecursionTree(CurriculumScene):
                 MathTex(r"n=8:\ \log_2 8+1=4", font_size=30, color=YELLOW),
             ],
             chip,
-            buff=0.32,
+            buff=0.28,
         )
         cap = self._caption("半分ずつなら、段数は対数。n が2倍になると、段が1つ増える。")
         self.play(FadeIn(cap), run_time=0.4)
@@ -221,6 +234,7 @@ class RecursionTree(CurriculumScene):
         self.below_chip(lead, chip)
         self.play(FadeIn(lead), run_time=0.4)
         self.wait(1.15)
+        self.play(FadeOut(lead), run_time=0.3)
         rows = self._formula_rows(
             [
                 self._mix(self.ja_text("1段の合計は", font_size=22), MathTex(r"n", font_size=30)),
@@ -233,13 +247,19 @@ class RecursionTree(CurriculumScene):
                 MathTex(r"8+8+8+8=32", font_size=30),
             ],
             chip,
-            buff=0.28,
+            buff=0.24,
         )
-        definition = self.ja_text("再帰木では、段の合計 × 段数 で T(n) を見積もる。今日は Θ(n log n)。", font_size=22, color=YELLOW)
+        definition = self._line(
+            "再帰木では、段の合計 × 段数 で T(n) を見積もる。今回は ",
+            MathTex(r"\Theta(n\log n)", font_size=26, color=YELLOW),
+            "。",
+            font_size=22,
+            color=YELLOW,
+        )
         definition.to_edge(DOWN, buff=0.2)
         self.play(FadeIn(definition), run_time=0.45)
         self.linger(3.4)
-        cap = self._caption("次回のマスター定理は、この足し算を場合分けして一気に出す道具。今日は手で足す。")
+        cap = self._caption("次回のマスター定理は、この足し算を場合分けして一気に出す道具。今回は手で足す。")
         self.play(FadeOut(definition), FadeIn(cap), run_time=0.4)
         self.wait(1.6)
         self.wipe(self.header)
@@ -295,7 +315,14 @@ class RecursionTree(CurriculumScene):
         self.below_chip(table, chip, buff=0.32)
         table.set_x(0)
         self.reveal_table(table, row_wait=0.8)
-        cap = self._caption("15 個の呼び出し、仕事の合計 32。n log_{2} n + n = 8·3+8=32。")
+        cap = self._caption(
+            self._line(
+                "15 個の呼び出し、仕事の合計 32。",
+                MathTex(r"n\log_{2} n+n=8\cdot 3+8=32", font_size=26),
+                "。",
+                font_size=22,
+            )
+        )
         self.play(FadeIn(cap), run_time=0.4)
         self.wait(1.7)
         self.wipe(self.header)
@@ -323,12 +350,11 @@ class RecursionTree(CurriculumScene):
         self.play(FadeIn(nxt), run_time=0.45)
         self.wait(1.15)
         body = VGroup(
-            self.ja_text("今日は T(n)=2T(n/2)+n を手で足した。", font_size=26),
+            self._line("今回は ", MathTex(r"T(n)=2T(n/2)+n", font_size=28), " を手で足した。", font_size=26),
             self.ja_text("次回は、子の個数と、自分の仕事の増え方が変わっても、", font_size=26),
             self.ja_text("同じ見積もりを場合分けで出す。", font_size=26),
         ).arrange(DOWN, buff=0.26, aligned_edge=LEFT)
-        body.next_to(nxt, DOWN, buff=0.4)
-        body.align_to(nxt, LEFT)
+        self.stack_below(body, nxt, buff=0.4)
         for row in body:
             self.play(FadeIn(row), run_time=0.4)
             self.wait(1.15)

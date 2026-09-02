@@ -13,7 +13,7 @@ from manim_math.geometry import (
     polar,
     staircase_cells,
 )
-from manim_math.japanese import get_japanese_font
+from manim_math.japanese import JapaneseScene, LessonScene, PacedScene, get_japanese_font
 from manim_math.path_setup import add_repo_root_to_syspath
 
 
@@ -62,6 +62,14 @@ class PathAndFontTests(unittest.TestCase):
     def test_japanese_font_is_nonempty(self):
         font = get_japanese_font()
         self.assertTrue(isinstance(font, str) and len(font) > 0)
+
+    def test_lesson_scene_does_not_stretch_motion(self):
+        self.assertEqual(LessonScene.motion_scale, 1.0)
+        self.assertEqual(LessonScene.beat, 1.0)
+        self.assertEqual(PacedScene.motion_scale, 2.5)
+        self.assertTrue(issubclass(LessonScene, JapaneseScene))
+        self.assertTrue(issubclass(PacedScene, JapaneseScene))
+        self.assertFalse(issubclass(LessonScene, PacedScene))
 
 
 if __name__ == "__main__":

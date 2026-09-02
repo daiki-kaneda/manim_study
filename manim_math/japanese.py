@@ -165,6 +165,18 @@ class JapaneseScene(Scene):
         return title
 
 
+class LessonScene(JapaneseScene):
+    """5–10 minute curriculum lessons (math / algorithm 200).
+
+    Motion is not stretched. ``beat`` is 1 second so ``hold`` is a short
+    reading pause, not the 3-second wait used by short-form scenes.
+    Do not use ``PacedScene`` (``motion_scale=2.5``) for these lessons.
+    """
+
+    motion_scale = 1.0
+    beat = 1.0
+
+
 class PacedScene(JapaneseScene):
     """30–60 second shorts: animations are stretched, idle waits are not."""
 

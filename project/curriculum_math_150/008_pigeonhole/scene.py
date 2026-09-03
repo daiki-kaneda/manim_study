@@ -637,19 +637,20 @@ class Pigeonhole(LessonScene):
             shown.add(mob)
             self.linger(3.2)
 
-        related = self._line(
-            MathTex(r"365", font_size=20, color=GREY_B),
-            "日の誕生日で、同じ日が「出やすい」人数は、保証の",
+        trivia = self._line(
+            "うるう年を入れて、箱を",
             MathTex(r"366", font_size=20, color=GREY_B),
-            "人よりずっと小さい。あれは割合の話になります。",
+            "日とおくと、",
+            MathTex(r"367", font_size=20, color=GREY_B),
+            "人いれば同じ誕生日の 2 人が必ずいる。",
             font_size=18,
             color=GREY_B,
         )
-        self.stack_below(related, shown, buff=0.24)
-        self._fit_left(related)
-        self.play(FadeIn(related), run_time=0.45)
+        self.stack_below(trivia, shown, buff=0.24)
+        self._fit_left(trivia)
+        self.play(FadeIn(trivia), run_time=0.45)
         self.linger(
-            "365 日の誕生日で、同じ日が「出やすい」人数は、保証の 366 人よりずっと小さい。あれは割合の話になります。",
+            "うるう年を入れて、箱を 366 日とおくと、367 人いれば同じ誕生日の 2 人が必ずいる。",
             extra=0.40,
         )
 

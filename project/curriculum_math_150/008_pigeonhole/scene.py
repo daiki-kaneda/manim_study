@@ -462,12 +462,13 @@ class Pigeonhole(LessonScene):
     def part_example(self):
         self.wipe(self.header)
         chip = self.step_label("実例")
-        self.play(FadeIn(chip), run_time=0.4)
+        self.play(FadeIn(chip), run_time=0.7)
+        self.pause_new_screen()
 
         lead = self.ja_text("箱が 3 つのときを、最初から最後まで数えます。", font_size=22)
         self.below_chip(lead, chip, buff=0.16)
         self._fit_left(lead)
-        self.play(FadeIn(lead), run_time=0.45)
+        self.play(FadeIn(lead), run_time=0.7)
         self.linger(lead.text)
 
         restate = self._line(
@@ -479,25 +480,30 @@ class Pigeonhole(LessonScene):
         )
         self.stack_below(restate, lead, buff=0.10)
         restate.set_x(0)
-        self.play(FadeIn(restate), run_time=0.4)
+        self.play(FadeIn(restate), run_time=0.55)
+        self.pause_short_formula()
         self.linger(3.2)
 
         sock_colors = [BLUE_B, GREEN, ORANGE]
         names = ["青", "緑", "橙"]
-        counts = [0, 0, 0]
-        fig = self._sock_bins(counts, sock_colors, names)
         steps = [
-            ([1, 0, 0], "1 足目。青に 1。"),
-            ([1, 1, 0], "2 足目。緑に 1。まだ同じ色が 2 足はない。"),
-            ([1, 1, 1], "3 足目。橙に 1。どの引き出しも 1 足。これが最悪。"),
-            ([2, 1, 1], "4 足目。空の引き出しはない。同じ色が 2 足になる。"),
+            ([1, 0, 0], "1 足目。青の引き出しに 1 足入ります。"),
+            ([1, 1, 0], "2 足目。緑に 1 足。まだ同じ色が 2 足はありません。"),
+            ([1, 1, 1], "3 足目。橙に 1 足。どの引き出しも 1 足。これが最悪です。"),
+            ([2, 1, 1], "4 足目。空の引き出しはありません。同じ色が 2 足になります。"),
         ]
-        caption = self.ja_text(steps[0][1], font_size=18)
-        pair = VGroup(fig, caption).arrange(RIGHT, buff=0.40, aligned_edge=UP)
-        self.stack_below(pair, restate, buff=0.12)
-        pair.set_x(0)
-        self._nudge(pair)
-        self.play(FadeIn(fig), FadeIn(caption), run_time=0.5)
+        fig = self._sock_bins([0, 0, 0], sock_colors, names)
+        self.stack_below(fig, restate, buff=0.16)
+        fig.set_x(0)
+        self._nudge(fig)
+        caption = self.ja_text("引き出しは 3 つ。まだ靴下はありません。", font_size=20)
+        self.stack_below(caption, fig, buff=0.16)
+        caption.set_x(0)
+        self._fit(caption, 13.0)
+        caption.set_x(0)
+        self.play(FadeIn(fig), FadeIn(caption), run_time=0.7)
+        self.pause_new_screen()
+        self.linger(caption.text)
 
         for counts, text in steps:
             nxt = self._sock_bins(
@@ -507,19 +513,29 @@ class Pigeonhole(LessonScene):
                 highlight=0 if counts[0] == 2 else None,
             )
             nxt.move_to(fig)
-            new_cap = self.ja_text(text, font_size=18)
-            new_cap.move_to(caption)
-            self.play(FadeOut(fig), FadeIn(nxt), Transform(caption, new_cap), run_time=0.5)
+            new_cap = self.ja_text(text, font_size=20)
+            self._fit(new_cap, 13.0)
+            self.stack_below(new_cap, nxt, buff=0.16)
+            new_cap.set_x(0)
+            self.play(
+                FadeOut(fig),
+                FadeIn(nxt),
+                FadeOut(caption),
+                FadeIn(new_cap),
+                run_time=0.70,
+            )
             fig = nxt
-            self.linger(3.2)
+            caption = new_cap
+            self.linger(text)
 
         eq = MathTex(r"n(r-1)+1=3\cdot 1+1=4", font_size=28, color=YELLOW)
-        self.stack_below(eq, pair, buff=0.16)
+        self.stack_below(eq, caption, buff=0.16)
         eq.set_x(0)
-        self.play(FadeIn(eq), run_time=0.4)
-        self.linger(3.4)
+        self.play(FadeIn(eq), run_time=0.55)
+        self.pause_conclusion()
 
-        self.play(FadeOut(VGroup(fig, caption, eq)), run_time=0.3)
+        self.play(FadeOut(VGroup(fig, caption, eq)), run_time=0.45)
+        self.pause_topic()
         three = [
             self._line(MathTex(r"r=3", font_size=26, color=TEAL), "なら、最悪は各色 2 足で 6 足。", font_size=20),
             MathTex(r"3\cdot(3-1)+1=6+1=7", font_size=32, color=YELLOW),

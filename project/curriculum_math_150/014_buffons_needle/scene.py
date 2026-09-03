@@ -65,9 +65,9 @@ class BuffonsNeedle(LessonScene):
         self.linger(cap.text)
 
         q1 = self._line(
-            "等間隔の平行線を床に引く、とおく。間隔を",
+            "等間隔の平行線を床に引きます。間隔を",
             MathTex(r"D", font_size=24, color=TEAL),
-            "とおく。",
+            "とします。",
             font_size=20,
         )
         self.stack_below(q1, pair, buff=0.20)
@@ -75,14 +75,14 @@ class BuffonsNeedle(LessonScene):
         self._fit(q1, 13.0)
         q1.set_x(0)
         self.play(FadeIn(q1), run_time=0.7)
-        self.linger("等間隔の平行線を床に引く、とおく。間隔を D とおく。")
+        self.linger("等間隔の平行線を床に引きます。間隔を D とします。")
 
         q2 = self._line(
-            "長さ",
-            MathTex(r"L", font_size=24, color=ORANGE),
-            "の針を、無作為に落とします。ただし",
-            MathTex(r"L\le D", font_size=24),
-            "とおく。",
+            "針の長さも同じ",
+            MathTex(r"D", font_size=24, color=ORANGE),
+            "だとします。つまり",
+            MathTex(r"L=D", font_size=24, color=YELLOW),
+            "です。",
             font_size=20,
         )
         self.stack_below(q2, q1, buff=0.12)
@@ -90,18 +90,20 @@ class BuffonsNeedle(LessonScene):
         self._fit(q2, 13.0)
         q2.set_x(0)
         self.play(FadeIn(q2), run_time=0.7)
-        self.linger("長さ L の針を、無作為に落とします。ただし L≤D とおく。")
+        self.linger("針の長さも同じ D だとします。つまり L=D です。")
 
-        q3 = self.ja_text(
-            "線と交わる割合から、なぜ円周率が出るのでしょうか。",
-            font_size=20,
+        q3 = self._line(
+            "このとき、線と交わる回数から円周率が",
+            MathTex(r"\dfrac{2N}{C}", font_size=26, color=GREEN),
+            "のように出ることが知られています。これはなぜ起こるのでしょうか。",
+            font_size=18,
         )
         self.stack_below(q3, q2, buff=0.12)
         q3.set_x(0)
         self._fit(q3, 13.0)
         q3.set_x(0)
         self.play(FadeIn(q3), run_time=0.7)
-        self.linger(q3.text, extra=0.35)
+        self.linger("このとき、線と交わる回数から円周率が 2N/C のように出ることが知られています。これはなぜ起こるのでしょうか。", extra=0.35)
 
     def part_trial_count(self):
         chip = self.begin_step("試行  交差を数える", self.header)
@@ -246,6 +248,11 @@ class BuffonsNeedle(LessonScene):
 
         defs = [
             self._line(
+                "針の長さは間隔と同じです。",
+                MathTex(r"L=D", font_size=26, color=YELLOW),
+                font_size=18,
+            ),
+            self._line(
                 "一番近い線からの距離を",
                 MathTex(r"x", font_size=24, color=TEAL),
                 "とおく。範囲は",
@@ -263,7 +270,7 @@ class BuffonsNeedle(LessonScene):
                 MathTex(r"x", font_size=24, color=TEAL),
                 "と",
                 MathTex(r"\theta", font_size=24, color=YELLOW),
-                "は独立で、それぞれの範囲に一様、とおく",
+                "は独立で、それぞれの範囲に一様です",
                 font_size=18,
             ),
         ]
@@ -347,10 +354,10 @@ class BuffonsNeedle(LessonScene):
         self.linger("針の端が線に届くときを、x と θ の不等式にします。")
 
         restate = self._line(
-            "針の長さ",
-            MathTex(r"L", font_size=24, color=ORANGE),
-            "。半長",
-            MathTex(r"\dfrac{L}{2}", font_size=24, color=ORANGE),
+            "針の長さは間隔と同じで",
+            MathTex(r"L=D", font_size=24, color=YELLOW),
+            "。半長は",
+            MathTex(r"\dfrac{D}{2}", font_size=24, color=ORANGE),
             "。",
             font_size=18,
         )
@@ -358,14 +365,14 @@ class BuffonsNeedle(LessonScene):
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
-        self.linger("針の長さ L。半長 L/2。")
+        self.linger("針の長さは間隔と同じで L=D。半長は D/2。")
         self.play(FadeOut(lead), run_time=0.45)
 
         fig = self._hit_figure(theta=0.70)
         formulas = VGroup(
             self._line(
                 "針の中心から端までの、線に垂直な成分は",
-                MathTex(r"\dfrac{L}{2}\sin\theta", font_size=26, color=ORANGE),
+                MathTex(r"\dfrac{D}{2}\sin\theta", font_size=26, color=ORANGE),
                 font_size=16,
             ),
             self._line(
@@ -376,7 +383,7 @@ class BuffonsNeedle(LessonScene):
             ),
             self._line(
                 "だから",
-                MathTex(r"x\le\dfrac{L}{2}\sin\theta", font_size=30, color=YELLOW),
+                MathTex(r"x\le\dfrac{D}{2}\sin\theta", font_size=30, color=YELLOW),
                 font_size=18,
             ),
         ).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
@@ -421,7 +428,7 @@ class BuffonsNeedle(LessonScene):
                 font_size=16,
             ),
             self._line(
-                MathTex(r"x\le\dfrac{L}{2}", font_size=26, color=YELLOW),
+                MathTex(r"x\le\dfrac{D}{2}", font_size=26, color=YELLOW),
                 "なら交わります。",
                 font_size=16,
             ),
@@ -431,7 +438,7 @@ class BuffonsNeedle(LessonScene):
         self._nudge(VGroup(fig90, check90))
         self.play(FadeOut(fig), FadeIn(fig90), FadeOut(check0), FadeIn(check90), run_time=0.65)
         fig = fig90
-        self.linger("θ=π/2 のときは sin(π/2)=1 で、x≤L/2 なら交わります。")
+        self.linger("θ=π/2 のときは sin(π/2)=1 で、x≤D/2 なら交わります。")
         self.pause_short_formula()
 
         self.play(FadeOut(VGroup(fig, check90)), run_time=0.45)
@@ -451,10 +458,9 @@ class BuffonsNeedle(LessonScene):
     def part_step3_area(self):
         chip = self.begin_step("STEP 3  配置の面積", self.header)
 
-        lead = self._line(
-            MathTex(r"(x,\theta)", font_size=22),
-            "の動ける長方形のうち、交わる領域の面積を出します。",
-            font_size=18,
+        lead = self.ja_text(
+            "長方形のうち交わる領域の面積を出します。割合が面積の比になる理由を、先に一段書きます。",
+            font_size=16,
         )
         self.below_chip(lead, chip, buff=0.16)
         self._fit_left(lead)
@@ -499,6 +505,26 @@ class BuffonsNeedle(LessonScene):
         self.play(FadeOut(VGroup(plot, cap)), run_time=0.45)
         self.pause_topic()
 
+        why = [
+            self._line(
+                "落とすたびに、長方形の中の点",
+                MathTex(r"(x,\theta)", font_size=22),
+                "が一つ決まります。",
+                font_size=16,
+            ),
+            self.ja_text(
+                "位置も向きも偏っていないので、長方形のどの小さな区画も同じ確からしさです。",
+                font_size=16,
+            ),
+            self.ja_text(
+                "だから交わる割合は、交わる点の集まりの面積を、長方形全体の面積で割った比です。",
+                font_size=16,
+            ),
+        ]
+        why_block = self._formula_rows(why, restate, buff=0.10, hold=self.PAUSE_COMPLEX)
+        self.play(FadeOut(why_block), run_time=0.40)
+        self.pause_topic()
+
         row1 = self._line(
             "全部の配置の面積は",
             MathTex(r"\pi\cdot\dfrac{D}{2}=\dfrac{\pi D}{2}", font_size=28, color=YELLOW),
@@ -514,7 +540,7 @@ class BuffonsNeedle(LessonScene):
         row2 = self._line(
             "交わる領域の面積は",
             MathTex(
-                r"\displaystyle\int_{0}^{\pi}\dfrac{L}{2}\sin\theta\,d\theta",
+                r"\displaystyle\int_{0}^{\pi}\dfrac{D}{2}\sin\theta\,d\theta",
                 font_size=28,
                 color=ORANGE,
             ),
@@ -581,13 +607,13 @@ class BuffonsNeedle(LessonScene):
             ),
             self._line(
                 "だから交わる面積は",
-                MathTex(r"\dfrac{L}{2}\cdot 2=L", font_size=28, color=ORANGE),
+                MathTex(r"\dfrac{D}{2}\cdot 2=D", font_size=28, color=ORANGE),
                 font_size=18,
             ),
             self._line(
                 "交わる割合は",
                 MathTex(
-                    r"\dfrac{L}{\pi D/2}=\dfrac{2L}{\pi D}",
+                    r"\dfrac{D}{\pi D/2}=\dfrac{2}{\pi}",
                     font_size=30,
                     color=YELLOW,
                 ),
@@ -639,7 +665,7 @@ class BuffonsNeedle(LessonScene):
 
         restate = self._line(
             "割合",
-            MathTex(r"p=\dfrac{2L}{\pi D}", font_size=26, color=YELLOW),
+            MathTex(r"p=\dfrac{2}{\pi}", font_size=26, color=YELLOW),
             "。",
             font_size=18,
         )
@@ -647,7 +673,7 @@ class BuffonsNeedle(LessonScene):
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
-        self.linger("割合 p は 2L を πD で割った値です。")
+        self.linger("割合 p は 2/π です。")
 
         first = [
             self._line(
@@ -657,19 +683,19 @@ class BuffonsNeedle(LessonScene):
                 "とおく",
                 font_size=18,
             ),
-            MathTex(r"\dfrac{C}{N}\approx\dfrac{2L}{\pi D}", font_size=32, color=YELLOW),
+            MathTex(r"\dfrac{C}{N}\approx\dfrac{2}{\pi}", font_size=32, color=YELLOW),
             self._line(
-                MathTex(r"\dfrac{C}{N}=\dfrac{2L}{\pi D}", font_size=28),
-                "とおく",
+                MathTex(r"\dfrac{C}{N}=\dfrac{2}{\pi}", font_size=28),
+                "とします",
                 font_size=18,
             ),
             self._line(
                 "両辺に",
-                MathTex(r"\pi D", font_size=24),
+                MathTex(r"\pi", font_size=24),
                 "を掛ける",
                 font_size=18,
             ),
-            MathTex(r"\dfrac{C}{N}\cdot\pi D=2L", font_size=30),
+            MathTex(r"\dfrac{C}{N}\cdot\pi=2", font_size=30),
         ]
         block1 = self._formula_rows(first, restate, buff=0.10, hold=self.PAUSE_REWRITE)
         self.pause_complex()
@@ -683,15 +709,15 @@ class BuffonsNeedle(LessonScene):
                 "を掛ける",
                 font_size=18,
             ),
-            MathTex(r"C\cdot\pi D=2LN", font_size=30),
+            MathTex(r"C\cdot\pi=2N", font_size=30),
             self._line(
                 "両辺を",
-                MathTex(r"C D", font_size=24),
+                MathTex(r"C", font_size=24),
                 "で割る",
                 font_size=18,
             ),
-            MathTex(r"\pi=\dfrac{2LN}{CD}", font_size=32, color=YELLOW),
-            MathTex(r"\pi\approx\dfrac{2LN}{CD}", font_size=32, color=GREEN),
+            MathTex(r"\pi=\dfrac{2N}{C}", font_size=32, color=YELLOW),
+            MathTex(r"\pi\approx\dfrac{2N}{C}", font_size=32, color=GREEN),
         ]
         block2 = self._formula_rows(second, restate, buff=0.10, hold=self.PAUSE_REWRITE)
         self.pause_conclusion()
@@ -714,13 +740,13 @@ class BuffonsNeedle(LessonScene):
 
         lead = self._line(
             MathTex(r"L=D", font_size=24, color=YELLOW),
-            "とおいて、公式と 1 回分の図を最後まで通します。",
+            "のときの公式と、1 回分の図を最後まで通します。",
             font_size=18,
         )
         self.below_chip(lead, chip, buff=0.16)
         self._fit_left(lead)
         self.play(FadeIn(lead), run_time=0.7)
-        self.linger("L=D とおいて、公式と 1 回分の図を最後まで通します。")
+        self.linger("L=D のときの公式と、1 回分の図を最後まで通します。")
 
         fig = self._floor(
             specs=[(0.05, 1 * self.FLOOR_GAP + 0.06, 1.15)],
@@ -825,13 +851,39 @@ class BuffonsNeedle(LessonScene):
                 MathTex(r"x", font_size=22, color=TEAL),
                 "と",
                 MathTex(r"\theta", font_size=22, color=YELLOW),
-                "は一様。交わるのは",
-                MathTex(r"x\le\dfrac{L}{2}\sin\theta", font_size=26, color=YELLOW),
+                "は一様。いまは",
+                MathTex(r"L=D", font_size=24, color=YELLOW),
+                "で、交わるのは",
+                MathTex(r"x\le\dfrac{D}{2}\sin\theta", font_size=24, color=YELLOW),
                 "。",
                 font_size=16,
             ),
             self.ja_text(
                 "幾何確率と呼ばれます。ビュフォンの針の問題が、この型です。無作為な配置を何度も作る方法は、モンテカルロ法の原型でもあります。",
+                font_size=16,
+            ),
+            self._line(
+                "針の長さを",
+                MathTex(r"L", font_size=22, color=ORANGE),
+                "とし、",
+                MathTex(r"L<D", font_size=24, color=ORANGE),
+                "とします。",
+                font_size=16,
+            ),
+            self._line(
+                "届く垂直成分は",
+                MathTex(r"\dfrac{L}{2}\sin\theta", font_size=24, color=ORANGE),
+                "なので、交わる条件は",
+                MathTex(r"x\le\dfrac{L}{2}\sin\theta", font_size=24, color=YELLOW),
+                "。",
+                font_size=16,
+            ),
+            self._line(
+                "正弦の曲線が低くなるので、交わる面積は",
+                MathTex(r"L", font_size=22, color=ORANGE),
+                "、全部の面積は変わらず",
+                MathTex(r"\dfrac{\pi D}{2}", font_size=22),
+                "です。",
                 font_size=16,
             ),
             MathTex(r"p=\dfrac{2L}{\pi D}", font_size=32, color=YELLOW),
@@ -849,7 +901,11 @@ class BuffonsNeedle(LessonScene):
         close = [
             self.ja_text(
                 "確率は回数の極限ではなく、配置空間の面積の比として先に決まります。実験はその比を読む方法です。",
-                font_size=18,
+                font_size=16,
+            ),
+            self.ja_text(
+                "長さと間隔が同じ L=D は、いちばん簡単な具体です。短い針は、同じ面積の考え方のまま曲線が低くなるだけです。",
+                font_size=16,
             ),
         ]
         self._formula_rows(close, name, buff=0.12, hold=self.PAUSE_CONCLUSION)
@@ -867,24 +923,34 @@ class BuffonsNeedle(LessonScene):
                 font_size=16,
             ),
             self._line(
-                "交わる条件は",
-                MathTex(r"x\le\dfrac{L}{2}\sin\theta", font_size=24, color=YELLOW),
+                MathTex(r"L=D", font_size=22, color=YELLOW),
+                "のとき、交わる条件は",
+                MathTex(r"x\le\dfrac{D}{2}\sin\theta", font_size=22, color=YELLOW),
+                "、比は",
+                MathTex(r"\dfrac{2}{\pi}", font_size=22, color=YELLOW),
                 "です",
                 font_size=16,
             ),
             self._line(
-                "全部の配置の面積は",
-                MathTex(r"\dfrac{\pi D}{2}", font_size=24),
+                "点が長方形に一様なら、割合は面積の比です。全部の面積は",
+                MathTex(r"\dfrac{\pi D}{2}", font_size=22),
                 "、交わる面積は",
-                MathTex(r"L", font_size=24, color=ORANGE),
-                "、比は",
-                MathTex(r"\dfrac{2L}{\pi D}", font_size=24, color=YELLOW),
+                MathTex(r"D", font_size=22, color=ORANGE),
+                "です",
                 font_size=16,
             ),
             self._line(
                 "実験の交わる回数から、",
-                MathTex(r"\pi\approx\dfrac{2LN}{CD}", font_size=24, color=GREEN),
+                MathTex(r"\pi\approx\dfrac{2N}{C}", font_size=24, color=GREEN),
                 "と読めます",
+                font_size=16,
+            ),
+            self._line(
+                "針が短い",
+                MathTex(r"L<D", font_size=22, color=ORANGE),
+                "では、同じ考え方で比は",
+                MathTex(r"\dfrac{2L}{\pi D}", font_size=22, color=YELLOW),
+                "です",
                 font_size=16,
             ),
         ]
@@ -902,7 +968,7 @@ class BuffonsNeedle(LessonScene):
         trivia = self._line(
             "針を短くして",
             MathTex(r"L=\dfrac{D}{2}", font_size=20, color=GREY_B),
-            "とおくと、交わる割合は",
+            "とすると、交わる割合は",
             MathTex(r"\dfrac{1}{\pi}", font_size=20, color=GREY_B),
             "です。10 回に 3 回ほどしか交わらないので、同じ回数でも見積もりのばらつきは大きくなります。",
             font_size=14,
@@ -912,7 +978,7 @@ class BuffonsNeedle(LessonScene):
         self._fit_left(trivia)
         self.play(FadeIn(trivia), run_time=0.70)
         self.linger(
-            "針を短くして L=D/2 とおくと、交わる割合は 1/π です。10 回に 3 回ほどしか交わらないので、同じ回数でも見積もりのばらつきは大きくなります。",
+            "針を短くして L=D/2 とすると、交わる割合は 1/π です。10 回に 3 回ほどしか交わらないので、同じ回数でも見積もりのばらつきは大きくなります。",
             extra=0.40,
         )
         self.pause_conclusion()
@@ -1053,7 +1119,7 @@ class BuffonsNeedle(LessonScene):
         if reach > 0.08:
             reach_end = center + DOWN * reach
             reach_seg = DashedLine(center, reach_end, color=ORANGE, stroke_width=2.2)
-            reach_lab = MathTex(r"\dfrac{L}{2}\sin\theta", font_size=20, color=ORANGE)
+            reach_lab = MathTex(r"\dfrac{D}{2}\sin\theta", font_size=20, color=ORANGE)
             reach_lab.next_to(reach_seg, LEFT, buff=0.10)
             parts.extend([reach_seg, reach_lab])
         if show_angle and theta > 0.08:
@@ -1066,7 +1132,7 @@ class BuffonsNeedle(LessonScene):
             mark = Angle(h_arm, n_arm, radius=0.32, color=YELLOW, stroke_width=3.5)
             th = MathTex(r"\theta", font_size=20, color=YELLOW)
             th.move_to(center + 0.50 * np.array([np.cos(theta / 2), np.sin(theta / 2), 0.0]))
-            half_lab = MathTex(r"\dfrac{L}{2}", font_size=18, color=ORANGE)
+            half_lab = MathTex(r"\dfrac{D}{2}", font_size=18, color=ORANGE)
             mid = (center + p2) / 2
             half_lab.move_to(mid + 0.22 * np.array([-np.sin(theta), np.cos(theta), 0.0]))
             parts.extend([href, h_arm, n_arm, mark, th, half_lab])
@@ -1076,7 +1142,7 @@ class BuffonsNeedle(LessonScene):
         frame.move_to(body)
         return VGroup(frame, body)
 
-    def _config_plot(self, l_frac=0.72):
+    def _config_plot(self, l_frac=1.0):
         w, h = 4.35, 2.20
 
         def to_pt(theta, x_over_d2):
@@ -1102,7 +1168,7 @@ class BuffonsNeedle(LessonScene):
         x_lab.next_to(rect, LEFT, buff=0.42)
         d2 = MathTex(r"\dfrac{D}{2}", font_size=18, color=TEAL)
         d2.next_to(rect.get_corner(UL), LEFT, buff=0.08)
-        eq = MathTex(r"x=\dfrac{L}{2}\sin\theta", font_size=18, color=ORANGE)
+        eq = MathTex(r"x=\dfrac{D}{2}\sin\theta", font_size=18, color=ORANGE)
         eq.move_to(to_pt(0.78 * PI, 0.86))
         return VGroup(rect, area, curve, zero, pi_t, th_lab, x_lab, d2, eq)
 

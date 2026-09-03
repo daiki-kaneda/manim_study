@@ -607,6 +607,9 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("ベイズ", scene)
         self.assertIn("感度", scene)
         self.assertIn("特異度", scene)
+        self.assertNotIn("事前が稀", scene)
+        self.assertNotIn("事前が稀だと", story)
+        self.assertIn("1 万人に 1 人だとします", scene)
         step1 = scene[
             scene.index("def part_step1_rules") : scene.index("def part_step2_prior")
         ]
@@ -615,6 +618,12 @@ class CurriculumLessonTests(unittest.TestCase):
 
     def test_math_150_012_has_storyboard_and_scene(self):
         story, scene = self._assert_math_150_common(MATH_150_012, "CentralLimitDice")
+        self.assertIn("二つのサイコロを振って出る目の合計は、何が一番多いでしょうか", scene)
+        self.assertIn("def _pips", scene)
+        self.assertIn("場合の数", scene)
+        self.assertIn("y_axis", scene)
+        self.assertNotIn("しぼむ", scene)
+        self.assertIn("ペースで小さく", scene)
         self.assertIn(r"6\cdot 6=36", scene)
         self.assertIn(r"6^{3}=216", scene)
         self.assertIn(r"\sqrt{n}", scene)
@@ -630,6 +639,9 @@ class CurriculumLessonTests(unittest.TestCase):
 
     def test_math_150_013_has_storyboard_and_scene(self):
         story, scene = self._assert_math_150_common(MATH_150_013, "LawOfLargeNumbers")
+        self.assertNotIn("しぼむ", scene)
+        self.assertIn("ペースで小さく", scene)
+        self.assertIn("記憶はありません", scene)
         self.assertIn(r"\dfrac{8}{10}", scene)
         self.assertIn(r"8-5=3", scene)
         self.assertIn(r"\dfrac{53}{100}", scene)
@@ -648,6 +660,12 @@ class CurriculumLessonTests(unittest.TestCase):
 
     def test_math_150_014_has_storyboard_and_scene(self):
         story, scene = self._assert_math_150_common(MATH_150_014, "BuffonsNeedle")
+        q = scene[scene.index("def part_question") : scene.index("def part_trial_count")]
+        self.assertIn(r"L=D", q)
+        self.assertNotIn(r"L\le D", q)
+        self.assertIn(r"\dfrac{2N}{C}", q)
+        self.assertIn("長方形のどの小さな区画も同じ確からしさ", scene)
+        self.assertIn(r"L<D", scene)
         self.assertIn(r"x\le\dfrac{L}{2}\sin\theta", scene)
         self.assertIn(r"\dfrac{2L}{\pi D}", scene)
         self.assertIn(r"\pi\approx\dfrac{2LN}{CD}", scene)
@@ -662,6 +680,11 @@ class CurriculumLessonTests(unittest.TestCase):
 
     def test_math_150_015_has_storyboard_and_scene(self):
         story, scene = self._assert_math_150_common(MATH_150_015, "RandomWalkReturn")
+        self.assertNotIn("入口で再掲", scene)
+        self.assertNotIn("観察で十分", scene)
+        self.assertIn(r"p_{1}=p_{2}=1", scene)
+        self.assertIn(r"p_{d}<1", scene)
+        self.assertIn(r"\mathbb{Z}^{d}", scene)
         self.assertIn(r"2^{2}=4", scene)
         self.assertIn(r"2^{4}=16", scene)
         self.assertIn(r"\dbinom{4}{2}", scene)

@@ -38,7 +38,7 @@ class FalsePositiveBayes(LessonScene):
     def part_question(self):
         fig = self._kit()
         cap = self.ja_text(
-            "ある病気は、1 万人に 1 人の割合であるとおく。",
+            "ある病気にかかっている人は、1 万人に 1 人だとします。",
             font_size=18,
         )
         self._fit(cap, 13.0)
@@ -51,7 +51,7 @@ class FalsePositiveBayes(LessonScene):
         self.linger(cap.text)
 
         q1 = self.ja_text(
-            "検査は、病気の人にも、病気でない人にも、99 パーセント正しく判定するとおく。",
+            "検査は、病気の人にも、病気でない人にも、99 パーセント正しく判定します。",
             font_size=20,
         )
         self.stack_below(q1, pair, buff=0.22)
@@ -86,9 +86,9 @@ class FalsePositiveBayes(LessonScene):
 
         rows = [
             self._line(
-                "検査が正しい割合を",
+                "検査が正しい割合は",
                 MathTex(r"99\%", font_size=28, color=YELLOW),
-                "とおく。",
+                "です。",
                 font_size=18,
             ),
             self._line(
@@ -98,7 +98,7 @@ class FalsePositiveBayes(LessonScene):
                 font_size=18,
             ),
             self.ja_text(
-                "1 万人に 1 人、という事前の稀さは、まだ使っていません。",
+                "1 万人に 1 人という少なさは、まだ使っていません。",
                 font_size=18,
             ),
         ]
@@ -272,37 +272,41 @@ class FalsePositiveBayes(LessonScene):
 
         defs = [
             self._line(
-                "人数を",
+                "人数は",
                 MathTex(r"10000", font_size=26, color=YELLOW),
-                "人とおく。",
+                "人とします。",
                 font_size=18,
             ),
             self._line(
-                "病気の人の人数を",
+                "病気の人は",
                 MathTex(r"1", font_size=26, color=YELLOW),
-                "とおく。病気でない人の人数を",
+                "人、病気でない人は",
                 MathTex(r"9999", font_size=26, color=ORANGE),
-                "とおく。",
+                "人です。",
                 font_size=18,
             ),
             self._line(
-                "感度を、病気の人が陽性になる割合とおく。値は",
+                "感度は、病気の人が陽性になる割合です。値は",
                 MathTex(r"99\%=\dfrac{99}{100}", font_size=26, color=GREEN),
                 font_size=16,
             ),
             self._line(
-                "特異度を、病気でない人が陰性になる割合とおく。値は",
+                "特異度は、病気でない人が陰性になる割合です。値は",
                 MathTex(r"99\%=\dfrac{99}{100}", font_size=26, color=GREEN),
                 font_size=16,
             ),
             self._line(
-                "条件付き確率",
+                "病気であるという出来事を",
+                MathTex(r"A", font_size=24, color=YELLOW),
+                "、陽性が出るという出来事を",
+                MathTex(r"B", font_size=24, color=ORANGE),
+                "とおく。条件付き確率",
                 MathTex(r"P(A\mid B)", font_size=26, color=YELLOW),
-                "を、「",
+                "は、「",
                 MathTex(r"B", font_size=24),
                 "が起きたという条件のもとでの、",
                 MathTex(r"A", font_size=24),
-                "の割合」とおく。",
+                "の割合」です。",
                 font_size=16,
             ),
         ]
@@ -470,7 +474,7 @@ class FalsePositiveBayes(LessonScene):
 
         switch = [
             self.ja_text(
-                "表では人数を整数に揃えるため、1 万人のかわりに 100 万人で同じ割合を使う、とおく。",
+                "表では人数を整数に揃えるため、同じ割合のまま 100 万人で数えます。",
                 font_size=16,
             ),
             self._line(
@@ -613,7 +617,7 @@ class FalsePositiveBayes(LessonScene):
         self.reveal_table(table, row_wait=1.20)
 
         symbol = self._line(
-            "A を病気、B を陽性、とおくと、",
+            "病気を A、陽性を B とおくと、",
             MathTex(r"P(A\mid B)=\dfrac{99}{10098}", font_size=28, color=YELLOW),
             "です。",
             font_size=18,
@@ -624,7 +628,7 @@ class FalsePositiveBayes(LessonScene):
         symbol.set_x(0)
         self.play(FadeIn(symbol), run_time=0.55)
         self.pause_conclusion()
-        self.linger("A を病気、B を陽性、とおくと、P(A|B)=99/10098 です。")
+        self.linger("病気を A、陽性を B とおくと、P(A|B)=99/10098 です。")
 
         notes = [
             self.ja_text(
@@ -632,7 +636,7 @@ class FalsePositiveBayes(LessonScene):
                 font_size=18,
             ),
             self.ja_text(
-                "検査が 99 パーセント正しくても、事前が稀だと、陽性のほとんどは偽陽性です。",
+                "検査が 99 パーセント正しくても、もともと病気の人がとても少ないと、陽性が出た人のほとんどは偽陽性です。",
                 font_size=18,
             ),
         ]
@@ -662,8 +666,9 @@ class FalsePositiveBayes(LessonScene):
         self.linger(lead.text)
 
         restate = self._line(
-            MathTex(r"N=1000000", font_size=24, color=YELLOW),
-            "とおく。病気",
+            "人数は",
+            MathTex(r"1000000", font_size=24, color=YELLOW),
+            "人です。病気の人は",
             MathTex(r"100", font_size=24, color=YELLOW),
             "人。感度",
             MathTex(r"\dfrac{99}{100}", font_size=24, color=GREEN),
@@ -678,7 +683,7 @@ class FalsePositiveBayes(LessonScene):
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
-        self.linger("N=1000000 とおく。病気 100 人。")
+        self.linger("人数は 1000000 人です。病気の人は 100 人。")
         self.play(FadeOut(lead), run_time=0.45)
         self.play(FadeOut(restate), run_time=0.45)
 
@@ -767,7 +772,7 @@ class FalsePositiveBayes(LessonScene):
 
         first = [
             self._line(
-                "事前の病気の割合を",
+                "検査の前に病気である割合を",
                 MathTex(r"P(A)", font_size=26, color=YELLOW),
                 "とおく。",
                 font_size=18,
@@ -799,7 +804,7 @@ class FalsePositiveBayes(LessonScene):
         self.pause_topic()
 
         name = self.ja_text(
-            "A を病気、B を陽性、とおく。人数の割合を、検査のあとに付け替える、という方法です。",
+            "病気を A、陽性を B とおく。人数の割合を、検査のあとに付け替える、という方法です。",
             font_size=18,
             color=GREY_B,
         )
@@ -817,9 +822,9 @@ class FalsePositiveBayes(LessonScene):
             self._line(
                 "感度",
                 MathTex(r"P(B\mid A)", font_size=24, color=GREEN),
-                "が高くても、",
+                "が高くても、検査の前に病気である割合",
                 MathTex(r"P(A)", font_size=24, color=YELLOW),
-                "が小さいと、",
+                "が小さいと、陽性が出たあとに病気である確率",
                 MathTex(r"P(A\mid B)", font_size=24, color=YELLOW),
                 "は小さくなりえます。",
                 font_size=16,
@@ -827,7 +832,7 @@ class FalsePositiveBayes(LessonScene):
             self._line(
                 "分母の",
                 MathTex(r"P(B)", font_size=24, color=ORANGE),
-                "に、病気でない人からの偽陽性が入ります。稀な病気では、この項が大きくなります。",
+                "に、病気でない人からの偽陽性が入ります。もともと病気の人が少ないと、この項が大きくなります。",
                 font_size=16,
             ),
         ]
@@ -855,7 +860,7 @@ class FalsePositiveBayes(LessonScene):
                     font_size=24,
                     color=YELLOW,
                 ),
-                "。事前が稀だと、事後も小さくなりえます",
+                "。もともと病気の人が少ないと、陽性が出たあとに病気である確率も小さくなりえます",
                 font_size=16,
             ),
         ]
@@ -871,7 +876,7 @@ class FalsePositiveBayes(LessonScene):
             self.pause_conclusion()
 
         trivia = self._line(
-            "事前を 1 万人に 1 人ではなく、100 人に 1 人とすると、同じ検査でも真の陽性",
+            "病気の人を 1 万人に 1 人ではなく、100 人に 1 人とすると、同じ検査でも真の陽性",
             MathTex(r"99", font_size=20, color=GREY_B),
             "人、偽の陽性",
             MathTex(r"99", font_size=20, color=GREY_B),
@@ -885,7 +890,7 @@ class FalsePositiveBayes(LessonScene):
         self._fit_left(trivia)
         self.play(FadeIn(trivia), run_time=0.70)
         self.linger(
-            "事前を 1 万人に 1 人ではなく、100 人に 1 人とすると、同じ検査でも真の陽性 99 人、偽の陽性 99 人となり、陽性のとき病気である確率は 99/(99+99)=1/2 まで上がります。",
+            "病気の人を 1 万人に 1 人ではなく、100 人に 1 人とすると、同じ検査でも真の陽性 99 人、偽の陽性 99 人となり、陽性のとき病気である確率は 99/(99+99)=1/2 まで上がります。",
             extra=0.40,
         )
         self.pause_conclusion()

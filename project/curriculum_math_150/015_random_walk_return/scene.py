@@ -46,7 +46,7 @@ class RandomWalkReturn(LessonScene):
     def part_question(self):
         fig = self._fig_1d(current=None, arrows=True, walk_marks=False)
         cap = self.ja_text(
-            "直線上を、毎ステップ左右へ同じ確からしさで 1 歩歩く、とおく。",
+            "直線上を、毎ステップ左右へ同じ確からしさで 1 歩歩きます。",
             font_size=18,
         )
         self._fit(cap, 13.0)
@@ -218,7 +218,7 @@ class RandomWalkReturn(LessonScene):
             self._line(
                 "各歩は右か左。確率はどちらも",
                 MathTex(r"\dfrac{1}{2}", font_size=28, color=YELLOW),
-                "とおく。独立とおく。",
+                "です。各歩は独立です。",
                 font_size=18,
             ),
             self._line(
@@ -273,7 +273,7 @@ class RandomWalkReturn(LessonScene):
         self.play(FadeIn(lead), run_time=0.7)
         self.linger(lead.text)
 
-        restate = self.ja_text("入口で再掲します。左右の差が、そのときの位置です。", font_size=18)
+        restate = self.ja_text("左右の差が、そのときの位置です。", font_size=18)
         self.stack_below(restate, lead, buff=0.10)
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
@@ -345,16 +345,16 @@ class RandomWalkReturn(LessonScene):
         self.linger(lead.text)
 
         restate = self._line(
-            "入口で再掲します。各歩は 4 方向。確率はどれも",
+            "各歩は 4 方向です。確率はどれも",
             MathTex(r"\dfrac{1}{4}", font_size=28, color=YELLOW),
-            "とおく。",
+            "です。",
             font_size=18,
         )
         self.stack_below(restate, lead, buff=0.10)
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
-        self.linger("入口で再掲します。各歩は 4 方向。確率はどれも 1/4 とおく。")
+        self.linger("各歩は 4 方向です。確率はどれも 1/4 です。")
         self.play(FadeOut(lead), run_time=0.45)
 
         path = [(0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (0, -1), (1, -1), (1, 0)]
@@ -424,16 +424,16 @@ class RandomWalkReturn(LessonScene):
         self.linger(lead.text)
 
         restate = self._line(
-            "入口で再掲します。各歩は 6 方向。確率はどれも",
+            "各歩は 6 方向です。確率はどれも",
             MathTex(r"\dfrac{1}{6}", font_size=28, color=YELLOW),
-            "とおく。",
+            "です。",
             font_size=18,
         )
         self.stack_below(restate, lead, buff=0.10)
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
-        self.linger("入口で再掲します。各歩は 6 方向。確率はどれも 1/6 とおく。")
+        self.linger("各歩は 6 方向です。確率はどれも 1/6 です。")
         self.play(FadeOut(lead), run_time=0.45)
 
         fig = self._fig_3d()
@@ -467,18 +467,18 @@ class RandomWalkReturn(LessonScene):
         notes = [
             self._line(
                 "3 次元以上では、いつかは戻る確率は",
-                MathTex(r"P<1", font_size=26, color=YELLOW),
+                MathTex(r"p_{d}<1", font_size=26, color=YELLOW),
                 "です。戻らない確率が正です。いつかは必ず戻る、とは言えません。",
                 font_size=16,
             ),
             self._line(
                 "1 次元と 2 次元では、重なりが多く、",
-                MathTex(r"P=1", font_size=26, color=GREEN),
+                MathTex(r"p_{1}=p_{2}=1", font_size=26, color=GREEN),
                 "でいつかは戻ります。",
                 font_size=16,
             ),
             self.ja_text(
-                "級数による証明は書かず、隙間が残るという観察で十分です。",
+                "厳密な証明では、戻る確率を級数で書いて、その級数が発散するか収束するかを見ます。今回は高校で使う範囲として、次元ごとの経路の広がりまでとします。",
                 font_size=16,
             ),
         ]
@@ -607,20 +607,25 @@ class RandomWalkReturn(LessonScene):
         self.linger(lead.text)
 
         first = [
-            self.ja_text("入口で再掲します。各方向は同じ確からしさ。独立とおく。", font_size=18),
-            self.ja_text(
-                "ポリアの定理と呼ばれます。1 次元と 2 次元では確率 1 でいつかは戻ります。3 次元以上では、戻らない確率が正です。",
+            self.ja_text("各方向は同じ確からしさです。各歩は独立です。", font_size=18),
+            self._line(
+                "格子",
+                MathTex(r"\mathbb{Z}^{d}", font_size=26, color=YELLOW),
+                "の隣へ、同じ確からしさで歩くとします。",
                 font_size=16,
             ),
             self._line(
-                "1 次元と 2 次元では",
-                MathTex(r"P=1", font_size=26, color=GREEN),
-                "。3 次元以上では",
-                MathTex(r"P<1", font_size=26, color=YELLOW),
-                "です。",
+                "出発点へいつか戻る確率を",
+                MathTex(r"p_{d}", font_size=28, color=YELLOW),
+                "とおく。",
                 font_size=18,
             ),
-            self.ja_text("式は直観のまとめに留めます。級数は書きません。", font_size=18),
+            self.ja_text("ポリアの定理と呼ばれます。主張は次の式です。", font_size=16),
+            MathTex(
+                r"p_{1}=p_{2}=1,\qquad p_{d}<1\quad(d\ge 3)",
+                font_size=28,
+                color=YELLOW,
+            ),
         ]
         block = self._formula_rows(first, lead, buff=0.10, hold=self.PAUSE_CONCLUSION)
         self.play(FadeOut(VGroup(lead, block)), run_time=0.45)
@@ -636,7 +641,13 @@ class RandomWalkReturn(LessonScene):
         self.linger(name.text)
 
         close = [
-            self.ja_text("経路の重なり方を次元ごとに見る、という方法です。", font_size=18, color=GREY_B),
+            self._line(
+                "厳密な証明では",
+                MathTex(r"p_{d}", font_size=22, color=GREY_B),
+                "を級数で書きます。今回は主張の式までとします。",
+                font_size=16,
+                color=GREY_B,
+            ),
         ]
         self._formula_rows(close, name, buff=0.12, hold=self.PAUSE_COMPLEX)
 
@@ -654,14 +665,17 @@ class RandomWalkReturn(LessonScene):
             ),
             self._line(
                 "2 次元でも面の上で交差しやすく、",
-                MathTex(r"P=1", font_size=24, color=GREEN),
+                MathTex(r"p_{2}=1", font_size=24, color=GREEN),
                 "で戻ります",
                 font_size=16,
             ),
             self._line(
-                "3 次元以上では隙間が残り、",
-                MathTex(r"P<1", font_size=24, color=YELLOW),
-                "です。ポリアの定理",
+                "ポリアの定理:",
+                MathTex(r"p_{1}=p_{2}=1", font_size=22, color=GREEN),
+                "、",
+                MathTex(r"d\ge 3", font_size=22, color=YELLOW),
+                "では",
+                MathTex(r"p_{d}<1", font_size=22, color=YELLOW),
                 font_size=16,
             ),
         ]

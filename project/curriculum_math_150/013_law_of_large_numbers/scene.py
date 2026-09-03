@@ -47,7 +47,7 @@ class LawOfLargeNumbers(LessonScene):
         cap = self._line(
             "公正なコインを、表が出る確率",
             MathTex(r"\dfrac{1}{2}", font_size=26, color=YELLOW),
-            "とおく。",
+            "とします。",
             font_size=18,
         )
         self._fit(cap, 13.0)
@@ -57,7 +57,7 @@ class LawOfLargeNumbers(LessonScene):
         self._nudge(pair)
         self.play(FadeIn(fig), FadeIn(cap), run_time=0.8)
         self.pause_new_screen()
-        self.linger("公正なコインを、表が出る確率 1/2 とおく。")
+        self.linger("公正なコインを、表が出る確率 1/2 とします。")
 
         q1 = self._line(
             "振り続けたとき、表の枚数を回数で割った割合は、必ず",
@@ -245,15 +245,15 @@ class LawOfLargeNumbers(LessonScene):
 
         defs = [
             self._line(
-                "表が出る確率を",
+                "表が出る確率は",
                 MathTex(r"\dfrac{1}{2}", font_size=26, color=YELLOW),
-                "とおく。裏も",
+                "です。裏も",
                 MathTex(r"\dfrac{1}{2}", font_size=26, color=YELLOW),
-                "とおく。",
+                "です。",
                 font_size=18,
             ),
             self.ja_text(
-                "各回は独立とおく。前の結果は、次の回の出やすさを変えない、とおく。",
+                "各回は独立です。前の結果は、次の回の出やすさを変えません。",
                 font_size=18,
             ),
             self._line(
@@ -270,7 +270,7 @@ class LawOfLargeNumbers(LessonScene):
 
         notes = [
             self.ja_text(
-                "独立とおいたので、コインに記憶はありません。",
+                "独立なので、コインに記憶はありません。",
                 font_size=18,
             ),
             self.ja_text(
@@ -304,17 +304,18 @@ class LawOfLargeNumbers(LessonScene):
         self.linger(lead.text)
 
         restate = self._line(
+            "回数を",
             MathTex(r"n", font_size=24, color=YELLOW),
-            "回振って表が",
+            "、表の枚数を",
             MathTex(r"k", font_size=24, color=YELLOW),
-            "回。",
+            "とおく。",
             font_size=18,
         )
         self.stack_below(restate, lead, buff=0.10)
         restate.set_x(0)
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
-        self.linger("n 回振って表が k 回。")
+        self.linger("回数を n、表の枚数を k とおく。")
 
         rows = [
             self._line(
@@ -440,7 +441,7 @@ class LawOfLargeNumbers(LessonScene):
         cap = None
         for i, (_n, rate, ntex, eq, speak) in enumerate(stages):
             color = colors[i]
-            tag_dir = RIGHT if i == 2 else UP
+            tag_dir = [UP, LEFT, RIGHT][i]
             mark = self._rate_mark(nl, rate, ntex, eq_color=color, tag_dir=tag_dir)
             eq_mob = self._line(
                 MathTex(ntex, font_size=24, color=color),
@@ -494,10 +495,10 @@ class LawOfLargeNumbers(LessonScene):
                 self.linger("短い列で外れて見えるのは、分母の n が小さいからです。")
 
     def part_step4_shrink(self):
-        chip = self.begin_step("STEP 4  しぼむ", self.header)
+        chip = self.begin_step("STEP 4  小さく", self.header)
 
         lead = self.ja_text(
-            "割合のばらつきが、回数とともにどうしぼむかを、絵で見ます。",
+            "割合のばらつきが、回数とともにどう小さくなっていくかを、絵で見ます。",
             font_size=18,
         )
         self.below_chip(lead, chip, buff=0.16)
@@ -527,19 +528,19 @@ class LawOfLargeNumbers(LessonScene):
                 MathTex(r"n", font_size=24, color=YELLOW),
                 "回の表の割合を",
                 MathTex(r"\dfrac{k}{n}", font_size=28, color=YELLOW),
-                "とおく。",
+                "とします。",
                 font_size=18,
             ),
             self._line(
                 "この割合のばらつきの目安は、",
                 MathTex(r"\dfrac{1}{n}", font_size=28, color=ORANGE),
-                "に比例してしぼみます。",
+                "に比例して小さくなっていきます。",
                 font_size=18,
             ),
             self._line(
                 "幅が",
                 MathTex(r"\dfrac{1}{\sqrt{n}}", font_size=28, color=TEAL),
-                "で狭まる絵を出します。",
+                "のペースで小さくなっていく絵を出します。",
                 font_size=18,
             ),
         ]
@@ -567,13 +568,13 @@ class LawOfLargeNumbers(LessonScene):
             self._line(
                 "ばらつきの目安は",
                 MathTex(r"\dfrac{1}{n}", font_size=24, color=ORANGE),
-                "に比例してしぼみます。",
+                "に比例して小さくなっていきます。",
                 font_size=18,
             ),
             self._line(
                 "幅は",
                 MathTex(r"\dfrac{1}{\sqrt{n}}", font_size=24, color=TEAL),
-                "で狭まります。",
+                "のペースで小さくなっていきます。",
                 font_size=18,
             ),
             self._line(
@@ -597,9 +598,9 @@ class LawOfLargeNumbers(LessonScene):
             cap = new_cap
             self.pause_new_screen()
             if i == 0:
-                self.linger("ばらつきの目安は 1/n に比例してしぼみます。")
+                self.linger("ばらつきの目安は 1/n に比例して小さくなっていきます。")
             elif i == 1:
-                self.linger("幅は 1/sqrt(n) で狭まります。")
+                self.linger("幅は 1/sqrt(n) のペースで小さくなっていきます。")
             else:
                 self.linger("回数が多いほど、1/2 のまわりが細くなります。")
 
@@ -676,7 +677,7 @@ class LawOfLargeNumbers(LessonScene):
         self.linger("最初の 10 回は表。k=10、n=10、割合 1。")
 
         cap2 = self.ja_text(
-            "そのあと 90 回を、表 45、裏 45 とおく。公正な平均の例です。",
+            "そのあと 90 回を、表 45、裏 45 とします。公正な平均の例です。",
             font_size=18,
         )
         self._fit(cap2, 13.0)
@@ -832,8 +833,10 @@ class LawOfLargeNumbers(LessonScene):
                 "。",
                 font_size=18,
             ),
-            self.ja_text(
-                "必ず各回が帳消しになる、という意味ではありません。割る回数が増えて、外れの見え方がしぼむ、という意味です。",
+            self._line(
+                "必ず各回が帳消しになる、という意味ではありません。割る回数が増えて、外れの見え方が",
+                MathTex(r"\dfrac{1}{\sqrt{n}}", font_size=20, color=TEAL),
+                "のペースで小さくなっていく、という意味です。",
                 font_size=16,
                 color=GREY_B,
             ),
@@ -867,7 +870,7 @@ class LawOfLargeNumbers(LessonScene):
                 MathTex(r"\dfrac{k}{n}", font_size=24, color=YELLOW),
                 "が平均へ寄ることです。ばらつきの幅は",
                 MathTex(r"\dfrac{1}{\sqrt{n}}", font_size=24, color=TEAL),
-                "でしぼみます",
+                "のペースで小さくなっていきます",
                 font_size=16,
             ),
         ]
@@ -960,7 +963,7 @@ class LawOfLargeNumbers(LessonScene):
             MathTex(r"45", font_size=26, color=GOLD),
             "裏",
             MathTex(r"45", font_size=26, color=GREY_B),
-            "とおく",
+            "です",
             font_size=16,
         )
         inner = VGroup(title, body).arrange(DOWN, buff=0.16)
@@ -983,7 +986,7 @@ class LawOfLargeNumbers(LessonScene):
             stroke_width=2.0,
         )
         half = MathTex(r"\dfrac{1}{2}", font_size=20, color=YELLOW)
-        half.next_to(nl.n2p(0.5), DOWN, buff=0.10)
+        half.next_to(nl.n2p(0.5), DOWN, buff=0.22)
         group = VGroup(nl, dash, half)
         for rate, tex, color in marks:
             group.add(self._rate_mark(nl, rate, tex, eq_color=color))
@@ -993,9 +996,18 @@ class LawOfLargeNumbers(LessonScene):
         dot = Dot(nl.n2p(rate), color=eq_color, radius=0.09)
         arm = Line(nl.n2p(0.5), nl.n2p(rate), color=eq_color, stroke_width=5)
         lab = MathTex(ntex, font_size=18, color=eq_color)
-        val = MathTex(rf"{rate}", font_size=18, color=eq_color)
-        tags = VGroup(lab, val).arrange(DOWN, buff=0.04)
-        tags.next_to(dot, tag_dir, buff=0.08)
+        near_half = abs(rate - 0.5) < 0.04
+        tags = lab if near_half else VGroup(lab, MathTex(rf"{rate}", font_size=18, color=eq_color)).arrange(DOWN, buff=0.04)
+        if tag_dir is UP:
+            tags.next_to(dot, UP, buff=0.16)
+        elif tag_dir is DOWN:
+            tags.next_to(dot, DOWN, buff=0.28)
+        elif tag_dir is LEFT:
+            tags.next_to(dot, LEFT, buff=0.12)
+            tags.shift(UP * 0.28)
+        else:
+            tags.next_to(dot, RIGHT, buff=0.14)
+            tags.shift(UP * 0.28)
         return VGroup(arm, dot, tags)
 
     def _width_band(self, n, half_w, color):
@@ -1010,24 +1022,24 @@ class LawOfLargeNumbers(LessonScene):
         lab0 = MathTex(r"0", font_size=16)
         lab1 = MathTex(r"1", font_size=16)
         labh = MathTex(r"\dfrac{1}{2}", font_size=16, color=YELLOW)
-        lab0.next_to(nl.n2p(0.0), DOWN, buff=0.08)
-        lab1.next_to(nl.n2p(1.0), DOWN, buff=0.08)
-        labh.next_to(nl.n2p(0.5), DOWN, buff=0.08)
+        lab0.next_to(nl.n2p(0.0), DOWN, buff=0.22)
+        lab1.next_to(nl.n2p(1.0), DOWN, buff=0.22)
+        labh.next_to(nl.n2p(0.5), DOWN, buff=0.22)
         width = abs(nl.n2p(0.5 + half_w)[0] - nl.n2p(0.5 - half_w)[0])
         rect = Rectangle(
             width=max(width, 0.10),
-            height=0.26,
+            height=0.20,
             color=color,
             stroke_width=1.4,
         )
         rect.set_fill(color, 0.35)
-        rect.move_to(nl.n2p(0.5))
+        rect.move_to(nl.n2p(0.5) + UP * 0.02)
         nlab = MathTex(rf"n={n}", font_size=18, color=color)
         vlab = MathTex(rf"\dfrac{{1}}{{{n}}}", font_size=16, color=ORANGE)
         wlab = MathTex(rf"\dfrac{{1}}{{\sqrt{{{n}}}}}", font_size=16, color=TEAL)
         left = VGroup(nlab, vlab, wlab).arrange(DOWN, buff=0.04, aligned_edge=RIGHT)
         line_group = VGroup(nl, rect, lab0, lab1, labh)
-        row = VGroup(left, line_group).arrange(RIGHT, buff=0.20)
+        row = VGroup(left, line_group).arrange(RIGHT, buff=0.28)
         return row
 
     def _line(self, *chunks, font_size=24, color=None, buff=0.08):

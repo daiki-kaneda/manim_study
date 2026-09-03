@@ -30,7 +30,8 @@ class CentralLimitDice(LessonScene):
         self.part_summary()
 
     def _open_header(self):
-        title = self.ja_text("サイコロを足すと釣鐘になるのはなぜか", font_size=36)
+        title = self.ja_text("二つのサイコロを振って出る目の合計は何が一番多いか", font_size=32)
+        self._fit(title, 13.2)
         self.play(FadeIn(title), run_time=0.8)
         self.pause_new_screen()
         self.linger(1.5)
@@ -54,7 +55,7 @@ class CentralLimitDice(LessonScene):
         self.linger(cap.text)
 
         q2 = self.ja_text(
-            "何個もの目を足した合計は、なぜ端が少なく、真ん中が膨らむのでしょうか。",
+            "二つのサイコロを振って出る目の合計は、何が一番多いでしょうか。",
             font_size=20,
         )
         self.stack_below(q2, pair, buff=0.22)
@@ -207,13 +208,13 @@ class CentralLimitDice(LessonScene):
 
         defs = [
             self._line(
-                "サイコロの個数を",
+                "サイコロの個数は",
                 MathTex(r"2", font_size=26, color=YELLOW),
-                "とおく。目を",
+                "です。目は",
                 MathTex(r"1", font_size=26),
                 "から",
                 MathTex(r"6", font_size=26),
-                "とおく。",
+                "です。",
                 font_size=18,
             ),
             self._line(
@@ -222,7 +223,7 @@ class CentralLimitDice(LessonScene):
                 "です。",
                 font_size=18,
             ),
-            self.ja_text("どの組も同じ確からしさ、とおく。", font_size=18),
+            self.ja_text("どの組も同じ確からしさです。", font_size=18),
         ]
         block = self._formula_rows(defs, lead, buff=0.12)
         self.pause_conclusion()
@@ -578,7 +579,7 @@ class CentralLimitDice(LessonScene):
             self._line(
                 "平均で割る方法で見ると、相対的なばらつきは",
                 MathTex(r"\dfrac{\sqrt{n}}{n}=\dfrac{1}{\sqrt{n}}", font_size=28, color=GOLD),
-                "でしぼみます。",
+                "のペースで小さくなっていきます。",
                 font_size=16,
             ),
         ]
@@ -623,16 +624,18 @@ class CentralLimitDice(LessonScene):
         self.play(FadeIn(name), run_time=0.55)
         self.linger(name.text)
 
-        note = self.ja_text(
-            "足すほど、真ん中に寄って見えるのは、経路の数の差と、相対的な幅がしぼむからです。",
-            font_size=18,
+        note = self._line(
+            "足すほど、真ん中に寄って見えるのは、経路の数の差と、相対的な幅が",
+            MathTex(r"\dfrac{1}{\sqrt{n}}", font_size=22, color=GOLD),
+            "のペースで小さくなっていくからです。",
+            font_size=16,
         )
         self.stack_below(note, name, buff=0.10)
         note.set_x(0)
         self._fit(note, 13.0)
         note.set_x(0)
         self.play(FadeIn(note), run_time=0.55)
-        self.linger(note.text)
+        self.linger("足すほど、真ん中に寄って見えるのは、経路の数の差と、相対的な幅が 1/sqrt(n) のペースで小さくなっていくからです。")
 
     def part_example(self):
         chip = self.begin_step("実例", self.header)
@@ -824,7 +827,7 @@ class CentralLimitDice(LessonScene):
                 MathTex(r"n", font_size=22, color=YELLOW),
                 "を増やすと、相対的なばらつきは",
                 MathTex(r"\dfrac{1}{\sqrt{n}}", font_size=24, color=GOLD),
-                "でしぼみます",
+                "のペースで小さくなっていきます",
                 font_size=16,
             ),
             self.ja_text(
@@ -848,7 +851,7 @@ class CentralLimitDice(LessonScene):
             MathTex(r"1", font_size=20, color=GREY_B),
             "、裏を",
             MathTex(r"0", font_size=20, color=GREY_B),
-            "とおいて足しても、同じように真ん中が膨らみます。サイコロである必要はありません。",
+            "とおく。足しても、同じように真ん中が膨らみます。サイコロである必要はありません。",
             font_size=16,
             color=GREY_B,
         )
@@ -856,7 +859,7 @@ class CentralLimitDice(LessonScene):
         self._fit_left(trivia)
         self.play(FadeIn(trivia), run_time=0.70)
         self.linger(
-            "コインの表を 1、裏を 0 とおいて足しても、同じように真ん中が膨らみます。サイコロである必要はありません。",
+            "コインの表を 1、裏を 0 とおく。足しても、同じように真ん中が膨らみます。サイコロである必要はありません。",
             extra=0.40,
         )
         self.pause_conclusion()
@@ -871,21 +874,125 @@ class CentralLimitDice(LessonScene):
         ul = LEFT * (s / 2) + UP * (s / 2)
         off = RIGHT * dx + UP * dy
         front = Polygon(fl, fr, ur, ul, color=GREY_B, stroke_width=2.4)
-        front.set_fill(GREY_A, 0.95)
+        front.set_fill("#F4F0E6", 0.98)
         top = Polygon(ul, ur, ur + off, ul + off, color=GREY_B, stroke_width=2.0)
-        top.set_fill("#E2E2E2", 0.95)
+        top.set_fill("#E8E4DA", 0.98)
         side = Polygon(fr, fr + off, ur + off, ur, color=GREY_B, stroke_width=2.0)
-        side.set_fill(GREY_C, 0.92)
-        inset = RoundedRectangle(
-            width=s * 0.72,
-            height=s * 0.72,
-            corner_radius=0.10,
-            color=GREY_B,
-            stroke_width=1.2,
+        side.set_fill("#D4D0C6", 0.98)
+        front_pips = self._pips(front.get_center(), s * 0.78, 5, color=GREY_E)
+        top_center = (ul + ur + ur + off + ul + off) / 4
+        top_pips = self._pips(top_center, s * 0.42, 1, color=GREY_E, y_scale=0.55)
+        side_center = (fr + fr + off + ur + off + ur) / 4
+        side_pips = self._pips(side_center, s * 0.38, 6, color=GREY_E, x_scale=0.55)
+        return VGroup(top, side, front, top_pips, side_pips, front_pips)
+
+    def _pips(self, center, face_w, n, color=GREY_E, x_scale=1.0, y_scale=1.0):
+        r = max(face_w * 0.07, 0.045)
+        d = face_w * 0.22
+        layout = {
+            1: [(0, 0)],
+            2: [(-d, d), (d, -d)],
+            3: [(-d, d), (0, 0), (d, -d)],
+            4: [(-d, d), (d, d), (-d, -d), (d, -d)],
+            5: [(-d, d), (d, d), (0, 0), (-d, -d), (d, -d)],
+            6: [(-d, d), (d, d), (-d, 0), (d, 0), (-d, -d), (d, -d)],
+        }
+        dots = VGroup()
+        for x, y in layout[n]:
+            dots.add(
+                Dot(
+                    center + RIGHT * x * x_scale + UP * y * y_scale,
+                    radius=r,
+                    color=color,
+                )
+            )
+        return dots
+
+    def _bar_chart(
+        self,
+        heights,
+        labels,
+        color=BLUE_B,
+        colors=None,
+        unit=0.30,
+        bar_w=0.46,
+        gap=0.10,
+        label_size=16,
+    ):
+        n = len(heights)
+        if colors is None:
+            colors = [color] * n
+        bars = VGroup()
+        labs = VGroup()
+        stride = bar_w + gap
+        width = n * bar_w + (n - 1) * gap
+        x0 = -width / 2 + bar_w / 2
+        y0 = 0.0
+        label_y = y0 - 0.28
+        max_h = max(heights) if heights else 1
+        for i, (h, text) in enumerate(zip(heights, labels)):
+            col = colors[i]
+            height = max(h * unit, 0.10)
+            bar = Rectangle(
+                width=bar_w,
+                height=height,
+                color=col,
+                stroke_width=1.2,
+            )
+            bar.set_fill(col, 0.85)
+            x = x0 + i * stride
+            bar.move_to([x, y0 + height / 2, 0])
+            lab = MathTex(rf"{text}", font_size=label_size)
+            lab.move_to([x, label_y, 0])
+            bars.add(bar)
+            labs.add(lab)
+        left = bars[0].get_left()[0] - 0.12
+        right = bars[-1].get_right()[0] + 0.12
+        baseline = Line([left, y0, 0], [right, y0, 0], color=GREY_B, stroke_width=1.6)
+        axis_top = y0 + max(max_h * unit, 0.10) + 0.08
+        y_axis = Line([left, y0, 0], [left, axis_top, 0], color=GREY_B, stroke_width=1.6)
+        ticks = VGroup()
+        tick_vals = self._axis_ticks(max_h)
+        for val in tick_vals:
+            ty = y0 + val * unit
+            tick = Line([left - 0.07, ty, 0], [left, ty, 0], color=GREY_B, stroke_width=1.4)
+            tlab = MathTex(rf"{val}", font_size=14, color=GREY_B)
+            tlab.next_to(tick, LEFT, buff=0.06)
+            ticks.add(VGroup(tick, tlab))
+        y_name = self.ja_text("場合の数", font_size=14, color=GREY_B)
+        y_name.next_to(y_axis, UP, buff=0.08)
+        y_name.align_to(y_axis, LEFT)
+        chart = VGroup(baseline, y_axis, ticks, y_name, bars, labs)
+        chart.bars = bars
+        chart.labels = labs
+        chart.baseline = baseline
+        chart.y_axis = VGroup(y_axis, ticks, y_name)
+        return chart
+
+    def _axis_ticks(self, max_h):
+        if max_h <= 1:
+            return [1]
+        if max_h <= 6:
+            return list(range(1, int(max_h) + 1))
+        if max_h <= 12:
+            return list(range(2, int(max_h) + 1, 2))
+        step = 9 if max_h <= 27 else max(1, int(round(max_h / 3)))
+        vals = list(range(step, int(max_h), step))
+        if vals[-1] != int(max_h):
+            vals.append(int(max_h))
+        return vals
+
+    def _play_bars(self, chart):
+        self.add(chart.baseline, chart.y_axis)
+        self.play(
+            LaggedStart(
+                *[GrowFromEdge(bar, DOWN) for bar in chart.bars],
+                lag_ratio=0.08,
+            ),
+            FadeIn(chart.labels),
+            run_time=1.35,
         )
-        inset.set_fill(WHITE, 0.08)
-        inset.move_to(front.get_center())
-        return VGroup(top, side, front, inset)
+        self.pause_new_screen()
 
     def _pair_grid(self, cell=0.48, buff=0.05):
         rects = []
@@ -924,64 +1031,6 @@ class CentralLimitDice(LessonScene):
         left_name.next_to(row_labs, LEFT, buff=0.10)
         left_name.set_y(grid.get_y())
         return VGroup(grid, labels, col_labs, row_labs, top_name, left_name)
-
-    def _bar_chart(
-        self,
-        heights,
-        labels,
-        color=BLUE_B,
-        colors=None,
-        unit=0.30,
-        bar_w=0.46,
-        gap=0.10,
-        label_size=16,
-    ):
-        n = len(heights)
-        if colors is None:
-            colors = [color] * n
-        bars = VGroup()
-        labs = VGroup()
-        stride = bar_w + gap
-        width = n * bar_w + (n - 1) * gap
-        x0 = -width / 2 + bar_w / 2
-        y0 = 0.0
-        label_y = y0 - 0.28
-        for i, (h, text) in enumerate(zip(heights, labels)):
-            col = colors[i]
-            height = max(h * unit, 0.10)
-            bar = Rectangle(
-                width=bar_w,
-                height=height,
-                color=col,
-                stroke_width=1.2,
-            )
-            bar.set_fill(col, 0.85)
-            x = x0 + i * stride
-            bar.move_to([x, y0 + height / 2, 0])
-            lab = MathTex(rf"{text}", font_size=label_size)
-            lab.move_to([x, label_y, 0])
-            bars.add(bar)
-            labs.add(lab)
-        left = bars[0].get_left()[0] - 0.12
-        right = bars[-1].get_right()[0] + 0.12
-        baseline = Line([left, y0, 0], [right, y0, 0], color=GREY_B, stroke_width=1.6)
-        chart = VGroup(baseline, bars, labs)
-        chart.bars = bars
-        chart.labels = labs
-        chart.baseline = baseline
-        return chart
-
-    def _play_bars(self, chart):
-        self.add(chart.baseline)
-        self.play(
-            LaggedStart(
-                *[GrowFromEdge(bar, DOWN) for bar in chart.bars],
-                lag_ratio=0.08,
-            ),
-            FadeIn(chart.labels),
-            run_time=1.35,
-        )
-        self.pause_new_screen()
 
     def _envelope(self, bars, color=ORANGE):
         left = bars[0].get_corner(DL) + LEFT * 0.18

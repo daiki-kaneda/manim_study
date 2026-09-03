@@ -324,34 +324,28 @@ class CircleArea(LessonScene):
 
         r = 1.15
         arranged = None
-        dim_lab = None
         for n, wait in ((4, 3.2), (8, 3.2), (16, 3.2)):
-            nxt = self._arranged_pieces(n, r)
-            self.stack_below(nxt, lead, buff=0.4)
-            nxt.set_x(-1.4)
-            w = n * r * np.sin(PI / n)
-            h = r * np.cos(PI / n)
-            w_tex = MathTex(rf"n={n}", font_size=28, color=YELLOW)
-            h_tex = MathTex(r"\approx r\cos(\pi/n)", font_size=26, color=YELLOW)
-            wd_tex = MathTex(r"\approx nr\sin(\pi/n)", font_size=26, color=ORANGE)
-            labs = VGroup(w_tex, h_tex, wd_tex).arrange(DOWN, aligned_edge=LEFT, buff=0.14)
-            labs.next_to(nxt, RIGHT, buff=0.45)
+            nxt = self._arranged_with_dims(n, r)
+            self.stack_below(nxt, lead, buff=0.32)
+            self._fit(nxt, 12.8)
+            nxt.set_x(0)
+            overflow = (-config.frame_width / 2 + 0.08) - nxt.get_left()[0]
+            if overflow > 0:
+                nxt.shift(RIGHT * overflow)
             if arranged is None:
-                self.play(FadeIn(nxt), FadeIn(labs), run_time=0.7)
-                arranged = nxt
-                dim_lab = labs
+                self.play(FadeIn(nxt), run_time=0.7)
             else:
-                self.play(FadeOut(arranged), FadeIn(nxt), Transform(dim_lab, labs), run_time=0.85)
-                arranged = nxt
+                self.play(ReplacementTransform(arranged, nxt), run_time=0.85)
+            arranged = nxt
             self.linger(wait)
 
         result = [
-            self._line("横", MathTex(r"nr\sin(\pi/n)\to\pi r", font_size=34), font_size=26),
-            self._line("縦", MathTex(r"r\cos(\pi/n)\to r", font_size=34), font_size=26),
+            self._line("横", MathTex(r"nr\sin(\pi/n)\to\pi r", font_size=34, color=ORANGE), font_size=26, color=ORANGE),
+            self._line("縦", MathTex(r"r\cos(\pi/n)\to r", font_size=34, color=YELLOW), font_size=26, color=YELLOW),
             MathTex(r"(\pi r)\cdot r=\pi r^2", font_size=40, color=GREEN),
         ]
         block = VGroup(*result).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
-        block.next_to(arranged, DOWN, buff=0.32)
+        self.stack_below(block, arranged, buff=0.28)
         block.set_x(0)
         for row in result:
             self.play(FadeIn(row), run_time=0.4)
@@ -689,6 +683,31 @@ class CircleArea(LessonScene):
             sec.rotate(PI / 2 + i * TAU / n, about_point=ORIGIN)
             pieces.add(sec)
         return pieces
+
+    def _arranged_with_dims(self, n, radius):
+        pieces = self._arranged_pieces(n, radius)
+        w_brace = Brace(pieces, DOWN, color=ORANGE, buff=0.14)
+        w_lab = self._line(
+            "横",
+            MathTex(r"\approx nr\sin(\pi/n)", font_size=24, color=ORANGE),
+            font_size=22,
+            color=ORANGE,
+        )
+        w_brace.put_at_tip(w_lab)
+        h_brace = Brace(pieces, LEFT, color=YELLOW, buff=0.14)
+        h_lab = self._line(
+            "縦",
+            MathTex(r"\approx r\cos(\pi/n)", font_size=24, color=YELLOW),
+            font_size=22,
+            color=YELLOW,
+        )
+        h_brace.put_at_tip(h_lab)
+        n_lab = MathTex(rf"n={n}", font_size=28, color=YELLOW)
+        n_lab.next_to(pieces, RIGHT, buff=0.32)
+        n_lab.align_to(pieces, UP)
+        group = VGroup(pieces, w_brace, w_lab, h_brace, h_lab, n_lab)
+        group.pieces = pieces
+        return group
 
     def _arranged_pieces(self, n, radius):
         colors = [BLUE, TEAL]

@@ -41,6 +41,11 @@ MATH_150_007 = ROOT / "project" / "curriculum_math_150" / "007_regions_from_line
 MATH_150_008 = ROOT / "project" / "curriculum_math_150" / "008_pigeonhole"
 MATH_150_009 = ROOT / "project" / "curriculum_math_150" / "009_birthday_paradox"
 MATH_150_010 = ROOT / "project" / "curriculum_math_150" / "010_monty_hall"
+MATH_150_011 = ROOT / "project" / "curriculum_math_150" / "011_false_positive_bayes"
+MATH_150_012 = ROOT / "project" / "curriculum_math_150" / "012_central_limit_dice"
+MATH_150_013 = ROOT / "project" / "curriculum_math_150" / "013_law_of_large_numbers"
+MATH_150_014 = ROOT / "project" / "curriculum_math_150" / "014_buffons_needle"
+MATH_150_015 = ROOT / "project" / "curriculum_math_150" / "015_random_walk_return"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -564,6 +569,146 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("numbers_above", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_010 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_010 / "scene.py")
+
+    def _assert_math_150_common(self, folder, class_name):
+        story = (folder / "storyboard.md").read_text(encoding="utf-8")
+        scene = (folder / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn(f"class {class_name}(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.begin_step(", scene)
+        self.assertIn("pause_conclusion", scene)
+        self.assertIn("とおく", scene)
+        self.assertIn("方法", scene)
+        self.assertNotIn("道", scene)
+        self.assertNotIn("あれは", scene)
+        self._assert_no_japanese_in_mathtex(folder / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(folder / "scene.py")
+        return story, scene
+
+    def test_math_150_011_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_011, "FalsePositiveBayes")
+        self.assertIn(r"P(A\mid B)", scene)
+        self.assertIn(r"P(A\mid B)=\dfrac{P(B\mid A)\,P(A)}{P(B)}", scene)
+        self.assertIn(r"\dfrac{99}{10098}", scene)
+        self.assertIn(r"99+9999=10098", scene)
+        self.assertIn(r"\dfrac{99}{99+99}=\dfrac{1}{2}", scene)
+        self.assertIn("ベイズ", scene)
+        self.assertIn("感度", scene)
+        self.assertIn("特異度", scene)
+        self.assertNotIn("事前が稀", scene)
+        self.assertNotIn("事前が稀だと", story)
+        self.assertIn("1 万人に 1 人だとします", scene)
+        step1 = scene[
+            scene.index("def part_step1_rules") : scene.index("def part_step2_prior")
+        ]
+        self.assertNotIn(r"P(B\mid A)", step1)
+        self.assertNotIn("10098", step1)
+
+    def test_math_150_012_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_012, "CentralLimitDice")
+        self.assertIn("二つのサイコロを振って出る目の合計は、何が一番多いでしょうか", scene)
+        self.assertIn("def _dice_pair", scene)
+        self.assertIn("def _pips", scene)
+        self.assertIn("角丸", story)
+        self.assertIn("二次元", story)
+        q = scene[scene.index("def part_question") : scene.index("def part_trial_one")]
+        self.assertIn("_dice_pair", q)
+        self.assertNotIn("Polygon", q)
+        self.assertIn("場合の数", scene)
+        self.assertIn("y_axis", scene)
+        self.assertNotIn("しぼむ", scene)
+        self.assertIn("ペースで小さく", scene)
+        self.assertIn(r"6\cdot 6=36", scene)
+        self.assertIn(r"6^{3}=216", scene)
+        self.assertIn(r"\sqrt{n}", scene)
+        self.assertIn(r"\dfrac{1}{\sqrt{n}}", scene)
+        self.assertIn(r"2\cdot(1+2+3+4+5)+6", scene)
+        self.assertIn(r"=30+6=36", scene)
+        self.assertIn("中心極限", scene)
+        step1 = scene[
+            scene.index("def part_step1_pairs") : scene.index("def part_step2_sums")
+        ]
+        self.assertNotIn(r"\sqrt{n}", step1)
+        self.assertNotIn("正規分布", step1)
+
+    def test_math_150_013_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_013, "LawOfLargeNumbers")
+        self.assertNotIn("しぼむ", scene)
+        self.assertIn("ペースで小さく", scene)
+        self.assertIn("記憶はありません", scene)
+        self.assertIn(r"\dfrac{8}{10}", scene)
+        self.assertIn(r"8-5=3", scene)
+        self.assertIn(r"\dfrac{53}{100}", scene)
+        self.assertIn(r"\dfrac{503}{1000}", scene)
+        self.assertIn(r"\dfrac{55}{100}", scene)
+        self.assertIn(r"\dfrac{520}{1000}", scene)
+        self.assertIn(r"\dfrac{1}{\sqrt{n}}", scene)
+        self.assertIn("大数の法則", scene)
+        step1 = scene[
+            scene.index("def part_step1_no_memory") : scene.index(
+                "def part_step2_diff_vs_rate"
+            )
+        ]
+        self.assertNotIn("大数の法則", step1)
+        self.assertNotIn(r"\dfrac{1}{\sqrt{n}}", step1)
+
+    def test_math_150_014_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_014, "BuffonsNeedle")
+        q = scene[scene.index("def part_question") : scene.index("def part_trial_count")]
+        self.assertIn(r"L=D", q)
+        self.assertNotIn(r"L\le D", q)
+        self.assertIn(r"\dfrac{2}{\pi}", q)
+        self.assertIn("全体の試行回数に対する交わる回数の割合", q)
+        self.assertNotIn(r"\dfrac{2N}{C}", q)
+        header = scene[scene.index("def _open_header") : scene.index("def part_question")]
+        self.assertIn('"針を落として円周率"', header)
+        self.assertIn('"は出るか"', header)
+        self.assertNotIn('"針を落として円周率は出るか"', header)
+        self.assertIn("長方形のどの小さな区画も同じ確からしさ", scene)
+        self.assertIn(r"L<D", scene)
+        self.assertIn(r"x\le\dfrac{L}{2}\sin\theta", scene)
+        self.assertIn(r"\dfrac{2L}{\pi D}", scene)
+        self.assertIn(r"\pi\approx\dfrac{2LN}{CD}", scene)
+        self.assertIn("ビュフォン", scene)
+        self.assertIn(r"\int_{0}^{\pi}", scene)
+        self.assertIn(r"-\cos\pi-(-\cos 0)", scene)
+        step1 = scene[
+            scene.index("def part_step1_coords") : scene.index("def part_step2_hit")
+        ]
+        self.assertNotIn(r"\dfrac{2L}{\pi D}", step1)
+        self.assertNotIn("ビュフォン", step1)
+
+    def test_math_150_015_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_015, "RandomWalkReturn")
+        self.assertNotIn("入口で再掲", scene)
+        self.assertNotIn("観察で十分", scene)
+        self.assertNotIn("観察に留め", scene)
+        self.assertIn(r"p_{1}=p_{2}=1", scene)
+        self.assertIn(r"p_{d}<1", scene)
+        self.assertIn(r"\mathbb{Z}^{d}", scene)
+        self.assertIn(r"2^{2}=4", scene)
+        self.assertIn(r"2^{4}=16", scene)
+        self.assertIn(r"\dbinom{4}{2}", scene)
+        self.assertIn(r"\dfrac{6}{16}=\dfrac{3}{8}", scene)
+        self.assertIn("ポリア", scene)
+        step1 = scene[
+            scene.index("def part_step1_two_steps") : scene.index(
+                "def part_step2_must_cross"
+            )
+        ]
+        self.assertNotIn("ポリア", step1)
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

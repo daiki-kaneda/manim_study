@@ -384,6 +384,15 @@ class MontyHall(LessonScene):
 
         nxt = self._doors(pick=0, opened=1, prize=2, show_prize=True)
         nxt.move_to(fig)
+        new_restate = self._line(
+            "最初に選ぶ扉を",
+            MathTex(r"1", font_size=24, color=YELLOW),
+            "とおく。当たりは扉",
+            MathTex(r"3", font_size=24, color=GREEN),
+            "とします。",
+            font_size=18,
+        )
+        new_restate.move_to(restate)
         new_cap = self.ja_text(
             "当たりが扉 3 のときも、司会は扉 2 を開けます。扉 3 へ乗り換えると当たりです。",
             font_size=18,
@@ -391,10 +400,11 @@ class MontyHall(LessonScene):
         self._fit(new_cap, 13.0)
         self.stack_below(new_cap, nxt, buff=0.40)
         new_cap.set_x(0)
-        self.play(FadeOut(fig), FadeIn(nxt), FadeOut(cap), run_time=0.65)
+        self.play(FadeOut(fig), FadeIn(nxt), FadeOut(cap), FadeOut(restate), run_time=0.65)
         fig = nxt
         cap = new_cap
-        self.play(FadeIn(cap), run_time=0.55)
+        restate = new_restate
+        self.play(FadeIn(restate), FadeIn(cap), run_time=0.55)
         self.linger(new_cap.text)
 
         self.play(FadeOut(VGroup(fig, cap)), run_time=0.45)

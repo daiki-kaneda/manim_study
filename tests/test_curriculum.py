@@ -38,6 +38,7 @@ MATH_150_004 = ROOT / "project" / "curriculum_math_150" / "004_reflection_shorte
 MATH_150_005 = ROOT / "project" / "curriculum_math_150" / "005_ant_on_cube"
 MATH_150_006 = ROOT / "project" / "curriculum_math_150" / "006_picks_theorem"
 MATH_150_007 = ROOT / "project" / "curriculum_math_150" / "007_regions_from_lines"
+MATH_150_008 = ROOT / "project" / "curriculum_math_150" / "008_pigeonhole"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -387,6 +388,51 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertNotIn(r"R(n)=1+\dfrac{n(n+1)}{2}", step1)
         self._assert_no_japanese_in_mathtex(MATH_150_007 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_007 / "scene.py")
+
+    def test_math_150_008_has_storyboard_and_scene(self):
+        story = (MATH_150_008 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (MATH_150_008 / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn("class Pigeonhole(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn("とおく", scene)
+        self.assertIn("方法", scene)
+        self.assertNotIn("道", scene)
+        self.assertNotIn("確率", scene)
+        self.assertNotIn("割合", scene)
+        self.assertNotIn("出やすい", scene)
+        self.assertNotIn("あれは", scene)
+        self.assertIn("鳩の巣", scene)
+        self.assertIn(r"366", scene)
+        self.assertIn(r"367", scene)
+        self.assertIn(r"m=n+1", scene)
+        self.assertIn(r"12+1=13", scene)
+        self.assertIn(r"12\times 2=24", scene)
+        self.assertIn(r"24+1=25", scene)
+        self.assertIn(r"n(r-1)+1", scene)
+        self.assertIn(r"3\cdot 1+1=4", scene)
+        self.assertIn(r"3\cdot(3-1)+1=6+1=7", scene)
+        self.assertIn(r"\left\lceil\dfrac{n+1}{n}\right\rceil=2", scene)
+        self.assertIn(r"\left\lceil\dfrac{13}{12}\right\rceil=2", scene)
+        step1 = scene[
+            scene.index("def part_step1_boxes") : scene.index("def part_step2_worst")
+        ]
+        self.assertNotIn(r"m=n+1", step1)
+        self.assertNotIn(r"n(r-1)+1", step1)
+        self._assert_no_japanese_in_mathtex(MATH_150_008 / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(MATH_150_008 / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

@@ -493,11 +493,11 @@ class Pigeonhole(LessonScene):
             ([2, 1, 1], "4 足目。空の引き出しはありません。同じ色が 2 足になります。"),
         ]
         fig = self._sock_bins([0, 0, 0], sock_colors, names)
-        self.stack_below(fig, restate, buff=0.16)
+        self.stack_below(fig, restate, buff=0.18)
         fig.set_x(0)
         self._nudge(fig)
         caption = self.ja_text("引き出しは 3 つ。まだ靴下はありません。", font_size=20)
-        self.stack_below(caption, fig, buff=0.16)
+        self.stack_below(caption, fig, buff=0.32)
         caption.set_x(0)
         self._fit(caption, 13.0)
         caption.set_x(0)
@@ -515,7 +515,7 @@ class Pigeonhole(LessonScene):
             nxt.move_to(fig)
             new_cap = self.ja_text(text, font_size=20)
             self._fit(new_cap, 13.0)
-            self.stack_below(new_cap, nxt, buff=0.16)
+            self.stack_below(new_cap, nxt, buff=0.32)
             new_cap.set_x(0)
             self.play(
                 FadeOut(fig),
@@ -529,12 +529,13 @@ class Pigeonhole(LessonScene):
             self.linger(text)
 
         eq = MathTex(r"n(r-1)+1=3\cdot 1+1=4", font_size=28, color=YELLOW)
-        self.stack_below(eq, caption, buff=0.16)
+        self.play(FadeOut(caption), run_time=0.45)
+        self.stack_below(eq, fig, buff=0.28)
         eq.set_x(0)
         self.play(FadeIn(eq), run_time=0.55)
         self.pause_conclusion()
 
-        self.play(FadeOut(VGroup(fig, caption, eq)), run_time=0.45)
+        self.play(FadeOut(VGroup(fig, eq)), run_time=0.45)
         self.pause_topic()
         three = [
             self._line(MathTex(r"r=3", font_size=26, color=TEAL), "なら、最悪は各色 2 足で 6 足。", font_size=20),

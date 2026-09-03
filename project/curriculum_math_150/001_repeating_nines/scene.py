@@ -424,7 +424,7 @@ class RepeatingNines(LessonScene):
         self.play(FadeIn(lead), run_time=0.5)
         self.linger(lead.text)
 
-        steps = [
+        setup = [
             MathTex(r"0.999\ldots=0.9+0.09+0.009+\cdots", font_size=32),
             MathTex(r"=\dfrac{9}{10}+\dfrac{9}{100}+\dfrac{9}{1000}+\cdots", font_size=32),
             MathTex(r"=\dfrac{9}{10}\left(1+\dfrac{1}{10}+\dfrac{1}{100}+\cdots\right)", font_size=32),
@@ -433,13 +433,23 @@ class RepeatingNines(LessonScene):
                 MathTex(r"1", font_size=28),
                 "、公比",
                 MathTex(r"1/10", font_size=28),
-                "の無限等比級数",
+                "の無限等比級数。和を",
+                MathTex(r"S", font_size=28),
+                "と置く",
                 font_size=22,
             ),
-            MathTex(r"\dfrac{1}{1-1/10}=\dfrac{10}{9}", font_size=34),
+        ]
+        setup_block = self._formula_rows(setup, lead, buff=0.2)
+        self.play(FadeOut(setup_block), run_time=0.3)
+
+        derived = [
+            MathTex(r"S=1+\dfrac{1}{10}+\dfrac{1}{100}+\cdots", font_size=34),
+            MathTex(r"\dfrac{1}{10}S=\dfrac{1}{10}+\dfrac{1}{100}+\cdots", font_size=34),
+            MathTex(r"S-\dfrac{1}{10}S=1", font_size=36),
+            MathTex(r"S=\dfrac{10}{9}", font_size=36),
             MathTex(r"\dfrac{9}{10}\times\dfrac{10}{9}=1", font_size=40, color=GREEN),
         ]
-        self._formula_rows(steps, lead, buff=0.2)
+        self._formula_rows(derived, lead, buff=0.22)
         self.linger(3.3)
 
         note = self._line(
@@ -510,6 +520,23 @@ class RepeatingNines(LessonScene):
         self.stack_below(note2, note1, buff=0.18)
         self._fit_left(note2)
         self.play(FadeIn(note2), run_time=0.45)
+        self.linger(3.2)
+
+        self.play(FadeOut(shown), FadeOut(note1), FadeOut(note2), run_time=0.35)
+        same = self.ja_text("同じ読み方で、よく知っている循環小数も閉じます。", font_size=24)
+        self.stack_below(same, lead, buff=0.3)
+        self._fit_left(same)
+        self.play(FadeIn(same), run_time=0.4)
+        self.linger(same.text)
+        third = [
+            MathTex(r"0.333\ldots=0.3+0.03+0.003+\cdots", font_size=32),
+            MathTex(
+                r"=\dfrac{3}{10}\left(1+\dfrac{1}{10}+\dfrac{1}{100}+\cdots\right)",
+                font_size=32,
+            ),
+            MathTex(r"=\dfrac{3}{10}\times\dfrac{10}{9}=\dfrac{1}{3}", font_size=36, color=GREEN),
+        ]
+        self._formula_rows(third, same, buff=0.24)
         self.linger(3.2)
 
     def part_generalize(self):
@@ -684,7 +711,7 @@ class RepeatingNines(LessonScene):
         block.set_x(0)
         for row in block:
             self.play(FadeIn(row), run_time=0.45)
-            self.linger(1.2)
+            self.linger(3.2)
         return block
 
     def _fit(self, mob, max_w=12.4):

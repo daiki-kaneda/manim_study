@@ -331,6 +331,17 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn(r"S=I+\dfrac{B}{2}-1", scene)
         self.assertIn(r"T=2I+B-2", scene)
         self.assertIn(r"6+5-1=10", scene)
+        self.assertIn(r"V-E+F=1", scene)
+        self.assertIn(r"V=I+B", scene)
+        self.assertIn("とおく", scene)
+        self.assertIn("方法", scene)
+        self.assertNotIn("道", scene)
+        step1 = scene[
+            scene.index("def part_step1_primitive") : scene.index("def part_step2_splits")
+        ]
+        self.assertNotIn(r"I+\dfrac{B}{2}-1", step1)
+        self.assertNotIn(r"T=2I+B-2", step1)
+        self.assertIn("とおく", step1)
         self._assert_no_japanese_in_mathtex(MATH_150_006 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_006 / "scene.py")
 

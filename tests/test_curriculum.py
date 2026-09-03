@@ -34,6 +34,7 @@ MATH_150_001 = (
 )
 MATH_150_002 = ROOT / "project" / "curriculum_math_150" / "002_circle_area"
 MATH_150_003 = ROOT / "project" / "curriculum_math_150" / "003_fixed_perimeter_rectangle"
+MATH_150_004 = ROOT / "project" / "curriculum_math_150" / "004_reflection_shortest_path"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -257,6 +258,30 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn(r"\dfrac{x+y}{2}\ge\sqrt{xy}", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_003 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_003 / "scene.py")
+
+    def test_math_150_004_has_storyboard_and_scene(self):
+        story = (MATH_150_004 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (MATH_150_004 / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn("class ReflectionShortestPath(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn(r"BP=B'P", scene)
+        self.assertIn(r"AP+PB'\ge AB'", scene)
+        self.assertIn(r"6\sqrt{2}+2\sqrt{2}=8\sqrt{2}\approx 11.314", scene)
+        self._assert_no_japanese_in_mathtex(MATH_150_004 / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(MATH_150_004 / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

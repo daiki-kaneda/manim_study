@@ -34,8 +34,9 @@ class BuffonsNeedle(LessonScene):
 
     def _open_header(self):
         title = self._line(
-            "針を落として円周率は出るか",
+            "針を落として円周率",
             MathTex(r"\pi", font_size=36),
+            "は出るか",
             font_size=36,
         )
         self.play(FadeIn(title), run_time=0.8)
@@ -93,9 +94,9 @@ class BuffonsNeedle(LessonScene):
         self.linger("針の長さも同じ D だとします。つまり L=D です。")
 
         q3 = self._line(
-            "このとき、線と交わる回数から円周率が",
-            MathTex(r"\dfrac{2N}{C}", font_size=26, color=GREEN),
-            "のように出ることが知られています。これはなぜ起こるのでしょうか。",
+            "全体の試行回数に対する交わる回数の割合は",
+            MathTex(r"\dfrac{2}{\pi}", font_size=26, color=GREEN),
+            "となることが知られています。",
             font_size=18,
         )
         self.stack_below(q3, q2, buff=0.12)
@@ -103,7 +104,18 @@ class BuffonsNeedle(LessonScene):
         self._fit(q3, 13.0)
         q3.set_x(0)
         self.play(FadeIn(q3), run_time=0.7)
-        self.linger("このとき、線と交わる回数から円周率が 2N/C のように出ることが知られています。これはなぜ起こるのでしょうか。", extra=0.35)
+        self.linger("全体の試行回数に対する交わる回数の割合は 2/π となることが知られています。")
+
+        q4 = self.ja_text(
+            "これはなぜ起こるのでしょうか。",
+            font_size=20,
+        )
+        self.stack_below(q4, q3, buff=0.12)
+        q4.set_x(0)
+        self._fit(q4, 13.0)
+        q4.set_x(0)
+        self.play(FadeIn(q4), run_time=0.7)
+        self.linger("これはなぜ起こるのでしょうか。", extra=0.35)
 
     def part_trial_count(self):
         chip = self.begin_step("試行  交差を数える", self.header)

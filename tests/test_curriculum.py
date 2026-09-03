@@ -669,7 +669,13 @@ class CurriculumLessonTests(unittest.TestCase):
         q = scene[scene.index("def part_question") : scene.index("def part_trial_count")]
         self.assertIn(r"L=D", q)
         self.assertNotIn(r"L\le D", q)
-        self.assertIn(r"\dfrac{2N}{C}", q)
+        self.assertIn(r"\dfrac{2}{\pi}", q)
+        self.assertIn("全体の試行回数に対する交わる回数の割合", q)
+        self.assertNotIn(r"\dfrac{2N}{C}", q)
+        header = scene[scene.index("def _open_header") : scene.index("def part_question")]
+        self.assertIn('"針を落として円周率"', header)
+        self.assertIn('"は出るか"', header)
+        self.assertNotIn('"針を落として円周率は出るか"', header)
         self.assertIn("長方形のどの小さな区画も同じ確からしさ", scene)
         self.assertIn(r"L<D", scene)
         self.assertIn(r"x\le\dfrac{L}{2}\sin\theta", scene)

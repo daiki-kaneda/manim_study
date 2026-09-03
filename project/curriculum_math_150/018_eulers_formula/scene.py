@@ -609,14 +609,20 @@ class EulersFormula(LessonScene):
         more = [
             self._line(
                 "虚部:",
-                MathTex(r"\pi-\dfrac{\pi^{3}}{6}", font_size=24, color=TEAL),
-                "。",
-                MathTex(r"\dfrac{\pi^{3}}{6}\approx 5.168", font_size=22),
-                "、",
-                MathTex(r"\pi-5.168\approx -2.026", font_size=22, color=ORANGE),
-                font_size=14,
+                MathTex(r"\pi-\dfrac{\pi^{3}}{6}", font_size=26, color=TEAL),
+                font_size=16,
             ),
-            self.ja_text("0 にはまだ遠い。あとの項で 0 に寄ります。", font_size=16),
+            self._line(
+                MathTex(r"\pi^{3}\approx 31.006", font_size=22),
+                "、",
+                MathTex(r"\dfrac{\pi^{3}}{6}\approx 5.168", font_size=22, color=GREEN),
+                font_size=16,
+            ),
+            self._line(
+                MathTex(r"\pi-5.168\approx -2.026", font_size=26, color=ORANGE),
+                "。0 にはまだ遠い。あとの項で 0 に寄ります。",
+                font_size=16,
+            ),
         ]
         extra = self._formula_rows(more, chip, buff=0.14, hold=self.PAUSE_COMPLEX)
         self.play(FadeOut(extra), run_time=0.40)

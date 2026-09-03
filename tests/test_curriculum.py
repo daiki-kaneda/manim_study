@@ -36,6 +36,7 @@ MATH_150_002 = ROOT / "project" / "curriculum_math_150" / "002_circle_area"
 MATH_150_003 = ROOT / "project" / "curriculum_math_150" / "003_fixed_perimeter_rectangle"
 MATH_150_004 = ROOT / "project" / "curriculum_math_150" / "004_reflection_shortest_path"
 MATH_150_005 = ROOT / "project" / "curriculum_math_150" / "005_ant_on_cube"
+MATH_150_006 = ROOT / "project" / "curriculum_math_150" / "006_picks_theorem"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -307,6 +308,51 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn(r"s\sqrt{5}", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_005 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_005 / "scene.py")
+
+    def test_math_150_006_has_storyboard_and_scene(self):
+        story = (MATH_150_006 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (MATH_150_006 / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn("class PicksTheorem(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn(r"I+\dfrac{B}{2}-1", scene)
+        self.assertIn(r"S=I+\dfrac{B}{2}-1", scene)
+        self.assertIn(r"T=2I+B-2", scene)
+        self.assertIn(r"6+5-1=10", scene)
+        self.assertIn(r"V-E+F=1", scene)
+        self.assertIn(r"V=I+B", scene)
+        self.assertIn("とおく", scene)
+        self.assertIn("方法", scene)
+        self.assertNotIn("道", scene)
+        step1 = scene[
+            scene.index("def part_step1_primitive") : scene.index("def part_step2_splits")
+        ]
+        self.assertNotIn(r"I+\dfrac{B}{2}-1", step1)
+        self.assertNotIn(r"T=2I+B-2", step1)
+        self.assertIn("とおく", step1)
+        self.assertIn(r"12-\dfrac{9}{2}", scene)
+        self.assertIn(r"\dfrac{24}{2}-\dfrac{9}{2}=\dfrac{15}{2}", scene)
+        self.assertNotIn(r"\dfrac{21}{2}", scene)
+        self.assertIn("細長", scene)
+        self.assertIn(r"3(2-1)+0(1-0)+1(0-2)", scene)
+        self.assertIn(r"x_1(y_2-y_3)", scene)
+        self.assertNotIn("多くの多角形", scene)
+        self.assertNotIn("多くの多角形", story)
+        self.assertIn("辺が交わらず穴もない", scene)
+        self._assert_no_japanese_in_mathtex(MATH_150_006 / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(MATH_150_006 / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

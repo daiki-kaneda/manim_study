@@ -155,7 +155,8 @@ class BirthdayParadox(LessonScene):
             self._line("全てのペアは", MathTex(r"\dfrac{n(n-1)}{2}", font_size=26), font_size=18),
             MathTex(r"n=6:\quad \dfrac{6\cdot 5}{2}=15", font_size=30, color=GREEN),
         ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        new_right.move_to(right)
+        new_right.next_to(complete, RIGHT, buff=0.40, aligned_edge=UP)
+        self._nudge(VGroup(complete, new_right))
         self.play(FadeOut(fig), FadeIn(complete), FadeOut(right), FadeIn(new_right), run_time=0.65)
         fig = complete
         right = new_right

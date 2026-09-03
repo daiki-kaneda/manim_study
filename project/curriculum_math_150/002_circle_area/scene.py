@@ -238,6 +238,28 @@ class CircleArea(LessonScene):
         self.play(FadeIn(note), run_time=0.4)
         self.linger("残る問いは、定数 c が π と同じかどうかです。", extra=0.35)
 
+        self.play(FadeOut(pair), FadeOut(shown), FadeOut(note), run_time=0.35)
+        circ = Circle(radius=1.15, color=BLUE, stroke_width=3)
+        outer = Square(side_length=2.3, color=ORANGE, stroke_width=2)
+        inner = Square(side_length=1.15 * np.sqrt(2), color=GREEN, stroke_width=2).rotate(PI / 4)
+        fig = VGroup(outer, circ, inner)
+        self.below_chip(fig, chip, buff=0.4)
+        fig.to_edge(LEFT, buff=0.6)
+        self.play(Create(outer), Create(circ), Create(inner), run_time=1.0)
+        self.linger(3.2)
+        bounds = [
+            MathTex(r"(2r)^2=4r^2", font_size=32, color=ORANGE),
+            MathTex(r"2r^2<S<4r^2", font_size=32),
+            MathTex(r"2<c<4", font_size=36, color=YELLOW),
+            self._line(MathTex(r"\pi", font_size=30), "はこのあいだにある", font_size=24),
+        ]
+        block = VGroup(*bounds).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
+        block.next_to(fig, RIGHT, buff=0.55)
+        block.align_to(fig, UP)
+        for row in bounds:
+            self.play(FadeIn(row), run_time=0.45)
+            self.linger(3.2)
+
     def part_step3_refine(self):
         self.wipe(self.header)
         chip = self.step_label("STEP 3  細く並べる")
@@ -356,7 +378,14 @@ class CircleArea(LessonScene):
             MathTex(r"2.828\times 0.707=2.000", font_size=32, color=YELLOW),
         ]
         calc_block = self._formula_rows(calc, lead, buff=0.26)
-        self.play(FadeOut(calc_block), run_time=0.35)
+        self.play(FadeOut(calc_block), run_time=0.3)
+        calc8 = [
+            MathTex(r"8\sin(\pi/8)\approx 3.061", font_size=32),
+            MathTex(r"\cos(\pi/8)\approx 0.924", font_size=32),
+            MathTex(r"3.061\times 0.924=2.828", font_size=32, color=YELLOW),
+        ]
+        calc8_block = self._formula_rows(calc8, lead, buff=0.26)
+        self.play(FadeOut(calc8_block), run_time=0.35)
 
         table = self.aligned_table(
             [

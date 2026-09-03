@@ -483,6 +483,7 @@ class Pigeonhole(LessonScene):
         self.play(FadeIn(restate), run_time=0.55)
         self.pause_short_formula()
         self.linger(3.2)
+        self.play(FadeOut(lead), run_time=0.45)
 
         sock_colors = [BLUE_B, GREEN, ORANGE]
         names = ["青", "緑", "橙"]
@@ -493,11 +494,11 @@ class Pigeonhole(LessonScene):
             ([2, 1, 1], "4 足目。空の引き出しはありません。同じ色が 2 足になります。"),
         ]
         fig = self._sock_bins([0, 0, 0], sock_colors, names)
-        self.stack_below(fig, restate, buff=0.22)
+        self.stack_below(fig, restate, buff=0.50)
         fig.set_x(0)
         self._nudge(fig)
         caption = self.ja_text("引き出しは 3 つ。まだ靴下はありません。", font_size=20)
-        self.stack_below(caption, fig, buff=0.40)
+        self.stack_below(caption, fig, buff=0.50)
         caption.set_x(0)
         self._fit(caption, 13.0)
         caption.set_x(0)
@@ -515,7 +516,7 @@ class Pigeonhole(LessonScene):
             nxt.move_to(fig)
             new_cap = self.ja_text(text, font_size=20)
             self._fit(new_cap, 13.0)
-            self.stack_below(new_cap, nxt, buff=0.40)
+            self.stack_below(new_cap, nxt, buff=0.50)
             new_cap.set_x(0)
             self.play(FadeOut(fig), FadeIn(nxt), FadeOut(caption), run_time=0.65)
             fig = nxt
@@ -525,7 +526,7 @@ class Pigeonhole(LessonScene):
 
         eq = MathTex(r"n(r-1)+1=3\cdot 1+1=4", font_size=28, color=YELLOW)
         self.play(FadeOut(caption), run_time=0.45)
-        self.stack_below(eq, fig, buff=0.28)
+        self.stack_below(eq, fig, buff=0.45)
         eq.set_x(0)
         self.play(FadeIn(eq), run_time=0.55)
         self.pause_conclusion()
@@ -692,7 +693,7 @@ class Pigeonhole(LessonScene):
         grid = VGroup(*cells).arrange_in_grid(rows=rows, cols=cols, buff=0.12)
         return grid
 
-    def _sock_bins(self, counts, colors, names, highlight=None, box_w=1.35, box_h=1.55):
+    def _sock_bins(self, counts, colors, names, highlight=None, box_w=1.20, box_h=1.35):
         cells = []
         for i, c in enumerate(counts):
             stroke = YELLOW if highlight == i else colors[i]

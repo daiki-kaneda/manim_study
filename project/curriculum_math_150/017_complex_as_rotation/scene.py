@@ -127,7 +127,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_trial_one(self):
         chip = self.begin_step("試行  1 に掛ける", self.header)
@@ -187,7 +187,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step1_point(self):
         chip = self.begin_step("STEP 1  平面の点", self.header)
@@ -244,7 +244,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step2_angle(self):
         chip = self.begin_step("STEP 2  90 度", self.header)
@@ -303,7 +303,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
             if i == 1:
                 self.pause_conclusion()
 
@@ -394,7 +394,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step4_polar(self):
         chip = self.begin_step("STEP 4  極形式", self.header)
@@ -499,7 +499,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
             if i == 1:
                 self.pause_conclusion()
 
@@ -585,7 +585,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_generalize(self):
         chip = self.begin_step("一般化", self.header)
@@ -663,7 +663,7 @@ class ComplexAsRotation(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_summary(self):
         chip = self.begin_step("まとめ", self.header)
@@ -792,6 +792,13 @@ class ComplexAsRotation(LessonScene):
         l2.next_to(d2, LEFT, buff=0.08)
         mark = RightAngle(Line(ORIGIN, p), Line(ORIGIN, q), length=0.18, color=YELLOW, stroke_width=2.5)
         return VGroup(plane, a1, a2, d1, d2, l1, l2, mark)
+
+    def _read(self, mob, extra=0.0):
+        if hasattr(mob, "text"):
+            self.linger(mob.text, extra=extra)
+            return
+        parts = [sub.text for sub in mob if hasattr(sub, "text")]
+        self.linger("".join(parts) if parts else 2.0, extra=extra)
 
     def _line(self, *chunks, font_size=24, color=None, buff=0.08):
         parts = []

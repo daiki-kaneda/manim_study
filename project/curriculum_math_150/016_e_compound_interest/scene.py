@@ -149,7 +149,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_trial_explode(self):
         chip = self.begin_step("試行  爆発？", self.header)
@@ -223,7 +223,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
             if i == 1:
                 self.pause_conclusion()
 
@@ -299,7 +299,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step2_expand(self):
         chip = self.begin_step("STEP 2  展開", self.header)
@@ -397,7 +397,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step3_cap(self):
         chip = self.begin_step("STEP 3  頭打ち", self.header)
@@ -458,7 +458,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step4_limit(self):
         chip = self.begin_step("STEP 4  極限", self.header)
@@ -520,7 +520,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
             if i == 1:
                 self.pause_conclusion()
 
@@ -615,7 +615,7 @@ class CompoundInterestE(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_generalize(self):
         chip = self.begin_step("一般化", self.header)
@@ -756,7 +756,7 @@ class CompoundInterestE(LessonScene):
             self._fit_left(mob, 13.0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text if hasattr(mob, "text") else 2.0)
+            self._read(mob)
             if i == 3:
                 self.pause_conclusion()
 
@@ -861,6 +861,13 @@ class CompoundInterestE(LessonScene):
             run_time=1.35,
         )
         self.pause_new_screen()
+
+    def _read(self, mob, extra=0.0):
+        if hasattr(mob, "text"):
+            self.linger(mob.text, extra=extra)
+            return
+        parts = [sub.text for sub in mob if hasattr(sub, "text")]
+        self.linger("".join(parts) if parts else 2.0, extra=extra)
 
     def _line(self, *chunks, font_size=24, color=None, buff=0.08):
         parts = []

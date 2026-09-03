@@ -147,7 +147,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_trial_rotate(self):
         chip = self.begin_step("試行  90 度", self.header)
@@ -219,7 +219,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step1_series(self):
         chip = self.begin_step("STEP 1  級数", self.header)
@@ -295,7 +295,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step2_powers(self):
         chip = self.begin_step("STEP 2  i の累乗", self.header)
@@ -351,7 +351,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step3_parts(self):
         chip = self.begin_step("STEP 3  実部と虚部", self.header)
@@ -476,7 +476,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_step4_pi(self):
         chip = self.begin_step("STEP 4  π", self.header)
@@ -550,7 +550,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_example(self):
         chip = self.begin_step("実例", self.header)
@@ -673,7 +673,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             shown.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_generalize(self):
         chip = self.begin_step("一般化", self.header)
@@ -743,7 +743,7 @@ class EulersFormula(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.55)
             extra.add(mob)
-            self.linger(mob.text)
+            self._read(mob)
 
     def part_summary(self):
         chip = self.begin_step("まとめ", self.header)
@@ -840,6 +840,13 @@ class EulersFormula(LessonScene):
         frame = Rectangle(width=(r + 0.7) * 2, height=(r + 0.55) * 2, stroke_opacity=0.0)
         frame.move_to(ORIGIN)
         return VGroup(frame, group)
+
+    def _read(self, mob, extra=0.0):
+        if hasattr(mob, "text"):
+            self.linger(mob.text, extra=extra)
+            return
+        parts = [sub.text for sub in mob if hasattr(sub, "text")]
+        self.linger("".join(parts) if parts else 2.0, extra=extra)
 
     def _line(self, *chunks, font_size=24, color=None, buff=0.08):
         parts = []

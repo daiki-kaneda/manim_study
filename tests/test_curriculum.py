@@ -39,6 +39,7 @@ MATH_150_005 = ROOT / "project" / "curriculum_math_150" / "005_ant_on_cube"
 MATH_150_006 = ROOT / "project" / "curriculum_math_150" / "006_picks_theorem"
 MATH_150_007 = ROOT / "project" / "curriculum_math_150" / "007_regions_from_lines"
 MATH_150_008 = ROOT / "project" / "curriculum_math_150" / "008_pigeonhole"
+MATH_150_009 = ROOT / "project" / "curriculum_math_150" / "009_birthday_paradox"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -433,6 +434,55 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertNotIn(r"n(r-1)+1", step1)
         self._assert_no_japanese_in_mathtex(MATH_150_008 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_008 / "scene.py")
+
+    def test_math_150_009_has_storyboard_and_scene(self):
+        story = (MATH_150_009 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (MATH_150_009 / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn("class BirthdayParadox(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn("とおく", scene)
+        self.assertIn("方法", scene)
+        self.assertNotIn("道", scene)
+        self.assertNotIn("あれは", scene)
+        self.assertIn(r"\dfrac{365}{2}=182.5", scene)
+        self.assertIn(r"\dfrac{6\cdot 5}{2}=15", scene)
+        self.assertIn(r"\dfrac{33306}{2}=16653", scene)
+        self.assertIn(r"\dfrac{5040}{10000}=0.504", scene)
+        self.assertIn(r"0.504\times\dfrac{6}{10}=0.3024", scene)
+        self.assertIn(r"\left(1-\dfrac{1}{m}\right)^{m}\approx\dfrac{1}{e}", scene)
+        self.assertIn(r"1-x\approx e^{-x}", scene)
+        self.assertIn(r"1+2+\cdots+(n-1)=\dfrac{(n-1)n}{2}", scene)
+        self.assertIn(r"P(A)\approx 1-e^{-n(n-1)/(2d)}", scene)
+        self.assertIn(r"n(n-1)=2d\ln 2", scene)
+        self.assertIn(r"n\approx\sqrt{2d\ln 2}", scene)
+        self.assertIn(r"22^{2}=484", scene)
+        self.assertIn(r"22.5^{2}=506.25", scene)
+        self.assertIn(r"22\cdot 21=462", scene)
+        self.assertIn(r"23\cdot 22=506", scene)
+        self.assertIn(r"1-e^{-462/730}\approx 0.469", scene)
+        self.assertIn(r"1-e^{-506/730}\approx 0.500", scene)
+        self.assertIn(r"10000", scene)
+        self.assertIn(r"120", scene)
+        step1 = scene[
+            scene.index("def part_step1_complement") : scene.index("def part_step2_product")
+        ]
+        self.assertNotIn(r"n\approx\sqrt{2d\ln 2}", step1)
+        self.assertNotIn("23 人", step1)
+        self._assert_no_japanese_in_mathtex(MATH_150_009 / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(MATH_150_009 / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

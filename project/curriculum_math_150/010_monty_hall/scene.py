@@ -722,7 +722,9 @@ class MontyHall(LessonScene):
         self.pause_conclusion()
 
     def _doors(self, pick=None, opened=None, prize=None, show_prize=False):
+        numbers_above = opened is not None or (show_prize and prize is not None)
         cells = VGroup()
+        rects = []
         for i in range(3):
             stroke = YELLOW if pick == i else GREY_B
             width = 5.0 if pick == i else 2.0
@@ -742,19 +744,27 @@ class MontyHall(LessonScene):
                 mark = self.ja_text("外れ", font_size=16, color=GREY_B)
                 mark.next_to(blob, DOWN, buff=0.08)
                 inner.add(blob, mark)
-                lab.next_to(rect, UP, buff=0.08)
             elif show_prize and prize == i:
                 star = Star(n=5, outer_radius=0.28, inner_radius=0.12, color=GOLD, fill_opacity=1.0)
                 tag = self.ja_text("当たり", font_size=16, color=GOLD)
                 tag.next_to(star, DOWN, buff=0.08)
                 inner.add(star, tag)
+            if numbers_above:
                 lab.next_to(rect, UP, buff=0.08)
             else:
                 lab.move_to(rect.get_center())
+            parts = VGroup(rect, lab)
             if inner:
                 inner.move_to(rect.get_center() + DOWN * 0.12)
-            cells.add(VGroup(rect, lab, inner))
-        return cells.arrange(RIGHT, buff=0.35)
+                parts.add(inner)
+            cells.add(parts)
+            rects.append(rect)
+        cells.arrange(RIGHT, buff=0.35)
+        if numbers_above:
+            y = rects[0].get_y()
+            for cell, rect in zip(cells, rects):
+                cell.shift(UP * (y - rect.get_y()))
+        return cells
 
     def _line(self, *chunks, font_size=24, color=None, buff=0.08):
         parts = []

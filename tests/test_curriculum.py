@@ -560,6 +560,8 @@ class CurriculumLessonTests(unittest.TestCase):
             scene.index("def part_step3_first_miss") : scene.index("def part_step4_combine")
         ]
         self.assertIn("new_restate", step3)
+        self.assertIn("番号を扉の上", story)
+        self.assertIn("numbers_above", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_010 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_010 / "scene.py")
 

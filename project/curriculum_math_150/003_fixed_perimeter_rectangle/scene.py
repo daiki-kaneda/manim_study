@@ -289,7 +289,9 @@ class FixedPerimeterRectangle(LessonScene):
             MathTex(r"\dfrac{x+y}{2}\ge\sqrt{xy}", font_size=36),
         ]
         block1 = self._formula_rows(first, pos, buff=0.18)
-        self.play(FadeOut(block1), run_time=0.3)
+        kept = first[-1]
+        self.play(*[FadeOut(row) for row in first[:-1]], run_time=0.3)
+        self.play(kept.animate.next_to(pos, DOWN, buff=0.22).set_x(0), run_time=0.4)
 
         second = [
             self.ja_text("両辺は 0 以上なので、平方してよい。", font_size=22),
@@ -297,7 +299,7 @@ class FixedPerimeterRectangle(LessonScene):
             MathTex(r"\dfrac{s^2}{4}\ge S", font_size=40, color=GREEN),
             self._line("等号は", MathTex(r"\sqrt{x}=\sqrt{y}", font_size=30), "のとき。よって", MathTex(r"x=y", font_size=30, color=YELLOW), font_size=22),
         ]
-        self._formula_rows(second, pos, buff=0.18)
+        self._formula_rows(second, kept, buff=0.18)
         self.linger(3.5)
 
     def part_step4_move(self):
@@ -398,7 +400,7 @@ class FixedPerimeterRectangle(LessonScene):
         self.reveal_table(table, row_wait=0.8)
 
         notes = [
-            self._line(MathTex(r"4.5", font_size=26), "は", MathTex(r"5", font_size=26), "より小さい。", font_size=22),
+            self._line("面積", MathTex(r"24.75", font_size=26), "は", MathTex(r"25", font_size=26), "より小さい。", font_size=22),
             self.ja_text("ずれの平方のぶんだけ、面積が落ちます。", font_size=22),
             self.ja_text("周 20 なら、いちばん広いのは 5 かける 5 の正方形です。", font_size=22),
         ]

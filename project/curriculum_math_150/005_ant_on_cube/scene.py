@@ -14,9 +14,10 @@ from manim_math import LessonScene
 class AntOnCube(LessonScene):
     """#5 立方体の表面を歩く蟻（約7分）"""
 
-    ISO_X = 0.78
-    ISO_Y = 0.78
-    ISO_Z = 0.26
+    ISO_X = 0.88
+    ISO_Z = 0.52
+    ISO_Y = 0.82
+    ISO_D = 0.24
     NET = 1.05
 
     def construct(self):
@@ -33,7 +34,10 @@ class AntOnCube(LessonScene):
         self.part_summary()
 
     def _iso(self, x, y, z):
-        return (x - z) * self.ISO_X * RIGHT + (y * self.ISO_Y + (x + z) * self.ISO_Z) * UP
+        # 左右を非対称にして、反対頂点 S と T が画面上で縦に重ならないようにする。
+        return (x * self.ISO_X - z * self.ISO_Z) * RIGHT + (
+            y * self.ISO_Y + (x + z) * self.ISO_D
+        ) * UP
 
     def _open_header(self):
         title = self.ja_text("立方体の表面を歩く蟻", font_size=40)
@@ -81,7 +85,11 @@ class AntOnCube(LessonScene):
         self.play(FadeIn(lead), run_time=0.45)
         self.linger(lead.text)
 
-        fig = self._cube(path_edges=[("S", "B"), ("B", "C"), ("C", "T")], path_color=ORANGE)
+        fig = self._cube(
+            path_edges=[("S", "B"), ("B", "C"), ("C", "T")],
+            path_color=ORANGE,
+            mark_lens=True,
+        )
         self.stack_below(fig, lead, buff=0.22)
         fig.to_edge(LEFT, buff=0.45)
         self._nudge(fig)
@@ -118,7 +126,12 @@ class AntOnCube(LessonScene):
 
         self.play(FadeOut(VGroup(fig, block, shown)), run_time=0.35)
         face = self._cube(path_edges=[("S", "C")], path_color=YELLOW)
-        space = DashedLine(self._iso(0, 0, 0), self._iso(1, 1, 1), color=GREY_A, stroke_width=2)
+        space = DashedLine(
+            self._iso(0, 0, 0),
+            self._iso(1, 1, 1),
+            color=GREY_A,
+            stroke_width=3.5,
+        )
         combo = VGroup(face, space)
         extra = [
             MathTex(r"\sqrt{1^2+1^2}=\sqrt{2}", font_size=32, color=YELLOW),
@@ -539,7 +552,7 @@ class AntOnCube(LessonScene):
         self.play(FadeIn(related), run_time=0.45)
         self.linger(related.text, extra=0.45)
 
-    def _cube(self, path_edges=None, path_color=ORANGE, highlight_faces=(), p_t=None):
+    def _cube(self, path_edges=None, path_color=ORANGE, highlight_faces=(), p_t=None, mark_lens=False):
         pts = {
             "S": self._iso(0, 0, 0),
             "B": self._iso(1, 0, 0),
@@ -587,6 +600,16 @@ class AntOnCube(LessonScene):
         if path_edges:
             for a, b in path_edges:
                 parts.append(Line(pts[a], pts[b], color=path_color, stroke_width=5))
+                if mark_lens:
+                    mid = (np.array(pts[a]) + np.array(pts[b])) / 2
+                    lab = MathTex(r"1", font_size=20, color=path_color)
+                    lab.move_to(mid)
+                    shift = mid - np.array(pts[a])
+                    if abs(shift[0]) >= abs(shift[1]):
+                        lab.shift(0.16 * UP)
+                    else:
+                        lab.shift(0.18 * RIGHT)
+                    parts.append(lab)
 
         s_dot = Dot(pts["S"], color=YELLOW, radius=0.08)
         t_dot = Dot(pts["T"], color=TEAL, radius=0.08)
@@ -651,7 +674,9 @@ class AntOnCube(LessonScene):
         s_dot = Dot(s, color=YELLOW, radius=0.06)
         t_dot = Dot(t, color=TEAL, radius=0.06)
         path = Line(s, t, color=YELLOW, stroke_width=3.5)
-        return VGroup(*sqs, path, s_dot, t_dot)
+        s_lab = MathTex(r"S", font_size=20, color=YELLOW).next_to(s_dot, DL, buff=0.06)
+        t_lab = MathTex(r"T", font_size=20, color=TEAL).next_to(t_dot, DR, buff=0.06)
+        return VGroup(*sqs, path, s_dot, t_dot, s_lab, t_lab)
 
     def _net_L(self):
         front, s, _, _, _ = self._sq(0, 0, YELLOW)
@@ -666,7 +691,7 @@ class AntOnCube(LessonScene):
         hole.move_to((ghost.get_center()))
         s_dot = Dot(s, color=YELLOW, radius=0.06)
         t_dot = Dot(t, color=GREY_B, radius=0.06)
-        t_lab = MathTex(r"?", font_size=22, color=GREY_B).next_to(t_dot, UR, buff=0.06)
+        t_lab = MathTex(r"T", font_size=20, color=GREY_B).next_to(t_dot, UR, buff=0.06)
         s_lab = MathTex(r"S", font_size=20, color=YELLOW).next_to(s_dot, DL, buff=0.06)
         return VGroup(front, top, right, ghost, dash, hole, s_dot, t_dot, s_lab, t_lab)
 

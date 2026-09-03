@@ -777,7 +777,8 @@ class PicksTheorem(LessonScene):
 
         lines = [
             self.ja_text("今やったことは、頂点が格子点の多角形の面積を、格子点の個数だけで書く考え方でした。", font_size=22),
-            self._line("いちばん小さい三角形の面積は", MathTex(r"\dfrac{1}{2}", font_size=26), "。多くの多角形は、それに分けられる。", font_size=22),
+            self._line("いちばん小さい三角形の面積は", MathTex(r"\dfrac{1}{2}", font_size=26), "。", font_size=22),
+            self.ja_text("頂点が格子点で、辺が交わらず穴もない多角形は、内部と境界の格子点を頂点にして、それに分けられる。", font_size=22),
             self._line(MathTex(r"T", font_size=26, color=ORANGE), "をその個数、", MathTex(r"I", font_size=26, color=YELLOW), "を内部、", MathTex(r"B", font_size=26, color=TEAL), "を境界の個数とおく。", font_size=22),
             self._line("オイラーの公式から", MathTex(r"T=2I+B-2", font_size=26), "が出る。", font_size=22),
             self._line("だから面積は", MathTex(r"S=I+\dfrac{B}{2}-1", font_size=26), "。", font_size=22),
@@ -813,7 +814,12 @@ class PicksTheorem(LessonScene):
         rows = [
             self.ja_text("マスを半分ずつ数えると、切り口の場合分けが増える", font_size=24),
             self.ja_text("大きい長方形から欠けを引くと、形が変わるたびに場合分けが要る", font_size=24),
-            self._line("多くの多角形は、面積", MathTex(r"\dfrac{1}{2}", font_size=28), "の三角形に分けられる", font_size=24),
+            self._line(
+                "頂点が格子点で、辺が交わらず穴もない多角形は、面積",
+                MathTex(r"\dfrac{1}{2}", font_size=26),
+                "の三角形に分けられる",
+                font_size=22,
+            ),
             self._line("オイラーの公式から", MathTex(r"T=2I+B-2", font_size=26), "、", MathTex(r"S=I+\dfrac{B}{2}-1", font_size=26, color=YELLOW), font_size=24),
         ]
         shown = VGroup()

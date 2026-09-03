@@ -348,6 +348,9 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("細長", scene)
         self.assertIn(r"3(2-1)+0(1-0)+1(0-2)", scene)
         self.assertIn(r"x_1(y_2-y_3)", scene)
+        self.assertNotIn("多くの多角形", scene)
+        self.assertNotIn("多くの多角形", story)
+        self.assertIn("辺が交わらず穴もない", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_006 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_006 / "scene.py")
 

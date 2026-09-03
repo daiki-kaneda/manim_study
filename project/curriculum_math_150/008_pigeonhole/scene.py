@@ -556,7 +556,7 @@ class Pigeonhole(LessonScene):
         ]
         block = self._formula_rows(first, lead, buff=0.12)
         self.linger(3.4)
-        self.play(FadeOut(block), run_time=0.3)
+        self.play(FadeOut(VGroup(lead, block)), run_time=0.3)
 
         name = self.ja_text("切り上げ", font_size=22, color=GREY_B)
         self.below_chip(name, chip, buff=0.18)
@@ -581,6 +581,7 @@ class Pigeonhole(LessonScene):
         ]
         block2 = self._formula_rows(ceil_rows, name, buff=0.10)
         self.linger(3.4)
+        self.play(FadeOut(block2), run_time=0.3)
 
         close = [
             self.ja_text("平均が 1 を少し超える、の正体は、切り上げると 2 になることです。", font_size=20),
@@ -590,9 +591,9 @@ class Pigeonhole(LessonScene):
         shown = VGroup()
         for i, mob in enumerate(close):
             if i == 0:
-                self.stack_below(mob, block2, buff=0.12)
+                self.stack_below(mob, name, buff=0.16)
             else:
-                self.stack_below(mob, shown, buff=0.08)
+                self.stack_below(mob, shown, buff=0.10)
             mob.set_x(0)
             self._fit(mob, 13.0)
             mob.set_x(0)

@@ -269,16 +269,11 @@ class ReflectionShortestPath(LessonScene):
         self.play(FadeIn(lead), run_time=0.45)
         self.linger("B を、川に対して反対側へ折り返します。")
 
-        fig_plain = self._base_figure(p_x=4.0, show_b_prime=False)
-        self.stack_below(fig_plain, lead, buff=0.16)
-        fig_plain.to_edge(LEFT, buff=0.38)
-        self._nudge(fig_plain)
-        self.play(FadeIn(fig_plain), run_time=0.55)
-        self.linger(1.4)
-
         fig = self._base_figure(p_x=4.0, show_b_prime=True)
-        fig.move_to(fig_plain)
-        self.play(ReplacementTransform(fig_plain, fig), run_time=0.9)
+        self.stack_below(fig, lead, buff=0.16)
+        fig.to_edge(LEFT, buff=0.38)
+        self._nudge(fig)
+        self.play(FadeIn(fig), run_time=0.8)
         self.linger(3.2)
 
         rows = [

@@ -163,8 +163,8 @@ class PicksTheorem(LessonScene):
             MathTex(r"5\times 3=15", font_size=30),
             MathTex(r"\dfrac{2\times 3}{2}=3", font_size=28),
             MathTex(r"\dfrac{3\times 3}{2}=\dfrac{9}{2}", font_size=28),
-            MathTex(r"15-3-\dfrac{9}{2}=\dfrac{21}{2}-\dfrac{9}{2}", font_size=28),
-            MathTex(r"\dfrac{12}{2}=\dfrac{15}{2}", font_size=32, color=YELLOW),
+            MathTex(r"15-3-\dfrac{9}{2}=12-\dfrac{9}{2}", font_size=28),
+            MathTex(r"\dfrac{24}{2}-\dfrac{9}{2}=\dfrac{15}{2}", font_size=32, color=YELLOW),
         ]
         calc_block = VGroup(*calc).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
         pair = VGroup(fig, calc_block).arrange(RIGHT, buff=0.40, aligned_edge=UP)
@@ -476,7 +476,7 @@ class PicksTheorem(LessonScene):
         block1 = self._formula_rows(defs, lead, buff=0.10)
         self.play(FadeOut(block1), run_time=0.3)
 
-        name = self.ja_text("オイラーの公式（中だけを数える。証明は認めます。）", font_size=20, color=GREY_B)
+        name = self.ja_text("オイラーの公式（中だけを数える。ここでは証明せずに認めます。）", font_size=20, color=GREY_B)
         self.stack_below(name, lead, buff=0.14)
         name.set_x(0)
         self.play(FadeIn(name), run_time=0.4)

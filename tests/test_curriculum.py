@@ -342,6 +342,9 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertNotIn(r"I+\dfrac{B}{2}-1", step1)
         self.assertNotIn(r"T=2I+B-2", step1)
         self.assertIn("とおく", step1)
+        self.assertIn(r"12-\dfrac{9}{2}", scene)
+        self.assertIn(r"\dfrac{24}{2}-\dfrac{9}{2}=\dfrac{15}{2}", scene)
+        self.assertNotIn(r"\dfrac{21}{2}", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_006 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_006 / "scene.py")
 

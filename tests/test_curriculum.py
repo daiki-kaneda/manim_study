@@ -29,6 +29,9 @@ ALGO_004 = ALGO_D01 / "004_best_worst_average"
 ALGO_005 = ALGO_D01 / "005_omega_theta"
 ALGO_006 = ALGO_D01 / "006_recursion_complexity"
 ALGO_007 = ALGO_D01 / "007_recursion_tree"
+MATH_150_001 = (
+    ROOT / "project" / "curriculum_math_150" / "001_repeating_nines"
+)
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -178,6 +181,30 @@ class CurriculumLessonTests(unittest.TestCase):
         fixed = LessonScene.stack_below(line.copy(), prev, buff=0.22)
         self.assertGreaterEqual(fixed.get_left()[0], frame_left + 0.05)
         self.assertAlmostEqual(fixed.get_left()[0], prev.get_left()[0], places=5)
+
+    def test_math_150_001_has_storyboard_and_scene(self):
+        story = (MATH_150_001 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (MATH_150_001 / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn("class RepeatingNines(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn(r"1-a_n=10^{-n}", scene)
+        self.assertIn(r"10x-x=9.999\ldots-0.999\ldots", scene)
+        self.assertIn(r"\dfrac{9}{10}\times\dfrac{10}{9}=1", scene)
+        self._assert_no_japanese_in_mathtex(MATH_150_001 / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(MATH_150_001 / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

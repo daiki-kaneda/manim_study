@@ -1181,7 +1181,9 @@ class BuffonsNeedle(LessonScene):
         d2 = MathTex(r"\dfrac{D}{2}", font_size=18, color=TEAL)
         d2.next_to(rect.get_corner(UL), LEFT, buff=0.08)
         eq = MathTex(r"x=\dfrac{D}{2}\sin\theta", font_size=18, color=ORANGE)
-        eq.move_to(to_pt(0.78 * PI, 0.86))
+        eq.next_to(rect.get_corner(UR), UP, buff=0.10)
+        eq.align_to(rect.get_right(), RIGHT)
+        eq.shift(LEFT * 0.06)
         return VGroup(rect, area, curve, zero, pi_t, th_lab, x_lab, d2, eq)
 
     def _sin_area_plot(self):

@@ -197,33 +197,77 @@ class CircleArea(LessonScene):
         chip = self.step_label("STEP 2  相似")
         self.play(FadeIn(chip), run_time=0.4)
 
-        small, s_line, s_lab = self._radius_circle(0.85, color=BLUE, label=r"r")
-        big, b_line, b_lab = self._radius_circle(1.7, color=TEAL, label=r"2r")
+        small, s_line, s_lab = self._radius_circle(0.70, color=BLUE, label=r"1")
+        big, b_line, b_lab = self._radius_circle(1.40, color=TEAL, label=r"r")
         left = VGroup(small, s_line, s_lab)
         right = VGroup(big, b_line, b_lab)
-        pair = VGroup(left, right).arrange(RIGHT, buff=1.1, aligned_edge=DOWN)
-        self.below_chip(pair, chip, buff=0.35)
+        mid = self._line(MathTex(r"r", font_size=30, color=YELLOW), "倍に拡大", font_size=22)
+        pair = VGroup(left, mid, right).arrange(RIGHT, buff=0.42, aligned_edge=DOWN)
+        self.below_chip(pair, chip, buff=0.28)
         pair.set_x(0)
+        mid.align_to(left, UP).shift(DOWN * 0.55)
+
+        s_area = self._line("面積", MathTex(r"c", font_size=30, color=YELLOW), font_size=22)
+        s_area.next_to(left, DOWN, buff=0.14)
+        b_area = self._line("面積", MathTex(r"c r^2", font_size=30, color=YELLOW), font_size=22)
+        b_area.next_to(right, DOWN, buff=0.14)
+
         self.play(FadeIn(left), run_time=0.55)
-        self.play(FadeIn(right), run_time=0.55)
         self.linger(3.2)
 
-        lines = [
-            self._line("円を", MathTex(r"k", font_size=30), "倍に拡大すると、長さは", MathTex(r"k", font_size=30), "倍です。", font_size=24),
-            self._line("面積は", MathTex(r"k^2", font_size=30), "倍になります。", font_size=24),
-            self._line("だから面積は、必ず", MathTex(r"r^2", font_size=30), "に比例します。", font_size=24),
-            MathTex(r"S=c\,r^2", font_size=40, color=YELLOW),
-        ]
-        shown = VGroup()
-        for i, mob in enumerate(lines):
-            if i == 0:
-                self.stack_below(mob, pair, buff=0.32)
-            else:
-                self.stack_below(mob, shown, buff=0.18)
-            mob.set_x(0)
-            self.play(FadeIn(mob), run_time=0.45)
-            shown.add(mob)
-            self.linger(3.2)
+        line1 = self._line(
+            "半径",
+            MathTex(r"1", font_size=30),
+            "の円の面積を、",
+            MathTex(r"c", font_size=30),
+            "とおきます。",
+            font_size=24,
+        )
+        line1.to_edge(DOWN, buff=0.38)
+        line1.set_x(0)
+        self.play(FadeIn(line1), FadeIn(s_area), run_time=0.5)
+        self.linger("半径 1 の円の面積を、c とおきます。")
+
+        line2 = self._line(
+            "この円を",
+            MathTex(r"r", font_size=30),
+            "倍に拡大します。半径は",
+            MathTex(r"r", font_size=30),
+            "になります。",
+            font_size=24,
+        )
+        line2.move_to(line1)
+        self.play(FadeOut(line1), FadeIn(line2), FadeIn(mid), FadeIn(right), run_time=0.7)
+        self.linger("この円を r 倍に拡大します。半径は r になります。")
+
+        line3 = self._line(
+            "相似なので、長さは",
+            MathTex(r"r", font_size=30),
+            "倍、面積は",
+            MathTex(r"r^2", font_size=30),
+            "倍です。",
+            font_size=24,
+        )
+        line3.move_to(line2)
+        self.play(FadeOut(line2), FadeIn(line3), run_time=0.5)
+        self.linger("相似なので、長さは r 倍、面積は r² 倍です。")
+
+        line4 = self._line(
+            "だから拡大あとの面積は",
+            MathTex(r"c r^2", font_size=32),
+            "です。",
+            font_size=24,
+        )
+        line4.move_to(line3)
+        result = MathTex(r"S=c\,r^2", font_size=42, color=YELLOW)
+        self.stack_below(result, pair, buff=0.22)
+        result.set_x(0)
+        # keep clear of area labels
+        if result.get_top()[1] > s_area.get_bottom()[1] - 0.12:
+            result.next_to(VGroup(s_area, b_area), DOWN, buff=0.22)
+            result.set_x(0)
+        self.play(FadeOut(line3), FadeIn(line4), FadeIn(b_area), FadeIn(result), run_time=0.55)
+        self.linger(3.4)
 
         note = self._line(
             "残る問いは、定数",
@@ -233,12 +277,18 @@ class CircleArea(LessonScene):
             "と同じかどうかです。",
             font_size=24,
         )
-        note.to_edge(DOWN, buff=0.32)
-        note.set_x(0)
-        self.play(FadeIn(note), run_time=0.4)
+        note.move_to(line4)
+        self.play(FadeOut(line4), FadeIn(note), run_time=0.45)
         self.linger("残る問いは、定数 c が π と同じかどうかです。", extra=0.35)
 
-        self.play(FadeOut(pair), FadeOut(shown), FadeOut(note), run_time=0.35)
+        self.play(
+            FadeOut(pair),
+            FadeOut(s_area),
+            FadeOut(b_area),
+            FadeOut(result),
+            FadeOut(note),
+            run_time=0.35,
+        )
         circ = Circle(radius=1.15, color=BLUE, stroke_width=3)
         outer = Square(side_length=2.3, color=ORANGE, stroke_width=2)
         inner = Square(side_length=1.15 * np.sqrt(2), color=GREEN, stroke_width=2).rotate(PI / 4)
@@ -249,6 +299,7 @@ class CircleArea(LessonScene):
         self.linger(3.2)
         bounds = [
             MathTex(r"(2r)^2=4r^2", font_size=32, color=ORANGE),
+            self._line("内接は対角線", MathTex(r"2r", font_size=30), "なので", MathTex(r"2r^2", font_size=30), font_size=24),
             MathTex(r"2r^2<S<4r^2", font_size=32),
             MathTex(r"2<c<4", font_size=36, color=YELLOW),
             self._line(MathTex(r"\pi", font_size=30), "はこのあいだにある", font_size=24),
@@ -295,8 +346,8 @@ class CircleArea(LessonScene):
             self.linger(wait)
 
         result = [
-            self._line("横", MathTex(r"\to\pi r", font_size=34), font_size=26),
-            self._line("縦", MathTex(r"\to r", font_size=34), font_size=26),
+            self._line("横", MathTex(r"nr\sin(\pi/n)\to\pi r", font_size=34), font_size=26),
+            self._line("縦", MathTex(r"r\cos(\pi/n)\to r", font_size=34), font_size=26),
             MathTex(r"(\pi r)\cdot r=\pi r^2", font_size=40, color=GREEN),
         ]
         block = VGroup(*result).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
@@ -481,16 +532,51 @@ class CircleArea(LessonScene):
             shown.add(mob)
             self.linger(text)
 
-        lim = MathTex(
-            r"S=\lim_{n\to\infty} nr\sin\frac{\pi}{n}\cdot r\cos\frac{\pi}{n}=\pi r^2",
-            font_size=34,
-            color=YELLOW,
-        )
-        self.stack_below(lim, shown, buff=0.36)
-        lim.set_x(0)
-        self._fit(lim, 12.8)
-        lim.set_x(0)
-        self.play(Write(lim), run_time=1.1)
+        self.play(FadeOut(shown), run_time=0.35)
+
+        lead = self.ja_text("横と縦の極限を、途中式で書きます。", font_size=26)
+        self.below_chip(lead, chip, buff=0.30)
+        self._fit_left(lead)
+        self.play(FadeIn(lead), run_time=0.45)
+        self.linger(lead.text)
+
+        sub_rows = [
+            MathTex(r"x=\dfrac{\pi}{n}", font_size=36, color=YELLOW),
+            self._line(
+                MathTex(r"n\to\infty", font_size=32),
+                "のとき",
+                MathTex(r"x\to 0", font_size=32),
+                font_size=24,
+            ),
+            MathTex(r"n=\dfrac{\pi}{x}", font_size=34),
+            MathTex(r"n\sin\dfrac{\pi}{n}=n\sin x", font_size=34),
+            MathTex(r"n\sin x=\dfrac{\pi}{x}\sin x=\pi\cdot\dfrac{\sin x}{x}", font_size=34),
+        ]
+        sub_block = self._formula_rows(sub_rows, lead, buff=0.24)
+
+        self.play(FadeOut(sub_block), run_time=0.3)
+        lim_rows = [
+            MathTex(r"\lim_{x\to 0}\dfrac{\sin x}{x}=1", font_size=36, color=YELLOW),
+            self._line(
+                "よって",
+                MathTex(r"\lim_{n\to\infty}n\sin\dfrac{\pi}{n}=\pi", font_size=32),
+                font_size=24,
+            ),
+            MathTex(r"\cos\dfrac{\pi}{n}=\cos x\to\cos 0=1", font_size=34),
+        ]
+        lim_block = self._formula_rows(lim_rows, lead, buff=0.24)
+
+        self.play(FadeOut(lim_block), run_time=0.3)
+        close_rows = [
+            self._line("横", MathTex(r"r\cdot n\sin\dfrac{\pi}{n}\to\pi r", font_size=32), font_size=24),
+            self._line("縦", MathTex(r"r\cos\dfrac{\pi}{n}\to r", font_size=32), font_size=24),
+            MathTex(
+                r"S=\lim_{n\to\infty}nr\sin\dfrac{\pi}{n}\cdot r\cos\dfrac{\pi}{n}",
+                font_size=32,
+            ),
+            MathTex(r"=(\pi r)\cdot r=\pi r^2", font_size=40, color=GREEN),
+        ]
+        close_block = self._formula_rows(close_rows, lead, buff=0.22)
         self.linger(3.6)
 
     def part_summary(self):
@@ -667,6 +753,8 @@ class CircleArea(LessonScene):
     def _formula_rows(self, rows, under, buff=0.36):
         block = VGroup(*rows).arrange(DOWN, buff=0.2, aligned_edge=LEFT)
         self.stack_below(block, under, buff=buff)
+        block.set_x(0)
+        self._fit(block, 12.6)
         block.set_x(0)
         for row in block:
             self.play(FadeIn(row), run_time=0.45)

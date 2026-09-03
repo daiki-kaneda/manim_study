@@ -264,10 +264,11 @@
 2. \(x=\dfrac{\pi}{n}\) とおく
 3. \(n\to\infty\) のとき \(x\to 0\)
 4. \(n=\dfrac{\pi}{x}\) なので \(n\sin\dfrac{\pi}{n}=n\sin x=\dfrac{\pi}{x}\sin x=\pi\cdot\dfrac{\sin x}{x}\)
-5. \(\displaystyle\lim_{x\to 0}\dfrac{\sin x}{x}=1\) より \(\displaystyle\lim_{n\to\infty}n\sin\dfrac{\pi}{n}=\pi\)
-6. \(\cos\dfrac{\pi}{n}=\cos x\to\cos 0=1\)
-7. よって横 \(r\cdot n\sin\dfrac{\pi}{n}\to\pi r\)、縦 \(r\cos\dfrac{\pi}{n}\to r\)
-8. \(S=\lim_{n\to\infty} nr\sin\dfrac{\pi}{n}\cdot r\cos\dfrac{\pi}{n}=(\pi r)\cdot r=\pi r^2\)
+5. 変換の式 \(\pi\cdot\dfrac{\sin x}{x}\) は残したまま、\(\displaystyle\lim_{x\to 0}\dfrac{\sin x}{x}=1\) を出す
+6. よって \(\displaystyle\lim_{n\to\infty}n\sin\dfrac{\pi}{n}=\pi\)
+7. \(\cos\dfrac{\pi}{n}=\cos x\to\cos 0=1\)
+8. よって横 \(r\cdot n\sin\dfrac{\pi}{n}\to\pi r\)、縦 \(r\cos\dfrac{\pi}{n}\to r\)
+9. \(S=\lim_{n\to\infty} nr\sin\dfrac{\pi}{n}\cdot r\cos\dfrac{\pi}{n}=(\pi r)\cdot r=\pi r^2\)
 
 最後の \(\pi r^2\) は 3 秒以上残す。積分の記号は出してよい。定義の講義にはしない。
 「同様に」で余弦を飛ばさない。\(\cos x\to 1\) も一段残す。

@@ -553,8 +553,10 @@ class CircleArea(LessonScene):
             MathTex(r"n\sin x=\dfrac{\pi}{x}\sin x=\pi\cdot\dfrac{\sin x}{x}", font_size=34),
         ]
         sub_block = self._formula_rows(sub_rows, lead, buff=0.24)
+        kept = sub_rows[-1]
+        self.play(*[FadeOut(row) for row in sub_rows[:-1]], run_time=0.3)
+        self.play(kept.animate.next_to(lead, DOWN, buff=0.28).set_x(0), run_time=0.4)
 
-        self.play(FadeOut(sub_block), run_time=0.3)
         lim_rows = [
             MathTex(r"\lim_{x\to 0}\dfrac{\sin x}{x}=1", font_size=36, color=YELLOW),
             self._line(
@@ -564,9 +566,9 @@ class CircleArea(LessonScene):
             ),
             MathTex(r"\cos\dfrac{\pi}{n}=\cos x\to\cos 0=1", font_size=34),
         ]
-        lim_block = self._formula_rows(lim_rows, lead, buff=0.24)
+        lim_block = self._formula_rows(lim_rows, kept, buff=0.24)
 
-        self.play(FadeOut(lim_block), run_time=0.3)
+        self.play(FadeOut(kept), FadeOut(lim_block), run_time=0.3)
         close_rows = [
             self._line("横", MathTex(r"r\cdot n\sin\dfrac{\pi}{n}\to\pi r", font_size=32), font_size=24),
             self._line("縦", MathTex(r"r\cos\dfrac{\pi}{n}\to r", font_size=32), font_size=24),

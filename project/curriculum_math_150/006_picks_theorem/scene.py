@@ -454,15 +454,23 @@ class PicksTheorem(LessonScene):
             self.linger(3.2)
         self.linger(3.4)
 
-        self.play(FadeOut(VGroup(fig, block)), run_time=0.3)
+        self.play(FadeOut(block), run_time=0.3)
 
         check = [
+            self.ja_text("下の長方形と屋根", font_size=20),
             MathTex(r"4\times 2=8", font_size=30),
             MathTex(r"\dfrac{4\times 1}{2}=2", font_size=30),
             MathTex(r"8+2=10", font_size=34, color=GREEN),
         ]
-        block2 = self._formula_rows(check, lead, buff=0.14)
-        self.play(FadeOut(block2), run_time=0.3)
+        block2 = VGroup(*check).arrange(DOWN, buff=0.12, aligned_edge=LEFT)
+        block2.next_to(fig, RIGHT, buff=0.42)
+        block2.align_to(fig, UP)
+        self._nudge(block2)
+        for row in check:
+            self.play(FadeIn(row), run_time=0.4)
+            self.linger(3.2)
+        self.linger(3.4)
+        self.play(FadeOut(VGroup(fig, block2)), run_time=0.3)
 
         table = self.aligned_table(
             [
@@ -617,8 +625,13 @@ class PicksTheorem(LessonScene):
         if extras:
             parts.extend(extras)
         if triangles:
-            for verts, color in triangles:
+            for i, (verts, color) in enumerate(triangles, 1):
                 parts.append(self._poly(verts, color, 0.28))
+                cx = sum(v[0] for v in verts) / 3
+                cy = sum(v[1] for v in verts) / 3
+                parts.append(
+                    MathTex(rf"{i}", font_size=18, color=WHITE).move_to(self._xy(cx, cy))
+                )
         if poly:
             parts.append(self._poly(poly, fill_color, 0.16 if not triangles else 0.0))
 

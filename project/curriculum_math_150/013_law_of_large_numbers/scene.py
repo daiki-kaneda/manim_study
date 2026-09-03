@@ -558,8 +558,8 @@ class LawOfLargeNumbers(LessonScene):
             self._width_band(10, 10 ** (-0.5), ORANGE),
             self._width_band(100, 0.10, TEAL),
             self._width_band(1000, 1000 ** (-0.5), GREEN),
-        ).arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        fig = VGroup(legend, bands).arrange(DOWN, buff=0.14)
+        ).arrange(DOWN, buff=0.28, aligned_edge=LEFT)
+        fig = VGroup(legend, bands).arrange(DOWN, buff=0.16)
         self.below_chip(fig, chip, buff=0.16)
         fig.set_x(0)
         self._nudge(fig)
@@ -1037,7 +1037,8 @@ class LawOfLargeNumbers(LessonScene):
         nlab = MathTex(rf"n={n}", font_size=18, color=color)
         vlab = MathTex(rf"\dfrac{{1}}{{{n}}}", font_size=16, color=ORANGE)
         wlab = MathTex(rf"\dfrac{{1}}{{\sqrt{{{n}}}}}", font_size=16, color=TEAL)
-        left = VGroup(nlab, vlab, wlab).arrange(DOWN, buff=0.04, aligned_edge=RIGHT)
+        rates = VGroup(vlab, wlab).arrange(RIGHT, buff=0.16)
+        left = VGroup(nlab, rates).arrange(DOWN, buff=0.10, aligned_edge=RIGHT)
         line_group = VGroup(nl, rect, lab0, lab1, labh)
         row = VGroup(left, line_group).arrange(RIGHT, buff=0.28)
         return row

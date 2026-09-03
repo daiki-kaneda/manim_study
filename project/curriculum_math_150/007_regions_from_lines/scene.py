@@ -588,7 +588,7 @@ class RegionsFromLines(LessonScene):
         self.stack_below(related, shown, buff=0.28)
         self._fit_left(related)
         self.play(FadeIn(related), run_time=0.45)
-        self.linger(related.text, extra=0.40)
+        self.linger("円 n 個で平面を切るときも、新しい円が既存の円といくつ交わるかで増え方が書けます。", extra=0.40)
 
     def _arrangement(self, specs, pieces_of=None, mark_origin=False, fills=False):
         hw = self.WIN_W / 2

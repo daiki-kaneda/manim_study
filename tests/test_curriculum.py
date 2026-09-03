@@ -37,6 +37,7 @@ MATH_150_003 = ROOT / "project" / "curriculum_math_150" / "003_fixed_perimeter_r
 MATH_150_004 = ROOT / "project" / "curriculum_math_150" / "004_reflection_shortest_path"
 MATH_150_005 = ROOT / "project" / "curriculum_math_150" / "005_ant_on_cube"
 MATH_150_006 = ROOT / "project" / "curriculum_math_150" / "006_picks_theorem"
+MATH_150_007 = ROOT / "project" / "curriculum_math_150" / "007_regions_from_lines"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -353,6 +354,39 @@ class CurriculumLessonTests(unittest.TestCase):
         self.assertIn("辺が交わらず穴もない", scene)
         self._assert_no_japanese_in_mathtex(MATH_150_006 / "scene.py")
         self._assert_no_hardcoded_exponents_in_japanese(MATH_150_006 / "scene.py")
+
+    def test_math_150_007_has_storyboard_and_scene(self):
+        story = (MATH_150_007 / "storyboard.md").read_text(encoding="utf-8")
+        scene = (MATH_150_007 / "scene.py").read_text(encoding="utf-8")
+        for part in ("問い", "試行", "工夫", "一般化", "まとめ"):
+            self.assertIn(part, story)
+        self.assertIn("STEP 1", story)
+        self.assertIn("STEP 2", story)
+        self.assertIn("STEP 3", story)
+        self.assertIn("STEP 4", story)
+        self.assertIn("実例", story)
+        self.assertNotIn("今日のゴール", story)
+        self.assertNotIn("今日", scene)
+        self.assertIn("class RegionsFromLines(LessonScene)", scene)
+        self.assertNotIn("PacedScene", scene)
+        self.assertIn("self.below_chip(", scene)
+        self.assertIn("self.stack_below(", scene)
+        self.assertIn("self.aligned_table(", scene)
+        self.assertIn("self.linger(3.", scene)
+        self.assertIn("とおく", scene)
+        self.assertIn("方法", scene)
+        self.assertNotIn("道", scene)
+        self.assertIn(r"R(n)=R(n-1)+n", scene)
+        self.assertIn(r"R(n)=1+\dfrac{n(n+1)}{2}", scene)
+        self.assertIn(r"1+\dfrac{4\cdot 5}{2}=1+10=11", scene)
+        self.assertIn(r"R(k)+(k+1)=1+\dfrac{k(k+1)}{2}+(k+1)", scene)
+        self.assertIn("帰納法", scene)
+        step1 = scene[
+            scene.index("def part_step1_count") : scene.index("def part_step2_maximize")
+        ]
+        self.assertNotIn(r"R(n)=1+\dfrac{n(n+1)}{2}", step1)
+        self._assert_no_japanese_in_mathtex(MATH_150_007 / "scene.py")
+        self._assert_no_hardcoded_exponents_in_japanese(MATH_150_007 / "scene.py")
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

@@ -181,6 +181,14 @@ class LessonScene(JapaneseScene):
     motion_scale = 1.0
     beat = 1.0
 
+    # Beginner on-screen pacing (seconds). Midpoints of the 150本 bands.
+    PAUSE_NEW_SCREEN = 0.75  # 0.5–1s after a new screen appears
+    PAUSE_SHORT_FORMULA = 1.5  # 1–2s
+    PAUSE_REWRITE = 0.75  # 0.5–1s while a rewrite is on screen
+    PAUSE_COMPLEX = 2.5  # 2–3s for a slightly involved formula
+    PAUSE_CONCLUSION = 2.6  # 2–3s for a result the viewer must keep
+    PAUSE_TOPIC = 0.75  # 0.5–1s when the topic changes
+
     def wipe(self, *keep):
         """Fade out every top-level mobject except ``keep``."""
         from manim import FadeOut
@@ -189,15 +197,19 @@ class LessonScene(JapaneseScene):
         victims = [m for m in list(self.mobjects) if m not in keep_set]
         if not victims:
             return
-        self.play(*[FadeOut(m) for m in victims], run_time=0.45)
+        self.play(*[FadeOut(m) for m in victims], run_time=0.60)
         for m in victims:
             self.remove(m)
 
     def linger(self, text_or_seconds: str | float = "", extra: float = 0.0) -> None:
-        """Keep the current frame on screen long enough to read.
+        """Keep the current frame on screen long enough for a beginner to read.
 
-        - ``linger(3.5)``: wait that many wall-clock seconds (definitions / results).
-        - ``linger("本文", extra=0.4)``: scale with Japanese length; not idle padding.
+        - ``linger(2.6)``: wait that many wall-clock seconds (use pause helpers
+          for the 150本 bands: new screen, short formula, rewrite, complex,
+          conclusion, topic).
+        - ``linger("本文", extra=0.4)``: scale with Japanese length. About
+          0.14s per character (初学者が画面の文を追う速さ). Not idle padding
+          to hit a target runtime.
         """
         if isinstance(text_or_seconds, (int, float)) and not isinstance(
             text_or_seconds, bool
@@ -205,8 +217,36 @@ class LessonScene(JapaneseScene):
             super().wait(max(0.0, float(text_or_seconds) + extra))
             return
         text = str(text_or_seconds)
-        seconds = 1.15 + 0.08 * len(text)
-        self.read(min(3.2, max(1.15, seconds)) + extra)
+        seconds = 1.20 + 0.14 * len(text)
+        self.read(min(6.0, max(1.20, seconds)) + extra)
+
+    def pause_new_screen(self) -> None:
+        super().wait(self.PAUSE_NEW_SCREEN)
+
+    def pause_short_formula(self) -> None:
+        super().wait(self.PAUSE_SHORT_FORMULA)
+
+    def pause_rewrite(self) -> None:
+        super().wait(self.PAUSE_REWRITE)
+
+    def pause_complex(self) -> None:
+        super().wait(self.PAUSE_COMPLEX)
+
+    def pause_conclusion(self) -> None:
+        super().wait(self.PAUSE_CONCLUSION)
+
+    def pause_topic(self) -> None:
+        super().wait(self.PAUSE_TOPIC)
+
+    def begin_step(self, label: str, *keep):
+        """Wipe, show a STEP chip, then pause so the new screen can be read."""
+        from manim import FadeIn
+
+        self.wipe(*keep)
+        chip = self.step_label(label)
+        self.play(FadeIn(chip), run_time=0.70)
+        self.pause_new_screen()
+        return chip
 
     def step_label(self, text: str, font_size: int = 24):
         """Park a short STEP chip at the top-left."""

@@ -99,9 +99,9 @@ class CircleArea(LessonScene):
         insides = [c for c in grid.cells if c.kind == "in"]
         edges = [c for c in grid.cells if c.kind == "edge"]
         self.play(*[c.animate.set_fill(GREEN, 0.45).set_stroke(GREEN, 1.2) for c in insides], run_time=0.9)
-        self.linger(1.2)
+        self.linger(3.2)
         self.play(*[c.animate.set_fill(ORANGE, 0.4).set_stroke(ORANGE, 1.2) for c in edges], run_time=0.9)
-        self.linger(1.2)
+        self.linger(3.2)
 
         nums = VGroup(
             self._line("内側  ", MathTex(str(counts["in"]), font_size=34, color=GREEN), font_size=26),
@@ -112,7 +112,7 @@ class CircleArea(LessonScene):
         nums.align_to(grid, UP)
         for row in nums:
             self.play(FadeIn(row), run_time=0.4)
-            self.linger(1.15)
+            self.linger(1.6)
 
         note1 = self.ja_text("マスを数えても、境界が残るので近似にしかなりません。", font_size=24)
         note1.next_to(grid, DOWN, buff=0.32)
@@ -124,7 +124,7 @@ class CircleArea(LessonScene):
         self.stack_below(note2, note1, buff=0.16)
         note2.set_x(0)
         self.play(FadeIn(note2), run_time=0.45)
-        self.linger(note2.text, extra=0.3)
+        self.linger(note2.text, extra=0.5)
 
     def part_trial_sectors(self):
         self.wipe(self.header)
@@ -145,14 +145,14 @@ class CircleArea(LessonScene):
         r_lab = MathTex(r"r", font_size=30, color=YELLOW).next_to(r_line, DOWN, buff=0.08)
         self.play(FadeIn(pieces), run_time=0.7)
         self.play(Create(r_line), FadeIn(r_lab), run_time=0.45)
-        self.linger(1.2)
+        self.linger(3.2)
 
         arranged = self._arranged_pieces(n, r)
         arranged.next_to(pieces, RIGHT, buff=0.7)
         arranged.set_y(pieces.get_y() - 0.15)
         self.play(FadeOut(r_line), FadeOut(r_lab), run_time=0.25)
         self.play(TransformFromCopy(pieces, arranged), run_time=1.3)
-        self.linger(1.4)
+        self.linger(3.2)
 
         note1 = self.ja_text("だいたい長方形に見えます。でも弧が残ります。", font_size=24, color=ORANGE)
         note1.next_to(VGroup(pieces, arranged), DOWN, buff=0.4)
@@ -206,7 +206,7 @@ class CircleArea(LessonScene):
         pair.set_x(0)
         self.play(FadeIn(left), run_time=0.55)
         self.play(FadeIn(right), run_time=0.55)
-        self.linger(1.3)
+        self.linger(3.2)
 
         lines = [
             self._line("円を", MathTex(r"k", font_size=30), "倍に拡大すると、長さは", MathTex(r"k", font_size=30), "倍です。", font_size=24),
@@ -223,7 +223,7 @@ class CircleArea(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.45)
             shown.add(mob)
-            self.linger(3.2 if i == 3 else 1.35)
+            self.linger(3.2)
 
         note = self._line(
             "残る問いは、定数",
@@ -252,7 +252,7 @@ class CircleArea(LessonScene):
         r = 1.15
         arranged = None
         dim_lab = None
-        for n, wait in ((4, 1.5), (8, 1.4), (16, 1.6)):
+        for n, wait in ((4, 3.2), (8, 3.2), (16, 3.2)):
             nxt = self._arranged_pieces(n, r)
             self.stack_below(nxt, lead, buff=0.4)
             nxt.set_x(-1.4)
@@ -282,7 +282,7 @@ class CircleArea(LessonScene):
         block.set_x(0)
         for row in result:
             self.play(FadeIn(row), run_time=0.4)
-            self.linger(3.2 if row is result[-1] else 1.2)
+            self.linger(3.2)
 
         alt = self.ja_text(
             "同じ向きに並べると、横が周、縦が半径の半分の長方形にも見えます。どちらも面積は同じです。",
@@ -311,7 +311,7 @@ class CircleArea(LessonScene):
         self.stack_below(tri_fig, lead, buff=0.28)
         tri_fig.to_edge(LEFT, buff=0.55)
         self.play(FadeIn(tri_fig), run_time=0.7)
-        self.linger(1.2)
+        self.linger(3.2)
 
         rows = [
             MathTex(r"\dfrac{1}{2}r\,\Delta s", font_size=34),
@@ -324,7 +324,7 @@ class CircleArea(LessonScene):
         block.align_to(tri_fig, UP)
         for row in rows:
             self.play(FadeIn(row), run_time=0.45)
-            self.linger(3.2 if row is rows[-1] else 1.3)
+            self.linger(3.2)
 
         check = self._line(
             "検算: 横",
@@ -349,6 +349,14 @@ class CircleArea(LessonScene):
         self._fit_left(lead)
         self.play(FadeIn(lead), run_time=0.45)
         self.linger(lead.text)
+
+        calc = [
+            MathTex(r"4\sin(\pi/4)=2\sqrt{2}\approx 2.828", font_size=32),
+            MathTex(r"\cos(\pi/4)=\dfrac{\sqrt{2}}{2}\approx 0.707", font_size=32),
+            MathTex(r"2.828\times 0.707=2.000", font_size=32, color=YELLOW),
+        ]
+        calc_block = self._formula_rows(calc, lead, buff=0.26)
+        self.play(FadeOut(calc_block), run_time=0.35)
 
         table = self.aligned_table(
             [
@@ -405,7 +413,7 @@ class CircleArea(LessonScene):
             mob.set_x(0)
             self.play(FadeIn(mob), run_time=0.4)
             shown.add(mob)
-            self.linger(3.2 if i == 2 else 1.35)
+            self.linger(3.2)
 
     def part_generalize(self):
         self.wipe(self.header)
@@ -488,7 +496,7 @@ class CircleArea(LessonScene):
             self._fit_left(mob)
             self.play(FadeIn(mob), run_time=0.5)
             shown.add(mob)
-            self.linger(1.55)
+            self.linger(3.2)
 
         related = self.ja_text("極座標で細い扇を足す話も、同じ取り尽くしで閉じます。", font_size=22, color=GREY_B)
         self.stack_below(related, shown, buff=0.36)

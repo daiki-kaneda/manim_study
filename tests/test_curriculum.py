@@ -619,7 +619,13 @@ class CurriculumLessonTests(unittest.TestCase):
     def test_math_150_012_has_storyboard_and_scene(self):
         story, scene = self._assert_math_150_common(MATH_150_012, "CentralLimitDice")
         self.assertIn("二つのサイコロを振って出る目の合計は、何が一番多いでしょうか", scene)
+        self.assertIn("def _dice_pair", scene)
         self.assertIn("def _pips", scene)
+        self.assertIn("角丸", story)
+        self.assertIn("二次元", story)
+        q = scene[scene.index("def part_question") : scene.index("def part_trial_one")]
+        self.assertIn("_dice_pair", q)
+        self.assertNotIn("Polygon", q)
         self.assertIn("場合の数", scene)
         self.assertIn("y_axis", scene)
         self.assertNotIn("しぼむ", scene)

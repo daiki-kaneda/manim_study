@@ -40,7 +40,7 @@ class CentralLimitDice(LessonScene):
         return title
 
     def part_question(self):
-        fig = self._die()
+        fig = self._dice_pair()
         cap = self.ja_text(
             "サイコロは 1 個だと、1 から 6 まで同じ確からしさです。",
             font_size=20,
@@ -864,31 +864,29 @@ class CentralLimitDice(LessonScene):
         )
         self.pause_conclusion()
 
-    def _die(self, size=1.80):
-        s = size
-        dx = 0.38 * s
-        dy = 0.26 * s
-        fl = LEFT * (s / 2) + DOWN * (s / 2)
-        fr = RIGHT * (s / 2) + DOWN * (s / 2)
-        ur = RIGHT * (s / 2) + UP * (s / 2)
-        ul = LEFT * (s / 2) + UP * (s / 2)
-        off = RIGHT * dx + UP * dy
-        front = Polygon(fl, fr, ur, ul, color=GREY_B, stroke_width=2.4)
-        front.set_fill("#F4F0E6", 0.98)
-        top = Polygon(ul, ur, ur + off, ul + off, color=GREY_B, stroke_width=2.0)
-        top.set_fill("#E8E4DA", 0.98)
-        side = Polygon(fr, fr + off, ur + off, ur, color=GREY_B, stroke_width=2.0)
-        side.set_fill("#D4D0C6", 0.98)
-        front_pips = self._pips(front.get_center(), s * 0.78, 5, color=GREY_E)
-        top_center = (ul + ur + ur + off + ul + off) / 4
-        top_pips = self._pips(top_center, s * 0.42, 1, color=GREY_E, y_scale=0.55)
-        side_center = (fr + fr + off + ur + off + ur) / 4
-        side_pips = self._pips(side_center, s * 0.38, 6, color=GREY_E, x_scale=0.55)
-        return VGroup(top, side, front, top_pips, side_pips, front_pips)
+    def _dice_pair(self, left_n=5, right_n=2, size=1.45):
+        left = self._die(n=left_n, size=size)
+        right = self._die(n=right_n, size=size)
+        buff = 0.36
+        right.shift(RIGHT * (left[0].get_right()[0] - right[0].get_left()[0] + buff))
+        right.shift(UP * (left[0].get_center()[1] - right[0].get_center()[1]))
+        return VGroup(left, right)
 
-    def _pips(self, center, face_w, n, color=GREY_E, x_scale=1.0, y_scale=1.0):
-        r = max(face_w * 0.07, 0.045)
-        d = face_w * 0.22
+    def _die(self, n=5, size=1.45):
+        face = RoundedRectangle(
+            width=size,
+            height=size,
+            corner_radius=0.22 * size,
+            color=GREY_B,
+            stroke_width=2.6,
+        )
+        face.set_fill("#F4F0E6", 0.98)
+        pips = self._pips(face.get_center(), size * 0.62, n, color=GREY_E)
+        return VGroup(face, pips)
+
+    def _pips(self, center, face_w, n, color=GREY_E):
+        r = max(face_w * 0.11, 0.055)
+        d = face_w * 0.28
         layout = {
             1: [(0, 0)],
             2: [(-d, d), (d, -d)],
@@ -899,13 +897,7 @@ class CentralLimitDice(LessonScene):
         }
         dots = VGroup()
         for x, y in layout[n]:
-            dots.add(
-                Dot(
-                    center + RIGHT * x * x_scale + UP * y * y_scale,
-                    radius=r,
-                    color=color,
-                )
-            )
+            dots.add(Dot(center + RIGHT * x + UP * y, radius=r, color=color))
         return dots
 
     def _bar_chart(

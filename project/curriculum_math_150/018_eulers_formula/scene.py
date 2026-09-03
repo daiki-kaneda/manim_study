@@ -596,17 +596,17 @@ class EulersFormula(LessonScene):
                 "ではない。",
                 font_size=16,
             ),
-        ]
-        block = self._formula_rows(rows, lead, buff=0.08, hold=self.PAUSE_SHORT_FORMULA)
-        self.play(FadeOut(VGroup(lead, block)), run_time=0.40)
-
-        more = [
             self._line(
                 "次の項",
                 MathTex(r"-\dfrac{\pi^{6}}{720}", font_size=24, color=GREEN),
                 "は負で、下へ戻します。",
                 font_size=16,
             ),
+        ]
+        block = self._formula_rows(rows, lead, buff=0.08, hold=self.PAUSE_SHORT_FORMULA)
+        self.play(FadeOut(VGroup(lead, block)), run_time=0.40)
+
+        more = [
             self._line(
                 "虚部:",
                 MathTex(r"\pi-\dfrac{\pi^{3}}{6}", font_size=24, color=TEAL),

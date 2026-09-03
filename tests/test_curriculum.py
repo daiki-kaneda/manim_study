@@ -682,6 +682,7 @@ class CurriculumLessonTests(unittest.TestCase):
         story, scene = self._assert_math_150_common(MATH_150_015, "RandomWalkReturn")
         self.assertNotIn("入口で再掲", scene)
         self.assertNotIn("観察で十分", scene)
+        self.assertNotIn("観察に留め", scene)
         self.assertIn(r"p_{1}=p_{2}=1", scene)
         self.assertIn(r"p_{d}<1", scene)
         self.assertIn(r"\mathbb{Z}^{d}", scene)

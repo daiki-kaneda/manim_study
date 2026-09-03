@@ -441,8 +441,7 @@ class LawOfLargeNumbers(LessonScene):
         cap = None
         for i, (_n, rate, ntex, eq, speak) in enumerate(stages):
             color = colors[i]
-            tag_dir = [UP, LEFT, RIGHT][i]
-            mark = self._rate_mark(nl, rate, ntex, eq_color=color, tag_dir=tag_dir)
+            mark = self._rate_mark(nl, rate, ntex, eq_color=color)
             eq_mob = self._line(
                 MathTex(ntex, font_size=24, color=color),
                 "、差 3 枚:",
@@ -986,28 +985,20 @@ class LawOfLargeNumbers(LessonScene):
             stroke_width=2.0,
         )
         half = MathTex(r"\dfrac{1}{2}", font_size=20, color=YELLOW)
-        half.next_to(nl.n2p(0.5), DOWN, buff=0.22)
+        half.next_to(nl.n2p(0.5), DOWN, buff=0.28)
         group = VGroup(nl, dash, half)
         for rate, tex, color in marks:
             group.add(self._rate_mark(nl, rate, tex, eq_color=color))
         return group, nl
 
-    def _rate_mark(self, nl, rate, ntex, eq_color=ORANGE, tag_dir=UP):
+    def _rate_mark(self, nl, rate, _ntex, eq_color=ORANGE):
         dot = Dot(nl.n2p(rate), color=eq_color, radius=0.09)
         arm = Line(nl.n2p(0.5), nl.n2p(rate), color=eq_color, stroke_width=5)
-        lab = MathTex(ntex, font_size=18, color=eq_color)
-        near_half = abs(rate - 0.5) < 0.04
-        tags = lab if near_half else VGroup(lab, MathTex(rf"{rate}", font_size=18, color=eq_color)).arrange(DOWN, buff=0.04)
-        if tag_dir is UP:
-            tags.next_to(dot, UP, buff=0.16)
-        elif tag_dir is DOWN:
-            tags.next_to(dot, DOWN, buff=0.28)
-        elif tag_dir is LEFT:
-            tags.next_to(dot, LEFT, buff=0.12)
-            tags.shift(UP * 0.28)
-        else:
-            tags.next_to(dot, RIGHT, buff=0.14)
-            tags.shift(UP * 0.28)
+        near_half = abs(rate - 0.5) < 0.08
+        if near_half:
+            return VGroup(arm, dot)
+        tags = MathTex(rf"{rate}", font_size=18, color=eq_color)
+        tags.next_to(dot, UP, buff=0.16)
         return VGroup(arm, dot, tags)
 
     def _width_band(self, n, half_w, color):

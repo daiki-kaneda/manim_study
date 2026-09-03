@@ -394,8 +394,8 @@ class RandomWalkReturn(LessonScene):
                 font_size=18,
             ),
             self.ja_text(
-                "厳密な級数は書かず、重なりが残る、という観察に留めます。",
-                font_size=18,
+                "厳密な証明では、戻る確率を級数で書いて、その級数が発散するか収束するかを見ます。今回は高校で使う範囲として、次元ごとの経路の広がりまでとします。",
+                font_size=16,
             ),
         ]
         shown = VGroup()

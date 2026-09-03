@@ -262,8 +262,8 @@ class PicksTheorem(LessonScene):
         self.linger(3.4)
 
         notes = [
-            self._line("この小さい三角形の面積は、いつでも", MathTex(r"\dfrac{1}{2}", font_size=26), "です。", font_size=22),
-            self.ja_text("大きい多角形も、これに分けられれば、個数から面積が書けます。", font_size=22),
+            self._line("この直角三角形の面積は", MathTex(r"\dfrac{1}{2}", font_size=26), "です。", font_size=22),
+            self.ja_text("形が違う分け方も、面積を一段ずつ確かめます。", font_size=22),
         ]
         shown = VGroup()
         for i, mob in enumerate(notes):
@@ -350,6 +350,8 @@ class PicksTheorem(LessonScene):
             MathTex(r"2\times 2=4", font_size=28),
             self._line(MathTex(r"I", font_size=22, color=YELLOW), "を内部、", MathTex(r"B", font_size=22, color=TEAL), "を境界、", MathTex(r"T", font_size=22, color=ORANGE), "を小三角形の個数とおく。", font_size=18),
             MathTex(r"I=1,\quad B=8,\quad T=8", font_size=28),
+            self._line("番号 1 は底辺 1、高さ 1。", MathTex(r"\dfrac{1\times 1}{2}=\dfrac{1}{2}", font_size=24), font_size=18),
+            self._line("残り 7 個も、直角をはさむ 2 辺が 1。向きが違っても", MathTex(r"\dfrac{1}{2}", font_size=24), font_size=18),
             MathTex(r"8\times\dfrac{1}{2}=4", font_size=32, color=YELLOW),
         ]
         block2 = VGroup(*rows2).arrange(DOWN, buff=0.12, aligned_edge=LEFT)
@@ -385,7 +387,7 @@ class PicksTheorem(LessonScene):
             MathTex(r"\dfrac{3\times 2}{2}=3", font_size=28),
             self._line(MathTex(r"I", font_size=22, color=YELLOW), "を内部、", MathTex(r"B", font_size=22, color=TEAL), "を境界、", MathTex(r"T", font_size=22, color=ORANGE), "を小三角形の個数とおく。", font_size=18),
             MathTex(r"I=1,\quad B=6,\quad T=6", font_size=28),
-            MathTex(r"6\times\dfrac{1}{2}=3", font_size=32, color=YELLOW),
+            self._line("番号 1 は底辺 1、高さ 1。", MathTex(r"\dfrac{1\times 1}{2}=\dfrac{1}{2}", font_size=24), font_size=18),
         ]
         block3 = VGroup(*rows3).arrange(DOWN, buff=0.12, aligned_edge=LEFT)
         pair3 = VGroup(fig3, block3).arrange(RIGHT, buff=0.40, aligned_edge=UP)
@@ -397,6 +399,46 @@ class PicksTheorem(LessonScene):
             self.play(FadeIn(row), run_time=0.35)
             self.linger(3.2)
         self.play(FadeOut(pair3), run_time=0.3)
+
+        fig3b = self._lattice(
+            3,
+            2,
+            poly=[(0, 0), (3, 0), (0, 2)],
+            interior=[(1, 1)],
+            boundary=[(0, 0), (1, 0), (2, 0), (3, 0), (0, 1), (0, 2)],
+            triangles=list(zip(big_tris, [ORANGE, GOLD, GREEN, TEAL, BLUE, PURPLE])),
+            highlight=[(3, 0), (0, 2), (1, 1)],
+            fill_color=BLUE,
+        )
+        rows3b = [
+            self.ja_text("番号 4 は細長く見える。見た目では面積を決めない。", font_size=18),
+            self._line("頂点", MathTex(r"(3,0),\ (0,2),\ (1,1)", font_size=24), font_size=18),
+            self.ja_text("3 頂点の座標から面積を出す式", font_size=18, color=GREY_B),
+            MathTex(
+                r"\dfrac{1}{2}\lvert x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)\rvert",
+                font_size=22,
+            ),
+            MathTex(r"x_1=3,\ y_1=0,\ x_2=0,\ y_2=2,\ x_3=1,\ y_3=1", font_size=22),
+            MathTex(r"\dfrac{1}{2}\lvert 3(2-1)+0(1-0)+1(0-2)\rvert", font_size=24),
+            MathTex(r"=\dfrac{1}{2}\lvert 3\cdot 1+0-2\rvert=\dfrac{1}{2}\lvert 1\rvert=\dfrac{1}{2}", font_size=24, color=YELLOW),
+            self._line("細長くても面積は", MathTex(r"\dfrac{1}{2}", font_size=24), "。残りも", MathTex(r"\dfrac{1}{2}", font_size=24), font_size=18),
+            MathTex(r"6\times\dfrac{1}{2}=3", font_size=32, color=YELLOW),
+        ]
+        block3b = VGroup(*rows3b).arrange(DOWN, buff=0.10, aligned_edge=LEFT)
+        pair3b = VGroup(fig3b, block3b).arrange(RIGHT, buff=0.32, aligned_edge=UP)
+        self.stack_below(pair3b, lead, buff=0.10)
+        pair3b.set_x(0)
+        self._fit(pair3b, 13.2)
+        if pair3b.height > 5.5:
+            pair3b.scale_to_fit_height(5.5)
+        pair3b.set_x(0)
+        self._nudge(pair3b)
+        self.play(FadeIn(fig3b), run_time=0.7)
+        for row in rows3b:
+            self.play(FadeIn(row), run_time=0.35)
+            self.linger(3.2)
+        self.linger(3.4)
+        self.play(FadeOut(pair3b), run_time=0.3)
 
         table = self.aligned_table(
             [
@@ -438,7 +480,7 @@ class PicksTheorem(LessonScene):
         self.reveal_table(table, row_wait=0.80)
 
         notes = [
-            self._line("どの形も、面積", MathTex(r"\dfrac{1}{2}", font_size=24), "の三角形に分けられた。", font_size=22),
+            self._line("形は直角だったり細長かったりするが、面積はどれも", MathTex(r"\dfrac{1}{2}", font_size=24), "。", font_size=22),
             self._line(MathTex(r"T", font_size=26, color=ORANGE), "は、内部", MathTex(r"I", font_size=26, color=YELLOW), "と境界", MathTex(r"B", font_size=26, color=TEAL), "だけで決まりそうに見えます。", font_size=22),
         ]
         shown = VGroup()
@@ -828,6 +870,7 @@ class PicksTheorem(LessonScene):
         boundary=None,
         triangles=None,
         extras=None,
+        highlight=None,
         fill_color=BLUE,
         xmin=0,
         ymin=0,
@@ -853,6 +896,11 @@ class PicksTheorem(LessonScene):
                 )
         if poly:
             parts.append(self._poly(poly, fill_color, 0.16 if not triangles else 0.0))
+        if highlight:
+            pts = [self._xy(x, y) for x, y in highlight]
+            outline = Polygon(*pts, color=YELLOW, stroke_width=5)
+            outline.set_fill(opacity=0)
+            parts.append(outline)
 
         if interior:
             for x, y in interior:

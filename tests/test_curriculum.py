@@ -49,6 +49,8 @@ MATH_150_015 = ROOT / "project" / "curriculum_math_150" / "015_random_walk_retur
 MATH_150_016 = ROOT / "project" / "curriculum_math_150" / "016_e_compound_interest"
 MATH_150_017 = ROOT / "project" / "curriculum_math_150" / "017_complex_as_rotation"
 MATH_150_018 = ROOT / "project" / "curriculum_math_150" / "018_eulers_formula"
+MATH_150_019 = ROOT / "project" / "curriculum_math_150" / "019_roots_of_unity"
+MATH_150_020 = ROOT / "project" / "curriculum_math_150" / "020_euclidean_algorithm"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -757,6 +759,36 @@ class CurriculumLessonTests(unittest.TestCase):
         ]
         self.assertNotIn("オイラー", step1)
         self.assertNotIn(r"e^{i\theta}=\cos\theta+i\sin\theta", step1)
+
+    def test_math_150_019_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_019, "RootsOfUnity")
+        self.assertIn(r"z^{n}=1", scene)
+        self.assertIn(r"\theta=\dfrac{2\pi k}{n}", scene)
+        self.assertIn(r"z^{3}-1=(z-1)(z^{2}+z+1)", scene)
+        self.assertIn(r"z=\dfrac{-1\pm i\sqrt{3}}{2}", scene)
+        self.assertIn("ド・モアブル", scene)
+        self.assertIn(r"1+\omega+\omega^{2}=0", scene)
+        self.assertIn(r"z^{4}-1=(z^{2}-1)(z^{2}+1)", scene)
+        step1 = scene[
+            scene.index("def part_step1_polar") : scene.index("def part_step2_divide")
+        ]
+        self.assertNotIn("ド・モアブル", step1)
+        self.assertNotIn(r"\dfrac{2\pi k}{n}", step1)
+
+    def test_math_150_020_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_020, "EuclideanAlgorithm")
+        self.assertIn(r"\gcd(a,b)=\gcd(b,a\bmod b)", scene)
+        self.assertIn(r"1234567=1\cdot 891011+343556", scene)
+        self.assertIn(r"2785=253\cdot 11+2", scene)
+        self.assertIn(r"48\cdot(-1)+18\cdot 3=6", scene)
+        self.assertIn("ユークリッド", scene)
+        self.assertIn(r"a\equiv r\pmod{b}", scene)
+        self.assertIn("情報が落ちる、という心配は、この等式では支えられません", scene)
+        step1 = scene[
+            scene.index("def part_step1_divisors") : scene.index("def part_step2_diff")
+        ]
+        self.assertNotIn("ユークリッド", step1)
+        self.assertNotIn(r"a\bmod b", step1)
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

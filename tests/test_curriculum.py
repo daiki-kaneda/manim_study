@@ -46,6 +46,9 @@ MATH_150_012 = ROOT / "project" / "curriculum_math_150" / "012_central_limit_dic
 MATH_150_013 = ROOT / "project" / "curriculum_math_150" / "013_law_of_large_numbers"
 MATH_150_014 = ROOT / "project" / "curriculum_math_150" / "014_buffons_needle"
 MATH_150_015 = ROOT / "project" / "curriculum_math_150" / "015_random_walk_return"
+MATH_150_016 = ROOT / "project" / "curriculum_math_150" / "016_e_compound_interest"
+MATH_150_017 = ROOT / "project" / "curriculum_math_150" / "017_complex_as_rotation"
+MATH_150_018 = ROOT / "project" / "curriculum_math_150" / "018_eulers_formula"
 
 
 class CurriculumLessonTests(unittest.TestCase):
@@ -709,6 +712,51 @@ class CurriculumLessonTests(unittest.TestCase):
             )
         ]
         self.assertNotIn("ポリア", step1)
+
+    def test_math_150_016_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_016, "CompoundInterestE")
+        self.assertIn(r"\dfrac{9}{4}", scene)
+        self.assertIn(r"\left(1+\dfrac{1}{n}\right)^{n}", scene)
+        self.assertIn(r"\dfrac{64}{27}", scene)
+        self.assertIn("ネイピア", scene)
+        self.assertIn(r"y'=y", scene)
+        self.assertIn("無限に細かくすると爆発する、という予想は、この数字では支えられません", scene)
+        self.assertIn("y_axis", scene)
+        self.assertNotIn("しぼむ", scene)
+        step1 = scene[
+            scene.index("def part_step1_formula") : scene.index("def part_step2_expand")
+        ]
+        self.assertNotIn(r"\lim", step1)
+        self.assertNotIn("ネイピア", step1)
+
+    def test_math_150_017_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_017, "ComplexAsRotation")
+        self.assertIn(r"(a+bi)\cdot i=ai+bi^{2}", scene)
+        self.assertIn(r"ai+b(-1)=-b+ai", scene)
+        self.assertIn(r"\dfrac{\pi}{2}", scene)
+        self.assertIn(r"3+2i", scene)
+        self.assertIn("極形式", scene)
+        self.assertIn("無い数のように感じます", scene)
+        self.assertIn("時計まわりではありません", scene)
+        step1 = scene[
+            scene.index("def part_step1_point") : scene.index("def part_step2_angle")
+        ]
+        self.assertNotIn(r"\theta+\dfrac{\pi}{2}", step1)
+        self.assertNotIn("偏角", step1)
+
+    def test_math_150_018_has_storyboard_and_scene(self):
+        story, scene = self._assert_math_150_common(MATH_150_018, "EulersFormula")
+        self.assertIn(r"e^{i\theta}=\cos\theta+i\sin\theta", scene)
+        self.assertIn(r"e^{i\pi}+1=0", scene)
+        self.assertIn(r"e^{x}=1+x+\dfrac{x^{2}}{2}", scene)
+        self.assertIn("オイラー", scene)
+        self.assertIn(r"i^{4}=i^{2}\cdot i^{2}=(-1)\cdot(-1)=1", scene)
+        self.assertIn(r"-3.935+4.059=0.124", scene)
+        step1 = scene[
+            scene.index("def part_step1_series") : scene.index("def part_step2_powers")
+        ]
+        self.assertNotIn("オイラー", step1)
+        self.assertNotIn(r"e^{i\theta}=\cos\theta+i\sin\theta", step1)
 
     def test_algo_001_mathtex_has_no_japanese(self):
         self._assert_no_japanese_in_mathtex(ALGO_001 / "scene.py")

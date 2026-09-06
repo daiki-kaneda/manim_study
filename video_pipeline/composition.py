@@ -21,8 +21,14 @@ def build_use_case(root: Path | None = None) -> BuildVideoUseCase:
     token_path = Path(token) if token else (root / "local" / "youtube_token.json")
     secrets = os.environ.get("YOUTUBE_CLIENT_SECRETS")
     secrets_path = Path(secrets) if secrets else None
+    manim_media_root = os.environ.get("MANIM_MEDIA_ROOT")
+    manim_media_root_path = (
+        Path(manim_media_root)
+        if manim_media_root
+        else (root / "media" / "videos")
+    )
     return BuildVideoUseCase(
-        renderer=ManimRenderer(root),
+        renderer=ManimRenderer(root,manim_media_root_path),
         post_processor=FfmpegPostProcessor(root / "scripts" / "add_bg_bgm.sh"),
         storage=LocalStorage(),
         uploader=YouTubeUploader(token_path=token_path, client_secrets=secrets_path),

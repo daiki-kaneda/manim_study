@@ -300,7 +300,7 @@ class LessonScene(JapaneseScene):
         kwargs.setdefault("h_buff", 0.55)
         kwargs.setdefault("v_buff", 0.32)
         kwargs.setdefault("include_outer_lines", True)
-        kwargs.setdefault("include_inner_lines", True)
+        # kwargs.setdefault("include_inner_lines", True)
         kwargs.setdefault(
             "line_config",
             {"stroke_width": 1.2, "color": GREY_B},
